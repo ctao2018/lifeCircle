@@ -26,13 +26,13 @@ App({
               resolve(this.auth_info);
             },
             fail: () => {
-              reject({});
+              reject('授权失败');
             },
           });
         },
         fail: () => {
           my.switchTab({url: 'pages/index/index'})
-          reject({});
+          reject('拒绝授权');
         },
       });
     });

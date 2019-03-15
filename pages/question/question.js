@@ -16,11 +16,11 @@ Page({
 
   onLoad() {
     this.getLocation()
-    this._queryAllValidHotCity()
     this._queryAllValidQuestionCategory()
   },
   onShow() {
     this.setData({hotCity:[],})
+    this._queryAllValidHotCity()
   },
   onReady() {
     

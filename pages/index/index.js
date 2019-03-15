@@ -40,7 +40,6 @@ Page({
     //   })
    
    this.getLocation()
-   this._queryAllValidHotCity()
   },
   onShow() {
     this.setData({
@@ -54,6 +53,7 @@ Page({
     this._getMenu()
     this._queryAllHotspotCarousel()
     this._queryQuestionAnwserPage()
+    this._queryAllValidHotCity()
   },
   onReady() {
     
@@ -187,7 +187,7 @@ Page({
   },
   //点击跳转 悬赏问答页
   toReward() {
-    my.navigateTo({ url: '/pages/reward/reward'})
+    my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
     this.setData({editFlag:false})
   },
   //问答热门列表

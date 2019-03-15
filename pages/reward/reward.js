@@ -24,9 +24,13 @@ Page({
     hotCity:[],
   },
 
-  onLoad() {
-    this._queryAllValidQuestionCategory()
-    this._queryAllValidHotCity()
+  onLoad(options) {
+    console.log(options);
+    this.setData({
+      city:options.city,
+      cityAdcode:options.cityAdcode,
+    })
+    //this.getLocation()
   },
   onShow() {
     this.setData({
@@ -39,8 +43,9 @@ Page({
       showbtline:false,
       hotCity:[],
     });
-    //this._queryOfferQuestionPage()
-    this.getLocation()
+    this._queryOfferQuestionPage()
+    this._queryAllValidQuestionCategory()
+    this._queryAllValidHotCity()
   },
   onReady() {
     
@@ -188,6 +193,16 @@ Page({
       },
     });
   },
+  //点击去详情 当前城市
+  toDetailCur(e) {
+    let index=e.currentTarget.dataset['index'];
+    my.navigateTo({ url: '/pages/problemdetail/problemdetail'})
+  },
+  //点击去详情 其他城市
+  toDetailOth(e) {
+    let index=e.currentTarget.dataset['index'];
+    my.navigateTo({ url: '/pages/problemdetail/problemdetail'})
+  },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({
@@ -199,4 +214,13 @@ Page({
       this.setData({showbtline:true})
     }
   },
+   onPullDownRefresh() {
+    this.setData({pageNum:1,
+      curList:[],
+      othList:[],
+      showbtline:false,
+    })
+    this._queryOfferQuestionPage()
+    my.stopPullDownRefresh()
+  }
 });

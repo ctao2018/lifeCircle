@@ -15,7 +15,7 @@
   </view>
   <view class="rew-list">
     <block a:for="{{curList}}">
-      <view class="rew-bx bgf" data-index="{{index}}">
+      <view class="rew-bx bgf">
         <view class="rew-bxtop">
           <view class="rew-bxtopl">
             <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
@@ -23,8 +23,10 @@
           </view>
           <view class="rew-bxtopr fs24">{{item.ansRewardPoint}}积分</view>
         </view>
-        <view class="rew-bxtit c3 fs32">{{item.title}}</view>
-        <view class="rew-bxcon c9 fs28">{{item.description}}</view>
+        <view data-index="{{index}}" onTap="toDetailCur">
+          <view class="rew-bxtit c3 fs32">{{item.title}}</view>
+          <view class="rew-bxcon c9 fs28">{{item.description}}</view>
+        </view>
         <view class="rew-bxbt">
           <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
@@ -43,7 +45,7 @@
     </view>
   </view>
   <block a:for="{{othList}}">
-    <view class="rew-bx bgf" data-index="{{index}}">
+    <view class="rew-bx bgf">
         <view class="rew-bxtop">
           <view class="rew-bxtopl">
             <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
@@ -51,8 +53,10 @@
           </view>
           <view class="rew-bxtopr fs24">{{item.ansRewardPoint}}积分</view>
         </view>
-        <view class="rew-bxtit c3 fs32">{{item.title}}</view>
-        <view class="rew-bxcon c9 fs28">{{item.description}}</view>
+        <view data-index="{{index}}" onTap="toDetailOth">
+          <view class="rew-bxtit c3 fs32">{{item.title}}</view>
+          <view class="rew-bxcon c9 fs28">{{item.description}}</view>
+        </view>
         <view class="rew-bxbt">
           <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>

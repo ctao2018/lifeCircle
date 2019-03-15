@@ -15,8 +15,13 @@ Page({
     //this._questionAnwserPage()
   },
   onShow() {
-   // this._questionAnwserPage()
-   this.auth()
+    let tok = my.getStorageSync({ key: 'token' })
+    if (tok.data){
+      this._questionAnwserPage()
+    }else{
+      this.auth()
+    }
+    
    this.setData({
      ansArr:[],
      pageNum:1,
@@ -31,6 +36,7 @@ Page({
     app.getUserInfo().then(
       auth => {
           let auth_code = auth.auth_code.authCode;
+          console.log('auth_codeauth_code', auth_code)
           getTokenByCode({
             appClient: '',
             code: auth_code,
@@ -38,6 +44,7 @@ Page({
             mac: '',
             registePlat: 2
           }).then(result =>{
+            console.log('result.data.data',result)
             my.setStorage({
               key: 'token',
               data: result.data.data
@@ -96,7 +103,11 @@ Page({
   },
 
   onPullDownRefresh() {
-    this.setData({pageNum:1,ansArr:[]})
+    this.setData({
+      pageNum:1,
+      ansArr:[],
+      showbtline:false,
+    })
     this._questionAnwserPage()
     my.stopPullDownRefresh()
   }

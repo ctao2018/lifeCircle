@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/problemdetail/problemdetail",
+    "pages/answer/answer",
     "pages/index/index",
     "pages/circle/circle",
     "pages/webview/webview",
     "pages/question/question",
+    "pages/problemdetail/problemdetail",
     "pages/reward/reward"
     
   ],

@@ -1,0 +1,42 @@
+<view class="citychoice">
+  <view class="cc-searbx bgf">
+    <view class="cc-searbxl">
+      <view class="cc-searbxli"></view>
+      <input class="cc-searbxinp" confirm-type="search" onConfirm="searchCt"  value="{{serValue}}" placeholder="请输入城市搜索" />
+    </view>
+    <!-- <view class="cc-searbxr fs32">搜索</view> -->
+  </view>
+  <view class="cc-cur">
+    <view class="cc-cttit c9 fs26">当前城市</view>
+    <view class="cc-ctnamebx clearfix">
+      <view class="cc-ctname bgf fs28 cc-curct">深圳市</view>
+    </view>
+  </view>
+  <view class="cc-hotct">
+    <view class="cc-cttit c9 fs26">热门城市</view>
+    <view class="cc-ctnamebx clearfix">
+      <block a:for="{{hotList}}">
+        <view class="cc-ctname bgf fs28" data-index="{{index}}" onTap="clickHot">{{item.cityName}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="cc-allct">
+    <view class="cc-ctelp c9 fs26">A</view>
+    <view class="cc-allctcon bgf">
+      <view class="cc-allctname c3 fs34">鞍山</view>
+      <view class="cc-allctname c3 fs34">鞍山</view>
+      <view class="cc-allctname c3 fs34">鞍山</view>
+    </view>
+    <view class="cc-ctelp c9 fs26">B</view>
+    <view class="cc-allctcon bgf">
+      <view class="cc-allctname c3 fs34">北京</view>
+      <view class="cc-allctname c3 fs34">北京</view>
+      <view class="cc-allctname c3 fs34">北京</view>
+    </view>
+  </view>
+  <view class="cc-slide">
+    <block a:for="{{temABC}}">
+      <view class="cc-slideABC" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+</view>

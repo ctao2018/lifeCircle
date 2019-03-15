@@ -1,0 +1,7 @@
+{ 
+  "defaultTitle": "悬赏问答",
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

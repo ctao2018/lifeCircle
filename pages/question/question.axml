@@ -1,0 +1,26 @@
+<view class="question">
+  <form onSubmit="fabu">
+    <view class="que-inpbx"><input class="que-inp" maxlength="60" value="{{title}}" onBlur="getTit" placeholder="请输入问题并以问号结尾" /></view>
+    <view class="que-txtbx"><textarea class="que-txt" show-count="false" name="textarea" placeholder="详细描述你的问题（选填）" maxlength="300" /></view>
+    <view class="que-bt">
+      <view class="que-bta">
+        <view class="que-btal">
+          <view class="que-btalpos" onTap="toCitySel">
+            <view class="que-btalposi"></view>
+            <view class="que-btalposn">{{city}}</view>
+            </view>
+          <view class="que-btaltyp">
+            <view class="que-btaltypi "></view>
+            <picker onChange="bindPickerChange" value="{{indexType}}" range="{{typeArr}}" range-key="name">
+              <view class="picker">
+                {{typeArr[indexType].name}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <button class="que-btar {{selFlag?'que-btarSel':''}}" form-type="submit">发布</button>
+      </view>
+    </view>
+  </form>
+  <view class="que-btip">温馨提示：上传社保部门官网/公众号/生活/头条号/等链接作为依据，可以更快获得审核通过哦。经过审核后发布，可获得积分奖励。浏览量越高，积分奖励越高，积分可换购商品。</view>
+</view>

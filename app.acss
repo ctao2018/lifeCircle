@@ -1,0 +1,44 @@
+page {
+  flex: 1;
+  display: flex;
+  background: #f6f6f6;
+  font-family: "pingFang SC" "pingFang";
+}
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix{ display:inline-block;}
+.tc{
+  text-align: center;
+}
+.bgf{
+  background: #ffffff;
+}
+.cf{
+  color: #ffffff;
+}
+.c0{
+  color: #000000;
+}
+.c3{
+  color: #333333;
+}
+.c6{
+  color: #666666;
+}
+.c9{
+  color: #999999;
+}
+.fs24{
+  font-size: 24rpx;
+}
+.fs26{
+  font-size: 26rpx;
+}
+.fs28{
+  font-size: 28rpx;
+}
+.fs32{
+  font-size: 32rpx;
+}
+.fs34{
+  font-size: 34rpx;
+}

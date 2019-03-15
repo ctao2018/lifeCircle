@@ -1,0 +1,319 @@
+
+.home{
+  width: 100%;
+}
+.home-t{
+  background-color: #fff;
+  padding: 16rpx 32rpx 0 32rpx; 
+}
+.home-tbx{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+}
+.home-tbxl{
+  font-size: 28rpx;
+  color: #333333;
+}
+.home-tbxlname{
+  max-width: 150rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block
+}
+.home-tbsj{
+  width: 12rpx; 
+  height:14rpx;
+  background: url('../../assets/hone_choose.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4rpx;
+  margin-bottom: 16rpx;
+  margin-right: 10rpx;
+}
+.home-tbxr{
+  flex: 1;
+  height:70rpx;
+  background:#f5f5f5;
+  border-radius:4px;
+  display: flex;
+  align-items: center;
+}
+.home-tbsear{
+  width: 28rpx; 
+  height:28rpx;
+  background: url('../../assets/hone_search.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin: 0 12rpx 0 24rpx;
+}
+.home-tbxrn{
+  font-size: 28rpx;
+  color: #999999;
+}
+.home-swiper-item{
+  height: 280rpx;
+  border-radius: 6rpx;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+.home-tban{
+  margin: 22rpx 0 0 -45rpx;
+}
+.home-tbana{
+  float: left;
+  margin:26rpx 0 0 46rpx;
+  width: 98rpx;
+  text-align: center;
+}
+.home-tbanai{
+  width: 94rpx;
+  height: 94rpx;
+  border-radius: 47rpx;
+  overflow: hidden;
+  background-color: #bdbdbd;
+}
+.home-tbanaimg{
+  width: 94rpx;
+  height: 94rpx;
+}
+.home-tbanat{
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #333333;
+  display: inline-block;
+  margin-top: 23rpx;
+}
+.home-wd{
+  background-color: #ffffff;
+  margin-top: 15rpx;
+}
+.home-wdtop{
+  height: 75rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dddddd;
+}
+.home-wdtimg{
+  width: 175rpx;
+  height: 47rpx;
+  margin-left: 27rpx;
+}
+.home-wdth{
+  width: 64rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  margin-left: 40rpx;
+  background-color: #E8F5FF;
+  font-size: 22rpx;
+  color: #45A4FF;
+  text-align: center;
+  border-radius: 3rpx;
+}
+.home-wdtsw{
+  width: 400rpx;
+  height: 35rpx;
+  overflow: hidden;
+  margin-left: 10rpx;
+}
+.home-wdtsw-swiper{
+  height: 34rpx;
+  line-height: 34rpx;
+  color: #333333;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  display: inline-block;
+}
+.home-tab{
+  margin: 24rpx 32rpx 0;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.home-tabc{
+  display: inline-block;
+  margin-left: 24rpx;
+  margin-right: 44rpx;
+  font-size: 28rpx;
+  color: #999999;
+  font-weight:600;
+  border-bottom: 6rpx solid transparent;
+  padding-bottom: 10rpx;
+}
+.home-tabSel{
+  font-size: 36rpx;
+  color: #333333;
+  border-bottom-color: #45A4FF;
+}
+.home-wdbx{
+  background-color: #ffffff;
+  padding: 32rpx 32rpx 0;
+  margin-bottom: 16rpx;
+}
+.home-tit{
+  line-height: 48rpx;
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.home-name{
+  margin: 24rpx 0 16rpx;
+  display: flex;
+  align-items: center;
+}
+.home-nameibx{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  margin-right: 12rpx;
+  overflow: hidden;
+}
+.home-namei{
+  width: 40rpx;
+  height: 40rpx;
+}
+.home-namecon{
+  color: #999999;
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.home-wdcon{
+  color: #666666;
+  font-size: 28rpx;
+  line-height: 42rpx;
+}
+.home-wdimgbx{
+  height: 222rpx;
+  margin-top: 16rpx;
+  margin-left: -10rpx;
+  overflow: hidden
+}
+.home-wdimg{
+  float: left;
+  width: 222rpx;
+  height: 222rpx;
+  margin-left: 10rpx;
+}
+.home-wdfd{
+  margin-top: 24rpx;
+  height: 58rpx;
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+}
+.home-wdfd-f{
+  margin-right: 24rpx;
+}
+.home-wdfd-eye{
+  width: 24rpx; 
+  height:14rpx;
+  background: url('../../assets/browse.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+.home-wdfd-z{
+  width: 20rpx; 
+  height:20rpx;
+  background: url('../../assets/praise.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+.home-wdfd-t{
+  color: #999999;
+  font-size: 22rpx;
+  display: inline-block;
+  margin-right: 6rpx;
+}
+.home-edit{
+  position: fixed;
+  right:2rpx;
+  bottom:2rpx;
+  z-index: 2;
+}
+.home-editimg{
+  width: 162rpx;
+  height: 162rpx;
+}
+.home-twbig{
+  z-index: 9;
+}
+.home-twbg{
+  display: none;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.15s linear;
+}
+.home-twbgSel{
+  display: block;
+  background:rgba(8,8,8,0.4);
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.15s linear;
+}
+.home-tw{
+  width: 586rpx;
+  height: 520rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  position: fixed;
+  left: 82rpx;
+  bottom:-520rpx;
+  transition: all 0.15s linear;
+}
+.home-twSel{
+  transition: all 0.15s linear;
+  bottom: 297rpx;
+}
+.home-twbox{
+  padding-top: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.home-twboxf{
+  padding-bottom: 79rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.home-twboximg{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 93rpx;
+  margin-right: 40rpx;
+}
+.home-twboxr{
+  flex: 1;
+}
+.home-twboxtit{
+  color: #333333;
+  font-size: 38rpx;
+}
+.home-twboxcon{
+  color: #999999;
+  font-size: 24rpx;
+  max-width: 300rpx;
+  margin-top: 20rpx;
+}

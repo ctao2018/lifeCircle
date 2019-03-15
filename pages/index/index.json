@@ -1,0 +1,6 @@
+{ 
+  "defaultTitle": "社保生活圈",
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine"
+  }
+}

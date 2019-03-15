@@ -1,0 +1,85 @@
+<view class="reward">
+  <view class="rew-top bgf ">
+    <view class="rew-topb" onTap="showTy">
+      <view class="rew-topbcon c3 fs28">{{nowTy}}</view>
+      <view class="rew-arrd {{showTy?'rew-arrup':''}}"></view>
+      </view>
+    <view class="rew-topb" onTap="showTt">
+      <view class="rew-topbcon c3 fs28">{{nowTt}}</view>
+      <view class="rew-arrd {{showTt?'rew-arrup':''}}"></view>
+      </view>
+    <view class="rew-topb" onTap="toCitySel">
+      <view class="rew-topbcon c3 fs28">{{city}}</view>
+      <view class="rew-arrd"></view>
+    </view>
+  </view>
+  <view class="rew-list">
+    <block a:for="{{curList}}">
+      <view class="rew-bx bgf" data-index="{{index}}">
+        <view class="rew-bxtop">
+          <view class="rew-bxtopl">
+            <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
+            <view class="c9 fs24">{{item.nickName}}</view>
+          </view>
+          <view class="rew-bxtopr fs24">{{item.ansRewardPoint}}积分</view>
+        </view>
+        <view class="rew-bxtit c3 fs32">{{item.title}}</view>
+        <view class="rew-bxcon c9 fs28">{{item.description}}</view>
+        <view class="rew-bxbt">
+          <view class="c9 fs24">{{answerNumber || 0}} 回答</view>
+          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
+          <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
+        </view>
+      </view>
+    </block>
+    <no-data a:if="{{curList.length === 0}}"></no-data>
+  </view>
+  <view class="rew-fk bgf" a:if="{{othList.length>0}}">
+    <view class="rew-fktit c6 fs32 tc">当前城市问题展示完毕</view>
+    <view class="rew-fkcon">
+      <view class="rew-fkline"></view>
+      <view class="rew-fkcontt c9 fs24">以下是其他热门城市的问题</view>
+      <view class="rew-fkline"></view>
+    </view>
+  </view>
+  <block a:for="{{othList}}">
+    <view class="rew-bx bgf" data-index="{{index}}">
+        <view class="rew-bxtop">
+          <view class="rew-bxtopl">
+            <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
+            <view class="c9 fs24">{{item.nickName}}</view>
+          </view>
+          <view class="rew-bxtopr fs24">{{item.ansRewardPoint}}积分</view>
+        </view>
+        <view class="rew-bxtit c3 fs32">{{item.title}}</view>
+        <view class="rew-bxcon c9 fs28">{{item.description}}</view>
+        <view class="rew-bxbt">
+          <view class="c9 fs24">{{answerNumber || 0}} 回答</view>
+          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
+          <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
+        </view>
+      </view>
+  </block>
+  <view class="rew-tkbig" a:if="{{showTy}}">
+    <view class="rew-tkbg " onTap="closeTy"></view>
+    <view class="rew-tkty bgf">
+      <view class="rew-tktybx clearfix">
+        <block a:for="{{typeArr}}">
+          <view class="rew-tktya {{tyIndex==index?'rew-tktyaSel':''}}" data-index="{{index}}" onTap="selTy">{{item.name}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="rew-tkbig" a:if="{{showTt}}">
+    <view class="rew-tkbg " onTap="closeTt"></view>
+    <view class="rew-tktt bgf">
+      <block a:for="{{timeArr}}">
+        <view class="rew-tktta" data-index="{{index}}" onTap="selTt">
+          <view class="c0 fs32">{{item}}</view>
+          <view class="{{ttIndex==index?'rew-tkttaSel':''}}"></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
+</view>

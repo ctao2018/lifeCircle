@@ -1,0 +1,108 @@
+<view class="home">
+  <view class="home-t">
+    <view class="home-tbx">
+      <view class="home-tbxl" onTap="toCitySel">
+        <view class="home-tbxlname">{{city}}</view>
+        <view class="home-tbsj"></view>
+      </view>
+      <view class="home-tbxr">
+        <view class="home-tbsear"></view>
+        <view class="home-tbxrn">少儿医保</view>
+      </view>
+    </view>
+    <swiper
+      indicator-dots="{{true}}"
+      autoplay="{{true}}"
+      interval="{{3000}}"
+      circular="{{true}}"
+    >
+      <block a:for="{{banner}}">
+        <swiper-item>
+          <image data-index="{{index}}" class="home-swiper-item" onTap="goToLinkPage" src="{{item}}" mode="scaleToFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="home-tban clearfix">
+      <block a:for="{{menuList}}">
+        <view class="home-tbana" data-index="{{index}}" onTap="menuListClick">
+          <view class="home-tbanai"><image class="home-tbanaimg" src="{{item.icoUrl}}" mode="scaleToFill" /></view>
+          <text class="home-tbanat">{{item.moduleCh}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="home-wd">
+    <view class="home-wdtop">
+      <image class="home-wdtimg" src="../../assets/home_ugc.png" mode="scaleToFill" />
+      <view class="home-wdth">热门</view>
+      <view class="home-wdtsw">
+        <swiper
+          indicator-dots="{{false}}"
+          autoplay="{{true}}"
+          interval="{{3500}}"
+          circular="{{true}}"
+          vertical="{{true}}"
+        >
+          <block a:for="{{hotTit}}">
+            <swiper-item>
+              <view data-index="{{index}}" class="home-wdtsw-swiper" >{{item}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class="home-tab">
+      <block a:for="{{['问答','热门']}}">
+        <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <block a:for="{{ansArr}}">
+    <view class="home-wdbx" data-index="{{index}}">
+      <view class="home-tit">{{item.title}}</view>
+      <view class="home-name">
+        <view class="home-nameibx"><image class="home-namei" src="{{item.headAddress}}" mode="scaleToFill" /></view>
+        <view class="home-namecon">{{item.nickName}}</view>
+      </view>
+      <view>
+        <view class="home-wdcon">{{item.subAnswer}}...</view>
+        <view class="home-wdimgbx clearfix">
+          <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
+          <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
+          <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
+        </view>
+      </view>
+      <view class="home-wdfd">
+        <view class="home-wdfd-f">
+          <view class="home-wdfd-eye"></view>
+          <view class="home-wdfd-t">{{item.visitNumber}}</view>
+        </view>
+        <view>
+          <view class="home-wdfd-z"></view>
+          <view class="home-wdfd-t">{{item.praiseNumber}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
+  <view a:if="{{!editFlag}}" class="home-edit" onTap="showEdit"><image class="home-editimg" src="../../assets/editA.png" mode="scaleToFill" /></view>
+  <view class="home-twbig">
+    <view class="home-twbg {{editFlag?'home-twbgSel':''}}" onTap="closeEdit"></view>
+    <view class="home-tw {{editFlag?'home-twSel':''}}">
+      <view class="home-twbox home-twboxf" onTap="toQuestion">
+        <image class="home-twboximg" src="../../assets/release_ask.png" mode="scaleToFill" />
+        <view class="home-twboxr">
+          <view class="home-twboxtit">发布提问</view>
+          <view class="home-twboxcon">这里是发布提问的文案</view>
+        </view>
+      </view>
+      <view class="home-twbox" onTap="toReward">
+        <image class="home-twboximg" src="../../assets/release_answer.png" mode="scaleToFill" />
+        <view class="home-twboxr">
+          <view class="home-twboxtit">悬赏问答</view>
+          <view class="home-twboxcon">这里是悬赏问答的文案</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

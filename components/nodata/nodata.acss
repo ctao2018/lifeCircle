@@ -1,0 +1,11 @@
+.bl-con{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 30rpx 0;
+}
+.bl-line{
+  width: 220rpx;
+  height: 2rpx;
+  background-color: #cccccc;
+}

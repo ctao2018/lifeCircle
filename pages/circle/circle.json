@@ -1,0 +1,8 @@
+{ 
+  "defaultTitle": "圈子",
+  "pullRefresh": true,
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

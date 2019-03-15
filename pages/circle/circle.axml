@@ -1,0 +1,40 @@
+<view class="circle">
+  <view class="cir-wd">
+    <view class="home-tab">
+      <block a:for="{{['问答','热门']}}">
+        <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="cir-list">
+    <block a:for="{{ansArr}}">
+      <view class="home-wdbx" data-index="{{index}}">
+        <view class="home-tit">{{item.title}}</view>
+        <view class="home-name">
+          <view class="home-nameibx"><image class="home-namei" src="{{item.headAddress}}" mode="scaleToFill" /></view>
+          <view class="home-namecon">{{item.nickName}}</view>
+        </view>
+        <view>
+          <view class="home-wdcon">{{item.subAnswer}}...</view>
+          <view class="home-wdimgbx clearfix">
+            <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
+            <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
+            <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
+          </view>
+        </view>
+        <view class="home-wdfd">
+          <view class="home-wdfd-f">
+            <view class="home-wdfd-eye"></view>
+            <view class="home-wdfd-t">{{item.visitNumber}}</view>
+          </view>
+          <view>
+            <view class="home-wdfd-z"></view>
+            <view class="home-wdfd-t">{{item.praiseNumber}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <no-data a:if="{{ansArr.length === 0}}"></no-data>
+    <bottom-line a:if="{{showbtline}}"></bottom-line>
+  </view>
+</view>

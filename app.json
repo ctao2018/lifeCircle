@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/circle/circle",
+    "pages/webview/webview",
+    "pages/question/question",
+    "pages/reward/reward"
+    
+  ],
+  "window": {
+    "defaultTitle": "社保生活圈",
+    "titleBarColor": "#fff"
+  },
+  "tabBar": {
+    "textColor": "#999999",
+    "selectedColor": "#3C434A",
+    "backgroundColor": "#fff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "assets/tabbar_home_default.png",
+        "activeIcon": "assets/tabbar_home_selected.png",
+        "name": "首页"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "icon": "assets/tabbar_circle_default.png",
+        "activeIcon": "assets/tabbar_circle_selected.png",
+        "name": "圈子"
+      },
+      {
+        "pagePath": "",
+        "icon": "assets/tabbar_mall_default.png",
+        "activeIcon": "assets/tabbar_mall_selected.png",
+        "name": "商城"
+      },
+      {
+        "pagePath": "",
+        "icon": "assets/tabbar_my_default.png",
+        "activeIcon": "assets/tabbar_my_selected.png",
+        "name": "我的"
+      }
+    ]
+  }
+}

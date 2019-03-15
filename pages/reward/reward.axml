@@ -26,7 +26,7 @@
         <view class="rew-bxtit c3 fs32">{{item.title}}</view>
         <view class="rew-bxcon c9 fs28">{{item.description}}</view>
         <view class="rew-bxbt">
-          <view class="c9 fs24">{{answerNumber || 0}} 回答</view>
+          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>
@@ -54,7 +54,7 @@
         <view class="rew-bxtit c3 fs32">{{item.title}}</view>
         <view class="rew-bxcon c9 fs28">{{item.description}}</view>
         <view class="rew-bxbt">
-          <view class="c9 fs24">{{answerNumber || 0}} 回答</view>
+          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/problemdetail/problemdetail",
     "pages/index/index",
     "pages/circle/circle",
     "pages/webview/webview",

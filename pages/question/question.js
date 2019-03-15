@@ -122,5 +122,17 @@ Page({
     title:this.data.title
   })
     console.log(result)
+    if(result.data.code === 0){
+      my.showToast({
+        content: result.data.message,
+        success: () => {
+         my.switchTab({url: 'pages/index/index'})
+        },
+      });
+    }else{
+      my.showToast({
+        content: result.data.message
+      });
+    }
   },
 });

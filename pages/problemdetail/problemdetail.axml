@@ -1,0 +1,21 @@
+<view class="prodt bgf">
+  <view class="rew-bx ">
+    <view class="rew-bxtop">
+      <view class="rew-bxtopl">
+        <view class="rew-bxtopli"><image class="rew-bxthd" src="../../assets/headss.png" mode="scaleToFill" /></view>
+        <view class="c9 fs24">星辰</view>
+      </view>
+      <view class="rew-bxtopr fs28">200积分</view>
+    </view>
+    <view class="rew-bxtit c3 fs38">杭州的生育津贴怎么领？</view>
+    <view class="rew-bxcon c6 fs32">现在已经怀孕3个月了，求大神解答！我现在27岁，2018年8月怀孕，明天开始休产假，现在每个月工资大概到手8月怀孕，明天开始现在已经怀孕3个月了，求大神解答！我现在27岁，2018年8月怀孕，明天开始休产假，现在每个月工资大概到手8月怀孕，明天开始现在已经怀孕3</view>
+    <view class="rew-bxbt">
+      <view class="cc fs24">333 回答 · 发布于2019-03-15 21:00</view>
+      <view class="pro-dw">
+        <view class="pro-dwi"></view>
+        <view class="pro-dwn c9 fs24">杭州市</view>
+      </view>
+    </view>
+  </view>
+  <view class="pro-btn fs36"><view class="pro-btni"></view>去回答</view>
+</view>

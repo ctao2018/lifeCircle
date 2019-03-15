@@ -15,6 +15,9 @@ page {
 .cf{
   color: #ffffff;
 }
+.cc{
+  color: #cccccc;
+}
 .c0{
   color: #000000;
 }
@@ -41,4 +44,10 @@ page {
 }
 .fs34{
   font-size: 34rpx;
+}
+.fs36{
+  font-size: 36rpx;
+}
+.fs38{
+  font-size: 38rpx;
 }

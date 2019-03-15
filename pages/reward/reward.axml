@@ -29,7 +29,7 @@
         </view>
         <view class="rew-bxbt">
           <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
-          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
+          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerCur"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>
       </view>
@@ -59,7 +59,7 @@
         </view>
         <view class="rew-bxbt">
           <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
-          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}"><view class="rew-bxbtrai"></view>回答</view>
+          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerOth"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>
       </view>

@@ -18,5 +18,9 @@ Page({
   onReady() {
     
   },
- 
+  
+  //去回答
+  toAnswer() {
+     my.navigateTo({ url: '/pages/answer/answer'})
+  },
 });

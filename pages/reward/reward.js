@@ -203,6 +203,16 @@ Page({
     let index=e.currentTarget.dataset['index'];
     my.navigateTo({ url: '/pages/problemdetail/problemdetail'})
   },
+  //去回答 当前城市
+  toAnswerCur(e) {
+    let index=e.currentTarget.dataset['index'];
+    my.navigateTo({ url: '/pages/answer/answer'})
+  },
+  //去回答 其他城市
+  toAnswerOth(e) {
+    let index=e.currentTarget.dataset['index'];
+    my.navigateTo({ url: '/pages/answer/answer'})
+  },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({

@@ -17,5 +17,5 @@
       </view>
     </view>
   </view>
-  <view class="pro-btn fs36"><view class="pro-btni"></view>去回答</view>
+  <view class="pro-btn fs36" onTap="toAnswer"><view class="pro-btni"></view>去回答</view>
 </view>

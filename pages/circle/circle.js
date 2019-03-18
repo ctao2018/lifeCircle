@@ -36,7 +36,7 @@ Page({
     app.getUserInfo().then(
       auth => {
           let auth_code = auth.auth_code.authCode;
-          console.log('auth_codeauth_code', auth_code)
+         // console.log('auth_codeauth_code', auth_code)
           getTokenByCode({
             appClient: '',
             code: auth_code,
@@ -44,7 +44,7 @@ Page({
             mac: '',
             registePlat: 2
           }).then(result =>{
-            console.log('result.data.data',result)
+           // console.log('result.data.data',result)
             my.setStorage({
               key: 'token',
               data: result.data.data

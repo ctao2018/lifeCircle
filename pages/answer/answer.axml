@@ -8,11 +8,11 @@
       <view class="ans-clbx">
         <view class="ans-clbxt">
           <view class="c3 fs34">选择所需材料</view>
-          <view class="c3 fs28">0/3</view>
+          <view class="c3 fs28">{{selLeng}}/3</view>
         </view>
         <scroll-view class="ans-scroll" scroll-x="{{true}}" style="width: 100%" >
           <block a:for="{{clArr}}">
-            <view class="ans-clitem {{sel==index?'ans-clitemsel':''}}" data-index="{{index}}">{{item}}</view>
+            <view class="ans-clitem {{item.flaga?'ans-clitemsel':''}}" data-index="{{index}}" onTap="selCLfn">{{item.name}}</view>
           </block>
         </scroll-view>
         <view class="ans-linkbx">

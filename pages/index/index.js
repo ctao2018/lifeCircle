@@ -28,16 +28,10 @@ Page({
     isHot:'',
     showbtline:false,
     hotCity:[],
+    token:'',
   },
 
   onLoad() {
-    // app.getUserInfo().then(
-    //   auth => {
-    //     console.log(auth);
-    //     let auth_code = auth.auth_code.authCode;
-    //     this.setData({avatar:auth.user_info.avatar,nickName:auth.user_info.nickName,code:auth_code});
-    //     //this._getTokenByCode()
-    //   })
    
    this.getLocation()
   },
@@ -76,19 +70,25 @@ Page({
     })
   },
   //支付宝授权
-  async _getTokenByCode() {
-    let result = await getTokenByCode({
-      appClient: '',
-      code: this.data.code,
-      identityType: 1,
-      mac: '',
-      registePlat: 2
-    })
-    console.log('index',result)
-    my.setStorage({
-      key: 'token',
-      data: result.data.data
-    });
+  auth() {
+    app.getUserInfo().then(
+      auth => {
+          let auth_code = auth.auth_code.authCode;
+          //console.log('auth_codeauth_code', auth_code)
+          getTokenByCode({
+            appClient: '',
+            code: auth_code,
+            identityType: 1,
+            mac: '',
+            registePlat: 2
+          }).then(result =>{
+            //console.log('result.data.data',result)
+            my.setStorage({
+              key: 'token',
+              data: result.data.data
+            });
+          })
+      })
   },
   //轮播图列表
   async _getCategory() {
@@ -182,12 +182,22 @@ Page({
   },
   //点击跳转 发布问题
   toQuestion() {
-    my.navigateTo({ url: '/pages/question/question'})
+    this.setData({token:my.getStorageSync({ key: 'token' }),})
+    if (this.data.token.data){
+      my.navigateTo({ url: '/pages/question/question'})
+    }else{
+      this.auth()
+    }
     this.setData({editFlag:false})
   },
   //点击跳转 悬赏问答页
   toReward() {
-    my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
+    this.setData({token:my.getStorageSync({ key: 'token' }),})
+    if (this.data.token.data){
+      my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
+    }else{
+      this.auth()
+    }
     this.setData({editFlag:false})
   },
   //问答热门列表
@@ -217,9 +227,6 @@ Page({
       showHotCities: true,
       hotCities: this.data.hotCity,
       success: (res) => {
-        // my.alert({
-        //   content: res.city + ':' + res.adCode
-        // });
         this.setData({
           city:res.city,
           cityAdcode:res.adCode,

@@ -30,6 +30,12 @@ page {
 .c9{
   color: #999999;
 }
+.fs20{
+  font-size: 20rpx;
+}
+.fs22{
+  font-size: 22rpx;
+}
 .fs24{
   font-size: 24rpx;
 }
@@ -38,6 +44,9 @@ page {
 }
 .fs28{
   font-size: 28rpx;
+}
+.fs30{
+  font-size: 30rpx;
 }
 .fs32{
   font-size: 32rpx;

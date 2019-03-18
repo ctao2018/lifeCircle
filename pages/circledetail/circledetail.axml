@@ -1,0 +1,39 @@
+<view class="cirdetail">
+  <view class="rew-bx bgf">
+    <view class="rew-bxtit c3 fs38">杭州的生育津贴怎么领？</view>
+    <view class="rew-bxcon c6 fs32">现在已经怀孕3个月了，求大神解答！我现在27岁，2018年8月怀孕，明天开始休产假，现在每个月工资大概到手8月怀孕，明天开始现在已经怀孕3个月了，求大神解答！我现在27岁，2018年8月怀孕，明天开始休产假，现在每个月工资大概到手8月怀孕，明天开始现在已经怀孕3</view>
+    <view class="rew-bxbt">
+      <view class="pro-dw">
+        <view class="pro-dwi"></view>
+        <view class="pro-dwn c9 fs24">杭州市</view>
+      </view>
+    </view>
+  </view>
+  <view class="cd-bx bgf">
+    <view class="rew-bxtop">
+      <view class="rew-bxtopl">
+        <view class="rew-bxtopli"><image class="rew-bxthd" src="../../assets/headss.png" mode="scaleToFill" /></view>
+        <view class="">
+          <view class="rew-bxtoplname c6 fs28 ">北京人社</view>
+          <view class="c9 fs20">官方认证账号</view>
+        </view>
+      </view>
+      <view class="rew-bxtopr cc fs20">
+        <view>3.5万 浏览</view>
+        <view>2019-02-22 00：00:00</view>
+      </view>
+    </view>
+    <view class="cd-bxcon c3 fs32">1. 申请单位前往社保机构征收窗口，工作人员指引前往自助区网上申报，生成网上预申请表格，下载并打印申请表，并按照业务办理的指南准备业务材料，经办部门现场取号，社保经办窗口申请； 2.受理：受理窗口审核是否符合条件（即时）： （1）符合条件的当场受理，出具《受理告知书》。 （2）不符合条件的，不予受理，出具《不予受理决定书》。 （3）材料不齐全的，当场退回，并出具《业务指引告知书》。</view>
+    <view>
+      <image class="cd-bximg" src="../../assets/imgaa.png" mode="widthFix" />
+    </view>
+    <view class="cd-bxcl clearfix">
+      <view class="cd-bxcla c9 fs24">身份证</view>
+      <view class="cd-bxcla c9 fs24">实体社保卡</view>
+      <view class="cd-bxcla c9 fs24">本人工资卡</view>
+    </view>
+    <view class="tc cd-bxzan"><view class="cd-bxzani {{zanY?'cd-bxzaniSel':''}}" onTap="zanClick"></view></view>
+    <view class="tc fs28 cd-bxzantxt {{zanY?'cd-bxzantxtSel':''}}">634 人赞</view>
+  </view>
+  
+</view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/circledetail/circledetail",
     "pages/index/index",
     "pages/circle/circle",
     "pages/webview/webview",

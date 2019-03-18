@@ -14,10 +14,16 @@ Page({
     urlLink:'',
     selCl:[],
     selLeng:0,
+    typeBack:'',
+    changebtncol:false,
   },
 
-  onLoad() {
-    
+  onLoad(options) {
+     if(options){
+      this.setData({
+        typeBack:options.typeBack,
+      })
+    }
   },
   onShow() {
     
@@ -56,5 +62,20 @@ Page({
     this.setData({selCl:selArr})
     let nowLeng = this.data.selCl.length
     this.setData({selLeng:nowLeng})
+  },
+  //点击提交按钮
+  submitFn() {
+    this.setData({changebtncol:true,})
+    my.alert({
+      title: '提交成功',
+      content: '将在3-6个工作日内审核，审核通过后发放积分',
+      success: () => {
+        if(this.data.typeBack === '2'){
+          my.navigateBack({delta: 2})
+        }else{
+          my.navigateBack()
+        }
+      },
+    });
   },
 });

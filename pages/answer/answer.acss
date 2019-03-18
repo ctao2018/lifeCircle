@@ -87,3 +87,6 @@
   border-radius: 4rpx;
   background-color: #60B0FD;
 }
+.ans-btnSel{
+  background-color: #45A4FF;
+}

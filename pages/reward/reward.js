@@ -26,10 +26,13 @@ Page({
 
   onLoad(options) {
     console.log(options);
-    this.setData({
-      city:options.city,
-      cityAdcode:options.cityAdcode,
-    })
+    if(options){
+      this.setData({
+        city:options.city,
+        cityAdcode:options.cityAdcode,
+      })
+    }
+    
     //this.getLocation()
   },
   onShow() {

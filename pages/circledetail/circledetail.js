@@ -4,6 +4,7 @@ import {} from '../../config/api'
 Page({
   data: {
    zanY:false,
+   showZK:false,
   },
 
   onLoad() {
@@ -22,5 +23,8 @@ Page({
   zanClick() {
     this.setData({zanY:true,})
   },
-  
+  //点击展开
+  showZKtxt() {
+    this.setData({showZK:true,})
+  },
 });

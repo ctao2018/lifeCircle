@@ -21,6 +21,6 @@ Page({
   
   //去回答
   toAnswer() {
-     my.navigateTo({ url: '/pages/answer/answer'})
+     my.navigateTo({ url: '/pages/answer/answer?typeBack=2'})
   },
 });

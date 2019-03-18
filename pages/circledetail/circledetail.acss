@@ -120,3 +120,25 @@
 .cd-bxzantxtSel{
   color: #45A4FF;
 }
+.cd-bxconbig{
+  position: relative;
+  min-height: 144rpx;
+}
+.cd-bxconbigSel{
+  height: 144rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.cd-shzk{
+  position: absolute;
+  right: 0;
+  bottom: 6rpx;
+  padding-right: 10rpx;
+}
+.cd-shzkSel{
+  display: none;
+}
+.cd-shzktt{
+  color: #45A4FF;
+  display: inline-block;
+}

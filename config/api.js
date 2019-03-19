@@ -13,7 +13,9 @@ const api = {
   queryOfferQuestionPage,
   queryAllValidHotCity,
   addQuestionByUser,
-  queryOfferQuestionById
+  queryOfferQuestionById,
+  queryAllValidMaterials,
+  uploadPic
 };
 
 
@@ -77,5 +79,15 @@ function queryAllValidHotCity(params) {
 //提问 发布
 function addQuestionByUser(params) {
   return fetchData('/quesans/question/addQuestionByUser', params,'post');
+}
+
+//回答 材料配置列表
+function queryAllValidMaterials(params) {
+  return fetchData('/quesans/materials/queryAllValidMaterials', params);
+}
+
+//上传图片
+function uploadPic(params,header) {
+  return fetchData('/sharecom/oss/picture/upload', params,'post',header);
 }
 export default api

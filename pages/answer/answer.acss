@@ -15,6 +15,27 @@
   height: 160rpx;
   margin-left: 32rpx;
   margin-top: 20rpx;
+  float: left;
+}
+.ans-uppic{
+  float: left;
+  margin-left: 32rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.ans-upimg{
+  width: 160rpx;
+  height: 160rpx;
+}
+.ans-uppicclose{
+  width: 38rpx; 
+  height:38rpx;
+  background: url('../../assets/cha.png');
+  background-repeat: no-repeat;
+  background-size: 38rpx 38rpx;
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
 }
 .ans-clbx{
   margin-top: 20rpx;

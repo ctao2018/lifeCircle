@@ -5,8 +5,8 @@
     "pages/webview/webview",
     "pages/question/question",
     "pages/problemdetail/problemdetail",
-    "pages/answer/answer",
     "pages/reward/reward",
+    "pages/answer/answer",
     "pages/circledetail/circledetail"
     
   ],

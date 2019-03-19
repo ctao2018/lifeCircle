@@ -3,7 +3,11 @@
     <view class="ans-tcon bgf">
       <textarea class="ans-txt" show-count="false" name="textarea" maxlength="-1" placeholder="请输入你的答案" />
       <view class="addpic clearfix">
-        <image class="addpici" src="../../assets/picture.png" mode="aspectFill" />
+        <view class="ans-uppic">
+          <image class="ans-upimg" src="../../assets/imgaa.png" mode="aspectFill" />
+          <view class="ans-uppicclose"></view>
+        </view>
+        <image class="addpici" onTap="upLoadimg" src="../../assets/picture.png" mode="aspectFill" />
       </view>
       <view class="ans-clbx">
         <view class="ans-clbxt">
@@ -12,7 +16,7 @@
         </view>
         <scroll-view class="ans-scroll" scroll-x="{{true}}" style="width: 100%" >
           <block a:for="{{clArr}}">
-            <view class="ans-clitem {{item.flaga?'ans-clitemsel':''}}" data-index="{{index}}" onTap="selCLfn">{{item.name}}</view>
+            <view class="ans-clitem {{item.flaga?'ans-clitemsel':''}}" data-index="{{index}}" onTap="selCLfn">{{item.lists.name}}</view>
           </block>
         </scroll-view>
         <view class="ans-linkbx">

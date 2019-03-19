@@ -32,7 +32,8 @@ Page({
   },
 
   onLoad() {
-   
+   this._getCategory()
+   this._getMenu()
    this.getLocation()
   },
   onShow() {
@@ -43,8 +44,6 @@ Page({
       showbtline:false,
       hotCity:[],
       })
-    this._getCategory()
-    this._getMenu()
     this._queryAllHotspotCarousel()
     this._queryQuestionAnwserPage()
     this._queryAllValidHotCity()
@@ -216,9 +215,26 @@ Page({
     my.hideLoading()
     this.setData({pages:result.data.data.pages})
     let list = result.data.data.rows
-    this.data.ansArr = this.data.ansArr.concat(list)
+    let newList = []
+    for(let i =0;i<list.length;i++){
+      if(list[i].picturesUrl){
+        let imgArr = list[i].picturesUrl.split('|')
+        let b = {imgUrl:imgArr,lists:list[i]}
+        newList.push(b)
+      }else{
+        let b = {lists:list[i]}
+        newList.push(b)
+      }
+    }
+    this.data.ansArr = this.data.ansArr.concat(newList)
     this.setData({ansArr:this.data.ansArr})
     console.log(this.data.ansArr)
+  },
+  //问答热门列表 跳转至详情
+  toDetailFn(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.ansArr[index].lists.id
+    my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
   },
   //点击城市选择
   toCitySel() {

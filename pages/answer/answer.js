@@ -16,17 +16,19 @@ Page({
     selLeng:0,
     typeBack:'',
     changebtncol:false,
+    questionId:'',
   },
 
   onLoad(options) {
      if(options){
       this.setData({
         typeBack:options.typeBack,
+        questionId:options.id,
       })
     }
   },
   onShow() {
-    
+    console.log(this.data.questionId,this.data.typeBack)
   },
   onReady() {
     

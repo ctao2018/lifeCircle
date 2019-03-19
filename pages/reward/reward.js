@@ -199,22 +199,26 @@ Page({
   //点击去详情 当前城市
   toDetailCur(e) {
     let index=e.currentTarget.dataset['index'];
-    my.navigateTo({ url: '/pages/problemdetail/problemdetail'})
+    let id = this.data.curList[index].id
+    my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
   },
   //点击去详情 其他城市
   toDetailOth(e) {
     let index=e.currentTarget.dataset['index'];
-    my.navigateTo({ url: '/pages/problemdetail/problemdetail'})
+    let id = this.data.othList[index].id
+    my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
   },
   //去回答 当前城市
   toAnswerCur(e) {
     let index=e.currentTarget.dataset['index'];
-    my.navigateTo({ url: '/pages/answer/answer'})
+    let id = this.data.curList[index].id
+    my.navigateTo({ url: '/pages/answer/answer?id='+ id})
   },
   //去回答 其他城市
   toAnswerOth(e) {
     let index=e.currentTarget.dataset['index'];
-    my.navigateTo({ url: '/pages/answer/answer'})
+    let id = this.data.othList[index].id
+    my.navigateTo({ url: '/pages/answer/answer?id='+ id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

@@ -59,27 +59,28 @@
   </view>
   <block a:for="{{ansArr}}">
     <view class="home-wdbx" data-index="{{index}}">
-      <view class="home-tit">{{item.title}}</view>
+      <view class="home-tit"  data-index="{{index}}" onTap="toDetailFn">{{item.lists.title}}</view>
       <view class="home-name">
-        <view class="home-nameibx"><image class="home-namei" src="{{item.headAddress}}" mode="scaleToFill" /></view>
-        <view class="home-namecon">{{item.nickName}}</view>
+        <view class="home-nameibx"><image class="home-namei" src="{{item.lists.headAddress}}" mode="scaleToFill" /></view>
+        <view class="home-namecon">{{item.lists.nickName}}</view>
       </view>
-      <view>
-        <view class="home-wdcon">{{item.subAnswer}}...</view>
-        <view class="home-wdimgbx clearfix">
-          <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
-          <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
-          <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" />
-        </view>
+      <view  data-index="{{index}}" onTap="toDetailFn">
+        <view class="home-wdcon" a:if="{{item.lists.subAnswer}}">{{item.lists.subAnswer}}...</view>
+        <view class="home-wdimgbx clearfix" a:if="{{item.imgUrl}}">
+            <block a:for="{{item.imgUrl}}">
+              <image class="home-wdimg" data-index="{{index}}" src="{{item}}" mode="aspectFill" />
+            </block>
+            <!-- <image class="home-wdimg" src="../../assets/imgaa.png" mode="aspectFill" /> -->
+          </view>
       </view>
       <view class="home-wdfd">
         <view class="home-wdfd-f">
           <view class="home-wdfd-eye"></view>
-          <view class="home-wdfd-t">{{item.visitNumber}}</view>
+          <view class="home-wdfd-t">{{item.lists.visitNumber}}</view>
         </view>
         <view>
           <view class="home-wdfd-z"></view>
-          <view class="home-wdfd-t">{{item.praiseNumber}}</view>
+          <view class="home-wdfd-t">{{item.lists.praiseNumber}}</view>
         </view>
       </view>
     </view>

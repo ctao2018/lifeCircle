@@ -12,7 +12,8 @@ const api = {
   queryAllValidQuestionCategory,
   queryOfferQuestionPage,
   queryAllValidHotCity,
-  addQuestionByUser
+  addQuestionByUser,
+  queryOfferQuestionById
 };
 
 
@@ -35,7 +36,7 @@ function getMenu(params) {
 
 //首页根据cityCode或城市名称查询城市有效开通模块信息
 function queryOpenCityValidModuleInfoByParam(params) {
-  return fetchData('/dist/openModuleInfo/queryOpenCityValidModuleInfoByParam', params, 'post');
+  return fetchData('/dist/notGrant/queryOpenCityValidModuleInfoByParam', params, 'post');
 }
 
 //首页热点滚动列表
@@ -61,6 +62,11 @@ function queryAllValidQuestionCategory(params) {
 //悬赏问答列表
 function queryOfferQuestionPage(params) {
   return fetchData('/quesans/question/queryOfferQuestionPage', params);
+}
+
+//悬赏问答 详情
+function queryOfferQuestionById(params) {
+  return fetchData('/quesans/question/queryOfferQuestionById/'+params);
 }
 
 //城市选择 热门城市

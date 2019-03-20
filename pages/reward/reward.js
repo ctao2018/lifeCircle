@@ -25,7 +25,7 @@ Page({
   },
 
   onLoad(options) {
-    console.log(options);
+    //console.log(options);
     if(options){
       this.setData({
         city:options.city,

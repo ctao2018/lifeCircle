@@ -16,7 +16,9 @@ const api = {
   queryOfferQuestionById,
   queryAllValidMaterials,
   uploadPic,
-  addAnswerByUser
+  addAnswerByUser,
+  queryQuestionAnwserById,
+  praiseQuestionAnwser
 };
 
 
@@ -95,5 +97,15 @@ function uploadPic(params,header) {
 //回答 提交答案
 function addAnswerByUser(params) {
   return fetchData('/quesans/answer/addAnswerByUser', params,'post');
+}
+
+//圈子问答 详情
+function queryQuestionAnwserById(params) {
+  return fetchData('/quesans/question/queryQuestionAnwserById/'+params);
+}
+
+//圈子问答 详情 点赞
+function praiseQuestionAnwser(params) {
+  return fetchData('/quesans/question/praiseQuestionAnwser', params,'post');
 }
 export default api

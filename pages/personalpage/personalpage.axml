@@ -1,0 +1,51 @@
+<view class="personal">
+  <view class="per-top">
+    <view class="per-hd">
+      <view class="per-hdimg"><image class="per-hdimgi" src="../../assets/headss.png" mode="scaleToFill" /></view>
+    </view>
+    <view class="per-name tc fs38 cf">社保生活圈</view>
+    <view class="per-edbx">
+      <view class="per-edr fs24 cf">
+        <view class="per-edri"></view>编辑
+      </view>
+    </view>
+  </view>
+  <view class="cir-wd">
+    <view class="home-tab">
+      <block a:for="{{['回答','提问']}}">
+        <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="cir-list">
+    <block a:for="{{ansArr}}">
+      <view class="home-wdbx" >
+        <view class="home-tit" data-index="{{index}}" onTap="toDetailFn">{{item.lists.title}}</view>
+        <view class="home-name">
+          <view class="home-nameibx"><image class="home-namei" src="{{item.lists.headAddress}}" mode="scaleToFill" /></view>
+          <view class="home-namecon">{{item.lists.nickName}}</view>
+        </view>
+        <view data-index="{{index}}" onTap="toDetailFn">
+          <view class="home-wdcon" a:if="{{item.lists.subAnswer}}">{{item.lists.subAnswer}}...</view>
+          <view class="home-wdimgbx clearfix" a:if="{{item.imgUrl}}">
+            <block a:for="{{item.imgUrl}}">
+              <image class="home-wdimg" data-index="{{index}}" src="{{item}}" mode="aspectFill" />
+            </block>
+          </view>
+        </view>
+        <view class="home-wdfd">
+          <view class="home-wdfd-f">
+            <view class="home-wdfd-eye"></view>
+            <view class="home-wdfd-t">{{item.lists.visitNumber}}</view>
+          </view>
+          <view>
+            <view class="home-wdfd-z"></view>
+            <view class="home-wdfd-t">{{item.lists.praiseNumber}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <no-data a:if="{{ansArr.length === 0}}"></no-data>
+    <bottom-line a:if="{{showbtline}}"></bottom-line>
+  </view>
+</view>

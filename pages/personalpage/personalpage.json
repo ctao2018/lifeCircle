@@ -1,0 +1,7 @@
+{ 
+  "defaultTitle": "个人主页",
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

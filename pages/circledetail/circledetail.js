@@ -1,6 +1,5 @@
 const app = getApp();
 import {queryQuestionAnwserById,praiseQuestionAnwser} from '../../config/api'
-import parse from 'mini-html-parser2'
 
 Page({
   data: {
@@ -88,13 +87,6 @@ Page({
         picArr:pic,
         clList:cl,
         praiseNumber:detArr.praiseNumber,
-      })
-      parse(detArr.answer, (err, nodes) => {
-        if (!err) {
-          this.setData({
-            myrich:nodes,
-          });
-        }
       })
     }
   },

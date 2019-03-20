@@ -26,9 +26,7 @@
         <view>{{detail.publishTime}}</view>
       </view>
     </view>
-    <view class="cd-bxcon c3 fs32">
-      <rich-text nodes="{{myrich}}"></rich-text>
-    </view>
+    <view class="cd-bxcon c3 fs32">{{detail.answer}}</view>
     <view a:for="{{picArr}}">
       <image class="cd-bximg" src="{{item}}" mode="widthFix" />
     </view>

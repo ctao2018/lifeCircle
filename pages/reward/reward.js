@@ -200,13 +200,17 @@ Page({
   toDetailCur(e) {
     let index=e.currentTarget.dataset['index'];
     let id = this.data.curList[index].id
-    my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
+    if(this.data.curList[index].isCurrentUserReplayed === 0){
+      my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
+    }
   },
   //点击去详情 其他城市
   toDetailOth(e) {
     let index=e.currentTarget.dataset['index'];
     let id = this.data.othList[index].id
-    my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
+    if(this.data.othList[index].isCurrentUserReplayed === 0){
+      my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
+    }
   },
   //去回答 当前城市
   toAnswerCur(e) {

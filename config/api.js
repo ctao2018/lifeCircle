@@ -15,7 +15,8 @@ const api = {
   addQuestionByUser,
   queryOfferQuestionById,
   queryAllValidMaterials,
-  uploadPic
+  uploadPic,
+  addAnswerByUser
 };
 
 
@@ -89,5 +90,10 @@ function queryAllValidMaterials(params) {
 //上传图片
 function uploadPic(params,header) {
   return fetchData('/sharecom/oss/picture/upload', params,'post',header);
+}
+
+//回答 提交答案
+function addAnswerByUser(params) {
+  return fetchData('/quesans/answer/addAnswerByUser', params,'post');
 }
 export default api

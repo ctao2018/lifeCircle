@@ -9,7 +9,7 @@
             <view class="ans-uppicclose" data-index="{{index}}" onTap="delPicFn"></view>
           </view>
         </block>
-        <image class="addpici" onTap="upLoadimg" src="../../assets/picture.png" mode="aspectFill" />
+        <image class="addpici" onTap="upLoadimg" src="../../assets/picture.png" mode="scaleToFill" />
       </view>
       <view class="ans-clbx">
         <view class="ans-clbxt">
@@ -23,7 +23,7 @@
         </scroll-view>
         <view class="ans-linkbx">
           <view class="ans-linkl c3 fs34">来源链接</view>
-          <view class="ans-link"><input class="ans-linkinp"  value="{{urlLink}}" onBlur="getLink" placeholder="添加链接" /></view>
+          <view class="ans-link"><input class="ans-linkinp"  value="{{urlLink}}" onBlur="getLink" placeholder="添加链接(选填)" /></view>
         </view>
       </view>
     </view>

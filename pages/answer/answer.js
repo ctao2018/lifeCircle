@@ -1,5 +1,5 @@
 const app = getApp();
-import {queryAllValidMaterials} from '../../config/api'
+import {queryAllValidMaterials,addAnswerByUser} from '../../config/api'
 import env from '../../config/env'
 
 Page({
@@ -14,6 +14,8 @@ Page({
     imgUp:'',
     textarea:'',
     imgArr:[],
+    detailedList:'',
+    picturesUrl:'',
   },
 
   onLoad(options) {
@@ -31,7 +33,7 @@ Page({
     
   },
   //获取链接
-  getTit(e) {
+  getLink(e) {
     this.setData({
       urlLink: e.detail.value,
     });
@@ -48,6 +50,7 @@ Page({
       }
     })
     this.setData({clArr:newList})
+    //console.log('材料',this.data.clArr)
   },
   //点击选择材料
   selCLfn(e) {
@@ -68,7 +71,7 @@ Page({
     let that = this
     that.data.clArr.forEach(function (e, i) {
       if(that.data.clArr[i].flaga){
-        selArr.push(that.data.clArr[i].name)
+        selArr.push(that.data.clArr[i].lists.name)
       }
     })
     this.setData({selCl:selArr})
@@ -94,7 +97,7 @@ Page({
               //console.log(list)
               this.data.imgArr = this.data.imgArr.concat(list)
               this.setData({imgArr:this.data.imgArr})
-              console.log(this.data.imgArr)
+              //console.log(this.data.imgArr)
             },
             fail: (res) => {
               my.alert({
@@ -110,7 +113,6 @@ Page({
         content: '上传的图片张数已超过最大值！'
       });
     }
-    
   },
   //点击删除照片
   delPicFn(e) {
@@ -122,16 +124,54 @@ Page({
   submitFn(e) {
     this.setData({changebtncol:true,})
     this.setData({textarea:e.detail.value.textarea})
-    my.alert({
-      title: '提交成功',
-      content: '将在3-6个工作日内审核，审核通过后发放积分',
-      success: () => {
-        if(this.data.typeBack === '2'){
-          my.navigateBack({delta: 2})
-        }else{
-          my.navigateBack()
-        }
-      },
-    });
+    let piclist = ''
+    let imgUrl = []
+    if(this.data.imgArr.length>0){
+      for(let i=0;i<this.data.imgArr.length;i++){
+        imgUrl.push(this.data.imgArr[i].data)
+      }
+      piclist = imgUrl.join('|')
+    }
+    let dtlist = this.data.selCl.join(',')
+    this.setData({
+      detailedList:dtlist,
+      picturesUrl:piclist
+    })
+    if(this.data.textarea || piclist){
+      this._addAnswerByUser()
+    } else{
+      my.showToast({
+        content: '请输入答案或者上传图片资料！'
+      });
+    }
+  },
+  //提交答案
+  async _addAnswerByUser() {
+    let result = await addAnswerByUser({
+      answer: this.data.textarea,
+      detailedList: this.data.detailedList,
+      picturesUrl: this.data.picturesUrl,
+      questionId: this.data.questionId,
+      sourceUrl: this.data.urlLink,
+    })
+    console.log('提交',result)
+    if(result.data.code === 0){
+       my.alert({
+        title: '提交成功',
+        content: '将在1-3个工作日内审核，审核通过后发放积分',
+        success: () => {
+          if(this.data.typeBack === '2'){
+            my.navigateBack({delta: 2})
+          }else{
+            my.navigateBack()
+          }
+        },
+      });
+    }else{
+      my.alert({
+        title: '提交失败',
+        content: result.data.message,
+      });
+    }
   },
 });

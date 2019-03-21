@@ -1,11 +1,17 @@
+.bl-big{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .bl-con{
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 30rpx 0;
+  height: 100rpx;
 }
 .bl-line{
-  width: 220rpx;
+  width: 80rpx;
   height: 2rpx;
-  background-color: #cccccc;
+  background-color: #ddd;
 }

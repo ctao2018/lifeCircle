@@ -1,0 +1,7 @@
+{ 
+  "defaultTitle": "个人信息",
+  "pullRefresh":false,
+  "allowsBounceVertica":"no",
+  "usingComponents": {
+  }
+}

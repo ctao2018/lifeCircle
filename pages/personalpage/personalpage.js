@@ -9,6 +9,8 @@ Page({
     ansArr:[],
     isHot:'',
     showbtline:false,
+    showAnswer:true,
+    showQuestion:false,
   },
 
   onLoad() {
@@ -35,14 +37,29 @@ Page({
       showbtline:false,
     })
     if(index === 1){
-      this.setData({pageNum:1,ansArr:[],isHot:'Y'})
+      this.setData({
+        showAnswer:false,
+        showQuestion:true,
+        pageNum:1,
+        ansArr:[],
+        isHot:'Y',
+        })
       this._questionAnwserPage()
     }else{
-      this.setData({pageNum:1,ansArr:[],isHot:''})
+      this.setData({
+        showAnswer:true,
+        showQuestion:false,
+        pageNum:1,
+        ansArr:[],
+        isHot:'',
+      })
       this._questionAnwserPage()
     }
   },
-
+  //点击编辑
+  toEditFn() {
+    my.navigateTo({ url: '/pages/personalinfo/personalinfo'})
+  },
   //问答热门列表
   async _questionAnwserPage() {
     my.showLoading({

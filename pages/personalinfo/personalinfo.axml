@@ -1,0 +1,12 @@
+<view class="perinfo">
+  <view class="info-box bgf">
+    <view class="info-li">
+      <view class="c9 fs32">支付宝昵称</view>
+      <view class="info-lir c3 fs34" onTap="tapName">社保生活圈</view>
+    </view>
+    <view class="info-li">
+      <view class="c9 fs32">年龄</view>
+      <view class="info-lir c3 fs34">26<view class="info-liri"></view></view>
+    </view>
+  </view>
+</view>

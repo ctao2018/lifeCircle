@@ -37,7 +37,7 @@
 .per-edr{
   margin-right: 32rpx;
   width: 106rpx;
-  height: 40rpx;
+  height: 48rpx;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +59,9 @@
   margin-top: 15rpx;
 }
 .cir-list{
+  margin-top: 16rpx;
+}
+.per-twlist{
   margin-top: 16rpx;
 }
 .home-tab{
@@ -166,5 +169,78 @@
   color: #999999;
   font-size: 22rpx;
   display: inline-block;
+  margin-right: 6rpx;
+}
+.rew-bx{
+  margin-bottom: 20rpx;
+  box-shadow:0px 4px 8px 0px rgba(204,204,204,0.3);
+  padding: 12rpx 32rpx 0;
+}
+.rew-bxtop{
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rew-bxtopl{
+  display: flex;
+  align-items: center;
+}
+.rew-bxtopli{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin-right: 12rpx;
+}
+.rew-bxthd{
+  width: 40rpx;
+  height: 40rpx;
+}
+.rew-bxtopr{
+  color: #FFC55D;
+  font-weight: 500;
+}
+.rew-bxtit{
+  line-height: 48rpx;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 15rpx;
+}
+.rew-bxcon{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: 15rpx;
+}
+.rew-bxbt{
+  height: 72rpx;
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rew-bxbtra{
+  border: 2rpx solid #45A4FF;
+  width: 128rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  color: #45A4FF;
+  text-align: center;
+  border-radius: 28rpx;
+}
+.rew-bxbtrai{
+  width: 25rpx; 
+  height:26rpx;
+  background: url('../../assets/editB.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  vertical-align: middle;
   margin-right: 6rpx;
 }

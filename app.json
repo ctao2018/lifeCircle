@@ -8,8 +8,8 @@
     "pages/problemdetail/problemdetail",
     "pages/reward/reward",
     "pages/answer/answer",
-    "pages/circledetail/circledetail"
-    
+    "pages/circledetail/circledetail",
+    "pages/personalinfo/personalinfo"
   ],
   "window": {
     "defaultTitle": "社保生活圈",

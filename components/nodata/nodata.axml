@@ -1,5 +1,7 @@
-<view class="bl-con">
-  <view class="bl-line"></view>
-  <view class=" c9 fs24">该城市暂无数据！</view>
-  <view class="bl-line"></view>
+<view class="bl-big">
+  <view class="bl-con">
+    <view class="bl-line"></view>
+    <view class=" cc fs24">该城市暂无数据！</view>
+    <view class="bl-line"></view>
+  </view>
 </view>

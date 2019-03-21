@@ -1,0 +1,121 @@
+.my{
+  width: 100%;
+}
+.my-hd{
+  width: 100%;
+  position: relative;
+}
+.my-hdbg{
+  width: 100%; 
+  height:334rpx;
+  background: url('../../assets/personal_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.my-hdcon{
+  padding: 58rpx 32rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-hdconl{
+  display: flex;
+  align-items: center;
+}
+.my-hdconli{
+  width: 88rpx;
+  height: 88rpx;
+  border: 15rpx solid #ffffff;
+  border-radius: 67rpx;
+  overflow: hidden
+}
+.my-hdconlimg{
+  width: 88rpx;
+  height: 88rpx;
+}
+.my-hdconlname{
+  font-weight: 500;
+  margin-left: 20rpx;
+}
+.my-hdconr{
+  width: 23rpx; 
+  height:40rpx;
+  background: url('../../assets/btn.png');
+  background-repeat: no-repeat;
+  background-size: 23rpx 40rpx;
+  display: inline-block;
+  margin-right: 16rpx;
+}
+.my-hdban{
+  width: 686rpx;
+  height: 188rpx;
+  border-radius: 8rpx;
+  position: absolute;
+  left: 32rpx;
+  bottom: -94rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 5rpx 15rpx #ccc;
+}
+.my-hdbanai{
+  width: 84rpx; 
+  height:84rpx;
+  display: inline-block;
+  margin-bottom: 10rpx;
+}
+.my-hdbanaik{
+  background: url('../../assets/my_left.png');
+  background-repeat: no-repeat;
+  background-size: 84rpx 84rpx;
+}
+.my-hdbanaiw{
+  background: url('../../assets/my_center.png');
+  background-repeat: no-repeat;
+  background-size: 84rpx 84rpx;
+}
+.my-hdbanaid{
+  background: url('../../assets/my_right.png');
+  background-repeat: no-repeat;
+  background-size: 84rpx 84rpx;
+}
+.my-li{
+  height: 104rpx;
+  padding: 0 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+.my-lia{
+  width: 100%;
+  margin-top: 120rpx;
+  margin-bottom: 24rpx;
+}
+.my-libi{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.info-box{
+  padding: 0 0 0 32rpx;
+}
+.info-li{
+  height: 94rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-lir{
+  margin-right: 32rpx;
+}
+.info-liri{
+  width: 16rpx; 
+  height:26rpx;
+  background: url('../../assets/right.png');
+  background-repeat: no-repeat;
+  background-size: 16rpx 26rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}

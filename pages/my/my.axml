@@ -1,0 +1,40 @@
+<view class="my">
+  <view class="my-hd">
+    <view class="my-hdbg">
+      <view class="my-hdcon">
+        <view class="my-hdconl">
+          <view class="my-hdconli"><image class="my-hdconlimg" src="../../assets/headss.png" mode="scaleToFill" /></view>
+          <view class="my-hdconlname cf fs38">社保生活圈</view>
+        </view>
+        <view class="my-hdconr" onTap="toPersonal"></view>
+      </view>
+    </view>
+    <view class="my-hdban bgf">
+      <view class="my-hdbana tc">
+        <view class="my-hdbanai my-hdbanaik"></view>
+        <view class="c3 fs28">电子社保卡</view>
+      </view>
+      <view class="my-hdbana tc">
+        <view class="my-hdbanai my-hdbanaiw"></view>
+        <view class="c3 fs28">我的提问</view>
+      </view>
+      <view class="my-hdbana tc">
+        <view class="my-hdbanai my-hdbanaid"></view>
+        <view class="c3 fs28">我的回答</view>
+      </view>
+    </view>
+  </view>
+  <view class=" my-lia bgf">
+    <lifestyle publicId="your_lifestyle_id" />
+  </view>
+  <view class="my-li bgf">
+    <view class="c3 fs32"><image class="my-libi" src="../../assets/my_integral_icon.png" mode="scaleToFill" />积分</view>
+    <view class="c9 fs28 tc">365积分<view class="info-liri"></view></view>
+  </view>
+  <view class="info-box bgf">
+    <view class="info-li" onTap="makePhoneCall">
+      <view class="c3 fs32">联系客服</view>
+      <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
+    </view>
+  </view>
+</view>

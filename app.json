@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/personalpage/personalpage",
     "pages/index/index",
+    "pages/personalpage/personalpage",
     "pages/circle/circle",
     "pages/webview/webview",
     "pages/question/question",
@@ -9,7 +9,8 @@
     "pages/reward/reward",
     "pages/answer/answer",
     "pages/circledetail/circledetail",
-    "pages/personalinfo/personalinfo"
+    "pages/personalinfo/personalinfo",
+    "pages/my/my"
   ],
   "window": {
     "defaultTitle": "社保生活圈",
@@ -39,7 +40,7 @@
         "name": "商城"
       },
       {
-        "pagePath": "",
+        "pagePath": "pages/my/my",
         "icon": "assets/tabbar_my_default.png",
         "activeIcon": "assets/tabbar_my_selected.png",
         "name": "我的"

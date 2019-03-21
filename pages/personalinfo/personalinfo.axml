@@ -6,7 +6,7 @@
     </view>
     <view class="info-li">
       <view class="c9 fs32">年龄</view>
-      <view class="info-lir c3 fs34">26<view class="info-liri"></view></view>
+      <view class="info-lir c3 fs34" onTap="tapAge">26<view class="info-liri"></view></view>
     </view>
   </view>
 </view>

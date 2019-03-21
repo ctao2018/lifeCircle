@@ -4,7 +4,7 @@ import {queryQuestionAnwserById,praiseQuestionAnwser} from '../../config/api'
 Page({
   data: {
    zanY:false,
-   showZK:false,
+   showZK:true,
    id:'',
    detail:[],
    picArr:[],
@@ -27,7 +27,7 @@ Page({
     this.setData({
       detail:[],
       zanY:false,
-      showZK:false,
+      showZK:true,
       picArr:[],
       clList:[],
       praiseNumber:'',

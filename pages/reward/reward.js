@@ -45,6 +45,7 @@ Page({
       othList:[],
       showbtline:false,
       hotCity:[],
+      typeArr:[{name:'全部',id:''}],
     });
     this._queryOfferQuestionPage()
     this._queryAllValidQuestionCategory()

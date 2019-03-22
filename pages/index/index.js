@@ -273,7 +273,10 @@ Page({
     }
     this.setData({hotCity:this.data.hotCity})
   },
-
+  //to 搜索页面
+  toSearch() {
+    my.navigateTo({ url: '/pages/search/search'})
+  },
 
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

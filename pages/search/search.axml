@@ -1,0 +1,43 @@
+<view class="search">
+  <view class="sea-top">
+    <search-bar
+      value="{{seaVal}}"
+      placeholder="搜索"
+      onSubmit="handleSubmit"
+      showCancelButton="{{false}}" />
+  </view>
+  <view class="sea-hot bgf" a:if="{{showHot}}">
+    <view class="sea-htit c3 fs36 fw600">热门搜索</view>
+    <view class="sea-htli">
+      <view class="sea-htlia c3 fs34"><view class="sea-htliai sea-htliaa"></view>社保新规</view>
+    </view>
+    <view class="sea-htli">
+      <view class="sea-htlia c3 fs34"><view class="sea-htliai sea-htliaa"></view>特种病种门诊办理</view>
+    </view>
+    <view class="sea-htli">
+      <view class="sea-htlia c3 fs34"><view class="sea-htliai"></view>医疗保险</view>
+    </view>
+    <view class="sea-htli">
+      <view class="sea-htlia c3 fs34"><view class="sea-htliai"></view>少儿医保</view>
+    </view>
+  </view>
+  <view class="sea-jg" a:if="{{!showHot}}">
+    <view class="sea-jglist bgf" a:for="{{5}}">
+      <view class="sea-jgtit c3 fs32 fw500">到达退休年龄时，职工养老保险缴费不满15年怎么办？</view>
+      <view class="sea-jgcon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老</view>
+      <view class="sea-wdfd">
+        <view class="sea-wdfd-f">
+          <view class="sea-wdfd-eye"></view>
+          <view class="sea-wdfd-t cc fs22">123</view>
+        </view>
+        <view>
+          <view class="sea-wdfd-z"></view>
+          <view class="sea-wdfd-t cc fs22">88</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="sea-btnbx bgf">
+    <view class="sea-btntw fs26 cf tc" onTap="toQuestion">去提问</view>
+  </view>
+</view>

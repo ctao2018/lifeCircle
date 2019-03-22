@@ -13,6 +13,7 @@
     "pages/integral/integral",
     "pages/myanswer/myanswer",
     "pages/myquestion/myquestion",
+    "pages/search/search",
     "pages/my/my"
     
   ],

@@ -5,7 +5,7 @@
         <view class="home-tbxlname">{{city}}</view>
         <view class="home-tbsj"></view>
       </view>
-      <view class="home-tbxr">
+      <view class="home-tbxr" onTap="toSearch">
         <view class="home-tbsear"></view>
         <view class="home-tbxrn">少儿医保</view>
       </view>

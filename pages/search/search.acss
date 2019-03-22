@@ -1,0 +1,119 @@
+.search{
+  width: 100%;
+}
+.sea-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+.sea-hot{
+  padding-top: 120rpx;
+}
+.sea-htit{
+  padding: 0 32rpx;
+  margin-bottom: 28rpx;
+}
+.sea-htli{
+  padding: 0 0 0 32rpx;
+}
+.sea-htlia{
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.sea-htliai{
+  width: 32rpx; 
+  height:32rpx;
+  background: url('../../assets/search_on.png');
+  background-repeat: no-repeat;
+  background-size: 32rpx 32rpx;
+  margin-right: 20rpx;
+}
+.sea-htliaa{
+  background: url('../../assets/search_hot.png');
+  background-repeat: no-repeat;
+  background-size: 32rpx 32rpx;
+}
+.sea-htliab{
+  background: url('../../assets/search_new.png');
+  background-repeat: no-repeat;
+  background-size: 32rpx 32rpx;
+}
+.sea-btnbx{
+  height: 120rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:0px -1px 6px 0px rgba(0,0,0,0.2);
+}
+.sea-btntw{
+  width: 686rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  background-color: #2C9CFF;
+  border-radius: 36rpx;
+}
+.sea-jg{
+  margin: 108rpx 0 140rpx;
+}
+.sea-jglist{
+  padding: 32rpx 32rpx 0;
+  margin-bottom: 16rpx;
+}
+.sea-tit{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.sea-jgcon{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.sea-wdfd{
+  margin-top: 24rpx;
+  height: 58rpx;
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+}
+.sea-wdfd-f{
+  margin-right: 24rpx;
+}
+.sea-wdfd-eye{
+  width: 24rpx; 
+  height:14rpx;
+  background: url('../../assets/browse.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+.sea-wdfd-z{
+  width: 20rpx; 
+  height:20rpx;
+  background: url('../../assets/praise.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 12rpx;
+  vertical-align: middle;
+}
+.sea-wdfd-t{
+  font-size: 22rpx;
+  display: inline-block;
+  margin-right: 6rpx;
+}

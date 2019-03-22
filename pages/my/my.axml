@@ -25,11 +25,11 @@
     </view>
   </view>
   <view class=" my-lia bgf">
-    <lifestyle publicId="your_lifestyle_id" />
+    <lifestyle publicId="2017122701256753" />
   </view>
   <view class="my-li bgf">
     <view class="c3 fs32"><image class="my-libi" src="../../assets/my_integral_icon.png" mode="scaleToFill" />积分</view>
-    <view class="c9 fs28 tc">365积分<view class="info-liri"></view></view>
+    <view class="c9 fs28 tc" onTap="toJF">365积分<view class="info-liri"></view></view>
   </view>
   <view class="info-box bgf">
     <view class="info-li" onTap="makePhoneCall">

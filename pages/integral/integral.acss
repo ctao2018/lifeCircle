@@ -1,0 +1,91 @@
+.integral{
+  width: 100%;
+}
+.int-hd{
+  width: 100%;
+  position: relative;
+}
+.int-hdbg{
+  width: 100%; 
+  height:340rpx;
+  background: url('../../assets/integral_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.int-hdjf{
+  padding: 100rpx 0 0 160rpx;
+}
+.int-hdjfnum{
+  font-size: 78rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+}
+.int-hdz{
+  width: 196rpx;
+  height: 47rpx;
+  background:rgba(250,157,32,0.5338);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  position: absolute;
+  right: 0;
+  top: 24rpx;
+}
+.int-hdwh{
+  width: 24rpx; 
+  height:24rpx;
+  background: url('../../assets/integral_issue.png');
+  background-repeat: 24rpx 24rpx;
+  background-size: cover;
+}
+.int-jfbx{
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+  bottom: -52rpx;
+  width: 686rpx;
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top-left-radius: 4rpx;
+  border-top-right-radius: 4rpx;
+  border-bottom: 1rpx solid #E0E0E0;
+}
+.int-jfsel{
+  position: relative;
+}
+.int-jfsel:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -34rpx;
+  width: 86rpx;
+  height: 8rpx;
+  margin-left: -43rpx;
+  background-color: #FEBD6D;
+  border-radius: 4rpx;
+}
+.int-jfli{
+  margin: 52rpx 32rpx 32rpx;
+}
+.int-jflia{
+  padding: 0 24rpx;
+  height: 144rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.int-jfliara{
+  color: #FFB860;
+}
+.int-jfliarb{
+  color: #FF6464;
+}
+.int-jfliala{
+  margin-bottom: 4rpx;
+  line-height: 45rpx;
+}

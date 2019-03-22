@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/myanswer/myanswer",
+    "pages/myquestion/myquestion",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",
@@ -10,7 +12,9 @@
     "pages/answer/answer",
     "pages/circledetail/circledetail",
     "pages/personalinfo/personalinfo",
+    "pages/integral/integral",
     "pages/my/my"
+    
   ],
   "window": {
     "defaultTitle": "社保生活圈",

@@ -1,0 +1,34 @@
+<view class="myquestion">
+  <view class="mq-tab bgf c6 fs28">
+    <block a:for="{{['已回复','未回复']}}">
+      <view class=" {{curIndex==index?'mq-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+  <view class="mq-box" a:if="{{yesFlag}}">
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit c3 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
+      <view class="mq-ylitim c9 fs24">2019-03-01 12:00</view>
+      <view class="mq-ylixq fs24">详情</view>
+    </view>
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit c3 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon c9 fs28"></view>
+      <view class="mq-ylitim c9 fs24">2019-03-01 12:00</view>
+      <view class="mq-ylixq fs24">详情</view>
+    </view>
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit c3 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
+      <view class="mq-ylitim c9 fs24">2019-03-01 12:00</view>
+      <view class="mq-ylixq fs24">详情</view>
+    </view>
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit c3 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
+      <view class="mq-ylitim c9 fs24">2019-03-01 12:00</view>
+      <view class="mq-ylixq fs24">详情</view>
+    </view>
+  </view>
+  <view class="mq-box" a:if="{{noFlag}}"></view>
+</view>

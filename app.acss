@@ -60,3 +60,9 @@ page {
 .fs38{
   font-size: 38rpx;
 }
+.fwb{
+  font-weight: bold;
+}
+.fw500{
+  font-weight: 500;
+}

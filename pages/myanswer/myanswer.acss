@@ -1,0 +1,73 @@
+.myanswer{
+  width: 100%;
+}
+.mq-tab{
+  height: 89rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.mq-tabsel{
+  position: relative;
+  color: #45A4FF;
+}
+.mq-tabsel:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -30rpx;
+  width: 86rpx;
+  height: 4rpx;
+  margin-left: -43rpx;
+  background-color: #45A4FF;
+  border-radius: 2rpx;
+}
+.mq-box{
+  margin-top: 105rpx;
+}
+.mq-yli{
+  margin-bottom: 16rpx;
+  padding: 24rpx 32rpx 0;
+}
+.mq-ylitit{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+.mq-ylicon{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+.mq-ylitim{
+  margin-bottom: 16rpx;
+}
+.mq-ylixq{
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1rpx solid #eeeeee;
+  color: #45A4FF;
+}
+.ma-ybtna{
+  color: #FFC55D;
+}
+.ma-wbtna{
+  color: #333333;
+}
+.ma-nbtna{
+  color: #cccccc;
+}

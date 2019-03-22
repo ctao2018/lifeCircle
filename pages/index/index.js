@@ -163,8 +163,10 @@ Page({
     })
     //console.log('城市开通模块',result)
     if(result.data.data.length>0){
-      let url = result.data.data.moduleUrl
-      console.log(url)
+      let url = result.data.data[0].moduleUrl
+      //console.log(url)
+      app.webViewUrl = url
+      my.navigateTo({ url: '/pages/webview/webview'})
     }else{
       my.showToast({
         content: '该城市暂未开通此服务！'

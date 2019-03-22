@@ -1,0 +1,57 @@
+<view class="integral">
+  <view class="int-hd">
+    <view class="int-hdbg">
+      <view class="int-hdjf cf fs28 fw500">当前积分：<view class="int-hdjfnum fwb">456</view></view>
+    </view>
+    <view class="int-hdz fs22 cf">如何赚积分<view class="int-hdwh"></view></view>
+    <view class="int-jfbx bgf c6 fs28">
+      <block a:for="{{['全部积分','收入积分','支出积分']}}">
+        <view class=" {{curIndex==index?'int-jfsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="int-jfli bgf">
+    <view class="int-jflia">
+      <view class="int-jflial">
+        <view class="int-jfliala c3 fs32">提问奖励</view>
+        <view class="c9 fs24">2019-03-12 00:01</view>
+      </view>
+      <view class="int-jfliara fs36 fw500">+100</view>
+    </view>
+    <view class="int-jflia">
+      <view class="int-jflial">
+        <view class="int-jfliala c3 fs32">商城兑换</view>
+        <view class="c9 fs24">2019-03-12 00:01</view>
+      </view>
+      <view class="int-jfliarb fs36 fw500">-100</view>
+    </view>
+    <view class="int-jflia">
+      <view class="int-jflial">
+        <view class="int-jfliala c3 fs32">提问奖励</view>
+        <view class="c9 fs24">2019-03-12 00:01</view>
+      </view>
+      <view class="int-jfliara fs36 fw500">+100</view>
+    </view>
+    <view class="int-jflia">
+      <view class="int-jflial">
+        <view class="int-jfliala c3 fs32">提问奖励</view>
+        <view class="c9 fs24">2019-03-12 00:01</view>
+      </view>
+      <view class="int-jfliara fs36 fw500">+100</view>
+    </view>
+    <view class="int-jflia">
+      <view class="int-jflial">
+        <view class="int-jfliala c3 fs32">提问奖励</view>
+        <view class="c9 fs24">2019-03-12 00:01</view>
+      </view>
+      <view class="int-jfliara fs36 fw500">+100</view>
+    </view>
+    <view class="int-jflia">
+      <view class="int-jflial">
+        <view class="int-jfliala c3 fs32">提问奖励</view>
+        <view class="c9 fs24">2019-03-12 00:01</view>
+      </view>
+      <view class="int-jfliara fs36 fw500">+100</view>
+    </view>
+  </view>
+</view>

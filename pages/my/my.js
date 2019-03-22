@@ -21,6 +21,10 @@ Page({
   toPersonal() {
     my.navigateTo({ url: '/pages/personalpage/personalpage'})
   },
+  //点击去积分页面
+  toJF() {
+    my.navigateTo({ url: '/pages/integral/integral'})
+  },
   //联系客服
   makePhoneCall() {
     my.makePhoneCall({ number:'0755-27398610'});

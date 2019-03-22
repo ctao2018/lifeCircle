@@ -126,8 +126,8 @@ Page({
       my.showToast({
         content: result.data.message,
         success: () => {
-          my.navigateBack()
-        // my.switchTab({url: 'pages/index/index'})
+         // my.navigateBack()
+        my.switchTab({url: '/pages/index/index'})
         },
       });
     }else{

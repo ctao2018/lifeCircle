@@ -69,7 +69,7 @@ Page({
     })
   },
   //支付宝授权
-  auth() {
+  auth(id) {
     app.getUserInfo().then(
       auth => {
           let auth_code = auth.auth_code.authCode;
@@ -86,6 +86,9 @@ Page({
               key: 'token',
               data: result.data.data
             });
+            if(id){
+              my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+            }
           })
       })
   },
@@ -234,9 +237,14 @@ Page({
   },
   //问答热门列表 跳转至详情
   toDetailFn(e) {
+    let tok = my.getStorageSync({ key: 'token' })
     let index=e.currentTarget.dataset['index'];
     let id = this.data.ansArr[index].lists.id
-    my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+    if (tok.data){
+      my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+    }else{
+      this.auth(id)
+    }
   },
   //点击城市选择
   toCitySel() {
@@ -265,22 +273,6 @@ Page({
     }
     this.setData({hotCity:this.data.hotCity})
   },
-
-  // async getFeedFlowData() {
-  //   let { pageNum, feedFlowData } = this.data;
-
-  //   const data = await postRecommend({
-  //     pageNum,
-  //     pageSize: '',
-  //     isHot: isHot,
-  //     subAnwserLength: 50
-  //   })
-  //   console.log('index',data)
-  //   const { recommends, nextPage } = data
-  //   feedFlowData = feedFlowData.concat(recommends)
-  //   this.setData({ feedFlowData, nextPage })
-
-  // },
 
 
   onReachBottom(e) {

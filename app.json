@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/myanswer/myanswer",
-    "pages/myquestion/myquestion",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",
@@ -13,6 +11,8 @@
     "pages/circledetail/circledetail",
     "pages/personalinfo/personalinfo",
     "pages/integral/integral",
+    "pages/myanswer/myanswer",
+    "pages/myquestion/myquestion",
     "pages/my/my"
     
   ],

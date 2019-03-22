@@ -62,3 +62,40 @@
   border-top: 1rpx solid #eeeeee;
   color: #45A4FF;
 }
+.mq-nlixq{
+  justify-content: space-between;
+  color: #999999;
+}
+.mq-nlitim{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mq-nlitjf{
+  color: #FFC55D;
+}
+.mq-bxbtra{
+  border: 2rpx solid #45A4FF;
+  width: 128rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  color: #45A4FF;
+  text-align: center;
+  border-radius: 28rpx;
+}
+.mq-bxbtrai{
+  width: 25rpx; 
+  height:26rpx;
+  background: url('../../assets/editB.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6rpx;
+}
+.mq-ylixqd{
+  color: #333333;
+}
+.mq-ylixqn{
+  color: #cccccc;
+}

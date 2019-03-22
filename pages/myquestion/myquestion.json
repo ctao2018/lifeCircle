@@ -1,5 +1,8 @@
 { 
   "defaultTitle": "我的提问",
   "usingComponents": {
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "swipe-action": "mini-antui/es/swipe-action/index"
   }
 }

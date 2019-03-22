@@ -30,5 +30,30 @@
       <view class="mq-ylixq fs24">详情</view>
     </view>
   </view>
-  <view class="mq-box" a:if="{{noFlag}}"></view>
+  <view class="mq-box" a:if="{{noFlag}}">
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit c3 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
+      <view class="mq-ylitim c9 fs24 mq-nlitim">
+        <view>2019-03-01 12:00</view>
+        <view class="mq-nlitjf fw500">240积分</view>
+      </view>
+      <view class="mq-ylixq fs24 mq-nlixq">
+        <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+        <view class="mq-bxbtra fs24" ><view class="mq-bxbtrai"></view>回答</view>
+      </view>
+    </view>
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit cc fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon cc fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
+      <view class="mq-ylitim cc fs24">2019-03-01 12:00</view>
+      <view class="mq-ylixq fs24 mq-ylixqd">审核中</view>
+    </view>
+    <view class="mq-yli bgf">
+      <view class="mq-ylitit cc fs32">到达退休年龄时，职工养老保险缴费不的？</view>
+      <view class="mq-ylicon cc fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
+      <view class="mq-ylitim cc fs24">2019-03-01 12:00</view>
+      <view class="mq-ylixq fs24 mq-ylixqn">审核未通过</view>
+    </view>
+  </view>
 </view>

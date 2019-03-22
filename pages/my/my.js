@@ -29,4 +29,12 @@ Page({
   makePhoneCall() {
     my.makePhoneCall({ number:'0755-27398610'});
   },
+  //to 我的提问
+  toMyQuestion() {
+    my.navigateTo({ url: '/pages/myquestion/myquestion'})
+  },
+  //to 我的回答
+  toMyAnswer() {
+    my.navigateTo({ url: '/pages/myanswer/myanswer'})
+  },
 });

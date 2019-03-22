@@ -71,3 +71,6 @@
 .ma-nbtna{
   color: #cccccc;
 }
+.mq-ylino{
+  padding: 24rpx 0 0;
+}

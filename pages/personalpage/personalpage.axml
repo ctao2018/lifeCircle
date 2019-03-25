@@ -1,11 +1,11 @@
 <view class="personal">
   <view class="per-top">
     <view class="per-hd">
-      <view class="per-hdimg"><image class="per-hdimgi" src="../../assets/headss.png" mode="scaleToFill" /></view>
+      <view class="per-hdimg"><image class="per-hdimgi" src="{{userMsg.headAddress}}" mode="scaleToFill" /></view>
     </view>
-    <view class="per-name tc fs38 cf">社保生活圈</view>
+    <view class="per-name tc fs38 cf">{{userMsg.nickName}}</view>
     <view class="per-edbx">
-      <view class="per-edr fs24 cf" onTap="toEditFn">
+      <view class="per-edr fs24 cf" a:if="{{userMsg.isOneself === 'Y'}}" onTap="toEditFn">
         <view class="per-edri"></view>编辑
       </view>
     </view>
@@ -49,27 +49,30 @@
     <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
   <view class="per-twlist" a:if="{{showQuestion}}">
-    <block a:for="{{ansArr}}">
+    <block a:for="{{queArr}}">
       <view class="rew-bx bgf">
         <view class="rew-bxtop">
           <view class="rew-bxtopl">
-            <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.lists.headAddress}}" mode="scaleToFill" /></view>
-            <view class="c9 fs24">{{item.lists.nickName}}</view>
+            <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
+            <view class="c9 fs24">{{item.nickName}}</view>
           </view>
-          <view class="rew-bxtopr fs24">{{item.lists.ansRewardPoint}}积分</view>
+          <view class="rew-bxtopr fs24" a:if="{{item.auditState !== 'Z'}}">{{item.ansRewardPoint}}积分</view>
         </view>
-        <view data-index="{{index}}" onTap="toDetailCur">
-          <view class="rew-bxtit c3 fs32">{{item.lists.title}}</view>
-          <view class="rew-bxcon c9 fs28">{{item.lists.description}}</view>
+        <view>
+          <view class="rew-bxtit c3 fs32">{{item.title}}</view>
+          <view class="rew-bxcon c9 fs28">{{item.description}}</view>
         </view>
-        <view class="rew-bxbt">
-          <view class="c9 fs24">{{item.lists.answerNumber || 0}} 回答</view>
-          <view class="rew-bxbtra fs24" a:if="{{item.lists.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerCur"><view class="rew-bxbtrai"></view>回答</view>
-          <view class="c9 fs28" a:if="{{item.lists.isCurrentUserReplayed === 1}}">已回答</view>
+        <view class="rew-bxbt" a:if="{{item.auditState === 'N' || item.auditState === 'W' || item.auditState === 'Y'}}">
+          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+          <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerCur"><view class="rew-bxbtrai"></view>回答</view>
+          <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
+        </view>
+        <view class="rew-bxbtdt" a:if="{{item.auditState === 'Z'}}" data-index="{{index}}"  onTap="toDetailQ">
+          <view class="fs24">详情</view>
         </view>
       </view>
     </block>
-    <no-data a:if="{{curList.length === 0}}"></no-data>
+    <no-data a:if="{{queArr.length === 0}}"></no-data>
     <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
 </view>

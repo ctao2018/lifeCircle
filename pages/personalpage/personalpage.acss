@@ -225,6 +225,14 @@
   align-items: center;
   justify-content: space-between;
 }
+.rew-bxbtdt{
+  height: 72rpx;
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #45A4FF;
+}
 .rew-bxbtra{
   border: 2rpx solid #45A4FF;
   width: 128rpx;

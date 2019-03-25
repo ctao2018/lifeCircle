@@ -3,8 +3,8 @@
     <view class="my-hdbg">
       <view class="my-hdcon">
         <view class="my-hdconl">
-          <view class="my-hdconli"><image class="my-hdconlimg" src="../../assets/headss.png" mode="scaleToFill" /></view>
-          <view class="my-hdconlname cf fs38">社保生活圈</view>
+          <view class="my-hdconli"><image class="my-hdconlimg" src="{{userMsg.headAddress}}" mode="scaleToFill" /></view>
+          <view class="my-hdconlname cf fs38">{{userMsg.nickName}}</view>
         </view>
         <view class="my-hdconr" onTap="toPersonal"></view>
       </view>
@@ -29,7 +29,7 @@
   </view>
   <view class="my-li bgf">
     <view class="c3 fs32"><image class="my-libi" src="../../assets/my_integral_icon.png" mode="scaleToFill" />积分</view>
-    <view class="c9 fs28 tc" onTap="toJF">365积分<view class="info-liri"></view></view>
+    <view class="c9 fs28 tc" onTap="toJF">{{userMsg.point}} 积分<view class="info-liri"></view></view>
   </view>
   <view class="info-box bgf">
     <view class="info-li" onTap="makePhoneCall">

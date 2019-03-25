@@ -18,7 +18,12 @@ const api = {
   uploadPic,
   addAnswerByUser,
   queryQuestionAnwserById,
-  praiseQuestionAnwser
+  praiseQuestionAnwser,
+  queryMyAcctUserInfoAndPoint,
+  queryVisitUserInfoById,
+  queryVisitAnswerDynamicByParam,
+  queryVisitQuestionDynamicByParam,
+  userUpdateUserInfo
 };
 
 
@@ -107,5 +112,30 @@ function queryQuestionAnwserById(params) {
 //圈子问答 详情 点赞
 function praiseQuestionAnwser(params) {
   return fetchData('/quesans/question/praiseQuestionAnwser', params,'post');
+}
+
+//我的页面 获取个人信息
+function queryMyAcctUserInfoAndPoint(params) {
+  return fetchData('/acct/accUser/acctUserInfo/queryMyAcctUserInfoAndPoint', params);
+}
+
+//个人主页 获取用户资料
+function queryVisitUserInfoById(params) {
+  return fetchData('/acct/accUser/acctUserInfo/queryVisitUserInfoById/'+params);
+}
+
+//个人主页 回答
+function queryVisitAnswerDynamicByParam(params) {
+  return fetchData('/quesans/answer/queryVisitAnswerDynamicByParam', params);
+}
+
+//个人主页 提问
+function queryVisitQuestionDynamicByParam(params) {
+  return fetchData('/quesans/question/queryVisitQuestionDynamicByParam', params);
+}
+
+//个人信息 修改生日
+function userUpdateUserInfo(params) {
+  return fetchData('/acct/accUser/acctUserInfo/userUpdateUserInfo', params,'post');
 }
 export default api

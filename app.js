@@ -6,7 +6,7 @@ App({
   token: '',
   getUserInfo() {
     return new Promise((resolve, reject) => {
-      if (this.userInfo) resolve(this.auth_info);
+      //if (this.userInfo) resolve(this.auth_info);
 
       my.getAuthCode({
         scopes: ['auth_user'],

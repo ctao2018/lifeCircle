@@ -1,0 +1,11 @@
+.mall{
+  width: 100%;
+}
+.mall-ibx{
+  margin: 277rpx 0 48rpx;
+}
+.mall-img{
+  width: 380rpx;
+  height: 380rpx;
+  display: inline-block;
+}

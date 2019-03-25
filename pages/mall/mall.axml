@@ -1,0 +1,6 @@
+<view class="mall bgf">
+  <view class="mall-ibx tc">
+    <image class="mall-img" src="../../assets/mall_blank.png" mode="scaleToFill" />
+  </view>
+  <view class="c9 fs32 tc">开发中...</view>
+</view>

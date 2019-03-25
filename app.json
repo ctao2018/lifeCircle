@@ -14,7 +14,8 @@
     "pages/myanswer/myanswer",
     "pages/myquestion/myquestion",
     "pages/search/search",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/mall/mall"
     
   ],
   "window": {
@@ -39,7 +40,7 @@
         "name": "圈子"
       },
       {
-        "pagePath": "",
+        "pagePath": "pages/mall/mall",
         "icon": "assets/tabbar_mall_default.png",
         "activeIcon": "assets/tabbar_mall_selected.png",
         "name": "商城"

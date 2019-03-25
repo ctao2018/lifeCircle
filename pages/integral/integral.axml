@@ -11,47 +11,19 @@
     </view>
   </view>
   <view class="int-jfli bgf">
-    <view class="int-jflia">
-      <view class="int-jflial">
-        <view class="int-jfliala c3 fs32">提问奖励</view>
-        <view class="c9 fs24">2019-03-12 00:01</view>
+    <block a:for="{{jfArr}}">
+      <view class="int-jflia">
+        <view class="int-jflial">
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '1'}}">提问奖励</view>
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '2'}}">回答奖励</view>
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '3'}}">商城兑换</view>
+          <view class="c9 fs24">{{item.createTime}}</view>
+        </view>
+        <view class="int-jfliara fs36 fw500" a:if="{{item.changePoint >=0}}">+{{item.changePoint}}</view>
+        <view class="int-jfliarb fs36 fw500" a:if="{{item.changePoint <0}}">{{item.changePoint}}</view>
       </view>
-      <view class="int-jfliara fs36 fw500">+100</view>
-    </view>
-    <view class="int-jflia">
-      <view class="int-jflial">
-        <view class="int-jfliala c3 fs32">商城兑换</view>
-        <view class="c9 fs24">2019-03-12 00:01</view>
-      </view>
-      <view class="int-jfliarb fs36 fw500">-100</view>
-    </view>
-    <view class="int-jflia">
-      <view class="int-jflial">
-        <view class="int-jfliala c3 fs32">提问奖励</view>
-        <view class="c9 fs24">2019-03-12 00:01</view>
-      </view>
-      <view class="int-jfliara fs36 fw500">+100</view>
-    </view>
-    <view class="int-jflia">
-      <view class="int-jflial">
-        <view class="int-jfliala c3 fs32">提问奖励</view>
-        <view class="c9 fs24">2019-03-12 00:01</view>
-      </view>
-      <view class="int-jfliara fs36 fw500">+100</view>
-    </view>
-    <view class="int-jflia">
-      <view class="int-jflial">
-        <view class="int-jfliala c3 fs32">提问奖励</view>
-        <view class="c9 fs24">2019-03-12 00:01</view>
-      </view>
-      <view class="int-jfliara fs36 fw500">+100</view>
-    </view>
-    <view class="int-jflia">
-      <view class="int-jflial">
-        <view class="int-jfliala c3 fs32">提问奖励</view>
-        <view class="c9 fs24">2019-03-12 00:01</view>
-      </view>
-      <view class="int-jfliara fs36 fw500">+100</view>
-    </view>
+    </block>
   </view>
+  <no-data a:if="{{jfArr.length === 0}}"></no-data>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

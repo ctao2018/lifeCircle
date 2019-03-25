@@ -15,11 +15,11 @@
         <view class="c3 fs28">电子社保卡</view>
       </view>
       <view class="my-hdbana tc" onTap="toMyQuestion">
-        <view class="my-hdbanai my-hdbanaiw"></view>
+        <view class="my-hdbanai my-hdbanaiw {{unRead.unreadQuestionNum>0?'my-round':''}}"></view>
         <view class="c3 fs28">我的提问</view>
       </view>
       <view class="my-hdbana tc" onTap="toMyAnswer">
-        <view class="my-hdbanai my-hdbanaid"></view>
+        <view class="my-hdbanai my-hdbanaid {{unRead.unreadAnswerNum>0?'my-round':''}}"></view>
         <view class="c3 fs28">我的回答</view>
       </view>
     </view>

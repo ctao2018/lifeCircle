@@ -1,9 +1,10 @@
 const app = getApp();
-import {getTokenByCode,queryMyAcctUserInfoAndPoint} from '../../config/api'
+import {getTokenByCode,queryMyAcctUserInfoAndPoint,queryUnreadQuestionAndAnswerNum} from '../../config/api'
 
 Page({
   data: {
     userMsg:[],
+    unRead:[],
   },
 
   onLoad() {
@@ -18,7 +19,9 @@ Page({
     }
    this.setData({
      userMsg:[],
+     unRead:[],
    })
+   this._queryUnreadQuestionAndAnswerNum()
   },
   onReady() {
     
@@ -49,6 +52,16 @@ Page({
     if(result.data.code === 0){
       app.userInfo = result.data.data
       this.setData({userMsg:result.data.data,})
+    }else{
+      console.log(result)
+    }
+  },
+  //提问 回答 未读条数
+  async _queryUnreadQuestionAndAnswerNum() {
+    let result = await queryUnreadQuestionAndAnswerNum()
+   // console.log('未读',result)
+    if(result.data.code === 0){
+      this.setData({unRead:result.data.data,})
     }else{
       console.log(result)
     }

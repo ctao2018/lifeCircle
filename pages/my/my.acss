@@ -119,3 +119,17 @@
   display: inline-block;
   margin-left: 20rpx;
 }
+.my-round{
+  position: relative;
+}
+.my-round:after{
+  content: '';
+  position: absolute;
+  right:6rpx;
+  top: 6rpx;
+  width: 18rpx; 
+  height:18rpx;
+  background: url('../../assets/round.png');
+  background-repeat: no-repeat;
+  background-size: 18rpx 18rpx;
+}

@@ -2,5 +2,7 @@
   "defaultTitle": "积分",
   "titleBarColor":"#FEAC5F",
   "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
   }
 }

@@ -1,9 +1,14 @@
 const app = getApp();
-import {} from '../../config/api'
+import {queryMyPointBookPageByParam} from '../../config/api'
 
 Page({
   data: {
     curIndex:0,
+    pages:'',
+    pageNum:1,
+    isGain:'',
+    jfArr:[],
+    showbtline:false,
   },
 
   onLoad() {
@@ -12,7 +17,13 @@ Page({
   onShow() {
    this.setData({
      curIndex:0,
+     pages:'',
+     pageNum:1,
+     isGain:'',
+     jfArr:[],
+     showbtline:false,
    })
+   this._queryMyPointBookPageByParam()
   },
   onReady() {
     
@@ -23,5 +34,60 @@ Page({
     this.setData({
       curIndex:index,
     })
+    if(index === 1 ){
+      this.setData({
+        pageNum:1,
+        isGain:'Y',
+        jfArr:[],
+        showbtline:false,
+      })
+      this._queryMyPointBookPageByParam()
+    }else if(index === 2){
+      this.setData({
+        pageNum:1,
+        isGain:'N',
+        jfArr:[],
+        showbtline:false,
+      })
+      this._queryMyPointBookPageByParam()
+    }else{
+      this.setData({
+        pageNum:1,
+        isGain:'',
+        jfArr:[],
+        showbtline:false,
+      })
+      this._queryMyPointBookPageByParam()
+    }
+  },
+  //列表
+  async _queryMyPointBookPageByParam() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
+    const result = await queryMyPointBookPageByParam({
+      pageNum: this.data.pageNum,
+      pageSize: 10,
+      isGain:this.data.isGain
+    })
+    console.log('积分',result)
+    my.hideLoading()
+    this.setData({pages:result.data.data.pages})
+    let list = result.data.data.rows
+    this.data.jfArr = this.data.jfArr.concat(list)
+    this.setData({jfArr:this.data.jfArr})
+    console.log(this.data.jfArr)
+  },
+  onReachBottom(e) {
+    if (this.data.pages>this.data.pageNum) {
+      this.setData({
+        pageNum: ++this.data.pageNum
+      }, () => {
+        this._queryMyPointBookPageByParam()
+      })
+    }else{
+      this.setData({showbtline:true})
+    }
   },
 });

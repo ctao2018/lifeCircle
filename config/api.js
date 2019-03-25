@@ -23,7 +23,9 @@ const api = {
   queryVisitUserInfoById,
   queryVisitAnswerDynamicByParam,
   queryVisitQuestionDynamicByParam,
-  userUpdateUserInfo
+  userUpdateUserInfo,
+  queryUnreadQuestionAndAnswerNum,
+  queryMyPointBookPageByParam
 };
 
 
@@ -134,8 +136,18 @@ function queryVisitQuestionDynamicByParam(params) {
   return fetchData('/quesans/question/queryVisitQuestionDynamicByParam', params);
 }
 
+//个人主页 查询提问和回答的未读条数
+function queryUnreadQuestionAndAnswerNum(params) {
+  return fetchData('/quesans/question/queryUnreadQuestionAndAnswerNum', params);
+}
+
 //个人信息 修改生日
 function userUpdateUserInfo(params) {
   return fetchData('/acct/accUser/acctUserInfo/userUpdateUserInfo', params,'post');
+}
+
+//积分列表
+function queryMyPointBookPageByParam(params) {
+  return fetchData('/acct/acctPointBook/queryMyPointBookPageByParam', params);
 }
 export default api

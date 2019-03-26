@@ -25,7 +25,10 @@ const api = {
   queryVisitQuestionDynamicByParam,
   userUpdateUserInfo,
   queryUnreadQuestionAndAnswerNum,
-  queryMyPointBookPageByParam
+  queryMyPointBookPageByParam,
+  batchSetQuestionIsRead,
+  queryMyQuestionPageByParam,
+  qusUserDeleteById
 };
 
 
@@ -149,5 +152,20 @@ function userUpdateUserInfo(params) {
 //积分列表
 function queryMyPointBookPageByParam(params) {
   return fetchData('/acct/acctPointBook/queryMyPointBookPageByParam', params);
+}
+
+//批量修改提问状态
+function batchSetQuestionIsRead(params) {
+  return fetchData('/quesans/question/batchSetQuestionIsRead', params,'post');
+}
+
+//我的提问列表
+function queryMyQuestionPageByParam(params) {
+  return fetchData('/quesans/question/queryMyQuestionPageByParam', params);
+}
+
+//我的提问 删除
+function qusUserDeleteById(params) {
+  return fetchData('/quesans/question/userDeleteById/'+params,'','post');
 }
 export default api

@@ -99,3 +99,10 @@
 .mq-ylixqn{
   color: #cccccc;
 }
+.mq-ylino{
+  padding: 24rpx 0 0;
+  margin-bottom:0;
+}
+.mq-list{
+  margin-bottom: 16rpx;
+}

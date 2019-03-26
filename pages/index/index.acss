@@ -65,12 +65,12 @@
   display: inline-block;
 }
 .home-tban{
-  margin: 22rpx 0 0 -45rpx;
+  margin: 22rpx 0 0 -32rpx;
 }
 .home-tbana{
   float: left;
-  margin:26rpx 0 0 46rpx;
-  width: 98rpx;
+  margin:26rpx 0 0 54rpx;
+  width: 120rpx;
   text-align: center;
 }
 .home-tbanai{
@@ -79,6 +79,7 @@
   border-radius: 47rpx;
   overflow: hidden;
   background-color: #bdbdbd;
+  display: inline-block;
 }
 .home-tbanaimg{
   width: 94rpx;

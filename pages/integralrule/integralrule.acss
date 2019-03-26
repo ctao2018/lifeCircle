@@ -1,0 +1,38 @@
+.integralrule{
+  width: 100%;
+}
+.inr-bx{
+  margin-top: 25rpx;
+}
+.inr-tit{
+  padding: 0 33rpx;
+  line-height: 40rpx;
+  margin-bottom: 16rpx;
+  display: flex;
+  align-items: center;
+}
+.inr-ww{
+  width: 30rpx; 
+  height:30rpx;
+  background: url('../../assets/integral_prompt.png');
+  background-repeat: no-repeat;
+  background-size: 30rpx 30rpx;
+  margin-right: 16rpx;
+}
+.inr-con{
+  padding: 0 49rpx 0 79rpx;
+  margin-bottom: 48rpx;
+}
+.inr-contxt{
+   line-height: 33rpx;
+}
+.inr-conimg{
+  width: 100%;
+  margin: 12rpx 0;
+}
+.inr-tip{
+  margin: 32rpx 0 18rpx;
+}
+.mb8{
+  margin-bottom: 8rpx;
+}

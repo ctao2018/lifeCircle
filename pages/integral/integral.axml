@@ -3,7 +3,7 @@
     <view class="int-hdbg">
       <view class="int-hdjf cf fs28 fw500">当前积分：<view class="int-hdjfnum fwb">456</view></view>
     </view>
-    <view class="int-hdz fs22 cf">如何赚积分<view class="int-hdwh"></view></view>
+    <view class="int-hdz fs22 cf" onTap="toRule">积分规则<view class="int-hdwh"></view></view>
     <view class="int-jfbx bgf c6 fs28">
       <block a:for="{{['全部积分','收入积分','支出积分']}}">
         <view class=" {{curIndex==index?'int-jfsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>

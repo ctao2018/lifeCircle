@@ -28,7 +28,10 @@ const api = {
   queryMyPointBookPageByParam,
   batchSetQuestionIsRead,
   queryMyQuestionPageByParam,
-  qusUserDeleteById
+  qusUserDeleteById,
+  batchSetAnswerIsRead,
+  queryMyAnswerPageByParam,
+  userDeleteByAnswerId
 };
 
 
@@ -167,5 +170,20 @@ function queryMyQuestionPageByParam(params) {
 //我的提问 删除
 function qusUserDeleteById(params) {
   return fetchData('/quesans/question/userDeleteById/'+params,'','post');
+}
+
+//批量修改回答状态
+function batchSetAnswerIsRead(params) {
+  return fetchData('/quesans/answer/batchSetAnswerIsRead', params,'post');
+}
+
+//我的回答列表
+function queryMyAnswerPageByParam(params) {
+  return fetchData('/quesans/answer/queryMyAnswerPageByParam', params);
+}
+
+//我的回答 删除
+function userDeleteByAnswerId(params) {
+  return fetchData('/quesans/answer/userDeleteByAnswerId/'+params,'','post');
 }
 export default api

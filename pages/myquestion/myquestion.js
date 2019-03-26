@@ -41,30 +41,25 @@ Page({
     let index=e.currentTarget.dataset['index'];
     this.setData({
       curIndex:index,
+      pages:'',
+      pageNum:1,
+      twArr:[],
+      showbtline:false,
     })
     if(index === 1){
       this.setData({
         yesFlag:false,
         noFlag:true,
-        pages:'',
-        pageNum:1,
         isReplay:'N',
-        twArr:[],
-        showbtline:false,
       })
-      this._queryMyQuestionPageByParam()
     }else{
       this.setData({
         yesFlag:true,
         noFlag:false,
-        pages:'',
-        pageNum:1,
         isReplay:'Y',
-        twArr:[],
-        showbtline:false,
       })
-      this._queryMyQuestionPageByParam()
     }
+    this._queryMyQuestionPageByParam()
   },
   //标记为已读
   async _batchSetQuestionIsRead() {
@@ -111,13 +106,15 @@ Page({
     if(result.data.code=== 0){
       my.showToast({
         content: '删除成功',
+        success: () => {
+          this.setData({
+            pageNum:1,
+            twArr:[],
+            showbtline:false,
+          })
+          this._queryMyQuestionPageByParam()
+        },
       });
-      this.setData({
-        pageNum:1,
-        twArr:[],
-        showbtline:false,
-      })
-      this._queryMyQuestionPageByParam()
     }else{
       my.showToast({
         content: result.data.message,
@@ -132,16 +129,10 @@ Page({
       cancelButtonText: '取消',
       success: (result) => {
         if (result.confirm) {
-          if(this.data.swipeIndex){
-            let indx = this.data.swipeIndex
-            let id = this.data.twArr[indx].id
-            this.setData({delId:id})
-            this._qusUserDeleteById()
-          }else{
-            let id = this.data.twArr[0].id
-            this.setData({delId:id})
-            this._qusUserDeleteById()
-          }
+          let indx = this.data.swipeIndex
+          let id = this.data.twArr[indx].id
+          this.setData({delId:id})
+          this._qusUserDeleteById()
           e.done();
         } else {
           
@@ -154,7 +145,7 @@ Page({
   },
   onSwipeStart(e) {
     this.setData({
-      swipeIndex: e.index || null,
+      swipeIndex: e.index,
     });
   },
   onReachBottom(e) {

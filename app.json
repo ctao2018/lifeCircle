@@ -15,7 +15,8 @@
     "pages/myquestion/myquestion",
     "pages/search/search",
     "pages/my/my",
-    "pages/mall/mall"
+    "pages/mall/mall",
+    "pages/integralrule/integralrule"
     
   ],
   "window": {

@@ -60,6 +60,10 @@ Page({
       this._queryMyPointBookPageByParam()
     }
   },
+  //to 规则页
+  toRule() {
+    my.navigateTo({ url: '/pages/integralrule/integralrule'})
+  },
   //列表
   async _queryMyPointBookPageByParam() {
     my.showLoading({

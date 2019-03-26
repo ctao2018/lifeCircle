@@ -39,6 +39,7 @@
   background: url('../../assets/integral_issue.png');
   background-repeat: 24rpx 24rpx;
   background-size: cover;
+  margin-left: 10rpx;
 }
 .int-jfbx{
   position: absolute;

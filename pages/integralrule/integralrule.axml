@@ -1,0 +1,26 @@
+<view class="integralrule bgf">
+  <view class="inr-bx">
+    <view class="inr-tit fw500 c3 fs28"><view class="inr-ww"></view>如何获取积分？</view>
+    <view class="inr-con ">
+      <view class="inr-contxt c6 fs24 mb8">目前获取积分主要有以下途径：</view>
+      <view class="inr-contxt c6 fs24 mb8">1、参与提问或回答。审核通过后，后台根据问题或回答的内容优质程度划分，可获得30至300基础积分。</view>
+      <view class="inr-contxt c6 fs24">2、三天内，按提问下的答案总浏览量，提问者和成功回答者同时获得等额积分。根据页面浏览量获得额外积分：</view>
+      <image class="inr-conimg" src="../../assets/biao.png" mode="widthFix" />
+      <view class="inr-contxt c6 fs24 mb8">3、提问不成功或回答未被采纳，获得10至30随机积分奖励。</view>
+      <view class="inr-contxt c6 fs24">4、不满10浏览的部分按10浏览计算。</view>
+    </view>
+    <view class="inr-tit fw500 c3 fs28"><view class="inr-ww"></view>积分如何兑换商品？</view>
+    <view class="inr-con c6 fs24">
+      <view class="inr-contxt c6 fs24">打开【商城】，在页面中，实现各类商品兑换。</br> 注：若兑换的商品因不可抗力因素取消，例如政策变更/存货领完/服务器被攻击导致的异常低价或无限制领取等，抵扣的积分会在24小时左右退还至您的账户，恕不另行通知。</view>
+    </view>
+    <view class="inr-tit fw500 c3 fs28"><view class="inr-ww"></view>我的积分会过期吗？与支付宝积分有关吗？</view>
+    <view class="inr-con c6 fs24">
+      <view class="inr-contxt c6 fs24">积分永久有效无时限。社保生活圈积分与支付宝积分无关。</view>
+    </view>
+    <view class="inr-tit fw500 c3 fs28"><view class="inr-ww"></view>如何查询我的积分收支记录？</view>
+    <view class="inr-con c6 fs24">
+      <view class="inr-contxt c6 fs24">在【我的】中打开【积分】，可查询积分收支明细记录。</view>
+    </view>
+  </view>
+  <view class="fs22 cc tc inr-tip">如存在违规刷积分行为，我们将有权清空你的积分</view>
+</view>

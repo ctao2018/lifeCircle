@@ -5,47 +5,45 @@
     </block>
   </view>
   <view class="mq-box">
-    <view class="mq-yli bgf">
-      <view class="mq-ylitit c3 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
-      <view class="mq-ylicon c9 fs28"></view>
-      <view class="mq-ylitim c9 fs24">2019-03-01 12:00</view>
-      <view class="mq-ylixq fs24 ma-ybtna">恭喜通过审核，点击查看详情</view>
-    </view>
-    <view class="mq-yli bgf">
-      <view class="mq-ylitit c9 fs32">到达退休年龄时，职工养老保险缴费不的？</view>
-      <view class="mq-ylicon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老保险的个人，达到法定退休年龄时累计缴费不足十五年</view>
-      <view class="mq-ylitim c9 fs24">2019-03-01 12:00</view>
-      <view class="mq-ylixq fs24 ma-wbtna">审核中</view>
-    </view>
-    <view class="mq-yli bgf">
-      <view class="mq-ylitit cc fs32">到达退休年龄时，职工养老保险缴费不的？</view>
-      <view class="mq-ylicon c9 fs28"></view>
-      <view class="mq-ylitim cc fs24">2019-03-01 12:00</view>
-      <view class="mq-ylixq fs24 ma-nbtna">审核未通过</view>
-    </view>
-    <list>
-      <swipe-action
-        index="{{1}}"
-        restore="{{swipeIndex !== null && swipeIndex !== 1}}"
-        right="{{right}}"
-        onRightItemClick="onRightItemClick"
-        onSwipeStart="onSwipeStart"
-        extra="item1"
-      >
-        <list-item
-          arrow="horizontal"
-          index="1"
-          key="items-1"
-          onClick="onItemClick"
+    <block a:for="{{ansArr}}">
+      <view class="mq-yli bgf" a:if="{{item.auditState ==='Y'}}">
+        <view class="mq-ylitit c3 fs32">{{item.title}}</view>
+        <view class="mq-ylicon c9 fs28">{{item.description}}</view>
+        <view class="mq-ylitim c9 fs24">{{item.createTime}}</view>
+        <view class="mq-ylixq fs24 ma-ybtna" data-index="{{index}}" onTap="toDetail">详情</view>
+      </view>
+      <view class="mq-yli bgf" a:if="{{item.auditState ==='W'}}">
+        <view class="mq-ylitit c9 fs32">{{item.title}}</view>
+        <view class="mq-ylicon c9 fs28">{{item.description}}</view>
+        <view class="mq-ylitim c9 fs24">{{item.createTime}}</view>
+        <view class="mq-ylixq fs24 ma-wbtna">审核中</view>
+      </view>
+      <list class="ans-list" a:if="{{item.auditState ==='N'}}">
+        <swipe-action
+          index="{{index}}"
+          restore="{{swipeIndex !== null && swipeIndex !== 1}}"
+          right="{{right}}"
+          onRightItemClick="onRightItemClick"
+          onSwipeStart="onSwipeStart"
+          extra="item1"
         >
-        <view class="mq-yli bgf mq-ylino">
-          <view class="mq-ylitit cc fs32">到达退休年龄时，职工养老保险缴费不的？</view>
-          <view class="mq-ylicon c9 fs28"></view>
-          <view class="mq-ylitim cc fs24">2019-03-01 12:00</view>
-          <view class="mq-ylixq fs24 ma-nbtna">审核未通过</view>
-        </view>
-        </list-item>
-      </swipe-action>
-    </list>
+          <list-item
+            arrow="horizontal"
+            index="1"
+            key="items-1"
+            onClick="onItemClick"
+          >
+          <view class="mq-yli bgf mq-ylino">
+            <view class="mq-ylitit cc fs32">{{item.title}}</view>
+            <view class="mq-ylicon c9 fs28">{{item.description}}</view>
+            <view class="mq-ylitim cc fs24">{{item.createTime}}</view>
+            <view class="mq-ylixq fs24 ma-nbtna">审核未通过</view>
+          </view>
+          </list-item>
+        </swipe-action>
+      </list>
+    </block>
   </view>
+  <no-data a:if="{{ansArr.length === 0}}"></no-data>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

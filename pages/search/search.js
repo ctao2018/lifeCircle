@@ -1,10 +1,11 @@
 const app = getApp();
-import {} from '../../config/api'
+import {queryAllValidSearchHotWord,querySearchQuestionAnswerPage} from '../../config/api'
 
 Page({
   data: {
     seaVal:'',
-    showHot:false,
+    showHot:true,
+    hotArr:[],
   },
 
   onLoad() {
@@ -12,8 +13,10 @@ Page({
   },
   onShow() {
    this.setData({
-     
+     seaVal:'',
+     hotArr:[],
    })
+   this._queryAllValidSearchHotWord()
   },
   onReady() {
     
@@ -26,5 +29,13 @@ Page({
   //to 提问页面
   toQuestion() {
     my.navigateTo({ url: '/pages/question/question'})
+  },
+  //热门搜索
+  async _queryAllValidSearchHotWord() {
+    let result = await queryAllValidSearchHotWord()
+    console.log('热门搜索',result)
+    if(result.data.code === 0){
+      this.setData({hotArr:result.data.data})
+    }
   },
 });

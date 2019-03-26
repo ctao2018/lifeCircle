@@ -31,7 +31,9 @@ const api = {
   qusUserDeleteById,
   batchSetAnswerIsRead,
   queryMyAnswerPageByParam,
-  userDeleteByAnswerId
+  userDeleteByAnswerId,
+  queryAllValidSearchHotWord,
+  querySearchQuestionAnswerPage
 };
 
 
@@ -185,5 +187,15 @@ function queryMyAnswerPageByParam(params) {
 //我的回答 删除
 function userDeleteByAnswerId(params) {
   return fetchData('/quesans/answer/userDeleteByAnswerId/'+params,'','post');
+}
+
+//搜索 热门搜索
+function queryAllValidSearchHotWord(params) {
+  return fetchData('/quesans/searchHotWord/queryAllValidSearchHotWord', params);
+}
+
+//搜索 答案列表
+function querySearchQuestionAnswerPage(params) {
+  return fetchData('/quesans/question/querySearchQuestionAnswerPage', params);
 }
 export default api

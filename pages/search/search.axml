@@ -8,18 +8,16 @@
   </view>
   <view class="sea-hot bgf" a:if="{{showHot}}">
     <view class="sea-htit c3 fs36 fw600">热门搜索</view>
-    <view class="sea-htli">
-      <view class="sea-htlia c3 fs34"><view class="sea-htliai sea-htliaa"></view>社保新规</view>
-    </view>
-    <view class="sea-htli">
-      <view class="sea-htlia c3 fs34"><view class="sea-htliai sea-htliaa"></view>特种病种门诊办理</view>
-    </view>
-    <view class="sea-htli">
-      <view class="sea-htlia c3 fs34"><view class="sea-htliai"></view>医疗保险</view>
-    </view>
-    <view class="sea-htli">
-      <view class="sea-htlia c3 fs34"><view class="sea-htliai"></view>少儿医保</view>
-    </view>
+    <block a:for="{{hotArr}}">
+      <view class="sea-htli">
+        <view class="sea-htlia c3 fs34" data-index="{{index}}">
+          <view class="sea-htliai sea-htliaa" a:if="{{index === 0}}"></view>
+          <view class="sea-htliai sea-htliab" a:elif="{{index === 1}}"></view>
+          <view class="sea-htliai " a:else></view>
+          {{item.title}}
+        </view>
+      </view>
+    </block>
   </view>
   <view class="sea-jg" a:if="{{!showHot}}">
     <view class="sea-jglist bgf" a:for="{{5}}">

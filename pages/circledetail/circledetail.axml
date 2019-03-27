@@ -14,11 +14,11 @@
   </view>
   <view class="cd-bx bgf">
     <view class="rew-bxtop">
-      <view class="rew-bxtopl">
+      <view class="rew-bxtopl" onTap="toPersonal">
         <view class="rew-bxtopli"><image class="rew-bxthd" src="{{detail.headAddress}}" mode="scaleToFill" /></view>
         <view class="">
           <view class="rew-bxtoplname c6 fs28 ">{{detail.nickName}}</view>
-          <view class="c9 fs20">官方认证账号</view>
+          <view class="c9 fs20">{{detail.authName}}</view>
         </view>
       </view>
       <view class="rew-bxtopr cc fs20">

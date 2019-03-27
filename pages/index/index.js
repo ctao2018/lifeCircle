@@ -107,7 +107,7 @@ Page({
   //菜单列表
   async _getMenu() {
     let result = await getMenu()
-   // console.log('getMenu',result)
+   //console.log('getMenu',result)
    let menu = result.data.data
    this.setData({menuList:menu})
   },
@@ -275,7 +275,23 @@ Page({
   },
   //to 搜索页面
   toSearch() {
-    my.navigateTo({ url: '/pages/search/search'})
+    let tok = my.getStorageSync({ key: 'token' })
+    if (tok.data){
+      my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
+    }else{
+      this.auth()
+    }
+  },
+  //to 个人主页
+  toPersonal(e) {
+    let tok = my.getStorageSync({ key: 'token' })
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.ansArr[index].lists.accountId
+    if (tok.data){
+      my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
+    }else{
+      this.auth()
+    }
   },
 
   onReachBottom(e) {

@@ -2,15 +2,17 @@
   <view class="sea-top">
     <search-bar
       value="{{seaVal}}"
-      placeholder="搜索"
+      placeholder=""
       onSubmit="handleSubmit"
+      onCancel="handleCancel"
+      onClear="handleClear"
       showCancelButton="{{false}}" />
   </view>
   <view class="sea-hot bgf" a:if="{{showHot}}">
     <view class="sea-htit c3 fs36 fw600">热门搜索</view>
     <block a:for="{{hotArr}}">
       <view class="sea-htli">
-        <view class="sea-htlia c3 fs34" data-index="{{index}}">
+        <view class="sea-htlia c3 fs34" data-index="{{index}}" onTap="tapHot">
           <view class="sea-htliai sea-htliaa" a:if="{{index === 0}}"></view>
           <view class="sea-htliai sea-htliab" a:elif="{{index === 1}}"></view>
           <view class="sea-htliai " a:else></view>
@@ -20,20 +22,41 @@
     </block>
   </view>
   <view class="sea-jg" a:if="{{!showHot}}">
-    <view class="sea-jglist bgf" a:for="{{5}}">
-      <view class="sea-jgtit c3 fs32 fw500">到达退休年龄时，职工养老保险缴费不满15年怎么办？</view>
-      <view class="sea-jgcon c9 fs28">参加基本养老保险的个人，达到法定退休年龄时累计缴费满十五年的，按月领取基本养老金。参加基本养老</view>
-      <view class="sea-wdfd">
-        <view class="sea-wdfd-f">
-          <view class="sea-wdfd-eye"></view>
-          <view class="sea-wdfd-t cc fs22">123</view>
-        </view>
-        <view>
-          <view class="sea-wdfd-z"></view>
-          <view class="sea-wdfd-t cc fs22">88</view>
+    <block a:for="{{curCity}}">
+      <view class="sea-jglist bgf" data-index="{{index}}" onTap="toDetailCur">
+        <view class="sea-jgtit c3 fs32 fw500">{{item.title}}</view>
+        <view class="sea-jgcon c9 fs28">{{item.subAnswer}}</view>
+        <view class="sea-wdfd">
+          <view class="sea-wdfd-f">
+            <view class="sea-wdfd-eye"></view>
+            <view class="sea-wdfd-t cc fs22">{{item.visitNumber}}</view>
+          </view>
+          <view>
+            <view class="sea-wdfd-z"></view>
+            <view class="sea-wdfd-t cc fs22">{{item.praiseNumber }}</view>
+          </view>
         </view>
       </view>
-    </view>
+    </block>
+    <no-data a:if="{{curCity.length === 0}}"></no-data>
+    <view class="cc fs32 sea-otht" a:if="{{othCity.length>0}}">其他城市</view>
+    <block a:for="{{othCity}}">
+      <view class="sea-jglist bgf" data-index="{{index}}" onTap="toDetailOth">
+        <view class="sea-jgtit c3 fs32 fw500">{{item.title}}</view>
+        <view class="sea-jgcon c9 fs28">{{item.subAnswer}}</view>
+        <view class="sea-wdfd">
+          <view class="sea-wdfd-f">
+            <view class="sea-wdfd-eye"></view>
+            <view class="sea-wdfd-t cc fs22">{{item.visitNumber}}</view>
+          </view>
+          <view>
+            <view class="sea-wdfd-z"></view>
+            <view class="sea-wdfd-t cc fs22">{{item.praiseNumber }}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
   <view class="sea-btnbx bgf">
     <view class="sea-btntw fs26 cf tc" onTap="toQuestion">去提问</view>

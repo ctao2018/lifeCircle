@@ -21,7 +21,6 @@ Page({
     }else{
       this.auth()
     }
-    
    this.setData({
      ansArr:[],
      pageNum:1,
@@ -36,7 +35,6 @@ Page({
     app.getUserInfo().then(
       auth => {
           let auth_code = auth.auth_code.authCode;
-         // console.log('auth_codeauth_code', auth_code)
           getTokenByCode({
             appClient: '',
             code: auth_code,
@@ -44,7 +42,6 @@ Page({
             mac: '',
             registePlat: 2
           }).then(result =>{
-           // console.log('result.data.data',result)
             my.setStorage({
               key: 'token',
               data: result.data.data
@@ -105,6 +102,12 @@ Page({
     let index=e.currentTarget.dataset['index'];
     let id = this.data.ansArr[index].lists.id
     my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+  },
+  //to 个人主页
+  toPersonal(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.ansArr[index].lists.accountId
+    my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

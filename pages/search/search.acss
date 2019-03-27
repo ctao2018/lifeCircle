@@ -117,3 +117,6 @@
   display: inline-block;
   margin-right: 6rpx;
 }
+.sea-otht{
+  margin: 32rpx 32rpx 24rpx;
+}

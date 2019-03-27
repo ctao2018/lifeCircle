@@ -225,6 +225,18 @@ Page({
     let id = this.data.othList[index].id
     my.navigateTo({ url: '/pages/answer/answer?id='+ id})
   },
+  //to 个人主页 当前城市
+  toPersonalCur(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.curList[index].accountId
+    my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
+  },
+  //to 个人主页 其他城市
+  toPersonalOth(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.othList[index].accountId
+    my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
+  },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({

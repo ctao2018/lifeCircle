@@ -90,5 +90,9 @@ Page({
       })
     }
   },
-  
+  //to 个人主页
+  toPersonal() {
+    let id = this.data.detail.accountId
+    my.reLaunch({ url: '/pages/personalpage/personalpage?id=' +id})
+  },
 });

@@ -17,7 +17,7 @@
     <block a:for="{{curList}}">
       <view class="rew-bx bgf">
         <view class="rew-bxtop">
-          <view class="rew-bxtopl">
+          <view class="rew-bxtopl" data-index="{{index}}" onTap="toPersonalCur">
             <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
             <view class="c9 fs24">{{item.nickName}}</view>
           </view>
@@ -47,7 +47,7 @@
   <block a:for="{{othList}}">
     <view class="rew-bx bgf">
         <view class="rew-bxtop">
-          <view class="rew-bxtopl">
+          <view class="rew-bxtopl" data-index="{{index}}" onTap="toPersonalOth">
             <view class="rew-bxtopli"><image class="rew-bxthd" src="{{item.headAddress}}" mode="scaleToFill" /></view>
             <view class="c9 fs24">{{item.nickName}}</view>
           </view>

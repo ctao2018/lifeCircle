@@ -39,4 +39,10 @@ App({
       });
     });
   },
+  getUrl(id) {
+    let pages = getCurrentPages()  
+    let currentPage = pages[pages.length - 1] 
+    let url = currentPage.route
+    app.backUrl = url + '?id=' + id
+  },
 });

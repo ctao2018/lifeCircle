@@ -24,6 +24,7 @@ Page({
       hotCity:[],
       submitF:false,
     })
+    app.getUrl(1)
     this._queryAllValidHotCity()
   },
   onReady() {

@@ -47,6 +47,7 @@ Page({
       hotCity:[],
       typeArr:[{name:'全部',id:''}],
     });
+    app.getUrl(3,this.data.city,this.data.cityAdcode)
     this._queryOfferQuestionPage()
     this._queryAllValidQuestionCategory()
     this._queryAllValidHotCity()

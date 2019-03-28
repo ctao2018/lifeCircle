@@ -15,40 +15,17 @@ Page({
     //this._questionAnwserPage()
   },
   onShow() {
-    let tok = my.getStorageSync({ key: 'token' })
-    if (tok.data){
-      this._questionAnwserPage()
-    }else{
-      this.auth()
-    }
    this.setData({
      ansArr:[],
      pageNum:1,
      pages:'',
      showbtline:false,
      })
+     app.getUrl(1)
+     this._questionAnwserPage()
   },
   onReady() {
     
-  },
-  auth() {
-    app.getUserInfo().then(
-      auth => {
-          let auth_code = auth.auth_code.authCode;
-          getTokenByCode({
-            appClient: '',
-            code: auth_code,
-            identityType: 1,
-            mac: '',
-            registePlat: 2
-          }).then(result =>{
-            my.setStorage({
-              key: 'token',
-              data: result.data.data
-            });
-            this._questionAnwserPage()
-          })
-      })
   },
   // tab点击切换
   tabClick(e) {

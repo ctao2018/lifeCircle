@@ -22,7 +22,7 @@ Page({
         id:options.id,
       })
     }
-    this.getUrl()
+   app.getUrl(2,this.data.id)
   },
   onShow() {
     this.setData({
@@ -38,12 +38,6 @@ Page({
   },
   onReady() {
     
-  },
-  getUrl() {
-    let pages = getCurrentPages()  
-    let currentPage = pages[pages.length - 1] 
-    let url = currentPage.route
-    app.backUrl = url + '?id=' + this.data.id
   },
   //点赞
   zanClick() {

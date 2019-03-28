@@ -39,10 +39,20 @@ App({
       });
     });
   },
-  getUrl(id) {
-    let pages = getCurrentPages()  
-    let currentPage = pages[pages.length - 1] 
-    let url = currentPage.route
-    app.backUrl = url + '?id=' + id
+  getUrl(type,id,name) {
+    return new Promise((resolve, reject) => {
+      let pages = getCurrentPages()  
+      let currentPage = pages[pages.length - 1] 
+      let url = currentPage.route
+      if(type === 1){
+        this.backUrl = url 
+      }else if(type === 2){
+        this.backUrl = url+ '?id=' + id
+      }else if(type === 3){
+        this.backUrl = url+ '?city=' + id +'&cityAdcode=' + name
+      }
+      
+    })
+    
   },
 });

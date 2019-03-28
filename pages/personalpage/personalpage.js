@@ -33,6 +33,7 @@ Page({
      showbtline:false,
      userMsg:[],
     })
+    app.getUrl(2,this.data.id)
     if(this.data.showAnswer){
       this._queryVisitAnswerDynamicByParam()
     }else{

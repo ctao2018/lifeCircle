@@ -11,10 +11,7 @@ Page({
       '../../assets/banner.png',
       '../../assets/banner.png',
     ],
-    hotTit:[
-      '北京居民医保开始缴费了？',
-      '上海居民医保开始缴费了？',
-    ],
+    hotTit:[],
     hotList:[],
     category:[],
     menuList:[],
@@ -69,7 +66,7 @@ Page({
     })
   },
   //支付宝授权
-  auth(type,id) {
+  auth(id) {
     app.getUserInfo().then(
       auth => {
           let auth_code = auth.auth_code.authCode;
@@ -86,19 +83,7 @@ Page({
               key: 'token',
               data: result.data.data
             });
-            if(type === 1){
-              my.navigateTo({ url: '/pages/question/question'})
-            }else if(type === 2){
-              my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
-            }else if(type === 3){
-               my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
-            }else if(type === 4){
-              my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
-            }else if(type === 5){
-              my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
-            }else if(type === 6){
-              this._queryOpenCityValidModuleInfoByParam(id)
-            }
+            this._queryOpenCityValidModuleInfoByParam(id)
           })
       })
   },
@@ -166,7 +151,7 @@ Page({
       if (tok.data){
         this._queryOpenCityValidModuleInfoByParam(moduleEn)
       }else{
-        this.auth(6,moduleEn)
+        this.auth(moduleEn)
       }
     } else if(this.data.menuList[indx].type === '1'){
       app.webViewUrl = this.data.menuList[indx].linkUrl
@@ -202,22 +187,12 @@ Page({
   },
   //点击跳转 发布问题
   toQuestion() {
-    this.setData({token:my.getStorageSync({ key: 'token' }),})
-    if (this.data.token.data){
-      my.navigateTo({ url: '/pages/question/question'})
-    }else{
-      this.auth(1)
-    }
+    my.navigateTo({ url: '/pages/question/question'})
     this.setData({editFlag:false})
   },
   //点击跳转 悬赏问答页
   toReward() {
-    this.setData({token:my.getStorageSync({ key: 'token' }),})
-    if (this.data.token.data){
-      my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
-    }else{
-      this.auth(2)
-    }
+    my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
     this.setData({editFlag:false})
   },
   //问答热门列表
@@ -257,11 +232,6 @@ Page({
     let index=e.currentTarget.dataset['index'];
     let id = this.data.ansArr[index].lists.id
     my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
-    // if (tok.data){
-    //   my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
-    // }else{
-    //   this.auth(3,id)
-    // }
   },
   //点击城市选择
   toCitySel() {
@@ -292,23 +262,13 @@ Page({
   },
   //to 搜索页面
   toSearch() {
-    let tok = my.getStorageSync({ key: 'token' })
-    if (tok.data){
-      my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
-    }else{
-      this.auth(4)
-    }
+    my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
   },
   //to 个人主页
   toPersonal(e) {
-    let tok = my.getStorageSync({ key: 'token' })
     let index=e.currentTarget.dataset['index'];
     let id = this.data.ansArr[index].lists.accountId
-    if (tok.data){
-      my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
-    }else{
-      this.auth(5,id)
-    }
+    my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
   },
 
   onReachBottom(e) {

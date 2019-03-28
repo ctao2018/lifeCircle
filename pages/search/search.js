@@ -37,6 +37,7 @@ Page({
     title:'',
     showbtn:true,
    })
+   app.getUrl(3,this.data.city,this.data.cityAdcode)
    this._queryAllValidSearchHotWord()
   },
   onReady() {

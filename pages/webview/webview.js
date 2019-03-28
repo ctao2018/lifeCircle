@@ -7,11 +7,15 @@ Page({
   },
 
   onLoad() {
-    this.setData({webUrl:app.webViewUrl})
-    console.log(this.data.webUrl)
+    
+  },
+  onShow() {
+    this.setData({webUrl: app.webViewUrl})
+   // console.log(this.data.webUrl)
+    app.webViewUrl = ''
   },
   onReady() {
-    
+
   },
 
 });

@@ -12,6 +12,7 @@ Page({
     hotCity:[],
     typeArr:[],
     categoryNo:'',
+    submitF:false,
   },
 
   onLoad() {
@@ -19,7 +20,10 @@ Page({
     this._queryAllValidQuestionCategory()
   },
   onShow() {
-    this.setData({hotCity:[],})
+    this.setData({
+      hotCity:[],
+      submitF:false,
+    })
     this._queryAllValidHotCity()
   },
   onReady() {
@@ -67,7 +71,10 @@ Page({
     this.setData({textarea:e.detail.value.textarea})
     if(this.data.selFlag){
       if(this.data.title.length>3){
-        this._addQuestionByUser()
+        if(!this.data.submitF){
+          this._addQuestionByUser()
+          this.setData({submitF:true})
+        }
       }else{
         my.showToast({
           content: '标题不能少于4个字!'
@@ -134,6 +141,7 @@ Page({
       my.showToast({
         content: result.data.message
       });
+      this.setData({submitF:false})
     }
   },
 });

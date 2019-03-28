@@ -61,11 +61,9 @@ Page({
         [sItem]:false,
       })
     }else{
-      if(this.data.selLeng<3){
-        this.setData({
-          [sItem]:true,
-        })
-      }
+      this.setData({
+        [sItem]:true,
+      })
     }
     let selArr = []
     let that = this

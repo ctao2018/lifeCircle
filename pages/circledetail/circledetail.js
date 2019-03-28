@@ -22,6 +22,7 @@ Page({
         id:options.id,
       })
     }
+    this.getUrl()
   },
   onShow() {
     this.setData({
@@ -37,6 +38,12 @@ Page({
   },
   onReady() {
     
+  },
+  getUrl() {
+    let pages = getCurrentPages()  
+    let currentPage = pages[pages.length - 1] 
+    let url = currentPage.route
+    app.backUrl = url + '?id=' + this.data.id
   },
   //点赞
   zanClick() {
@@ -93,6 +100,6 @@ Page({
   //to 个人主页
   toPersonal() {
     let id = this.data.detail.accountId
-    my.reLaunch({ url: '/pages/personalpage/personalpage?id=' +id})
+    //my.reLaunch({ url: '/pages/personalpage/personalpage?id=' +id})
   },
 });

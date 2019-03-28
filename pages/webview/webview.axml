@@ -1,1 +1,3 @@
-<web-view src="webUrl" onMessage="test"></web-view>
+
+<!-- <web-view src="https://test.szyibei.com/sbjccx/managementNetwork/440600" onMessage="test"></web-view> -->
+<web-view src="{{webUrl}}" onMessage="test"></web-view>

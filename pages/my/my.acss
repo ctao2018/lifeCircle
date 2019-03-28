@@ -23,15 +23,15 @@
   align-items: center;
 }
 .my-hdconli{
-  width: 88rpx;
-  height: 88rpx;
-  border: 15rpx solid #ffffff;
-  border-radius: 67rpx;
+  width: 118rpx;
+  height: 118rpx;
+  border: 2rpx solid #ffffff;
+  border-radius: 65rpx;
   overflow: hidden
 }
 .my-hdconlimg{
-  width: 88rpx;
-  height: 88rpx;
+  width: 118rpx;
+  height: 118rpx;
 }
 .my-hdconlname{
   font-weight: 500;
@@ -56,7 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 5rpx 15rpx #ccc;
+  box-shadow: 0 5rpx 15rpx #ddd;
 }
 .my-hdbanai{
   width: 84rpx; 

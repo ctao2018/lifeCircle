@@ -27,25 +27,27 @@ const request = (
            // console.log(res);
             if (res.data.status === 200){
               if (res.data.code === 40301) {
-                app.getUserInfo().then(
-                  auth => {
-                      console.log(auth)
-                      let auth_code = auth.auth_code.authCode;
-                      api.getTokenByCode({
-                        appClient: '',
-                        code: auth_code,
-                        identityType: 1,
-                        mac: '',
-                        registePlat: 2
-                      }).then(result =>{
-                        console.log('index',result)
-                        my.setStorage({
-                          key: 'token',
-                          data: result.data.data
-                        });
-                      })
-                  }
-                );
+                console.log('backUrl',app.backUrl)
+                my.redirectTo({ url: '/pages/auth/auth'})
+                // app.getUserInfo().then(
+                //   auth => {
+                //       console.log(auth)
+                //       let auth_code = auth.auth_code.authCode;
+                //       api.getTokenByCode({
+                //         appClient: '',
+                //         code: auth_code,
+                //         identityType: 1,
+                //         mac: '',
+                //         registePlat: 2
+                //       }).then(result =>{
+                //         console.log('index',result)
+                //         my.setStorage({
+                //           key: 'token',
+                //           data: result.data.data
+                //         });
+                //       })
+                //   }
+                // );
               } else{
                 resolve(res);
               }

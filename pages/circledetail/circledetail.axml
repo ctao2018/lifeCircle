@@ -30,6 +30,7 @@
     <view a:for="{{picArr}}">
       <image class="cd-bximg" src="{{item}}" mode="widthFix" />
     </view>
+    <view class="c6 fs24 ">所需材料</view>
     <view class="cd-bxcl clearfix">
       <block a:for="{{clList}}">
         <view class="cd-bxcla c9 fs24">{{item}}</view>

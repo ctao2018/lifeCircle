@@ -2,6 +2,7 @@ App({
   userInfo: null,
   auth_info: null,
   webViewUrl:null,
+  backUrl:null,
   toUrl:null,
   globalData: {},
   token: '',

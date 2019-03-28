@@ -13,6 +13,7 @@ Page({
     showbtline:false,
     title:'',
     cityAdcode:'',
+    showbtn:true,
   },
 
   onLoad(options) {
@@ -34,6 +35,7 @@ Page({
     pages:'',
     showbtline:false,
     title:'',
+    showbtn:true,
    })
    this._queryAllValidSearchHotWord()
   },
@@ -69,6 +71,12 @@ Page({
       seaVal:'',
       value: '',
     })
+  },
+  handleFocus() {
+    this.setData({showbtn:false})
+  },
+  handleBlur() {
+    this.setData({showbtn:true})
   },
   //to 提问页面
   toQuestion() {

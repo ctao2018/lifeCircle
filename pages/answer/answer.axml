@@ -14,13 +14,13 @@
       <view class="ans-clbx">
         <view class="ans-clbxt">
           <view class="c3 fs34">选择所需材料</view>
-          <view class="c3 fs28">{{selLeng}}/3</view>
+          <!-- <view class="c3 fs28">{{selLeng}}/3</view> -->
         </view>
-        <scroll-view class="ans-scroll" scroll-x="{{true}}" style="width: 100%" >
+        <view class="ans-clbxsel">
           <block a:for="{{clArr}}">
             <view class="ans-clitem {{item.flaga?'ans-clitemsel':''}}" data-index="{{index}}" onTap="selCLfn">{{item.lists.name}}</view>
           </block>
-        </scroll-view>
+        </view>
         <view class="ans-linkbx">
           <view class="ans-linkl c3 fs34">来源链接</view>
           <view class="ans-link"><input class="ans-linkinp"  value="{{urlLink}}" onBlur="getLink" placeholder="添加链接(选填)" /></view>

@@ -69,7 +69,7 @@ Page({
     })
   },
   //支付宝授权
-  auth(id) {
+  auth(type,id) {
     app.getUserInfo().then(
       auth => {
           let auth_code = auth.auth_code.authCode;
@@ -86,8 +86,18 @@ Page({
               key: 'token',
               data: result.data.data
             });
-            if(id){
-              my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+            if(type === 1){
+              my.navigateTo({ url: '/pages/question/question'})
+            }else if(type === 2){
+              my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
+            }else if(type === 3){
+               my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+            }else if(type === 4){
+              my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
+            }else if(type === 5){
+              my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
+            }else if(type === 6){
+              this._queryOpenCityValidModuleInfoByParam(id)
             }
           })
       })
@@ -152,7 +162,12 @@ Page({
     let indx = e.currentTarget.dataset.index
     if(this.data.menuList[indx].type === '0'){
       let moduleEn = this.data.menuList[indx].moduleEn
-      this._queryOpenCityValidModuleInfoByParam(moduleEn)
+      let tok = my.getStorageSync({ key: 'token' })
+      if (tok.data){
+        this._queryOpenCityValidModuleInfoByParam(moduleEn)
+      }else{
+        this.auth(6,moduleEn)
+      }
     } else if(this.data.menuList[indx].type === '1'){
       app.webViewUrl = this.data.menuList[indx].linkUrl
       my.navigateTo({ url: '/pages/webview/webview'})
@@ -164,11 +179,12 @@ Page({
       cityCode: this.data.cityAdcode,
       moduleEn: moduleEn
     })
-    //console.log('城市开通模块',result)
+    console.log('城市开通模块',result)
     if(result.data.data.length>0){
       let url = result.data.data[0].moduleUrl
       //console.log(url)
-      app.webViewUrl = url
+      let tok = my.getStorageSync({ key: 'token' })
+      app.webViewUrl = url + '?tok=' + tok.data
       my.navigateTo({ url: '/pages/webview/webview'})
     }else{
       my.showToast({
@@ -190,7 +206,7 @@ Page({
     if (this.data.token.data){
       my.navigateTo({ url: '/pages/question/question'})
     }else{
-      this.auth()
+      this.auth(1)
     }
     this.setData({editFlag:false})
   },
@@ -200,7 +216,7 @@ Page({
     if (this.data.token.data){
       my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
     }else{
-      this.auth()
+      this.auth(2)
     }
     this.setData({editFlag:false})
   },
@@ -240,11 +256,12 @@ Page({
     let tok = my.getStorageSync({ key: 'token' })
     let index=e.currentTarget.dataset['index'];
     let id = this.data.ansArr[index].lists.id
-    if (tok.data){
-      my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
-    }else{
-      this.auth(id)
-    }
+    my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+    // if (tok.data){
+    //   my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
+    // }else{
+    //   this.auth(3,id)
+    // }
   },
   //点击城市选择
   toCitySel() {
@@ -279,7 +296,7 @@ Page({
     if (tok.data){
       my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
     }else{
-      this.auth()
+      this.auth(4)
     }
   },
   //to 个人主页
@@ -290,7 +307,7 @@ Page({
     if (tok.data){
       my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
     }else{
-      this.auth()
+      this.auth(5,id)
     }
   },
 

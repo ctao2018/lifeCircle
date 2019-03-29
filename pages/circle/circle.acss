@@ -128,8 +128,13 @@
 }
 .home-wdfd{
   margin-top: 24rpx;
-  height: 58rpx;
+  height: 65rpx;
   border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-wdfdl{
   display: flex;
   align-items: center;
 }
@@ -161,4 +166,17 @@
   font-size: 22rpx;
   display: inline-block;
   margin-right: 6rpx;
+}
+.rew-addr{
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.rew-addri{
+  width: 22rpx; 
+  height:28rpx;
+  background: url('../../assets/answer_location.png');
+  background-repeat: no-repeat;
+  background-size: 22rpx 28rpx;
+  margin-right: 8rpx;
 }

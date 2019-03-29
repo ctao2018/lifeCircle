@@ -96,4 +96,14 @@ Page({
     let id = this.data.detail.accountId
     //my.reLaunch({ url: '/pages/personalpage/personalpage?id=' +id})
   },
+  //查看大图
+  picBig(e) {
+    let index=e.currentTarget.dataset['index'];
+    let url = this.data.picArr[index]
+    let showUrl =[]
+    showUrl.push(url)
+    my.previewImage({
+      urls: showUrl,
+    });
+  },
 });

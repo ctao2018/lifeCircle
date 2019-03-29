@@ -27,8 +27,10 @@
       </view>
     </view>
     <view class="cd-bxcon c3 fs32">{{detail.answer}}</view>
-    <view a:for="{{picArr}}">
-      <image class="cd-bximg" src="{{item}}" mode="widthFix" />
+    <view class="cd-bxpic clearfix">
+      <block a:for="{{picArr}}">
+        <image class="cd-bximg" data-index="{{index}}" src="{{item}}" mode="aspectFill" onTap="picBig" />
+      </block>
     </view>
     <view class="c6 fs24 ">所需材料</view>
     <view class="cd-bxcl clearfix">

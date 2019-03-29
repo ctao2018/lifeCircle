@@ -126,16 +126,18 @@ Page({
     let result = await addQuestionByUser({
     category: this.data.categoryNo,
     cityCode:this.data.cityAdcode,
+    cityName:this.data.city,
     description:this.data.textarea,
     title:this.data.title
   })
     console.log(result)
     if(result.data.code === 0){
-      my.showToast({
+      my.alert({
+        title: '发布成功',
         content: result.data.message,
+        buttonText: '确定',
         success: () => {
-         // my.navigateBack()
-        my.switchTab({url: '/pages/index/index'})
+          my.redirectTo({url: '/pages/myquestion/myquestion'})
         },
       });
     }else{

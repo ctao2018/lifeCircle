@@ -15,6 +15,8 @@
 .home-tbxl{
   font-size: 28rpx;
   color: #333333;
+  display: flex;
+  align-items: center;
 }
 .home-tbxlname{
   max-width: 150rpx;
@@ -29,10 +31,7 @@
   background: url('../../assets/hone_choose.png');
   background-repeat: no-repeat;
   background-size: cover;
-  display: inline-block;
-  vertical-align: middle;
   margin-left: 4rpx;
-  margin-bottom: 16rpx;
   margin-right: 10rpx;
 }
 .home-tbxr{
@@ -211,8 +210,13 @@
 }
 .home-wdfd{
   margin-top: 24rpx;
-  height: 58rpx;
+  height: 65rpx;
   border-top: 1rpx solid #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.home-wdfdl{
   display: flex;
   align-items: center;
 }
@@ -317,4 +321,17 @@
   font-size: 24rpx;
   max-width: 300rpx;
   margin-top: 20rpx;
+}
+.rew-addr{
+  display: flex;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.rew-addri{
+  width: 22rpx; 
+  height:28rpx;
+  background: url('../../assets/answer_location.png');
+  background-repeat: no-repeat;
+  background-size: 22rpx 28rpx;
+  margin-right: 8rpx;
 }

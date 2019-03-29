@@ -24,14 +24,17 @@
           </view>
         </view>
         <view class="home-wdfd">
-          <view class="home-wdfd-f">
-            <view class="home-wdfd-eye"></view>
-            <view class="home-wdfd-t">{{item.lists.visitNumber}}</view>
+          <view class="home-wdfdl">
+            <view class="home-wdfd-f">
+              <view class="home-wdfd-eye"></view>
+              <view class="home-wdfd-t">{{item.lists.visitNumber}}</view>
+            </view>
+            <view>
+              <view class="home-wdfd-z"></view>
+              <view class="home-wdfd-t">{{item.lists.praiseNumber}}</view>
+            </view>
           </view>
-          <view>
-            <view class="home-wdfd-z"></view>
-            <view class="home-wdfd-t">{{item.lists.praiseNumber}}</view>
-          </view>
+          <view class="rew-addr c9 fs24"><view class="rew-addri"></view>{{item.lists.cityName}}</view>
         </view>
       </view>
     </block>

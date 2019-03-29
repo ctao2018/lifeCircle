@@ -22,7 +22,12 @@ Page({
      showbtline:false,
      })
      app.getUrl(1)
-     this._questionAnwserPage()
+     let tok = my.getStorageSync({ key: 'token' })
+      if (tok.data){
+        this._questionAnwserPage()
+      }else{
+        this.auth()
+      }
   },
   onReady() {
     
@@ -42,7 +47,26 @@ Page({
       this._questionAnwserPage()
     }
   },
-
+  auth() {
+    app.getUserInfo().then(
+      auth => {
+        let auth_code = auth.auth_code.authCode;
+        getTokenByCode({
+          appClient: '',
+          code: auth_code,
+          identityType: 1,
+          mac: '',
+          registePlat: 2
+        }).then(result =>{
+          my.setStorage({
+            key: 'token',
+            data: result.data.data
+          });
+          this._queryMyAcctUserInfoAndPoint()
+          this._queryUnreadQuestionAndAnswerNum()
+        })
+      })
+  },
   //问答热门列表
   async _questionAnwserPage() {
     my.showLoading({

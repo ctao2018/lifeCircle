@@ -16,11 +16,37 @@ Page({
      unRead:[],
    })
    app.getUrl(1)
-   this._queryUnreadQuestionAndAnswerNum()
-   this._queryMyAcctUserInfoAndPoint()
+   let tok = my.getStorageSync({ key: 'token' })
+    if (tok.data){
+      this._queryMyAcctUserInfoAndPoint()
+      this._queryUnreadQuestionAndAnswerNum()
+    }else{
+      this.auth()
+    }
+   
   },
   onReady() {
     
+  },
+  auth() {
+    app.getUserInfo().then(
+      auth => {
+        let auth_code = auth.auth_code.authCode;
+        getTokenByCode({
+          appClient: '',
+          code: auth_code,
+          identityType: 1,
+          mac: '',
+          registePlat: 2
+        }).then(result =>{
+          my.setStorage({
+            key: 'token',
+            data: result.data.data
+          });
+          this._queryMyAcctUserInfoAndPoint()
+          this._queryUnreadQuestionAndAnswerNum()
+        })
+      })
   },
   //获取个人信息
   async _queryMyAcctUserInfoAndPoint() {

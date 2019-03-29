@@ -28,13 +28,16 @@
 .que-bt{
   width: 100%;
   background-color: #ffffff;
-  padding-bottom: 32rpx;
+  padding-bottom: 28rpx;
 }
 .que-btip{
   padding: 15rpx 32rpx 32rpx;
   color: #cccccc;
   font-size: 24rpx;
   line-height: 36rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 .que-bta{
   display: flex;
@@ -84,14 +87,14 @@
   vertical-align: middle;
 }
 .que-btar{
-  margin-right: 38rpx;
-  width: 104rpx;
-  height: 48rpx;
-  line-height: 48rpx;
+  margin: 24rpx auto 0;
+  width: 686rpx;
+  height: 84rpx;
+  line-height: 84rpx;
   text-align: center;
-  border-radius: 46rpx;
+  border-radius: 4rpx;
   background-color: #dfdfdf;
-  font-size: 28rpx;
+  font-size: 32rpx;
   color: #ffffff;
 }
 .que-btarSel{

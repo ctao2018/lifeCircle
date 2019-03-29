@@ -209,3 +209,20 @@
   background-repeat: no-repeat;
   background-size: 25rpx 25rpx;;
 }
+.rew-bxbtl{
+  display: flex;
+  align-items: center;
+}
+.rew-addr{
+  margin-left: 38rpx;
+  display: flex;
+  align-items: center;
+}
+.rew-addri{
+  width: 22rpx; 
+  height:28rpx;
+  background: url('../../assets/answer_location.png');
+  background-repeat: no-repeat;
+  background-size: 22rpx 28rpx;
+  margin-right: 8rpx;
+}

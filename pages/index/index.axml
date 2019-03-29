@@ -74,14 +74,17 @@
           </view>
       </view>
       <view class="home-wdfd">
-        <view class="home-wdfd-f">
-          <view class="home-wdfd-eye"></view>
-          <view class="home-wdfd-t">{{item.lists.visitNumber}}</view>
+        <view class="home-wdfdl">
+          <view class="home-wdfd-f">
+            <view class="home-wdfd-eye"></view>
+            <view class="home-wdfd-t">{{item.lists.visitNumber}}</view>
+          </view>
+          <view>
+            <view class="home-wdfd-z"></view>
+            <view class="home-wdfd-t">{{item.lists.praiseNumber}}</view>
+          </view>
         </view>
-        <view>
-          <view class="home-wdfd-z"></view>
-          <view class="home-wdfd-t">{{item.lists.praiseNumber}}</view>
-        </view>
+        <view class="rew-addr c9 fs24"><view class="rew-addri"></view>{{item.lists.cityName}}</view>
       </view>
     </view>
   </block>
@@ -93,15 +96,15 @@
       <view class="home-twbox home-twboxf" onTap="toQuestion">
         <image class="home-twboximg" src="../../assets/release_ask.png" mode="scaleToFill" />
         <view class="home-twboxr">
-          <view class="home-twboxtit">发布提问</view>
-          <view class="home-twboxcon">这里是发布提问的文案</view>
+          <view class="home-twboxtit">我要提问</view>
+          <view class="home-twboxcon">社保商保生活百科 随心问</view>
         </view>
       </view>
       <view class="home-twbox" onTap="toReward">
         <image class="home-twboximg" src="../../assets/release_answer.png" mode="scaleToFill" />
         <view class="home-twboxr">
-          <view class="home-twboxtit">悬赏问答</view>
-          <view class="home-twboxcon">这里是悬赏问答的文案</view>
+          <view class="home-twboxtit">回答赚积分</view>
+          <view class="home-twboxcon">积分兑换多种商品</view>
         </view>
       </view>
     </view>

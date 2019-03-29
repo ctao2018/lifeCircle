@@ -204,6 +204,10 @@ Page({
     let id = this.data.curList[index].id
     if(this.data.curList[index].isCurrentUserReplayed === 0){
       my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
+    }else{
+      my.showToast({
+        content: '已回答，看看其他问题吧'
+      });
     }
   },
   //点击去详情 其他城市
@@ -212,6 +216,10 @@ Page({
     let id = this.data.othList[index].id
     if(this.data.othList[index].isCurrentUserReplayed === 0){
       my.navigateTo({ url: '/pages/problemdetail/problemdetail?id='+ id})
+    }else{
+      my.showToast({
+        content: '已回答，看看其他问题吧'
+      });
     }
   },
   //去回答 当前城市

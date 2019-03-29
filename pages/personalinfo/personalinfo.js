@@ -31,7 +31,7 @@ Page({
   //点击昵称
   tapName() {
     my.showToast({
-        content: '昵称需到支付宝设置页面修改'
+        content: '昵称到支付宝设置页面修改'
       });
   },
   //点击年龄

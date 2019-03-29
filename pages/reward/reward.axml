@@ -28,7 +28,10 @@
           <view class="rew-bxcon c9 fs28">{{item.description}}</view>
         </view>
         <view class="rew-bxbt">
-          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+          <view class="rew-bxbtl">
+            <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+            <view class="rew-addr c9 fs24"><view class="rew-addri"></view>{{item.cityName}}</view>
+          </view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerCur"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>
@@ -58,7 +61,10 @@
           <view class="rew-bxcon c9 fs28">{{item.description}}</view>
         </view>
         <view class="rew-bxbt">
-          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+          <view class="rew-bxbtl">
+            <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+            <view class="rew-addr c9 fs24"><view class="rew-addri"></view>{{item.cityName}}</view>
+          </view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerOth"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>

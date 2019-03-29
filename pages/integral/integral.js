@@ -9,6 +9,7 @@ Page({
     isGain:'',
     jfArr:[],
     showbtline:false,
+    pointAll:'',
   },
 
   onLoad() {
@@ -24,6 +25,7 @@ Page({
      showbtline:false,
    })
    this._queryMyPointBookPageByParam()
+   this.setData({pointAll:app.userInfo.point})
   },
   onReady() {
     

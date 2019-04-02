@@ -11,6 +11,7 @@
       </view>
     </view>
     <swiper
+      indicator-color="#fff"
       indicator-dots="{{true}}"
       autoplay="{{true}}"
       interval="{{3000}}"

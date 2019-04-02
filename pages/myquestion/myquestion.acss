@@ -106,3 +106,20 @@
 .mq-list{
   margin-bottom: 16rpx;
 }
+.mq-hdbtl{
+  display: flex;
+  align-items: center;
+}
+.mq-addr{
+  display: flex;
+  align-items: center;
+  margin-left:38rpx;
+}
+.mq-addri{
+  width: 22rpx; 
+  height:28rpx;
+  background: url('../../assets/answer_location.png');
+  background-repeat: no-repeat;
+  background-size: 22rpx 28rpx;
+  margin-right: 8rpx;
+}

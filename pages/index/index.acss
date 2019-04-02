@@ -64,7 +64,7 @@
   display: inline-block;
 }
 .home-tban{
-  margin: 22rpx 0 0 -32rpx;
+  margin: 0rpx 0 22rpx -32rpx;
 }
 .home-tbana{
   float: left;

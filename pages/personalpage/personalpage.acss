@@ -252,3 +252,20 @@
   vertical-align: middle;
   margin-right: 6rpx;
 }
+.home-wdfdl{
+  display: flex;
+  align-items: center;
+}
+.home-addr{
+  display: flex;
+  align-items: center;
+  margin-left:38rpx;
+}
+.home-addri{
+  width: 22rpx; 
+  height:28rpx;
+  background: url('../../assets/answer_location.png');
+  background-repeat: no-repeat;
+  background-size: 22rpx 28rpx;
+  margin-right: 8rpx;
+}

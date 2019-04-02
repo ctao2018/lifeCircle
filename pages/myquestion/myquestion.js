@@ -10,7 +10,7 @@ Page({
     noFlag:false,
     pages:'',
     pageNum:1,
-    isReplay:'Y',
+    isReplay:'Z',
     twArr:[],
     showbtline:false,
     delId:'',
@@ -26,7 +26,7 @@ Page({
      curIndex:0,
      pages:'',
     pageNum:1,
-    isReplay:'Y',
+    isReplay:'Z',
     twArr:[],
     showbtline:false,
     delId:'',
@@ -50,13 +50,19 @@ Page({
       this.setData({
         yesFlag:false,
         noFlag:true,
+        isReplay:'YW',
+      })
+    }else if(index === 2){
+      this.setData({
+        yesFlag:false,
+        noFlag:true,
         isReplay:'N',
       })
     }else{
       this.setData({
         yesFlag:true,
         noFlag:false,
-        isReplay:'Y',
+        isReplay:'Z',
       })
     }
     this._queryMyQuestionPageByParam()
@@ -77,7 +83,7 @@ Page({
     const result = await queryMyQuestionPageByParam({
       pageNum: this.data.pageNum,
       pageSize: 10,
-      isReplay:this.data.isReplay
+      queState:this.data.isReplay
     })
     console.log('list',result)
     my.hideLoading()

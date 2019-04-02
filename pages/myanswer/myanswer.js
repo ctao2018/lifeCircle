@@ -8,7 +8,7 @@ Page({
     right: [{ type: 'delete', text: '删除' }],
     pages:'',
     pageNum:1,
-    isReplay:'',
+    isReplay:'Y',
     ansArr:[],
     showbtline:false,
     delId:'',
@@ -22,7 +22,7 @@ Page({
      curIndex:0,
      pages:'',
     pageNum:1,
-    isReplay:'',
+    isReplay:'Y',
     ansArr:[],
     showbtline:false,
     delId:'',
@@ -44,7 +44,7 @@ Page({
     })
     if(index===1){
       this.setData({ 
-        isReplay:'Y',
+        isReplay:'W',
       })
     }else if(index === 2){
       this.setData({
@@ -52,7 +52,7 @@ Page({
       })
     }else {
       this.setData({
-        isReplay:'',
+        isReplay:'Y',
       })
     }
     this._queryMyAnswerPageByParam()
@@ -79,7 +79,7 @@ Page({
     const result = await queryMyAnswerPageByParam({
       pageNum: this.data.pageNum,
       pageSize: 10,
-      isReplay:this.data.isReplay
+      answerState:this.data.isReplay
     })
     console.log('list',result)
     my.hideLoading()

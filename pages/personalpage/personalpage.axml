@@ -63,7 +63,10 @@
           <view class="rew-bxcon c9 fs28">{{item.description}}</view>
         </view>
         <view class="rew-bxbt" a:if="{{item.auditState === 'N' || item.auditState === 'W' || item.auditState === 'Y'}}">
-          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+          <view class="home-wdfdl">
+            <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+            <view class="home-addr c9 fs24"><view class="home-addri"></view>{{item.cityName}}</view>
+          </view>
           <view class="rew-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswerCur"><view class="rew-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>

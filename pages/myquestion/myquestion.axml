@@ -1,6 +1,6 @@
 <view class="myquestion">
   <view class="mq-tab bgf c6 fs28">
-    <block a:for="{{['已回复','未回复']}}">
+    <block a:for="{{['已回复','发布中','未通过']}}">
       <view class=" {{curIndex==index?'mq-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
     </block>
   </view>
@@ -24,7 +24,10 @@
           <view class="mq-nlitjf fw500">{{item.ansRewardPoint}}积分</view>
         </view>
         <view class="mq-ylixq fs24 mq-nlixq">
-          <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+          <view class="mq-hdbtl">
+            <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
+            <view class="mq-addr c9 fs24"><view class="mq-addri"></view>{{item.cityName}}</view>
+          </view>
           <view class="mq-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswer"><view class="mq-bxbtrai"></view>回答</view>
           <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
         </view>

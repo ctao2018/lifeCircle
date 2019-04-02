@@ -160,7 +160,7 @@ Page({
     if(this.data.menuList[indx].type === '0'){
       let moduleEn = this.data.menuList[indx].moduleEn
       let tok = my.getStorageSync({ key: 'token' })
-      if (tok.data){
+      if (app.auth_info){
         this._queryOpenCityValidModuleInfoByParam(moduleEn)
       }else{
         this.auth(6,moduleEn)

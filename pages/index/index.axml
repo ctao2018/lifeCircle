@@ -12,6 +12,7 @@
     </view>
     <swiper
       indicator-color="#fff"
+      indicator-active-color="#3CA0FF"
       indicator-dots="{{true}}"
       autoplay="{{true}}"
       interval="{{3000}}"
@@ -90,7 +91,7 @@
     </view>
   </block>
   <bottom-line a:if="{{showbtline}}"></bottom-line>
-  <view a:if="{{!editFlag}}" class="home-edit" onTap="showEdit"><image class="home-editimg" src="../../assets/editA.png" mode="scaleToFill" /></view>
+  <!-- <view a:if="{{!editFlag}}" class="home-edit" onTap="showEdit"><image class="home-editimg" src="../../assets/editA.png" mode="scaleToFill" /></view>
   <view class="home-twbig">
     <view class="home-twbg {{editFlag?'home-twbgSel':''}}" onTap="closeEdit"></view>
     <view class="home-tw {{editFlag?'home-twSel':''}}">
@@ -109,6 +110,10 @@
         </view>
       </view>
     </view>
+  </view> -->
+  <view class="home-wdbox">
+    <view class="home-wdboxl cf fs26 fw500" onTap="toQuestion"><view class="home-twpic"></view>提问</view>
+    <view class="home-wdboxl home-wdboxr cf fs26 fw500" onTap="toReward"><view class="home-hdpic"></view>回答</view>
   </view>
   <favorite>收藏小程序，下次使用更方便</favorite>
 </view>

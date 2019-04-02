@@ -335,3 +335,45 @@
   background-size: 22rpx 28rpx;
   margin-right: 8rpx;
 }
+.home-wdbox{
+  width: 328rpx;
+  height: 72rpx;
+  position: fixed;
+  left: 50%;
+  bottom: 50rpx;
+  margin-left: -164rpx;
+  border-radius: 36rpx;
+  box-shadow: 0px 6px 10px 0px rgba(69, 151, 255,0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+.home-wdboxl{
+  width: 50%;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6CAAFF;
+}
+.home-wdboxr{
+  background-color: #4597FF;
+}
+.home-twpic{
+  width: 32rpx; 
+  height:32rpx;
+  background: url('../../assets/questions.png');
+  background-repeat: no-repeat;
+  background-size: 32rpx 32rpx;
+  margin-right: 4rpx;
+}
+.home-hdpic{
+  width: 32rpx; 
+  height:32rpx;
+  background: url('../../assets/answer.png');
+  background-repeat: no-repeat;
+  background-size: 32rpx 32rpx;
+  margin-right: 4rpx;
+}

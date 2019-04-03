@@ -62,8 +62,7 @@ Page({
             key: 'token',
             data: result.data.data
           });
-          this._queryMyAcctUserInfoAndPoint()
-          this._queryUnreadQuestionAndAnswerNum()
+          this._questionAnwserPage()
         })
       })
   },

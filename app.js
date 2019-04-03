@@ -33,7 +33,7 @@ App({
           });
         },
         fail: () => {
-          my.switchTab({url: 'pages/index/index'})
+          my.switchTab({url: '/pages/index/index'})
           reject('拒绝授权');
         },
       });

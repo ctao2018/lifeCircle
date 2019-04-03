@@ -21,12 +21,23 @@ Page({
             registePlat: 2
           }).then(result =>{
             console.log('index',result)
-            my.setStorage({
-              key: 'token',
-              data: result.data.data
-            });
-            console.log(app.backUrl)
-            my.redirectTo({ url: '/'+app.backUrl})
+            if(result.data.code === 0){
+              my.setStorage({
+                key: 'token',
+                data: result.data.data
+              });
+              console.log(app.backUrl)
+              my.redirectTo({ url: '/'+app.backUrl})
+            }else{
+              my.showToast({
+                content: '授权失败',
+                success: () => {
+                  my.switchTab({url: '/pages/index/index'})
+                },
+              });
+              my.switchTab({url: '/pages/index/index'})
+            }
+            
           })
       }
     );

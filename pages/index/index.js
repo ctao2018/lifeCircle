@@ -168,6 +168,14 @@ Page({
     } else if(this.data.menuList[indx].type === '1'){
       app.webViewUrl = this.data.menuList[indx].linkUrl
       my.navigateTo({ url: '/pages/webview/webview'})
+    } else if(this.data.menuList[indx].type === '2'){
+      let url = this.data.menuList[indx].linkUrl
+      my.navigateTo({ url: url})
+    } else if(this.data.menuList[indx].type === '3'){
+      let url = this.data.menuList[indx].linkUrl
+      my.ap.navigateToAlipayPage({
+        path: url,
+      })
     }
   },
   //判断城市开通模块

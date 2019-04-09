@@ -23,7 +23,7 @@ Page({
      })
      app.getUrl(1)
      let tok = my.getStorageSync({ key: 'token' })
-      if (tok.data){
+      if (app.auth_info){
         this._questionAnwserPage()
       }else{
         this.auth()

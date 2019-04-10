@@ -114,7 +114,7 @@ Page({
   //菜单列表
   async _getMenu() {
     let result = await getMenu()
-   //console.log('getMenu',result)
+   console.log('getMenu',result)
    let menu = result.data.data
    this.setData({menuList:menu})
   },

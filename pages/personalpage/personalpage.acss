@@ -15,15 +15,15 @@
   justify-content: center;
 }
 .per-hdimg{
-  width: 88rpx;
-  height: 88rpx;
-  border: 15rpx solid #ffffff;
-  border-radius: 67rpx;
+  width: 118rpx;
+  height: 118rpx;
+  border: 2rpx solid #ffffff;
+  border-radius: 65rpx;
   overflow: hidden
 }
 .per-hdimgi{
-  width: 88rpx;
-  height: 88rpx;
+  width: 118rpx;
+  height: 118rpx;
 }
 .per-name{
   font-weight: 500;

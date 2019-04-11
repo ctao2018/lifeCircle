@@ -156,6 +156,7 @@ Page({
   //菜单栏 点击跳转
   menuListClick(e) {
     //console.log(e)
+    //console.log(this.data.cityAdcode)
     let indx = e.currentTarget.dataset.index
     if(this.data.menuList[indx].type === '0'){
       let moduleEn = this.data.menuList[indx].moduleEn
@@ -180,11 +181,12 @@ Page({
   },
   //判断城市开通模块
   async _queryOpenCityValidModuleInfoByParam(moduleEn) {
+    console.log('111',this.data.cityAdcode)
     let result = await queryOpenCityValidModuleInfoByParam({
       cityCode: this.data.cityAdcode,
       moduleEn: moduleEn
     })
-    console.log('城市开通模块',result)
+    //console.log('城市开通模块',result)
     if(result.data.data.length>0){
       let url = result.data.data[0].moduleUrl
       //console.log(url)
@@ -254,7 +256,7 @@ Page({
     }
     this.data.ansArr = this.data.ansArr.concat(newList)
     this.setData({ansArr:this.data.ansArr})
-    console.log(this.data.ansArr)
+    //console.log(this.data.ansArr)
   },
   //问答热门列表 跳转至详情
   toDetailFn(e) {
@@ -274,10 +276,20 @@ Page({
       showHotCities: true,
       hotCities: this.data.hotCity,
       success: (res) => {
+        //console.log('城市',res)
         this.setData({
           city:res.city,
           cityAdcode:res.adCode,
         })
+        if(res.adCode === '110100'){
+          this.setData({cityAdcode:110000})
+        }else if(res.adCode === '120100'){
+          this.setData({cityAdcode:120000})
+        }else if(res.adCode === '310100'){
+          this.setData({cityAdcode:310000})
+        }else if(res.adCode === '500100'){
+          this.setData({cityAdcode:500000})
+        }
       },
     });
   },

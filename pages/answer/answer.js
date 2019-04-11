@@ -93,9 +93,10 @@ Page({
             success: (res) => {
               let list = JSON.parse(res.data)
               //console.log(list)
-              this.data.imgArr = this.data.imgArr.concat(list)
-              this.setData({imgArr:this.data.imgArr})
-              //console.log(this.data.imgArr)
+              if(list.code === 0){
+                this.data.imgArr = this.data.imgArr.concat(list)
+                this.setData({imgArr:this.data.imgArr})
+              }
             },
             fail: (res) => {
               my.alert({
@@ -130,13 +131,14 @@ Page({
       }
       piclist = imgUrl.join('|')
     }
+    //console.log('piclist',piclist)
     let dtlist = this.data.selCl.join(',')
     this.setData({
       detailedList:dtlist,
       picturesUrl:piclist
     })
     if(this.data.textarea || piclist){
-      this._addAnswerByUser()
+     // this._addAnswerByUser()
     } else{
       my.showToast({
         content: '请输入答案或者上传图片资料！'

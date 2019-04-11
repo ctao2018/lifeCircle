@@ -194,6 +194,15 @@ Page({
           othList:[],
           showbtline:false,
         })
+        if(res.adCode === '110100'){
+          this.setData({cityAdcode:110000})
+        }else if(res.adCode === '120100'){
+          this.setData({cityAdcode:120000})
+        }else if(res.adCode === '310100'){
+          this.setData({cityAdcode:310000})
+        }else if(res.adCode === '500100'){
+          this.setData({cityAdcode:500000})
+        }
         this._queryOfferQuestionPage()
       },
     });

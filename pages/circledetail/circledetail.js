@@ -79,11 +79,14 @@ Page({
       if(detArr.detailedList){
         cl = detArr.detailedList.split(',')
       }
-      if(detArr.description.length>100){
-        this.setData({showZK:false,})
-      }else{
-        this.setData({showZK:true,})
+      if(detArr.description){
+        if(detArr.description.length>100){
+          this.setData({showZK:false,})
+        }else{
+          this.setData({showZK:true,})
+        }
       }
+      
       this.setData({
         picArr:pic,
         clList:cl,

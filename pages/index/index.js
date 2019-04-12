@@ -26,6 +26,7 @@ Page({
     showbtline:false,
     hotCity:[],
     token:'',
+    newstapindx:0,
   },
 
   onLoad() {
@@ -95,6 +96,10 @@ Page({
               my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
             }else if(type === 6){
               this._queryOpenCityValidModuleInfoByParam(id)
+            }else if(type === 7){
+              this.hotJump(id)
+            }else if(type === 8){
+              this.categoryJump(id)
             }
           })
       })
@@ -102,7 +107,7 @@ Page({
   //轮播图列表
   async _getCategory() {
     let result = await getCategory()
-    //console.log('getCategory',result)
+   // console.log('getCategory',result)
    let cat = result.data.data
    this.setData({category:cat})
    let imgUrl = []
@@ -121,7 +126,7 @@ Page({
   //热点滚动列表
   async _queryAllHotspotCarousel() {
     let result = await queryAllHotspotCarousel()
-    //console.log('queryAllHotspotCarousel',result)
+    console.log('queryAllHotspotCarousel',result)
     let list = result.data.data
     this.setData({hotList:list})
     let titL = []
@@ -138,19 +143,71 @@ Page({
       showbtline:false,
     })
     if(index === 1){
-      this.setData({pageNum:1,ansArr:[],isHot:'Y'})
-      this._queryQuestionAnwserPage()
+      this.setData({pageNum:1,ansArr:[],})
+      
+    } else if(index === 2){
+      this.setData({pageNum:1,ansArr:[],})
+      
     }else{
       this.setData({pageNum:1,ansArr:[],isHot:''})
       this._queryQuestionAnwserPage()
     }
   },
+  //新闻二级菜单 点击
+  newsClick(e) {
+    let index=e.currentTarget.dataset['index'];
+    this.setData({
+      newstapindx:index,
+      showbtline:false,
+    })
+  },
   //点击轮播图跳转
   goToLinkPage(e) {
     //console.log(e);
     let indx = e.currentTarget.dataset.index
+    if (app.auth_info){
+      this.categoryJump(indx)
+    }else{
+      this.auth(8,indx)
+    }
+  },
+  //轮播 跳转
+  categoryJump(indx) {
     if(this.data.category[indx].isJump === 'Y'){
-      my.navigateTo({ url: this.data.category[indx].linkUrl})
+      if(this.data.category[indx].type === '1'){
+        app.webViewUrl = this.data.category[indx].linkUrl
+        my.navigateTo({ url: '/pages/webview/webview'})
+      } else if(this.data.category[indx].type === '2'){
+        my.navigateTo({ url: this.data.category[indx].linkUrl})
+      } else if(this.data.category[indx].type === '3'){
+        let url = this.data.category[indx].linkUrl
+        my.ap.navigateToAlipayPage({
+          path: url,
+        })
+      }
+    }
+  },
+  //热点滚动 点击跳转
+  hotLinkPage(e) {
+    let indx = e.currentTarget.dataset.index
+    if (app.auth_info){
+      this.hotJump(indx)
+    }else{
+      this.auth(7,indx)
+    }
+  },
+  //热点滚动跳转
+  hotJump(indx) {
+    if(this.data.hotList[indx].type === '1'){
+      app.webViewUrl = this.data.hotList[indx].linkUrl
+      my.navigateTo({ url: '/pages/webview/webview'})
+    } else if(this.data.hotList[indx].type === '2'){
+      my.navigateTo({ url: this.data.hotList[indx].linkUrl})
+    } else if(this.data.hotList[indx].type === '3'){
+      let url = this.data.hotList[indx].linkUrl
+      my.ap.navigateToAlipayPage({
+        path: url,
+      })
     }
   },
   //菜单栏 点击跳转
@@ -181,7 +238,7 @@ Page({
   },
   //判断城市开通模块
   async _queryOpenCityValidModuleInfoByParam(moduleEn) {
-    console.log('111',this.data.cityAdcode)
+   // console.log('111',this.data.cityAdcode)
     let result = await queryOpenCityValidModuleInfoByParam({
       cityCode: this.data.cityAdcode,
       moduleEn: moduleEn

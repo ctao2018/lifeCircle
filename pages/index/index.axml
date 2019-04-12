@@ -47,19 +47,19 @@
         >
           <block a:for="{{hotTit}}">
             <swiper-item>
-              <view data-index="{{index}}" class="home-wdtsw-swiper" >{{item}}</view>
+              <view data-index="{{index}}" onTap="hotLinkPage" class="home-wdtsw-swiper" >{{item}}</view>
             </swiper-item>
           </block>
         </swiper>
       </view>
     </view>
     <view class="home-tab">
-      <block a:for="{{['问答','热门']}}">
+      <block a:for="{{['问答','新闻','政策']}}">
         <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
       </block>
     </view>
   </view>
-  <block a:for="{{ansArr}}">
+  <block a:for="{{ansArr}}" a:if="{{currentTabsIndex == 0}}">
     <view class="home-wdbx" data-index="{{index}}">
       <view class="home-tit"  data-index="{{index}}" onTap="toDetailFn">{{item.lists.title}}</view>
       <view class="home-name" data-index="{{index}}" onTap="toPersonal">
@@ -90,6 +90,44 @@
       </view>
     </view>
   </block>
+  <view a:if="{{currentTabsIndex == 1}}">
+    <view class="home-newstop">
+      <block a:for="{{['人社新闻','地方动态']}}">
+        <view class="home-newstopa {{newstapindx==index?'home-newstopsel':''}}" onTap="newsClick" data-index="{{index}}">{{item}}</view>
+      </block>
+    </view>
+    <view class="home-newsbx bgf">
+      <view class="home-newsbxtit fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+      <view class="c9 fs24 home-newsbxdy">2029-02-02</view>
+    </view>
+    <view class="home-newsbx bgf">
+      <view class="home-newsbb">
+        <view class="home-newsbbl">
+          <view class="home-newsbxtitb fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+          <view class="c9 fs24">2029-02-02</view>
+        </view>
+        <image class="home-newspic" src="../../assets/imgaa.png" mode="aspectFill" />
+      </view>
+    </view>
+    <view class="home-newsbx bgf">
+      <view class="home-newsbxtit fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+      <view class="c9 fs24 home-newsbxdy">2029-02-02</view>
+    </view>
+  </view>
+  <view a:if="{{currentTabsIndex == 2}}">
+    <view class="home-newsbx bgf">
+      <view class="home-newsbxtit fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+      <view class="c9 fs24 home-newsbxdy">2029-02-02</view>
+    </view>
+    <view class="home-newsbx bgf">
+      <view class="home-newsbxtit fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+      <view class="c9 fs24 home-newsbxdy">2029-02-02</view>
+    </view>
+    <view class="home-newsbx bgf">
+      <view class="home-newsbxtit fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+      <view class="c9 fs24 home-newsbxdy">2029-02-02</view>
+    </view>
+  </view>
   <bottom-line a:if="{{showbtline}}"></bottom-line>
   <!-- <view a:if="{{!editFlag}}" class="home-edit" onTap="showEdit"><image class="home-editimg" src="../../assets/editA.png" mode="scaleToFill" /></view>
   <view class="home-twbig">

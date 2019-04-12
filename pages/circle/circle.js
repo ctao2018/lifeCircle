@@ -9,6 +9,7 @@ Page({
     ansArr:[],
     isHot:'',
     showbtline:false,
+    newstapindx:0,
   },
 
   onLoad() {
@@ -40,12 +41,23 @@ Page({
       showbtline:false,
     })
     if(index === 1){
-      this.setData({pageNum:1,ansArr:[],isHot:'Y'})
-      this._questionAnwserPage()
+      this.setData({pageNum:1,ansArr:[],newstapindx:0,})
+  
+    } else if(index === 2){
+      this.setData({pageNum:1,ansArr:[],})
+      
     }else{
       this.setData({pageNum:1,ansArr:[],isHot:''})
       this._questionAnwserPage()
     }
+  },
+  //新闻二级菜单 点击
+  newsClick(e) {
+    let index=e.currentTarget.dataset['index'];
+    this.setData({
+      newstapindx:index,
+      showbtline:false,
+    })
   },
   auth() {
     app.getUserInfo().then(

@@ -108,11 +108,11 @@
   margin-left: 27rpx;
 }
 .home-wdth{
-  width: 64rpx;
-  height: 32rpx;
-  line-height: 32rpx;
+  width: 60rpx;
+  height: 34rpx;
+  line-height: 34rpx;
   margin-left: 40rpx;
-  background-color: #E8F5FF;
+  border: 2rpx solid #46A4FF;
   font-size: 22rpx;
   color: #45A4FF;
   text-align: center;
@@ -127,7 +127,7 @@
 .home-wdtsw-swiper{
   height: 34rpx;
   line-height: 34rpx;
-  color: #333333;
+  color: #999999;
   font-size: 24rpx;
   box-sizing: border-box;
   width: 100%;
@@ -142,17 +142,16 @@
 }
 .home-tabc{
   display: inline-block;
-  margin-left: 24rpx;
-  margin-right: 44rpx;
-  font-size: 28rpx;
+  margin-right: 80rpx;
+  font-size: 32rpx;
   color: #999999;
-  font-weight:600;
   border-bottom: 6rpx solid transparent;
   padding-bottom: 10rpx;
 }
 .home-tabSel{
-  font-size: 36rpx;
-  color: #333333;
+  font-size: 32rpx;
+  color: #45A4FF;
+  font-weight: 500;
   border-bottom-color: #45A4FF;
 }
 .home-wdbx{
@@ -192,7 +191,7 @@
   font-weight: 500;
 }
 .home-wdcon{
-  color: #666666;
+  color: #333333;
   font-size: 28rpx;
   line-height: 42rpx;
 }
@@ -221,7 +220,7 @@
   align-items: center;
 }
 .home-wdfd-f{
-  margin-right: 24rpx;
+  margin-right: 64rpx;
 }
 .home-wdfd-eye{
   width: 24rpx; 
@@ -376,4 +375,63 @@
   background-repeat: no-repeat;
   background-size: 32rpx 32rpx;
   margin-right: 4rpx;
+}
+.home-newstop{
+  height: 83rpx;
+  background-color: #F8F8F8;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.home-newstopa{
+  color: #999999;
+  font-size: 28rpx;
+}
+.home-newstopsel{
+  color: #333333;
+  position: relative;
+}
+.home-newstopsel:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -25rpx;
+  width: 38rpx;
+  height: 4rpx;
+  margin-left: -19rpx;
+  background-color: #333;
+}
+.home-newsbx{
+  padding: 30rpx 32rpx 0;
+}
+.home-newsbxtit{
+  line-height: 48rpx;
+  margin-bottom: 20rpx;
+}
+.home-newsbb{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.home-newsbbl{
+  width: 436rpx;
+}
+.home-newsbxtitb{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 23rpx;
+}
+.home-newspic{
+  width: 218rpx;
+  height: 152rpx;
+  border-radius: 4rpx;
+  margin-bottom: 32rpx;
+}
+.home-newsbxdy{
+  border-bottom: 2rpx solid #eeeeee;
+  padding-bottom: 32rpx;
 }

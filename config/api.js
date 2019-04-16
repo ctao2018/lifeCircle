@@ -33,7 +33,10 @@ const api = {
   queryMyAnswerPageByParam,
   userDeleteByAnswerId,
   queryAllValidSearchHotWord,
-  querySearchQuestionAnswerPage
+  querySearchQuestionAnswerPage,
+  queryNewsChildrenCatalogTreeByParam,
+  queryFNewsInfoPage,
+  queryFNewsInfoDeatailById
 };
 
 
@@ -197,5 +200,20 @@ function queryAllValidSearchHotWord(params) {
 //搜索 答案列表
 function querySearchQuestionAnswerPage(params) {
   return fetchData('/quesans/question/querySearchQuestionAnswerPage', params);
+}
+
+//新闻 查询栏目
+function queryNewsChildrenCatalogTreeByParam(params) {
+  return fetchData('/dist/notGrant/queryNewsChildrenCatalogTreeByParam', params);
+}
+
+//新闻 列表
+function queryFNewsInfoPage(params) {
+  return fetchData('/dist/notGrant/queryFNewsInfoPage', params);
+}
+
+//新闻政策 详情
+function queryFNewsInfoDeatailById(params) {
+  return fetchData('/dist/formalNewsInfo/queryFNewsInfoDeatailById/'+params);
 }
 export default api

@@ -17,6 +17,7 @@
     "pages/my/my",
     "pages/mall/mall",
     "pages/auth/auth",
+    "pages/newsdetail/newsdetail",
     "pages/integralrule/integralrule"
     
   ],

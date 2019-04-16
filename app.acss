@@ -60,6 +60,9 @@ page {
 .fs38{
   font-size: 38rpx;
 }
+.fs48{
+  font-size: 48rpx;
+}
 .fwb{
   font-weight: bold;
 }
@@ -68,4 +71,7 @@ page {
 }
 .fw600{
   font-weight: 600;
+}
+.lh40{
+  line-height: 40rpx;
 }

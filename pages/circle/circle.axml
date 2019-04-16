@@ -1,8 +1,8 @@
 <view class="circle">
   <view class="cir-wd">
     <view class="home-tab">
-      <block a:for="{{['问答','新闻','政策']}}">
-        <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+      <block a:for="{{typeArr}}">
+        <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item.name}}</view>
       </block>
     </view>
   </view>
@@ -40,7 +40,7 @@
     </block>
     <no-data a:if="{{ansArr.length === 0}}"></no-data>
   </view>
-  <view class="cir-listb" a:if="{{currentTabsIndex == 1}}">
+  <!-- <view class="cir-listb" a:if="{{currentTabsIndex == 1}}">
     <view class="home-newstop">
       <block a:for="{{['人社新闻','地方动态']}}">
         <view class="home-newstopa {{newstapindx==index?'home-newstopsel':''}}" onTap="newsClick" data-index="{{index}}">{{item}}</view>
@@ -69,6 +69,30 @@
         <view class="c9 fs24 home-newsbxdy">2029-02-02</view>
       </view>
     </block>
+  </view> -->
+  <view a:if="{{currentTabsIndex == 1 || currentTabsIndex == 2}}" class="{{currentTabsIndex==1?'cir-listb':''}} {{currentTabsIndex==2?'cir-list':''}} ">
+    <view class="home-newstop" a:if="{{showtyNews}}">
+      <block a:for="{{typeNews}}">
+        <view class="home-newstopa {{newstapindx==index?'home-newstopsel':''}}" onTap="newsClick" data-index="{{index}}">{{item.name}}</view>
+      </block>
+    </view>
+    <block a:for="{{newsArr}}">
+      <view class="home-newsbx bgf" data-index="{{index}}" onTap="toNewsDetail">
+        <view class="home-newsbxtit fs34 c3 fw500">{{item.title}}</view>
+        <view class="c9 fs24 home-newsbxdy">{{item.publishTime}}</view>
+      </view>
+    </block>
+    <no-data a:if="{{newsArr.length === 0}}"></no-data>
+    <!-- <view class="home-newsbx bgf">
+      <view class="home-newsbb">
+        <view class="home-newsbbl">
+          <view class="home-newsbxtitb fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
+          <view class="c9 fs24">2029-02-02</view>
+        </view>
+        <image class="home-newspic" src="../../assets/imgaa.png" mode="aspectFill" />
+      </view>
+    </view> -->
+    
   </view>
    <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

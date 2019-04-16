@@ -1,6 +1,7 @@
 const app = getApp();
 import {getTokenByCode,getCategory,getMenu,queryOpenCityValidModuleInfoByParam,
-queryAllHotspotCarousel,queryQuestionAnwserPage,queryAllValidHotCity} from '../../config/api'
+queryAllHotspotCarousel,queryQuestionAnwserPage,queryAllValidHotCity,
+queryNewsChildrenCatalogTreeByParam,queryFNewsInfoPage} from '../../config/api'
 
 Page({
   data: {
@@ -21,30 +22,47 @@ Page({
     editFlag:false,
     pageNum:1,
     pages:'',
+    pagesNews:'',
     ansArr:[],
+    newsArr:[],
     isHot:'',
     showbtline:false,
     hotCity:[],
     token:'',
     newstapindx:0,
+    typeArr:[{name:'全部',catalogNo:'',children:[]}],
+    typeNews:[],
+    showtyNews:false,
+    catalogNo:'',
   },
 
   onLoad() {
    this._getCategory()
    this._getMenu()
    this.getLocation()
+   this._queryAllHotspotCarousel()
+   this._queryQuestionAnwserPage()
+   this._queryAllValidHotCity()
+   this._queryNewsChildrenCatalogTreeByParam()
   },
   onShow() {
     this.setData({
-      ansArr:[],
-      pageNum:1,
-      pages:'',
-      showbtline:false,
-      hotCity:[],
+      // ansArr:[],
+      // newsArr:[],
+      // pageNum:1,
+      // pages:'',
+      // pagesNews:'',
+      // showbtline:false,
+      // hotCity:[],
+      // typeArr:[{name:'全部',catalogNo:'',children:[]}],
+      // typeNews:[],
+      // showtyNews:false,
+      // currentTabsIndex:0,
+      // catalogNo:'',
+      // newstapindx:0,
       })
-    this._queryAllHotspotCarousel()
-    this._queryQuestionAnwserPage()
-    this._queryAllValidHotCity()
+    //this._queryQuestionAnwserPage()
+    
   },
   onReady() {
     
@@ -100,6 +118,8 @@ Page({
               this.hotJump(id)
             }else if(type === 8){
               this.categoryJump(id)
+            }else if(type === 9) {
+              my.navigateTo({ url: '/pages/newsdetail/newsdetail?id='+ id})
             }
           })
       })
@@ -119,14 +139,14 @@ Page({
   //菜单列表
   async _getMenu() {
     let result = await getMenu()
-   console.log('getMenu',result)
+   //console.log('getMenu',result)
    let menu = result.data.data
    this.setData({menuList:menu})
   },
   //热点滚动列表
   async _queryAllHotspotCarousel() {
     let result = await queryAllHotspotCarousel()
-    console.log('queryAllHotspotCarousel',result)
+    //console.log('queryAllHotspotCarousel',result)
     let list = result.data.data
     this.setData({hotList:list})
     let titL = []
@@ -135,6 +155,21 @@ Page({
     }
     this.setData({hotTit:titL})
   },
+  //栏目列表
+  async _queryNewsChildrenCatalogTreeByParam() {
+    let result = await queryNewsChildrenCatalogTreeByParam({
+      siteNo:'news'
+    })
+    //console.log('queryNewsChildrenCatalogTreeByParam',result)
+    let list = result.data.data
+    this.data.typeArr = this.data.typeArr.concat(list)
+    this.setData({typeArr:this.data.typeArr})
+    for(let i =0;i<this.data.typeArr.length;i++){
+      if(this.data.typeArr[i].children.length>0){
+        this.setData({typeNews:this.data.typeArr[i].children})
+      }
+    }
+  },
   // tab点击切换
   tabClick(e) {
     let index=e.currentTarget.dataset['index'];
@@ -142,14 +177,37 @@ Page({
       currentTabsIndex:index,
       showbtline:false,
     })
-    if(index === 1){
-      this.setData({pageNum:1,ansArr:[],})
-      
-    } else if(index === 2){
-      this.setData({pageNum:1,ansArr:[],})
-      
+    if(index === 1 || index === 2){
+      if(this.data.typeArr[index].children.length>0){
+        this.setData({
+          typeNews:this.data.typeArr[index].children,
+          showtyNews:true,
+          catalogNo:this.data.typeArr[index].children[0].catalogNo,
+          newstapindx:0,
+          })
+      }else{
+        this.setData({
+          typeNews:[],
+          showtyNews:false,
+          catalogNo:this.data.typeArr[index].catalogNo,
+          })
+      }
+      this.setData({
+        pageNum:1,
+        ansArr:[],
+        pagesNews:'',
+        pages:'',
+        newsArr:[],
+      })
+      this._queryFNewsInfoPage()
     }else{
-      this.setData({pageNum:1,ansArr:[],isHot:''})
+      this.setData({
+        pageNum:1,
+        ansArr:[],
+        isHot:'',
+        showtyNews:false,
+        newsArr:[],
+      })
       this._queryQuestionAnwserPage()
     }
   },
@@ -159,7 +217,31 @@ Page({
     this.setData({
       newstapindx:index,
       showbtline:false,
+      catalogNo:this.data.typeNews[index].catalogNo,
+      newsArr:[],
+      pagesNews:'',
+      pageNum:1,
     })
+    this._queryFNewsInfoPage()
+  },
+  //新闻政策列表
+  async _queryFNewsInfoPage() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
+    const result = await queryFNewsInfoPage({
+      pageNum: this.data.pageNum,
+      pageSize: 10,
+      catalogNo: this.data.catalogNo,
+    })
+    //console.log('news',result)
+    my.hideLoading()
+    this.setData({pagesNews:result.data.data.pages})
+    let list = result.data.data.rows
+    this.data.newsArr = this.data.newsArr.concat(list)
+    this.setData({newsArr:this.data.newsArr})
+    //console.log('newsArr',this.data.newsArr)
   },
   //点击轮播图跳转
   goToLinkPage(e) {
@@ -313,7 +395,7 @@ Page({
     }
     this.data.ansArr = this.data.ansArr.concat(newList)
     this.setData({ansArr:this.data.ansArr})
-    //console.log(this.data.ansArr)
+    //console.log('ansArr',this.data.ansArr)
   },
   //问答热门列表 跳转至详情
   toDetailFn(e) {
@@ -324,6 +406,16 @@ Page({
       my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
     }else{
       this.auth(3,id)
+    }
+  },
+  //新闻 至详情
+  toNewsDetail(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.newsArr[index].id
+    if (app.auth_info){
+      my.navigateTo({ url: '/pages/newsdetail/newsdetail?id='+ id})
+    }else{
+      this.auth(9,id)
     }
   },
   //点击城市选择
@@ -385,15 +477,28 @@ Page({
   },
 
   onReachBottom(e) {
-    if (this.data.pages>this.data.pageNum) {
-      this.setData({
-        pageNum: ++this.data.pageNum
-      }, () => {
-        this._queryQuestionAnwserPage()
-      })
+    if(this.data.currentTabsIndex<1){
+      if (this.data.pages>this.data.pageNum) {
+        this.setData({
+          pageNum: ++this.data.pageNum
+        }, () => {
+          this._queryQuestionAnwserPage()
+        })
+      }else{
+        this.setData({showbtline:true})
+      }
     }else{
-      this.setData({showbtline:true})
+      if (this.data.pagesNews>this.data.pageNum) {
+        this.setData({
+          pageNum: ++this.data.pageNum
+        }, () => {
+          this._queryFNewsInfoPage()
+        })
+      }else{
+        this.setData({showbtline:true})
+      }
     }
+    
   },
 
   

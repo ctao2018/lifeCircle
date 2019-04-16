@@ -1,0 +1,18 @@
+.newsdt{
+  width: 100%;
+}
+.nd-tit{
+  line-height: 67rpx;
+  margin-bottom: 32rpx;
+  padding: 0 32rpx;
+}
+.nd-rm{
+  padding: 0 32rpx;
+  margin-bottom: 32rpx;
+}
+.nd-cont{
+  padding: 0 32rpx;
+  color: #666666;
+  font-size: 36rpx;
+  line-height: 50rpx;
+}

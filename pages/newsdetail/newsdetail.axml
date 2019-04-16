@@ -1,0 +1,10 @@
+<view class="newsdt bgf">
+  <view class="nd-tit fs48 c3 fw500">{{detail.title}}</view>
+  <view class="nd-rm c9 fs28">
+    <view class="lh40">来源：{{detail.source}}</view>
+    <view class="lh40">日期：{{detail.publishTime}}</view>
+  </view>
+  <view class="nd-cont">
+    <rich-text nodes="{{nodes}}" ></rich-text>
+  </view>
+</view>

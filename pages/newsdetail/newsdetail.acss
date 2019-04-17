@@ -17,3 +17,6 @@
   line-height: 50rpx;
   margin-bottom: 50rpx;
 }
+.mohrssNewsImg{
+  width: 100% !important;
+}

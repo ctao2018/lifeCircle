@@ -46,7 +46,7 @@
           vertical="{{true}}"
         >
           <block a:for="{{hotTit}}">
-            <swiper-item>
+            <swiper-item >
               <view data-index="{{index}}" onTap="hotLinkPage" class="home-wdtsw-swiper" >{{item}}</view>
             </swiper-item>
           </block>

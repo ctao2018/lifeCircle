@@ -102,11 +102,9 @@ Page({
   //查看大图
   picBig(e) {
     let index=e.currentTarget.dataset['index'];
-    let url = this.data.picArr[index]
-    let showUrl =[]
-    showUrl.push(url)
     my.previewImage({
-      urls: showUrl,
+      current: index,
+      urls: this.data.picArr,
     });
   },
 });

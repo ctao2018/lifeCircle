@@ -20,3 +20,9 @@
 .mohrssNewsImg{
   width: 100% !important;
 }
+.nd-cont img{
+  width: 100% !important;
+}
+.nd-cont image{
+  width: 100% !important;
+}

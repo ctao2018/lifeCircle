@@ -30,7 +30,7 @@ Page({
     hotCity:[],
     token:'',
     newstapindx:0,
-    typeArr:[{name:'全部',catalogNo:'',children:[]}],
+    typeArr:[{name:'问答',catalogNo:'',children:[]}],
     typeNews:[],
     showtyNews:false,
     catalogNo:'',
@@ -475,7 +475,6 @@ Page({
       this.auth(5,id)
     }
   },
-
   onReachBottom(e) {
     if(this.data.currentTabsIndex<1){
       if (this.data.pages>this.data.pageNum) {

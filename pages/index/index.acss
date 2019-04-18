@@ -123,6 +123,9 @@
   overflow: hidden;
   margin-left: 10rpx;
 }
+.home-wdtsw swiper{
+  height: 35rpx;
+}
 .home-wdtsw-swiper{
   height: 34rpx;
   line-height: 34rpx;

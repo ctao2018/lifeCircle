@@ -10,7 +10,7 @@ Page({
     isHot:'',
     showbtline:false,
     newstapindx:0,
-    typeArr:[{name:'全部',catalogNo:'',children:[]}],
+    typeArr:[{name:'问答',catalogNo:'',children:[]}],
     typeNews:[],
     showtyNews:false,
     catalogNo:'',

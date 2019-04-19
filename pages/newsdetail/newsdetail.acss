@@ -3,7 +3,7 @@
 }
 .nd-tit{
   line-height: 67rpx;
-  margin-bottom: 32rpx;
+  margin: 32rpx 0;
   padding: 0 32rpx;
 }
 .nd-rm{
@@ -19,10 +19,5 @@
 }
 .mohrssNewsImg{
   width: 100% !important;
-}
-.nd-cont img{
-  width: 100% !important;
-}
-.nd-cont image{
-  width: 100% !important;
+  height: auto !important;
 }

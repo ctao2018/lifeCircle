@@ -36,7 +36,7 @@
 }
 .home-tbxr{
   flex: 1;
-  height:70rpx;
+  height:50rpx;
   background:#f5f5f5;
   border-radius:4px;
   display: flex;
@@ -52,7 +52,7 @@
   margin: 0 12rpx 0 24rpx;
 }
 .home-tbxrn{
-  font-size: 28rpx;
+  font-size: 24rpx;
   color: #999999;
 }
 .home-swiper-item{

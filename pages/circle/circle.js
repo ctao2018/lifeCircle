@@ -143,11 +143,17 @@ Page({
           mac: '',
           registePlat: 2
         }).then(result =>{
-          my.setStorage({
-            key: 'token',
-            data: result.data.data
-          });
-          this._questionAnwserPage()
+          if(result.data.code===0){
+            my.setStorage({
+              key: 'token',
+              data: result.data.data
+            });
+            this._questionAnwserPage()
+          }else{
+            my.showToast({
+              content: '授权失败，请重试！'
+            });
+          }
         })
       })
   },

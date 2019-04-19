@@ -127,14 +127,16 @@ Page({
   //轮播图列表
   async _getCategory() {
     let result = await getCategory()
-   // console.log('getCategory',result)
+   //console.log('getCategory',result)
    let cat = result.data.data
    this.setData({category:cat})
    let imgUrl = []
-   for(let i=0;i<cat.length;i++){
-     imgUrl.push(cat[i].pictureUrl)
+   if(cat.length>0){
+     for(let i=0;i<cat.length;i++){
+      imgUrl.push(cat[i].pictureUrl)
+    }
+    this.setData({banner:imgUrl})
    }
-   this.setData({banner:imgUrl})
   },
   //菜单列表
   async _getMenu() {
@@ -499,7 +501,39 @@ Page({
     }
     
   },
-
+  onPullDownRefresh() {
+    this.setData({
+      banner: [],
+      hotTit:[],
+      hotList:[],
+      category:[],
+      menuList:[],
+      currentTabsIndex:0,
+      editFlag:false,
+      pageNum:1,
+      pages:'',
+      pagesNews:'',
+      ansArr:[],
+      newsArr:[],
+      isHot:'',
+      showbtline:false,
+      hotCity:[],
+      token:'',
+      newstapindx:0,
+      typeArr:[{name:'问答',catalogNo:'',children:[]}],
+      typeNews:[],
+      showtyNews:false,
+      catalogNo:'',
+    })
+    this._getCategory()
+    this._getMenu()
+    this.getLocation()
+    this._queryAllHotspotCarousel()
+    this._queryQuestionAnwserPage()
+    this._queryAllValidHotCity()
+    this._queryNewsChildrenCatalogTreeByParam()
+    my.stopPullDownRefresh()
+  }
   
 
 });

@@ -125,7 +125,7 @@
 }
 .cd-bxconbig{
   position: relative;
-  min-height: 144rpx;
+  /* min-height: 144rpx; */
 }
 .cd-bxconbigSel{
   height: 144rpx;

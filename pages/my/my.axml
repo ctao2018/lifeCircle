@@ -10,7 +10,7 @@
       </view>
     </view>
     <view class="my-hdban bgf">
-      <view class="my-hdbana tc">
+      <view class="my-hdbana tc" onTap="toShebao">
         <view class="my-hdbanai my-hdbanaik"></view>
         <view class="c3 fs28">电子社保卡</view>
       </view>

@@ -1,7 +1,7 @@
 <view class="answer">
   <form onSubmit="submitFn">
     <view class="ans-tcon bgf">
-      <textarea class="ans-txt" show-count="false" name="textarea" maxlength="-1" placeholder="请输入你的答案" />
+      <textarea class="ans-txt" show-count="false" name="textarea" maxlength=-1 placeholder="请输入你的答案" />
       <view class="addpic clearfix">
         <block a:for="{{imgArr}}">
           <view class="ans-uppic" a:if="{{imgArr}}">

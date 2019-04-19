@@ -1,7 +1,7 @@
 <view class="cirdetail">
   <view class="rew-bx bgf">
     <view class="rew-bxtit c3 fs38">{{detail.title}}</view>
-    <view class="cd-bxconbig {{showZK?'':'cd-bxconbigSel'}}">
+    <view class="cd-bxconbig {{showZK?'':'cd-bxconbigSel'}}" >
       <view class="rew-bxcon c6 fs32">{{detail.description}}</view>
       <view class="c6 fs32 bgf cd-shzk {{showZK?'cd-shzkSel':''}}" onTap="showZKtxt">...<view class="cd-shzktt">展开</view></view>
     </view>

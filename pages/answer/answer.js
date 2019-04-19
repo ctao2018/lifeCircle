@@ -138,7 +138,7 @@ Page({
       picturesUrl:piclist
     })
     if(this.data.textarea || piclist){
-     // this._addAnswerByUser()
+     this._addAnswerByUser()
     } else{
       my.showToast({
         content: '请输入答案或者上传图片资料！'

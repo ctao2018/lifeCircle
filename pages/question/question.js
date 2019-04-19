@@ -124,6 +124,7 @@ Page({
     let result = await queryAllValidQuestionCategory()
     let cat = result.data.data
     this.data.typeArr = this.data.typeArr.concat(cat)
+    console.log(this.data.typeArr)
     this.setData({
       typeArr:this.data.typeArr,
       categoryNo:this.data.typeArr[0].categoryNo

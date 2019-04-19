@@ -86,7 +86,7 @@ Page({
   },
   //联系客服
   makePhoneCall() {
-    my.makePhoneCall({ number:'0755-27398610'});
+    my.makePhoneCall({ number:'0755-86622688'});
   },
   //to 我的提问
   toMyQuestion() {
@@ -96,4 +96,11 @@ Page({
   toMyAnswer() {
     my.navigateTo({ url: '/pages/myanswer/myanswer'})
   },
+  // 社保卡 点击
+  toShebao() {
+    let url = 'alipays://platformapi/startapp?appId=20000178&bizScenario=ON90100001'
+    my.ap.navigateToAlipayPage({
+      path: url,
+    })
+  }
 });

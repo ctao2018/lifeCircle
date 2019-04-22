@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "文章详情",
+  "pullRefresh": false,
   "usingComponents": {
   }
 }

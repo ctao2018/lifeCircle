@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "提问",
+  "pullRefresh": false,
   "usingComponents": {
   }
 }

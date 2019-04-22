@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "搜索",
+  "pullRefresh": false,
   "usingComponents": {
     "search-bar": "mini-antui/es/search-bar/index",
     "bottom-line": "/components/bottomLine/bottomLine",

@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "积分规则",
+  "pullRefresh": false,
   "usingComponents": {
   }
 }

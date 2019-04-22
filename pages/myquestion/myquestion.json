@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "我的提问",
+  "pullRefresh": false,
   "usingComponents": {
     "list": "mini-antui/es/list/index",
     "list-item": "mini-antui/es/list/list-item/index",

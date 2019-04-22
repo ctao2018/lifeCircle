@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "详情",
+  "pullRefresh": false,
   "usingComponents": {
   }
 }

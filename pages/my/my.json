@@ -1,5 +1,6 @@
 { 
   "defaultTitle": "我的",
+  "pullRefresh": false,
   "titleBarColor":"#61B2FF",
   "usingComponents": {
   }

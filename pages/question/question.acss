@@ -93,7 +93,7 @@
   line-height: 84rpx;
   text-align: center;
   border-radius: 4rpx;
-  background-color: #dfdfdf;
+  background-color: #45A4FF;
   font-size: 32rpx;
   color: #ffffff;
 }

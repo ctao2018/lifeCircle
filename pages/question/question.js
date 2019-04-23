@@ -58,29 +58,27 @@ Page({
     this.setData({
       title: e.detail.value,
     });
-    if(e.detail.value.length>3){
-      this.setData({selFlag:true})
-    }else{
-       my.showToast({
-        content: '标题不能少于4个字!'
-      });
-      this.setData({selFlag:false})
-    }
+    // if(e.detail.value.length>3){
+    //   this.setData({selFlag:true})
+    // }else{
+    //    my.showToast({
+    //     content: '标题不能少于4个字!'
+    //   });
+    //   this.setData({selFlag:false})
+    // }
   },
   //点击发布按钮
   fabu(e) {
     this.setData({textarea:e.detail.value.textarea})
-    if(this.data.selFlag){
-      if(this.data.title.length>3){
-        if(!this.data.submitF){
-          this._addQuestionByUser()
-          this.setData({submitF:true})
-        }
-      }else{
-        my.showToast({
-          content: '标题不能少于4个字!'
-        });
+    if(this.data.title.length>3){
+      if(!this.data.submitF){
+        this._addQuestionByUser()
+        this.setData({submitF:true})
       }
+    }else{
+      my.showToast({
+        content: '标题不能少于4个字!'
+      });
     }
   },
    //热门城市

@@ -33,7 +33,6 @@ Page({
      })
      app.getUrl(1)
      //let tok = my.getStorageSync({ key: 'token' })
-      
   },
   onReady() {
     

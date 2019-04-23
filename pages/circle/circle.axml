@@ -10,9 +10,9 @@
     <block a:for="{{ansArr}}">
       <view class="home-wdbx" >
         <view class="home-tit" data-index="{{index}}" onTap="toDetailFn">{{item.lists.title}}</view>
-        <view class="home-name" data-index="{{index}}" onTap="toPersonal">
-          <view class="home-nameibx"><image class="home-namei" src="{{item.lists.headAddress}}" mode="scaleToFill" /></view>
-          <view class="home-namecon">{{item.lists.nickName}}</view>
+        <view class="home-name" >
+          <view class="home-nameibx" data-index="{{index}}" onTap="toPersonal"><image class="home-namei" src="{{item.lists.headAddress}}" mode="scaleToFill" /></view>
+          <view class="home-namecon" data-index="{{index}}" onTap="toPersonal">{{item.lists.nickName}}</view>
         </view>
         <view data-index="{{index}}" onTap="toDetailFn">
           <view class="home-wdcon" a:if="{{item.lists.subAnswer}}">{{item.lists.subAnswer}}...</view>

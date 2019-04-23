@@ -44,7 +44,7 @@
     </block>
     <block a:if="{{detail.isPraiseByCurrentUser === 'N'}}">
       <view class="tc cd-bxzan"><view class="cd-bxzani {{zanY?'cd-bxzaniSel':''}}" onTap="zanClick"></view></view>
-      <view class="tc fs28 cd-bxzantxt {{zanY?'cd-bxzantxtSel':''}}">{{praiseNumber}} 人赞</view>
+      <view class="tc fs28 cd-bxzantxt {{zanY?'cd-bxzantxtSel':''}}">{{praiseNumber}} 人赞<view class="cd-dzadd {{zanY?'cd-dzaddSel':''}}">+1</view></view>
     </block>
   </view>
   

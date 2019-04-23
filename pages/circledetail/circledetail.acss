@@ -119,6 +119,7 @@
 .cd-bxzantxt{
   color: #666666;
   padding-bottom: 80rpx;
+  position: relative;
 }
 .cd-bxzantxtSel{
   color: #45A4FF;
@@ -144,4 +145,27 @@
 .cd-shzktt{
   color: #45A4FF;
   display: inline-block;
+}
+.cd-dzadd{
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #45A4FF;
+  position: absolute;
+  top: -10rpx;
+  left: 50%;
+  opacity: 0;
+  margin-left: 50rpx;
+}
+.cd-dzaddSel{
+  -webkit-animation: flutter 1s ease-in-out;
+  animation: flutter 1s ease-in-out;
+}
+@keyframes flutter {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        top: -80rpx;
+    }
 }

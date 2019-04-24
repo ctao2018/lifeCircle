@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/myaddr/myaddr",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",

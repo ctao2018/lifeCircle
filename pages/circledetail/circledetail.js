@@ -45,6 +45,12 @@ Page({
       this._praiseQuestionAnwser()
     }
   },
+  //点赞完后再点 没用
+  zanDone() {
+    my.showToast({
+      content: '你已经点过赞啦~'
+    });
+  },
   //点击展开
   showZKtxt() {
     this.setData({showZK:true,})

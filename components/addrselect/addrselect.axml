@@ -1,0 +1,19 @@
+<view class="city-picker-mask">
+    <view class="city-picker-inner">
+        <view class="city-header">
+            <view onTap="handleNo" class="city-cancel">取消</view>
+            <view onTap="handleOk" class="city-true">确定</view>
+        </view>
+        <picker-view value="{{value}}" onChange="onChange" class="citybody">
+            <picker-view-column>
+                <view class="picker-column-item" a:for="{{provinces}}" a:key="item">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-column-item" a:for="{{citys}}" a:key="item">{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-column-item" a:for="{{countys}}" a:key="item">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

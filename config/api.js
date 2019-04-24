@@ -36,7 +36,8 @@ const api = {
   querySearchQuestionAnswerPage,
   queryNewsChildrenCatalogTreeByParam,
   queryFNewsInfoPage,
-  queryFNewsInfoDeatailById
+  queryFNewsInfoDeatailById,
+  queryChildAreaByParentId
 };
 
 
@@ -215,5 +216,10 @@ function queryFNewsInfoPage(params) {
 //新闻政策 详情
 function queryFNewsInfoDeatailById(params) {
   return fetchData('/dist/formalNewsInfo/queryFNewsInfoDeatailById/'+params);
+}
+
+//城市选择
+function queryChildAreaByParentId(params) {
+  return fetchData('/sharecom/whArea/queryChildAreaByParentId', params);
 }
 export default api

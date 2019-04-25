@@ -3,7 +3,8 @@ import {} from '../../config/api'
 
 Page({
   data: {
-    showAddr:false
+    noAddr:false,
+    check:false,
   },
 
   onLoad() {
@@ -15,11 +16,23 @@ Page({
   onReady() {
     
   },
-  tapname() {
-    this.setData({showAddr:true})
+  toAddrAdd() {
+    my.navigateTo({ url: '/pages/myaddradd/myaddradd'})
   },
-  onChange(val,code) {
-    console.log("com",val)
-    this.setData({showAddr:false})
+  setAddr(e) {
+    this.setData({check:true,})
+  },
+  addrChange() {
+
+  },
+  addrDel() {
+    my.confirm({
+      content: '是否确认删除这条地址',
+      confirmButtonText: '确认',
+      cancelButtonText: '取消',
+      success: (result) => {
+       
+      },
+    });
   },
 });

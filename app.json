@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/myaddr/myaddr",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",
@@ -19,6 +18,8 @@
     "pages/mall/mall",
     "pages/auth/auth",
     "pages/newsdetail/newsdetail",
+    "pages/myaddr/myaddr",
+    "pages/myaddradd/myaddradd",
     "pages/integralrule/integralrule"
     
   ],

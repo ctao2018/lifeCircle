@@ -1,4 +1,4 @@
-<view class="myaddr ">
+<view class="myaddr {{noAddr?'bgf':''}}">
   <view class="addr-bx" a:if="{{!noAddr}}">
       <block a:for="{{5}}">
         <view class="addr-addr bgf">

@@ -1,4 +1,10 @@
-<view class="myaddr">
+<view class="adddz bgf">
+  <view>
+    <view>
+      <view></view>
+      <view></view>
+    </view>
+  </view>
   <view onTap="tapname">点我</view>
   <addrselect a:if="{{showAddr}}" onChange="onChange"></addrselect>
 </view>

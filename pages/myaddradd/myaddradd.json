@@ -1,5 +1,5 @@
 { 
-  "defaultTitle": "我的地址",
+  "defaultTitle": "新增地址",
   "pullRefresh": false,
   "usingComponents": {
     "addrselect": "/components/addrselect/addrselect"

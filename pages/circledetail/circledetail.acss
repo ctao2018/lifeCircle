@@ -3,7 +3,7 @@
 }
 .rew-bx{
   padding: 25rpx 32rpx 0rpx;
-  margin-bottom: 16rpx;
+  border-bottom: 16rpx solid #F5F5F5;
 }
 .rew-bxtop{
   height: 106rpx;

@@ -18,8 +18,8 @@
     "pages/mall/mall",
     "pages/auth/auth",
     "pages/newsdetail/newsdetail",
-    "pages/myaddr/myaddr",
     "pages/myaddradd/myaddradd",
+    "pages/myaddr/myaddr",
     "pages/integralrule/integralrule"
     
   ],

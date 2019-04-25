@@ -9,6 +9,7 @@
   height: 200rpx;
   color: #333;
   font-size: 28rpx;
+  border-top: 2rpx solid #eeeeee;
 }
 .addpici{
   width: 160rpx;

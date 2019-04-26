@@ -94,5 +94,8 @@
     </view> -->
     
   </view>
+  <view a:if="{{currentTabsIndex !== 0 && currentTabsIndex !== 1 && currentTabsIndex !== 2}}">
+    <view class="home-morenodata c9 fs24 tc">暂无数据！</view>
+  </view>
    <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

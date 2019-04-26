@@ -43,6 +43,10 @@ Page({
   zanClick() {
     if(this.data.zanFlag){
       this._praiseQuestionAnwser()
+    }else{
+      my.showToast({
+        content: '你已经点过赞啦~'
+      });
     }
   },
   //点赞完后再点 没用

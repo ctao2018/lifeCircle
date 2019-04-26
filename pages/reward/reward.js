@@ -12,7 +12,7 @@ Page({
     tyIndex:0,
     nowTy:'全部',
     catId:'',
-    timeArr:['不限','最新','一周期','一个月前'],
+    timeArr:['不限','最新','一周前','一个月前'],
     ttIndex:0,
     nowTt:'不限',
     timePart:'',

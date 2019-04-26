@@ -60,11 +60,14 @@
 }
 .home-tabc{
   display: inline-block;
-  margin-right: 80rpx;
+  margin-right: 65rpx;
   font-size: 32rpx;
   color: #999999;
   border-bottom: 6rpx solid transparent;
   padding-bottom: 10rpx;
+}
+.home-tabc:last-child{
+  margin-right: 0;
 }
 .home-tabSel{
   color: #45A4FF;
@@ -243,4 +246,7 @@
 }
 .cir-listb{
   margin-top: 175rpx;
+}
+.home-morenodata{
+  margin-top: 280rpx;
 }

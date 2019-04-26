@@ -1,5 +1,5 @@
 { 
-  "defaultTitle": "医贝社保圈",
+  "defaultTitle": "社保社保圈",
   "pullRefresh": true,
   "usingComponents": {
     "bottom-line": "/components/bottomLine/bottomLine"

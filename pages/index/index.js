@@ -2,6 +2,7 @@ const app = getApp();
 import {getTokenByCode,getCategory,getMenu,queryOpenCityValidModuleInfoByParam,
 queryAllHotspotCarousel,queryQuestionAnwserPage,queryAllValidHotCity,
 queryNewsChildrenCatalogTreeByParam,queryFNewsInfoPage} from '../../config/api'
+import env from '../../config/env'
 
 Page({
   data: {
@@ -315,9 +316,15 @@ Page({
       my.navigateTo({ url: url})
     } else if(this.data.menuList[indx].type === '3'){
       let url = this.data.menuList[indx].linkUrl
-      my.ap.navigateToAlipayPage({
-        path: url,
-      })
+      my.showToast({
+        content: '本服务由支付宝城市服务提供',
+        duration: 1500,
+        success: () => {
+           my.ap.navigateToAlipayPage({
+            path: url,
+          })
+        },
+      });
     }
   },
   //判断城市开通模块
@@ -332,7 +339,10 @@ Page({
       let url = result.data.data[0].moduleUrl
       //console.log(url)
       let tok = my.getStorageSync({ key: 'token' })
-      app.webViewUrl = url + '?tok=' + tok.data
+      let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
+      //console.log(newurl)
+      app.webViewUrl = newurl
+      //app.webViewUrl = url + '?tok=' + tok.data
       my.navigateTo({ url: '/pages/webview/webview'})
     }else{
       my.showToast({

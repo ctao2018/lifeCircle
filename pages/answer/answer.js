@@ -16,6 +16,8 @@ Page({
     imgArr:[],
     detailedList:'',
     picturesUrl:'',
+    showTK: false,
+    qtCL:'',
   },
 
   onLoad(options) {
@@ -55,16 +57,25 @@ Page({
   //点击选择材料
   selCLfn(e) {
     let index=e.currentTarget.dataset['index'];
-    let sItem = "clArr["+ index + "].flaga";
-    if(this.data.clArr[index].flaga){
+    let clLng = this.data.clArr.length - 1;
+    //console.log(clLng)
+    if(clLng === index){
       this.setData({
-        [sItem]:false,
+        showTK:true,
       })
-    }else{
-      this.setData({
-        [sItem]:true,
-      })
+    } else{
+      let sItem = "clArr["+ index + "].flaga";
+      if(this.data.clArr[index].flaga){
+        this.setData({
+          [sItem]:false,
+        })
+      }else{
+        this.setData({
+          [sItem]:true,
+        })
+      }
     }
+    
     let selArr = []
     let that = this
     that.data.clArr.forEach(function (e, i) {
@@ -75,6 +86,47 @@ Page({
     this.setData({selCl:selArr})
     let nowLeng = this.data.selCl.length
     this.setData({selLeng:nowLeng})
+  },
+  //关闭弹框
+  closeTK() {
+    this.setData({
+      showTK:false,
+      qtCL:'',
+    })
+  },
+  //弹框 确认
+  addYes() {
+    let num = this.data.qtCL.length
+    if(num>10){
+      my.showToast({
+        content: '输入内容过长',
+        duration: 1500,
+      });
+      return false
+    }
+    if(this.data.qtCL){
+      let newCL = []
+      newCL = [{
+        lists:{name:this.data.qtCL},
+        flaga:true,
+      }]
+      let newArr = newCL.concat(this.data.clArr)
+      let newselArr = this.data.selCl
+      //console.log(newselArr)
+      let nweselCl = newselArr.push(this.data.qtCL)
+      this.setData({
+        showTK:false,
+        qtCL:'',
+        clArr:newArr,
+        selArr:nweselCl,
+      })
+    }
+  },
+  //获取弹框输入框内容
+  getCail(e) {
+    this.setData({
+      qtCL: e.detail.value,
+    });
   },
   //点击上传图片
   upLoadimg() {
@@ -137,6 +189,7 @@ Page({
       detailedList:dtlist,
       picturesUrl:piclist
     })
+    //console.log(this.data.detailedList)
     if(this.data.textarea || piclist){
      this._addAnswerByUser()
     } else{

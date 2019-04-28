@@ -1,6 +1,6 @@
 <view class="search">
-  <view class="sea-top">
-    <search-bar
+  <view class="sea-top bgf">
+    <!-- <search-bar
       value="{{seaVal}}"
       placeholder=""
       onSubmit="handleSubmit"
@@ -8,7 +8,16 @@
       onClear="handleClear"
       onFocus="handleFocus"
       onBlur="handleBlur"
-      showCancelButton="{{false}}" />
+      showCancelButton="{{false}}" /> -->
+      <view class="sea-topl">
+        <view class="sea-topli"></view>
+        <input class="sea-toplinp" placeholder=""  value="{{ssCont}}"
+        onFocus="handleFocus"  
+        onBlur="handleBlur" 
+        onConfirm="handleConfirm"
+      />
+      </view>
+      <view class="fs32 sea-topr" onTap="handleSubmit">搜索</view>
   </view>
   <view class="sea-hot bgf" a:if="{{showHot}}">
     <view class="sea-htit c3 fs36 fw600">热门搜索</view>

@@ -35,6 +35,7 @@ Page({
     typeNews:[],
     showtyNews:false,
     catalogNo:'',
+    cdFalg:false,
   },
 
   onLoad() {
@@ -301,6 +302,7 @@ Page({
     //console.log(this.data.cityAdcode)
     let indx = e.currentTarget.dataset.index
     if(this.data.menuList[indx].type === '0'){
+      this.setData({cdFalg:false,})
       let moduleEn = this.data.menuList[indx].moduleEn
       let tok = my.getStorageSync({ key: 'token' })
       if (app.auth_info){
@@ -325,6 +327,14 @@ Page({
           })
         },
       });
+    } else if(this.data.menuList[indx].type === '4'){
+      this.setData({cdFalg:true,})
+      let moduleEn = this.data.menuList[indx].moduleEn
+      if (app.auth_info){
+        this._queryOpenCityValidModuleInfoByParam(moduleEn)
+      }else{
+        this.auth(6,moduleEn)
+      }
     }
   },
   //判断城市开通模块
@@ -338,12 +348,24 @@ Page({
     if(result.data.data.length>0){
       let url = result.data.data[0].moduleUrl
       //console.log(url)
-      let tok = my.getStorageSync({ key: 'token' })
-      let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
-      //console.log(newurl)
-      app.webViewUrl = newurl
-      //app.webViewUrl = url + '?tok=' + tok.data
-      my.navigateTo({ url: '/pages/webview/webview'})
+      if(this.data.cdFalg){
+        my.showToast({
+          content: '本服务由支付宝城市服务提供',
+          duration: 1500,
+          success: () => {
+            my.ap.navigateToAlipayPage({
+              path: url,
+            })
+          },
+        });
+      }else{
+        let tok = my.getStorageSync({ key: 'token' })
+        let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
+        //console.log(newurl)
+        app.webViewUrl = newurl
+        //app.webViewUrl = url + '?tok=' + tok.data
+        my.navigateTo({ url: '/pages/webview/webview'})
+      }
     }else{
       my.showToast({
         content: '该城市暂未开通此服务！'
@@ -534,6 +556,7 @@ Page({
       typeNews:[],
       showtyNews:false,
       catalogNo:'',
+      cdFalg:false,
     })
     this._getCategory()
     this._getMenu()

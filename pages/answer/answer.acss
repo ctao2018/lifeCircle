@@ -112,3 +112,42 @@
 .ans-btnSel{
   background-color: #45A4FF;
 }
+.ans-tk{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3998);
+  z-index: 99;
+}
+.ans-tkbx{
+  width:460rpx;
+  height:234rpx;
+  border-radius:4rpx;
+  padding: 48rpx 40rpx 42rpx 40rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -270rpx;
+  top: 200rpx;
+}
+.ans-tkbxcl{
+  width: 100%;
+  border-bottom: 2rpx solid #3199FC;
+  margin-top: 10rpx;
+}
+.ans-tkbxinp{
+  width: 100%;
+  height: 82rpx;
+  padding: 0;
+}
+.ans-tkbtn{
+  margin-top: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.ans-tkbtna{
+  color: #45A4FF;
+  margin: 0 20rpx 0 110rpx;
+}

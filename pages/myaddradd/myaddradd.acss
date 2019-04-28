@@ -1,3 +1,29 @@
-.myaddr{
+.adddz{
   width: 100%;
+}
+.ad-bx{
+  border-top: 2rpx solid #eeeeee;
+  padding: 0 0 0 32rpx;
+  margin-bottom: 38rpx;
+}
+.ad-bxli{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.ad-bxlil{
+  width: 150rpx;
+}
+.ad-bxlirinp{
+  flex: 1 1 0%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0;
+  background: 0px 0px;
+  box-sizing: border-box;
+  margin-right: 32rpx;
+}
+.ad-bxlira{
+  flex: 1 1 0%;
 }

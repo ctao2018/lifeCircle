@@ -14,6 +14,7 @@ Page({
     title:'',
     cityAdcode:'',
     showbtn:true,
+    ssCont:'',
   },
 
   onLoad(options) {
@@ -25,29 +26,32 @@ Page({
     }
   },
   onShow() {
-   this.setData({
-     seaVal:'',
-     showHot:true,
-     hotArr:[],
-     curCity:[],
-     othCity:[],
-     pageNum:1,
-    pages:'',
-    showbtline:false,
-    title:'',
-    showbtn:true,
-   })
+  //  this.setData({
+  //    seaVal:'',
+  //    showHot:true,
+  //    hotArr:[],
+  //    curCity:[],
+  //    othCity:[],
+  //    pageNum:1,
+  //   pages:'',
+  //   showbtline:false,
+  //   title:'',
+  //   showbtn:true,
+  //   ssCont:'',
+  //  })
+  this.setData({
+    hotArr:[],
+  })
    app.getUrl(3,this.data.city,this.data.cityAdcode)
    this._queryAllValidSearchHotWord()
   },
   onReady() {
     
   },
-  handleSubmit(value) {
-    console.log(value)
-    if(value){
+  handleSubmit() {
+    if(this.data.ssCont){
       this.setData({
-        title:value,
+        title:this.data.ssCont,
         curCity:[],
         othCity:[],
         pageNum:1,
@@ -56,28 +60,37 @@ Page({
       })
       this._querySearchQuestionAnswerPage()
     }else{
-      this.setData({showHot:true})
+      this.setData({
+        showHot:true,
+        curCity:[],
+        othCity:[],
+      })
     }
   },
-  handleClear(value) {
-    this.setData({
-      value: '',
-      seaVal:'',
-      showHot:true,
-    });
-  },
-  handleCancel() {
-    this.setData({
-      showHot:true,
-      seaVal:'',
-      value: '',
-    })
-  },
+  // handleClear(value) {
+  //   this.setData({
+  //     value: '',
+  //     seaVal:'',
+  //     showHot:true,
+  //   });
+  // },
+  // handleCancel() {
+  //   this.setData({
+  //     showHot:true,
+  //     seaVal:'',
+  //     value: '',
+  //   })
+  // },
   handleFocus() {
     this.setData({showbtn:false})
   },
-  handleBlur() {
-    this.setData({showbtn:true})
+  handleBlur(e) {
+    this.setData({showbtn:true,ssCont:e.detail.value})
+    //console.log(this.data.ssCont)
+  },
+  handleConfirm(e) {
+    this.setData({ssCont:e.detail.value})
+    this.handleSubmit()
   },
   //to 提问页面
   toQuestion() {
@@ -104,7 +117,7 @@ Page({
       title: this.data.title,
       cityCode: this.data.cityAdcode
     })
-    console.log('list',result)
+    //console.log('list',result)
      my.hideLoading()
     if(result.data.code ===0){
       this.setData({
@@ -127,7 +140,7 @@ Page({
     let index=e.currentTarget.dataset['index'];
     let tit = this.data.hotArr[index].title;
     this.setData({
-      seaVal:tit,
+      ssCont:tit,
       title:tit,
       curCity:[],
       othCity:[],

@@ -29,5 +29,15 @@
     </view>
     <view class="ans-tip c9 fs24">温馨提示：上传社保部门官网/公众号/生活/头条号/等链接作为依据，可以更快获得审核通过哦。经过审核后发布，可获得积分奖励。点击我的-积分查看积分规则。</view>
     <view class="ans-btnbx"><button class="ans-btn fs32 cf {{changebtncol?'ans-btnSel':''}}" form-type="submit">提交</button></view>
+    <view class="ans-tk" a:if="{{showTK}}">
+      <view class="ans-tkbx bgf">
+        <view class="fs36 c3 fw500">添加材料</view>
+        <view class="ans-tkbxcl"><input class="ans-tkbxinp c6 fs28"  value="{{clval}}" onBlur="getCail" placeholder="输入材料" /></view>
+        <view class="ans-tkbtn">
+          <view class="c9 fs28" onTap="closeTK">取消</view>
+          <view class="fs28 fw500 ans-tkbtna" onTap="addYes">添加</view>
+        </view>
+      </view>
+    </view>
   </form>
 </view>

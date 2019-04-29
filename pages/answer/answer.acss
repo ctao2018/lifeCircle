@@ -150,4 +150,7 @@
 .ans-tkbtna{
   color: #45A4FF;
   margin: 0 20rpx 0 110rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border: none;
 }

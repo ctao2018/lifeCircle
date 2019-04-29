@@ -19,8 +19,12 @@ Page({
   toAddrAdd() {
     my.navigateTo({ url: '/pages/myaddradd/myaddradd'})
   },
-  setAddr(e) {
-    this.setData({check:true,})
+  setAddr() {
+    if(this.data.check){
+       this.setData({check:false,})
+     }else{
+       this.setData({check:true,})
+     }
   },
   addrChange() {
 

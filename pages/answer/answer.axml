@@ -31,11 +31,12 @@
     <view class="ans-btnbx"><button class="ans-btn fs32 cf {{changebtncol?'ans-btnSel':''}}" form-type="submit">提交</button></view>
     <view class="ans-tk" a:if="{{showTK}}">
       <view class="ans-tkbx bgf">
+        <form onSubmit="addYes">
         <view class="fs36 c3 fw500">添加材料</view>
-        <view class="ans-tkbxcl"><input class="ans-tkbxinp c6 fs28"  value="{{clval}}" onBlur="getCail" placeholder="输入材料" /></view>
+        <view class="ans-tkbxcl"><input class="ans-tkbxinp c6 fs28"  value="{{clval}}" name="inputCl" placeholder="输入材料" /></view>
         <view class="ans-tkbtn">
           <view class="c9 fs28" onTap="closeTK">取消</view>
-          <view class="fs28 fw500 ans-tkbtna" onTap="addYes">添加</view>
+          <button class="fs28 fw500 ans-tkbtna" form-type="submit">添加</button>
         </view>
       </view>
     </view>

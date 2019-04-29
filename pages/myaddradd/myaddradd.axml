@@ -2,11 +2,11 @@
   <view class="ad-bx">
     <view class="ad-bxli">
       <view class="ad-bxlil fs28 c6 fw500">收货人</view>
-      <input class="ad-bxlirinp fs28 c6" placeholder="请填写收货人的姓名" />
+      <input class="ad-bxlirinp fs28 c6"  onBlur="getName" placeholder="请填写收货人的姓名" />
     </view>
     <view class="ad-bxli">
       <view class="ad-bxlil fs28 c6 fw500">联系电话</view>
-      <input class="ad-bxlirinp fs28 c6" type="number" placeholder="请填写联系人的电话" />
+      <input class="ad-bxlirinp fs28 c6" type="number" onBlur="getPhone" placeholder="请填写联系人的电话" />
     </view>
     <view class="ad-bxli">
       <view class="ad-bxlil fs28 c6 fw500">地区</view>
@@ -15,8 +15,10 @@
     </view>
     <view class="ad-bxli">
       <view class="ad-bxlil fs28 c6 fw500">详细地址</view>
-      <input class="ad-bxlirinp fs28 c6" placeholder="填写详细地址信息，不少于5个字" />
+      <input class="ad-bxlirinp fs28 c6" onBlur="getAddrdt" placeholder="填写详细地址信息，不少于5个字" />
     </view>
   </view>
+  <view class="c6 fs28 ad-btl"><view class="ad-btlradio {{check?'ad-btlradioSel':''}}" onTap="setAddr"></view>设为默认地址</view>
+  <view class="ad-btnbx"><view class="ad-btna tc cf fs36" onTap="saveBtn">保存</view></view>
   <addrselect a:if="{{showAddr}}" onChange="onChange"></addrselect>
 </view>

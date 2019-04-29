@@ -95,25 +95,27 @@ Page({
     })
   },
   //弹框 确认
-  addYes() {
-    let num = this.data.qtCL.length
-    if(num>10){
+  addYes(e) {
+    let inpData = e.detail.value.inputCl
+    this.setData({qtCL:inpData})
+    let num = inpData.length
+    if(num>15){
       my.showToast({
         content: '输入内容过长',
         duration: 1500,
       });
       return false
     }
-    if(this.data.qtCL){
+    if(inpData){
       let newCL = []
       newCL = [{
-        lists:{name:this.data.qtCL},
+        lists:{name:inpData},
         flaga:true,
       }]
       let newArr = newCL.concat(this.data.clArr)
       let newselArr = this.data.selCl
       //console.log(newselArr)
-      let nweselCl = newselArr.push(this.data.qtCL)
+      let nweselCl = newselArr.push(inpData)
       this.setData({
         showTK:false,
         qtCL:'',
@@ -207,7 +209,7 @@ Page({
       questionId: this.data.questionId,
       sourceUrl: this.data.urlLink,
     })
-    console.log('提交',result)
+    //console.log('提交',result)
     if(result.data.code === 0){
        my.alert({
         title: '提交成功',

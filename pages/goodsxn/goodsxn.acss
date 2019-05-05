@@ -1,0 +1,39 @@
+.goodsxn{
+  width: 100%;
+}
+.gxn-hd{
+  width: 100%;
+  margin-bottom: 16rpx;
+}
+.gxn-hdimg{
+  width: 100%;
+  height: 280rpx;
+}
+.gxn-hdbx{
+  padding: 24rpx 32rpx;
+}
+.gxn-hdtit{
+  line-height: 48rpx;
+  margin-bottom: 13rpx;
+}
+.gxn-hdjf{
+  color: #FB6C20;
+  line-height: 48rpx;
+}
+.gxn-xq{
+  padding: 24rpx 32rpx;
+  margin-bottom: 94rpx;
+}
+.gxn-top{
+  margin-bottom: 20rpx;
+}
+.gxn-btn{
+  width: 100%;
+  height: 94rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #45A4FF;
+}

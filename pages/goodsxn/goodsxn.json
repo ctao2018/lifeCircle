@@ -1,0 +1,6 @@
+{ 
+  "defaultTitle": "商品详情",
+  "pullRefresh": false,
+  "usingComponents": {
+  }
+}

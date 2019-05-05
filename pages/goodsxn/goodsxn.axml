@@ -1,0 +1,19 @@
+<view class="goodsxn">
+  <view class="gxn-hd bgf">
+    <image class="gxn-hdimg" src="{{imgsrc}}" mode="aspectFit" />
+    <view class="gxn-hdbx">
+      <view class="gxn-hdtit c3 fs34">经典棒球帽1996 DHEHGN经典</view>
+      <view class="gxn-hdjf fs34 fw500">188积分</view>
+    </view>
+  </view>
+  <view class="gxn-xq bgf">
+    <view class="gxn-top c6 fs28">商品详情</view>
+    <view class="c3 fs32 lh48">
+      <text>第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
+      第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
+      第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
+      第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。</text>
+    </view>
+  </view>
+  <view class="gxn-btn cf fs36 flex ac jc" onTap="exchange">立即兑换</view>
+</view>

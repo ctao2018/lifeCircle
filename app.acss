@@ -75,3 +75,18 @@ page {
 .lh40{
   line-height: 40rpx;
 }
+.lh48{
+  line-height: 48rpx;
+}
+.flex{
+  display: flex;
+}
+.ac{
+  align-items: center;
+}
+.jc{
+  justify-content: center;
+}
+.jb{
+  justify-content: space-between;
+}

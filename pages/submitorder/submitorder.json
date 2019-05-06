@@ -1,0 +1,6 @@
+{ 
+  "defaultTitle": "提交订单",
+  "pullRefresh": false,
+  "usingComponents": {
+  }
+}

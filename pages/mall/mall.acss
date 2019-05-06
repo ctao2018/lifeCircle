@@ -1,11 +1,80 @@
 .mall{
   width: 100%;
 }
-.mall-ibx{
-  margin: 277rpx 0 48rpx;
+.m-top{
+  height: 87rpx;
+  padding: 0 32rpx;
+  border-bottom: 2rpx solid #eeeeee;
 }
-.mall-img{
-  width: 380rpx;
-  height: 380rpx;
+.m-toplpic{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 2rpx solid #e2e2e2;
+  overflow: hidden;
+  margin-right: 12rpx;
+}
+.m-toplimg{
+  width: 60rpx;
+  height: 60rpx;
+}
+.m-toprm{
+  margin: 0 4rpx 0 9rpx;
+}
+.m-toparrr{
+  width: 10rpx; 
+  height:19rpx;
+  background: url('../../assets/rightb.png');
+  background-repeat: no-repeat;
+  background-size: 10rpx 19rpx;
   display: inline-block;
+}
+.m-ctop{
+  margin: 48rpx 0 32rpx;
+  padding: 0 32rpx;
+}
+.m-ctopla{
+  margin-bottom: 8rpx;
+}
+.m-cbig{
+  padding: 0 32rpx;
+}
+.m-cul{
+  margin-left: -16rpx;
+}
+.m-cbx{
+  width: 218rpx;
+  float: left;
+  margin-left: 16rpx;
+}
+.m-cbxpic{
+  width: 218rpx;
+  height: 218rpx;
+  overflow: hidden;
+  margin-bottom: 17rpx;
+}
+.m-cbximg{
+  width: 218rpx;
+  height: 218rpx;
+}
+.m-cbxtit{
+  width: 218rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.m-cbxjf{
+  margin: 6rpx 0 10rpx;
+  color: #FB6C20;
+}
+.m-cbxjfl{
+  margin-right: 6rpx;
+}
+.m-cbxbtn{
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #FB6C20;
+  border: 2rpx solid #FB6C20;
+  border-radius: 25rpx;
 }

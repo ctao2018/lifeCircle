@@ -80,6 +80,7 @@ Page({
           city: res.city,
           cityAdcode: res.cityAdcode
         })
+        app.cityAdcode = res.cityAdcode;
       },
       fail() {
         my.alert({ title: '定位失败' });
@@ -464,14 +465,19 @@ Page({
           city:res.city,
           cityAdcode:res.adCode,
         })
+        app.cityAdcode = res.adCode;
         if(res.adCode === '110100'){
           this.setData({cityAdcode:110000})
+          app.cityAdcode = '110000'
         }else if(res.adCode === '120100'){
           this.setData({cityAdcode:120000})
+          app.cityAdcode = '120100'
         }else if(res.adCode === '310100'){
           this.setData({cityAdcode:310000})
+          app.cityAdcode = '310100'
         }else if(res.adCode === '500100'){
           this.setData({cityAdcode:500000})
+          app.cityAdcode = '500100'
         }
       },
     });

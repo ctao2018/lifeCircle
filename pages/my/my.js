@@ -1,5 +1,5 @@
 const app = getApp();
-import {getTokenByCode,queryMyAcctUserInfoAndPoint,queryUnreadQuestionAndAnswerNum} from '../../config/api'
+import {getTokenByCode,queryMyAcctUserInfoAndPoint,queryUnreadQuestionAndAnswerNum,queryOpenCityValidModuleInfoByParam} from '../../config/api'
 
 Page({
   data: {
@@ -12,7 +12,6 @@ Page({
   },
   onShow() {
    this.setData({
-     userMsg:[],
      unRead:[],
    })
    app.getUrl(1)
@@ -98,9 +97,31 @@ Page({
   },
   // 社保卡 点击
   toShebao() {
-    let url = 'alipays://platformapi/startapp?appId=20000178&bizScenario=ON90100001'
-    my.ap.navigateToAlipayPage({
-      path: url,
+     this._queryOpenCityValidModuleInfoByParam()
+  },
+  //判断城市开通模块
+  async _queryOpenCityValidModuleInfoByParam() {
+    let result = await queryOpenCityValidModuleInfoByParam({
+      cityCode: app.cityAdcode,
+      moduleEn: 'mySocialSecurity'
     })
-  }
+    //console.log('城市开通模块',result)
+    if(result.data.data.length>0){
+      let url = result.data.data[0].moduleUrl
+      //console.log(url)
+      my.showToast({
+        content: '本服务由支付宝城市服务提供',
+        duration: 1500,
+        success: () => {
+          my.ap.navigateToAlipayPage({
+            path: url,
+          })
+        },
+      });
+    }else{
+      my.showToast({
+        content: '该城市暂未开通此服务！'
+      });
+    }
+  },
 });

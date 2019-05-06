@@ -1,0 +1,49 @@
+<view class="submitorder bgf">
+  <view class="so-dzbx">
+    <view class="so-dzcon">
+      <view class="so-addr flex ac jc" a:if="{{!addrFlag}}">
+        <view class="so-addri"></view>
+        <view class="cf fs28">请填写收货地址</view>
+      </view>
+      <view class="so-addry cf" a:if="{{addrFlag}}">
+        <view class="flex ac fs28">
+          <view class="so-addrn">张三丰</view>
+          <view>13800138000</view>
+        </view>
+        <view class="so-addrdz fs24">广东省深圳市南山区高新南七道011号深圳软件园T3栋211</view>
+        <view class="so-addrqt fs24">选择其他地址</view>
+      </view>
+    </view>
+  </view>
+  <view class="bb-e flex ac jb so-sp">
+    <view class="flex ac">
+      <view class="so-splpic"><image class="so-splimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+      <view class="so-spm">
+        <view class="c3 fs24 so-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
+        <view class="c9 fs22">商品尺码颜色信息在这里</view>
+      </view>
+    </view>
+    <view class="so-spr c3 fs24">
+      <view>¥10000.00</view>
+      <view>+</view>
+      <view class="c3">888积分</view>
+      <view class="c9 fs22 so-sprsl">X1</view>
+    </view>
+  </view>
+  <view class="so-xx flex ac jb bb-e">
+    <view class="c6 fs28">快递运费：<view class="c9 so-xxby">全国包邮</view></view>
+    <view class="c3 fs32 fw500">0</view>
+  </view>
+  <view class="so-xx flex ac jb bb-e">
+    <view class="c6 fs28">合计：</view>
+    <view class="c3 fs32 fw500">¥288.00</view>
+  </view>
+  <view class="so-xx flex ac jb bb-e">
+    <view class="c6 fs28">使用积分</view>
+    <view class="c3 fs32 fw500">888</view>
+  </view>
+  <view class="so-bt flex ac jb">
+    <view class="so-btl fs26 c6">总计：<view class="so-btlnum fs28">¥288.00 + 888积分</view></view>
+    <view class="so-btr tc cf fs36">提交订单</view>
+  </view>
+</view>

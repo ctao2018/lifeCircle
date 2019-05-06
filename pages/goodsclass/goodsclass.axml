@@ -1,0 +1,28 @@
+<view class="goodsclass">
+  <view class="gc-top bgf flex ac ja">
+    <view class="gc-topa {{xpFlag?'gc-sel':''}}" onTap="tapXP">新品</view>
+    <view class="gc-topa flex ac" onTap="tapJG">
+      <view class="gc-topar {{jgFlag?'gc-sel':''}}">价格</view>
+      <view class="gc-topari">
+        <view class="gc-topariu {{upFlag?'gc-upsel':''}}"></view>
+        <view class="gc-toparid {{downFlag?'gc-downsel':''}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="gc-big">
+    <view class="gc-cul clearfix">
+      <block a:for="{{8}}">
+        <view class="gc-cbx bgf">
+          <view class="gc-cbxpic"><image class="gc-cbximg" src="../../assets/imgaa.png" mode="scaleToFill"  /></view>
+          <view class="gc-cbxcon">
+            <view class="gc-cbxctit c3 fs30 fw500">欧舒丹甜蜜樱花</view>
+            <view class="flex ac gc-cbxcjf">
+              <view class="fs36 fw500">88</view>
+              <view class="fs34 gc-cbxcjfr">积分</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -90,3 +90,12 @@ page {
 .jb{
   justify-content: space-between;
 }
+.ja{
+  justify-content: space-around;
+}
+.mb32{
+  margin-bottom: 32rpx;
+}
+.bb-e{
+  border-bottom: 2rpx solid #eeeeee
+}

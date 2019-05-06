@@ -4,6 +4,7 @@ App({
   webViewUrl:null,
   backUrl:null,
   toUrl:null,
+  cityAdcode:null,
   globalData: {},
   token: '',
   getUserInfo() {

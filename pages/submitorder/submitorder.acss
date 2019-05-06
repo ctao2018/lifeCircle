@@ -1,0 +1,103 @@
+.submitorder{
+  width: 100%;
+}
+.so-dzbx{
+  padding: 32rpx 32rpx 0;
+  background-color: #f5f5f5;
+}
+.so-dzcon{
+  width: 100%;
+  background:linear-gradient(90deg,rgba(82,84,101,1) 0%,rgba(41,42,53,1) 100%);
+  border-radius:8rpx 8rpx 0rpx 0rpx;
+}
+.so-addr{
+  padding: 32rpx 0;
+}
+.so-addri{
+  width: 30rpx; 
+  height:30rpx;
+  background: url('../../assets/addb.png');
+  background-repeat: no-repeat;
+  background-size: 30rpx 30rpx;
+  margin-right: 10rpx;
+}
+.so-addry{
+  padding: 24rpx 32rpx;
+}
+.so-addrn{
+  margin-right: 42rpx;
+}
+.so-addrdz{
+  margin: 14rpx 0 36rpx;
+  line-height: 33rpx;
+}
+.so-addrqt{
+  width: 180rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  background-color: #72748D;
+  border-radius: 4rpx;
+  text-align: center;
+  color: #ECECEC;
+}
+.so-sp{
+  padding: 36rpx 32rpx 22rpx;
+}
+.so-splpic{
+  width:140rpx;
+  height:140rpx;
+  overflow: hidden;
+  margin-right: 16rpx;
+}
+.so-splimg{
+  width:140rpx;
+  height:140rpx;
+}
+.so-spm{
+  flex: 1;
+}
+.so-spmtit{
+  line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.so-spr{
+  margin-left: 25rpx;
+  text-align: right;
+}
+.so-sprsl{
+  margin-top: 18rpx;
+}
+.so-xx{
+  height: 92rpx;
+  padding: 0 32rpx;
+}
+.so-xxby{
+  margin-left: 12rpx;
+  display: inline-block;
+}
+.so-bt{
+  height: 94rpx;
+  border-top: 2rpx solid #eeeeee;
+  position:fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.so-btl{
+  margin-left: 32rpx;
+}
+.so-btlnum{
+  color: #FB6C20;
+  display: inline-block;
+}
+.so-btr{
+  width:279rpx;
+  height:94rpx;
+  line-height: 94rpx;
+  background:#45A4FF;
+}

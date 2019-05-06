@@ -1,6 +1,56 @@
 <view class="mall bgf">
-  <view class="mall-ibx tc">
-    <image class="mall-img" src="../../assets/mall_blank.png" mode="scaleToFill" />
+  <view class="m-top flex ac jb">
+    <view class="flex ac">
+      <view class="m-toplpic"><image class="m-toplimg" src="{{userMsg.headAddress}}" mode="scaleToFill"  /></view>
+      <view class="c3 fs32">{{userMsg.nickName}}</view>
+    </view>
+    <view class="flex ac" onTap="toJF">
+      <view class="c3 fs32 fw500">276</view>
+      <view class="c3 fs28 m-toprm">积分</view>
+      <view class="m-toparrr"></view>
+    </view>
   </view>
-  <view class="c9 fs32 tc">开发中...</view>
+  <view class="m-ctop flex ac jb">
+    <view>
+      <view class="c3 fs36 fw500 m-ctopla">限时抢购</view>
+      <view class="c9 fs24">限时低价兑换，供您选择</view>
+    </view>
+    <view class="c6 fs26" onTap="toList">查看更多</view>
+  </view>
+  <view class="m-cbig">
+    <view class="m-cul clearfix">
+      <block a:for="{{3}}">
+        <view class="m-cbx tc">
+          <view class="m-cbxpic"><image class="m-cbximg" src="{{userMsg.headAddress}}" mode="scaleToFill"  /></view>
+          <view class="fs30 c3 tc m-cbxtit">欧舒丹甜蜜樱桃啦啦啦</view>
+          <view class="m-cbxjf flex ac jc">
+            <view class="m-cbxjfl fs32 fw500">888</view>
+            <view class="fs30">积分</view>
+          </view>
+          <view class="flex jc"><view class="m-cbxbtn tc fs26" onTap="toexchange">去兑换</view></view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="m-ctop flex ac jb">
+    <view>
+      <view class="c3 fs36 fw500 m-ctopla">人气热卖</view>
+      <view class="c9 fs24">限时低价兑换，供您选择</view>
+    </view>
+    <view class="c6 fs26" onTap="toList">查看更多</view>
+  </view>
+  <view class="m-cbig">
+    <view class="m-cul clearfix">
+      <block a:for="{{6}}">
+        <view class="m-cbx tc mb32" onTap="todetail">
+          <view class="m-cbxpic"><image class="m-cbximg" src="{{userMsg.headAddress}}" mode="scaleToFill"  /></view>
+          <view class="fs30 c3 tc m-cbxtit">欧舒丹甜蜜樱桃</view>
+          <view class="m-cbxjf flex ac jc">
+            <view class="m-cbxjfl fs32 fw500">888</view>
+            <view class="fs30">积分</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
 </view>

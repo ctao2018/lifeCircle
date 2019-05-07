@@ -6,11 +6,11 @@
   margin-top: 350rpx;
 }
 .addr-img{
-  width: 210rpx; 
-  height:210rpx;
-  background: url('../../assets/wu.png');
+  width: 333rpx; 
+  height:247rpx;
+  background: url('../../assets/address_no.png');
   background-repeat: no-repeat;
-  background-size: 210rpx 210rpx;
+  background-size: 333rpx 247rpx;
   display: inline-block;
   margin-bottom: 16rpx;
 }

@@ -4,6 +4,7 @@ import {} from '../../config/api'
 Page({
   data: {
     curIndex:0,
+    listFg:true,
   },
 
   onLoad() {

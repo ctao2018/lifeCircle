@@ -93,3 +93,11 @@
   color: #45A4FF;
   border-radius: 29rpx;
 }
+.ol-nolist{
+  margin-top: 380rpx;
+}
+.ol-nolisti{
+  display: inline-block;
+  width: 333rpx;
+  height: 230rpx;
+}

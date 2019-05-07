@@ -4,7 +4,7 @@
       <view class=" {{curIndex==index?'ol-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
     </block>
   </view>
-  <view class="ol-big">
+  <view class="ol-big" a:if="{{listFg}}">
     <view class="ol-bx bgf">
       <view class="ol-bxa flex ac jb fs26">
         <view class="c6">订单单号：938273648277374</view>
@@ -48,6 +48,6 @@
       </view>
     </view>
   </view>
-  <no-data a:if="{{twArr.length === 0}}"></no-data>
+  <view class="ol-nolist tc" a:if="{{!listFg}}"><image class="ol-nolisti" src="../../assets/list_no.png" mode="scaleToFill" /></view>
   <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

@@ -1,7 +1,7 @@
 <view class="submitorder bgf">
   <view class="so-dzbx">
     <view class="so-dzcon">
-      <view class="so-addr flex ac jc" a:if="{{!addrFlag}}">
+      <view class="so-addr flex ac jc" a:if="{{!addrFlag}}" onTap="toAddaddr">
         <view class="so-addri"></view>
         <view class="cf fs28">请填写收货地址</view>
       </view>
@@ -11,12 +11,12 @@
           <view>13800138000</view>
         </view>
         <view class="so-addrdz fs24">广东省深圳市南山区高新南七道011号深圳软件园T3栋211</view>
-        <view class="so-addrqt fs24">选择其他地址</view>
+        <view class="so-addrqt fs24" onTap="toaddrlist">选择其他地址</view>
       </view>
     </view>
   </view>
   <view class="bb-e flex ac jb so-sp">
-    <view class="flex ac">
+    <view class="flex">
       <view class="so-splpic"><image class="so-splimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
       <view class="so-spm">
         <view class="c3 fs24 so-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
@@ -44,6 +44,6 @@
   </view>
   <view class="so-bt flex ac jb">
     <view class="so-btl fs26 c6">总计：<view class="so-btlnum fs28">¥288.00 + 888积分</view></view>
-    <view class="so-btr tc cf fs36">提交订单</view>
+    <view class="so-btr tc cf fs36" onTap="tjorder">提交订单</view>
   </view>
 </view>

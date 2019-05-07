@@ -1,0 +1,70 @@
+<view class="orderdetail">
+  <view class="od-top flex ac c-c20 fs34 fw500 bgf">交易成功</view>
+  <block a:if="{{!wlFlag}}">
+    <view class="od-qm c3 fs24 fw500 flex ac bb-e">券码<text class="c-c20 fs28 od-qmnum">X979DDF68S</text></view>
+    <view class="ol-bxb flex ac bgf bb-e">
+      <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+      <view class="ol-bxbr">
+        <view class="ol-bxbtit c3 fs26">SEESeekinxperiencneerinddderg包括专业分享、Workshop</view>
+        <view class="flex ac jb fs24">
+          <view class="c3">888 积分</view>
+          <view class="c9">X1</view>
+        </view>
+      </view>
+    </view>
+    <view class="ol-bxc flex ac c9 fs24 bgf">实付：<text class="c-c20 fs28 fw500">888</text><text class="c-c20 fs26">积分</text></view>
+  </block>
+  <block a:if="{{wlFlag}}">
+    <view class="od-wl bgf bb-e">
+      <view class="flex ac">
+        <view class="od-wlkdi"><image class="od-wlkdpic" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+        <view class="c3 fs28">韵达快递</view>
+      </view>
+      <view class="od-wldh flex ac">
+        <view class="c3 fs32">物流单号：<text class="fw500">20190507000012</text></view>
+        <view class="fs26 c6 tc od-wlfz" onTap="copyFn">复制</view>
+      </view>
+      <view class="c9 fs28">复制物流单号查询物流信息</view>
+    </view>
+    <view class="od-dz bgf flex ac">
+      <image class="od-dzlpic" src="../../assets/location.png" mode="scaleToFill"/>
+      <view class="od-dzr">
+        <view class="fs28 c3">张三丰<text class="c6 od-dzrph">13800138000</text></view>
+        <view class="c3 fs22 od-dzrdt">广东省深圳市南山区高新南七道011号深圳软件园T3栋2楼211</view>
+      </view>
+    </view>
+    <view class="ol-bxb flex ac jb bgf bb-e">
+      <view class="flex ">
+        <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+        <view class="ol-spm">
+          <view class="c3 fs26 ol-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
+          <view class="c9 fs22">商品尺码颜色信息在这里</view>
+        </view>
+      </view>
+      <view class="ol-spr c3 fs24">
+        <view>¥10000.00</view>
+        <view>+</view>
+        <view class="c3">888积分</view>
+        <view class="c9 fs22 ol-sprsl">X1</view>
+      </view>
+    </view>
+    <view class="ol-bxc flex ac c9 fs24 bgf">合计：<text class="c-c20 fs34 fw500">¥88+88</text><text class="c-c20 fs30">积分</text></view>
+  </block>
+  <view class="od-xx bgf">
+    <view class="od-xxdh bb-e c3 fs28 flex ac">订单单号：2019041700001212</view>
+    <view class="od-xxtime">
+      <view class="od-xxtimea bb-e c9">
+        <view class="fs28 lh40">付款时间：</view>
+        <view class="fs26">2019-04-15 12:12:37</view>
+      </view>
+      <view class="od-xxtimea c9">
+        <view class="fs28 lh40">下单时间：</view>
+        <view class="fs26">2019-04-15 12:12:37</view>
+      </view>
+    </view>
+  </view>
+  <view class="tc c6 fs28 od-kf bgf" onTap="makePhoneCall">联系客服</view>
+  <view class="od-sh bgf flex ac">
+    <view class="od-shbtn fs24 tc" onTap="shsure">确认收货</view>
+  </view>
+</view>

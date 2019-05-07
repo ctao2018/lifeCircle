@@ -1,0 +1,8 @@
+{ 
+  "defaultTitle": "全部订单",
+  "pullRefresh": false,
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

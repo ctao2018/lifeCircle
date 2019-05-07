@@ -1,0 +1,139 @@
+.orderdetail{
+  width: 100%;
+}
+.od-top{
+  height: 105rpx;
+  padding: 0 32rpx;
+  border-top: 2rpx solid #eeeeee;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.od-qm{
+  height: 80rpx;
+  padding: 0 32rpx;
+  background-color: #FEFAF8;
+  margin-top: 16rpx;
+}
+.od-qmnum{
+  margin-left: 10rpx;
+}
+.ol-bxb{
+  padding: 24rpx 32rpx;
+}
+.ol-bxbl{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+}
+.ol-bxblimg{
+  width: 140rpx;
+  height: 140rpx;
+}
+.ol-bxbr{
+  flex: 1;
+}
+.ol-bxbtit{
+  line-height: 38rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 32rpx;
+}
+.ol-bxc{
+  height: 80rpx;
+  padding: 0 32rpx;
+}
+.ol-spm{
+  flex: 1;
+}
+.ol-spmtit{
+  line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.ol-spr{
+  margin-left: 25rpx;
+  text-align: right;
+}
+.ol-sprsl{
+  margin-top: 18rpx;
+}
+.od-wl{
+  padding: 30rpx 32rpx 25rpx;
+}
+.od-wlkdi{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16rpx;
+}
+.od-wlkdpic{
+  width: 44rpx;
+  height: 44rpx;
+}
+.od-wldh{
+  margin: 16rpx 0;
+}
+.od-wlfz{
+  width:90rpx;
+  height:48rpx;
+  line-height: 48rpx;
+  background:#E6E6E6;
+  border-radius:4rpx;
+  margin-left: 28rpx;
+}
+.od-dz{
+  padding: 30rpx 32rpx;
+  margin-bottom: 16rpx;
+}
+.od-dzlpic{
+  width: 68rpx;
+  height: 68rpx;
+  margin-right: 32rpx;
+}
+.od-dzr{
+  flex: 1;
+}
+.od-dzrph{
+  margin-left: 42rpx;
+}
+.od-dzrdt{
+  margin-top: 16rpx;
+  line-height: 30rpx;
+}
+.od-xx{
+  margin: 16rpx 0;
+}
+.od-xxdh{
+  height: 87rpx;
+  padding: 0 32rpx;
+}
+.od-xxtime{
+  padding: 0 32rpx;
+}
+.od-xxtimea{
+  padding: 22rpx 0 16rpx;
+}
+.od-kf{
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-bottom: 38rpx;
+}
+.od-sh{
+  height: 100rpx;
+  padding: 0 32rpx;
+  justify-content: flex-end;
+}
+.od-shbtn{
+  width:160rpx;
+  height:57rpx;
+  line-height: 57rpx;
+  border-radius:29rpx;
+  border:2rpx solid #45A4FF;
+  color: #45A4FF;
+}

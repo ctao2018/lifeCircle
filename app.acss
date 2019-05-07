@@ -30,6 +30,9 @@ page {
 .c9{
   color: #999999;
 }
+.c-c20{
+  color: #FB6C20;
+}
 .fs20{
   font-size: 20rpx;
 }

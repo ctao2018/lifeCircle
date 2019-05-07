@@ -1,0 +1,53 @@
+<view class="orderlist">
+  <view class="ol-tab bgf c3 fs24">
+    <block a:for="{{['全部','待发货','待收货','已完成','已取消']}}">
+      <view class=" {{curIndex==index?'ol-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
+    </block>
+  </view>
+  <view class="ol-big">
+    <view class="ol-bx bgf">
+      <view class="ol-bxa flex ac jb fs26">
+        <view class="c6">订单单号：938273648277374</view>
+        <view class="fw500 ol-bxar">交易成功</view>
+      </view>
+      <view class="ol-bxb flex ac">
+        <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+        <view class="ol-bxbr">
+          <view class="ol-bxbtit c3 fs26">SEESeekinxperiencneerinddderg包括专业分享、Workshop</view>
+          <view class="flex ac jb fs24">
+            <view class="c3">888 积分</view>
+            <view class="c9">X1</view>
+          </view>
+        </view>
+      </view>
+      <view class="ol-bxc flex ac c6 fs24">实付：<text class="c-c20 fs28 fw500">888</text><text class="c-c20 fs26">积分</text></view>
+    </view>
+    <view class="ol-bx bgf" onTap="toDetail">
+      <view class="ol-bxa flex ac jb fs26">
+        <view class="c6">订单单号：938273648277374</view>
+        <view class="fw500 ol-bxar">交易完成</view>
+      </view>
+      <view class="ol-bxb flex ac jb">
+        <view class="flex ">
+          <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+          <view class="ol-spm">
+            <view class="c3 fs26 ol-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
+            <view class="c9 fs22">商品尺码颜色信息在这里</view>
+          </view>
+        </view>
+        <view class="ol-spr c3 fs24">
+          <view>¥10000.00</view>
+          <view>+</view>
+          <view class="c3">888积分</view>
+          <view class="c9 fs22 ol-sprsl">X1</view>
+        </view>
+      </view>
+      <view class="ol-bxc flex ac c6 fs24">合计：<text class="c-c20 fs34 fw500">¥88+88</text><text class="c-c20 fs30">积分</text></view>
+      <view class="ol-bxd flex ac">
+        <view class="ol-bxdbtn tc fs24">再次购买</view>
+      </view>
+    </view>
+  </view>
+  <no-data a:if="{{twArr.length === 0}}"></no-data>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
+</view>

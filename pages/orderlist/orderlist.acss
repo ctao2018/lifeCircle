@@ -1,0 +1,95 @@
+.orderlist{
+  width: 100%;
+}
+.ol-tab{
+  height: 87rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.ol-tabsel{
+  position: relative;
+  color: #45A4FF;
+  font-size: 30rpx;
+}
+.ol-big{
+  margin-top: 105rpx;
+}
+.ol-bx{
+  width: 100%;
+  margin-bottom: 16rpx;
+}
+.ol-bxa{
+  height: 78rpx;
+  padding: 0 32rpx;
+}
+.ol-bxar{
+  color: #FB6C20;
+}
+.ol-bxb{
+  padding: 24rpx 32rpx;
+  background-color: #F8F8F8;
+}
+.ol-bxbl{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+}
+.ol-bxblimg{
+  width: 140rpx;
+  height: 140rpx;
+}
+.ol-bxbr{
+  flex: 1;
+}
+.ol-bxbtit{
+  line-height: 38rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 32rpx;
+}
+.ol-bxc{
+  height: 80rpx;
+  padding: 0 32rpx;
+}
+.ol-spm{
+  flex: 1;
+}
+.ol-spmtit{
+  line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.ol-spr{
+  margin-left: 25rpx;
+  text-align: right;
+}
+.ol-sprsl{
+  margin-top: 18rpx;
+}
+.ol-bxd{
+  height: 102rpx;
+  padding: 0 32rpx;
+  border-top: 2rpx solid #eeeeee;
+  justify-content: flex-end;
+}
+.ol-bxdbtn{
+  width: 160rpx;
+  height: 57rpx;
+  line-height: 57rpx;
+  border: 2rpx solid #45A4FF;
+  color: #45A4FF;
+  border-radius: 29rpx;
+}

@@ -15,5 +15,16 @@ Page({
   onReady() {
     
   },
-  
+  //点击填写收货地址
+  toAddaddr() {
+    my.navigateTo({ url: '/pages/myaddradd/myaddradd'})
+  },
+  //选择其他地址
+  toaddrlist() {
+     my.navigateTo({ url: '/pages/myaddr/myaddr'})
+  },
+  //点击提交订单
+  tjorder() {
+    my.navigateTo({ url: '/pages/orderlist/orderlist'})
+  },
 });

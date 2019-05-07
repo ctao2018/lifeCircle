@@ -23,6 +23,8 @@
     "pages/goodsxn/goodsxn",
     "pages/goodsclass/goodsclass",
     "pages/submitorder/submitorder",
+    "pages/orderlist/orderlist",
+    "pages/orderdetail/orderdetail",
     "pages/integralrule/integralrule"
     
   ],

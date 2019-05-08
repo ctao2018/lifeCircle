@@ -1,17 +1,17 @@
 const app = getApp();
-import {} from '../../config/api'
+import {queryListByUserId} from '../../config/api'
 
 Page({
   data: {
-    noAddr:false,
     check:false,
+    addrList:[],
   },
 
   onLoad() {
     
   },
   onShow() {
-   
+   this._queryListByUserId()
   },
   onReady() {
     
@@ -19,11 +19,22 @@ Page({
   toAddrAdd() {
     my.navigateTo({ url: '/pages/myaddradd/myaddradd'})
   },
-  setAddr() {
-    if(this.data.check){
+  //地址列表
+  async _queryListByUserId() {
+    let result = await queryListByUserId()
+   //console.log('addr',result)
+   if(result.data.code === 0){
+     this.setData({
+        addrList:result.data.data
+      })
+   }
+  },
+  setAddr(e) {
+    let index=e.currentTarget.dataset['index'];
+    let flagM = this.data.addrList[index].isDefault
+    console.log(flagM)
+    if(!flagM){
        this.setData({check:false,})
-     }else{
-       this.setData({check:true,})
      }
   },
   addrChange() {

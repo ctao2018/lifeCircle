@@ -1,5 +1,5 @@
 const app = getApp();
-import {} from '../../config/api'
+import {addressSave} from '../../config/api'
 
 Page({
   data: {
@@ -18,7 +18,7 @@ Page({
     
   },
   onShow() {
-   
+   console.log(app.userInfo.id)
   },
   onReady() {
     

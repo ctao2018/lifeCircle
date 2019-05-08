@@ -37,7 +37,9 @@ const api = {
   queryNewsChildrenCatalogTreeByParam,
   queryFNewsInfoPage,
   queryFNewsInfoDeatailById,
-  queryChildAreaByParentId
+  queryChildAreaByParentId,
+  queryListByUserId,
+  addressSave
 };
 
 
@@ -221,5 +223,15 @@ function queryFNewsInfoDeatailById(params) {
 //城市选择
 function queryChildAreaByParentId(params) {
   return fetchData('/sharecom/whArea/queryChildAreaByParentId', params);
+}
+
+//地址列表
+function queryListByUserId(params) {
+  return fetchData('/mall/address/queryListByUserId', params);
+}
+
+//添加或更新收货地址
+function addressSave(params) {
+  return fetchData('/mall/address/save', params,'','post');
 }
 export default api

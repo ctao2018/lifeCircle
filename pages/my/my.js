@@ -95,6 +95,14 @@ Page({
   toMyAnswer() {
     my.navigateTo({ url: '/pages/myanswer/myanswer'})
   },
+  //to 全部订单
+  toOrderlist() {
+    my.navigateTo({ url: '/pages/orderlist/orderlist'})
+  },
+  //to 收货地址
+  toMyaddr() {
+    my.navigateTo({ url: '/pages/myaddr/myaddr'})
+  },
   // 社保卡 点击
   toShebao() {
      this._queryOpenCityValidModuleInfoByParam()

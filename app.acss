@@ -105,3 +105,6 @@ page {
 .bb-e{
   border-bottom: 2rpx solid #eeeeee
 }
+.mb16{
+  margin-bottom: 16rpx;
+}

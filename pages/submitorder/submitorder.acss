@@ -9,6 +9,7 @@
   width: 100%;
   background:linear-gradient(90deg,rgba(82,84,101,1) 0%,rgba(41,42,53,1) 100%);
   border-radius:8rpx 8rpx 0rpx 0rpx;
+  box-shadow: 15rpx 0rpx 15rpx -15rpx #666, -15rpx 0rpx 15rpx -15rpx #666;
 }
 .so-addr{
   padding: 32rpx 0;

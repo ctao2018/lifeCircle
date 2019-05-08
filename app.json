@@ -25,6 +25,7 @@
     "pages/submitorder/submitorder",
     "pages/orderlist/orderlist",
     "pages/orderdetail/orderdetail",
+    "pages/goodssw/goodssw",
     "pages/integralrule/integralrule"
     
   ],

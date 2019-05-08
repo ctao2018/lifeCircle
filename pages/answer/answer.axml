@@ -38,6 +38,7 @@
           <view class="c9 fs28" onTap="closeTK">取消</view>
           <button class="fs28 fw500 ans-tkbtna" form-type="submit">添加</button>
         </view>
+        </form>
       </view>
     </view>
   </form>

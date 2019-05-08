@@ -13,7 +13,7 @@
     <view class="gc-cul clearfix">
       <block a:for="{{8}}">
         <view class="gc-cbx bgf">
-          <view class="gc-cbxpic"><image class="gc-cbximg" src="../../assets/imgaa.png" mode="scaleToFill"  /></view>
+          <view class="gc-cbxpic"><image class="gc-cbximg" src="../../assets/imgaa.png" lazy-load="true" mode="scaleToFill"  /></view>
           <view class="gc-cbxcon">
             <view class="gc-cbxctit c3 fs30 fw500">欧舒丹甜蜜樱花</view>
             <view class="flex ac gc-cbxcjf">

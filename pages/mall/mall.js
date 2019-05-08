@@ -72,6 +72,10 @@ Page({
   toexchange() {
     my.navigateTo({ url: '/pages/goodsxn/goodsxn'})
   },
+  //点击去实物的详情
+  toSWdt() {
+    my.navigateTo({ url: '/pages/goodssw/goodssw'})
+  },
   //点击 去详情
   todetail() {
     my.navigateTo({ url: '/pages/submitorder/submitorder'})

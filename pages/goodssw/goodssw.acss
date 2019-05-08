@@ -1,0 +1,105 @@
+.goodssw{
+  width: 100%;
+}
+.gsw-swiper-item{
+  height: 750rpx;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+}
+.gsw-xx{
+  padding: 16rpx 32rpx 0;
+}
+.gsw-tit{
+  margin: 10rpx 0;
+  line-height: 48rpx;
+}
+.gsw-xxdt{
+  padding-bottom: 24rpx;
+}
+.gsw-xxyj{
+  text-decoration: line-through;
+}
+.gsw-tab{
+  padding: 42rpx 0 62rpx;
+}
+.gsw-tabc{
+  color: #999999;
+}
+.gsw-tabSel{
+  color: #45A4FF;
+  position: relative;
+}
+.gsw-tabSel:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -20rpx;
+  width: 124rpx;
+  height: 4rpx;
+  margin-left: -62rpx;
+  background-color: #45A4FF;
+}
+.gsw-xq{
+  padding: 32rpx;
+  margin-bottom: 100rpx;
+}
+.gsw-btn{
+  width: 100%;
+  height: 94rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #45A4FF;
+}
+.gsw-tk{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.65);
+  z-index: 99;
+}
+.gsw-tkbx{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 817rpx;
+  border-radius: 14rpx 14rpx 0rpx 0rpx;
+}
+.gsw-tktop{
+  padding: 32rpx 32rpx 48rpx;
+}
+.gsw-tktopl{
+  width: 218rpx;
+  height: 218rpx;
+  overflow: hidden;
+  margin-right: 24rpx;
+  border-radius:4rpx;
+}
+.gsw-tktopimg{
+  width: 218rpx;
+  height: 218rpx;
+}
+.gsw-tktopr{
+  flex:1;
+}
+.gsw-tknum{
+  height: 92rpx;
+  border-top: 2rpx solid #eeeeee;
+  border-bottom: 2rpx solid #eeeeee;
+  padding: 0 32rpx;
+}
+.am-stepper-content{
+  padding: 0;
+  line-height: 45rpx;
+  font-size: 32rpx;
+}
+.am-stepper-input{
+  margin-top: 10rpx;
+}

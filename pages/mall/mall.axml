@@ -21,7 +21,7 @@
     <view class="m-cul clearfix">
       <block a:for="{{3}}">
         <view class="m-cbx tc">
-          <view class="m-cbxpic"><image class="m-cbximg" src="{{userMsg.headAddress}}" mode="scaleToFill"  /></view>
+          <view class="m-cbxpic" onTap="toSWdt"><image class="m-cbximg" src="{{userMsg.headAddress}}" lazy-load="true" mode="scaleToFill"  /></view>
           <view class="fs30 c3 tc m-cbxtit">欧舒丹甜蜜樱桃啦啦啦</view>
           <view class="m-cbxjf flex ac jc">
             <view class="m-cbxjfl fs32 fw500">888</view>
@@ -41,9 +41,9 @@
   </view>
   <view class="m-cbig">
     <view class="m-cul clearfix">
-      <block a:for="{{6}}">
+      <block a:for="{{9}}">
         <view class="m-cbx tc mb32" onTap="todetail">
-          <view class="m-cbxpic"><image class="m-cbximg" src="{{userMsg.headAddress}}" mode="scaleToFill"  /></view>
+          <view class="m-cbxpic"><image class="m-cbximg" src="{{userMsg.headAddress}}" lazy-load="true" mode="scaleToFill"  /></view>
           <view class="fs30 c3 tc m-cbxtit">欧舒丹甜蜜樱桃</view>
           <view class="m-cbxjf flex ac jc">
             <view class="m-cbxjfl fs32 fw500">888</view>

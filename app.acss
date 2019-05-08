@@ -75,6 +75,9 @@ page {
 .fw600{
   font-weight: 600;
 }
+.lh33{
+  line-height: 33rpx;
+}
 .lh40{
   line-height: 40rpx;
 }

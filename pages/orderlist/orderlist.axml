@@ -48,6 +48,9 @@
       </view>
     </view>
   </view>
-  <view class="ol-nolist tc" a:if="{{!listFg}}"><image class="ol-nolisti" src="../../assets/list_no.png" mode="scaleToFill" /></view>
+  <view class="ol-nolist tc" a:if="{{!listFg}}">
+    <image class="ol-nolisti" src="../../assets/list_no.png" mode="scaleToFill" />
+    <view class="c9 fs32 ol-nolistn tc">暂无订单</view>
+  </view>
   <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

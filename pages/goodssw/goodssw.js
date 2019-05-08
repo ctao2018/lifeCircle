@@ -28,12 +28,22 @@ Page({
       currentTabsIndex:index,
     })
   },
-  //点击购买按钮出弹框
+  //点击购买按钮
   showTK() {
-    this.setData({showTKbx:true,})
+    if(!this.data.showTKbx){
+      this.setData({showTKbx:true,})
+    }else{
+      this.setData({showTKbx:false,})
+    }
+    
   },
   //选择数量
   callBackFn(value){
    console.log(value);
   },
+  //关闭弹框
+  closeTK() {
+    this.setData({showTKbx:false,})
+  },
+  
 });

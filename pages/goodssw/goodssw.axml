@@ -1,4 +1,4 @@
-<view class="goodssw">
+<view class="goodssw bgf">
   <swiper
       indicator-color="#E8E8E8"
       indicator-active-color="#3CA0FF"
@@ -13,7 +13,7 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class="gsw-xx bgf">
+  <view class="gsw-xx ">
     <view class="fs36 c-c20"><text class="fs38 fw500">¥188 + 188</text>积分</view>
     <view class="gsw-tit c3 fs34 fw500">经典棒球帽1996 DHEHGN经典</view>
     <view class="flex ac jb cc fs22 bb-e gsw-xxdt">
@@ -22,12 +22,12 @@
       <view>快递:免运费</view>
     </view>
   </view>
-  <view class="gsw-tab flex ac ja bgf bb-e">
+  <view class="gsw-tab flex ac ja  bb-e">
       <block a:for="{{['商品描述','配送说明']}}">
         <view class="gsw-tabc fs32 {{currentTabsIndex==index?'gsw-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
       </block>
     </view>
-  <view class="gsw-xq bgf" a:if="{{currentTabsIndex === 0}}">
+  <view class="gsw-xq " a:if="{{currentTabsIndex === 0}}">
     <view class="c3 fs32 lh48">
       <text>第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
       第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
@@ -35,8 +35,18 @@
       第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。</text>
     </view>
   </view>
-  <view class="gsw-btn cf fs36 flex ac jc" onTap="showTK">立即购买</view>
+  <view class="gsw-ps" a:if="{{currentTabsIndex === 1}}">
+    <view class="gsw-psbx">
+      <view class="gsw-psbxa c3 fs28 fw500 flex ac"><view class="gsw-psbxai"></view>关于发货</view>
+      <view class="c9 fs28">预计5个工作日内发货</view>
+    </view>
+    <view class="gsw-psbx">
+      <view class="gsw-psbxa c3 fs28 fw500 flex ac"><view class="gsw-psbxbi"></view>关于退换货</view>
+      <view class="c9 fs28">如需退换货请联系客服，非质量问题概不退换。</view>
+    </view>
+  </view>
   <view class="gsw-tk" a:if="{{showTKbx}}">
+    <view class="gsw-bg" onTap="closeTK"></view>
     <view class="gsw-tkbx bgf">
       <view class="gsw-tktop flex ">
         <view class="gsw-tktopl"><image class="gsw-tktopimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
@@ -50,7 +60,7 @@
         <view class="c9 fs32">购买数量</view>
         <stepper onChange="callBackFn" step="{{1}}" showNumber readOnly="{{false}}" value="{{valueNum}}" min="{{1}}" max="{{12}}" />
       </view>
-      <view>立即购买</view>
     </view>
   </view>
+  <view class="gsw-btn cf fs36 flex ac jc" onTap="showTK">立即购买</view>
 </view>

@@ -61,8 +61,16 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 9;
+}
+.gsw-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0,0,0,0.65);
-  z-index: 99;
+  z-index: 90;
 }
 .gsw-tkbx{
   position: absolute;
@@ -71,6 +79,7 @@
   right: 0;
   height: 817rpx;
   border-radius: 14rpx 14rpx 0rpx 0rpx;
+  z-index: 99;
 }
 .gsw-tktop{
   padding: 32rpx 32rpx 48rpx;
@@ -102,4 +111,41 @@
 }
 .am-stepper-input{
   margin-top: 10rpx;
+}
+.gsw-tkbtn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 94rpx;
+  line-height: 94rpx;
+  background-color: #45A4FF;
+  z-index: 109;
+}
+.gsw-ps{
+  margin-bottom: 200rpx;
+}
+.gsw-psbx{
+  background-color: #F7F7F7;
+  margin-bottom: 24rpx;
+  padding: 24rpx 32rpx;
+}
+.gsw-psbxa{
+  margin-bottom: 24rpx;
+}
+.gsw-psbxai{
+  width: 41rpx; 
+  height:34rpx;
+  background: url('../../assets/fahuo.png');
+  background-repeat: no-repeat;
+  background-size: 41rpx 34rpx;
+  margin-right: 20rpx;
+}
+.gsw-psbxbi{
+  width: 34rpx; 
+  height:34rpx;
+  background: url('../../assets/tuihuo.png');
+  background-repeat: no-repeat;
+  background-size: 34rpx 34rpx;
+  margin-right: 20rpx;
 }

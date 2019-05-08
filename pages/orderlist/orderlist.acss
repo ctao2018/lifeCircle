@@ -94,10 +94,13 @@
   border-radius: 29rpx;
 }
 .ol-nolist{
-  margin-top: 380rpx;
+  margin-top: 180rpx;
 }
 .ol-nolisti{
   display: inline-block;
   width: 333rpx;
   height: 230rpx;
+}
+.ol-nolistn{
+  margin-top: 60rpx;
 }

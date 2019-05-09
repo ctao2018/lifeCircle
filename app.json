@@ -26,6 +26,7 @@
     "pages/orderlist/orderlist",
     "pages/orderdetail/orderdetail",
     "pages/goodssw/goodssw",
+    "pages/myaddrch/myaddrch",
     "pages/integralrule/integralrule"
     
   ],

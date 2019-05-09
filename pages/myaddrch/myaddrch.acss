@@ -1,0 +1,58 @@
+.adddz{
+  width: 100%;
+}
+.ad-bx{
+  border-top: 2rpx solid #eeeeee;
+  padding: 0 0 0 32rpx;
+  margin-bottom: 38rpx;
+}
+.ad-bxli{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #eeeeee;
+}
+.ad-bxlil{
+  width: 150rpx;
+}
+.ad-bxlirinp{
+  flex: 1 1 0%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0;
+  background: 0px 0px;
+  box-sizing: border-box;
+  margin-right: 32rpx;
+}
+.ad-bxlira{
+  flex: 1 1 0%;
+}
+.ad-btl{
+  display: flex;
+  align-items: center;
+  padding: 0 34rpx;
+}
+.ad-btlradio{
+  width: 40rpx; 
+  height:40rpx;
+  background: url('../../assets/radiono.png');
+  background-repeat: no-repeat;
+  background-size: 40rpx 40rpx;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.ad-btlradioSel{
+  background: url('../../assets/radioyes.png');
+  background-repeat: no-repeat;
+  background-size: 40rpx 40rpx;
+}
+.ad-btnbx{
+  margin: 60rpx 0;
+  padding: 0 32rpx;
+}
+.ad-btna{
+  width: 100%;
+  height: 94rpx;
+  line-height: 94rpx;
+  background-color: #45A4FF;
+}

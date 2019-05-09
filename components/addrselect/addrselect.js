@@ -15,6 +15,7 @@ Component({
       countys: [],
       countysData: [],
       county: '',
+      countyID: '',
       value: [0, 0, 0],
       values: [0, 0, 0],
       cityData: '',
@@ -63,6 +64,7 @@ Component({
               citys: citys,
               citysData:citydata,
               city:citys[0],
+              cityID:citydata[0].id,
             })
           }
         }
@@ -91,15 +93,21 @@ Component({
           parentId:this.data.cityID,
         })
           let listdata = result.data.data
+          //console.log(listdata)
           let countys = []
           if(result.data.code ===0){
             for (let i = 0; i < listdata.length; i++) {
               countys.push(listdata[i].name);
             }
+            let couid = ''
+            if(listdata.length>0){
+              couid = listdata[0].id
+            }
             this.setData({
               countys: countys,
               countysData:listdata,
-               county: countys[0]
+               county: countys[0],
+               countyID:couid,
             })
           }
       },
@@ -113,8 +121,9 @@ Component({
             provinceID:this.data.provincesData[val[0]].id,
             citys: [],
             citysData:[],
-            county: [],
+            county: '',
             countys: [],
+            countysData:[],
             values: val,
             value: [val[0], 0, 0]
           })
@@ -125,7 +134,7 @@ Component({
           this.setData({
             cityID:this.data.citysData[val[1]].id,
             city: this.data.citys[val[1]],
-            county: [],
+            county: '',
             countys: [],
             values: val,
             value: [val[0], val[1], 0]
@@ -136,13 +145,14 @@ Component({
         if (val[2] != t[2]) {
           this.setData({
             county: this.data.countys[val[2]],
+            countyID:this.data.countysData[val[2]].id,
             values: val
           })
           return;
         }
       },
     handleOk() {
-      let address=[this.data.province,this.data.city,this.data.county];
+      let address=[this.data.province,this.data.city,this.data.county,this.data.cityID,this.data.countyID];
       this.props.onChange(address)
     },
     handleNo() {

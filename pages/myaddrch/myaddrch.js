@@ -1,5 +1,5 @@
 const app = getApp();
-import {addressSave} from '../../config/api'
+import {addressSave,addressDetail} from '../../config/api'
 
 Page({
   data: {
@@ -14,16 +14,39 @@ Page({
     addrDt:'',
     areaCode:'',
     pushFlag:false,
+    id:'',
+    addrdt:[],
   },
 
-  onLoad() {
-    
+  onLoad(options) {
+    if(options){
+      this.setData({
+        id:options.id,
+      })
+    }
   },
   onShow() {
-   
+    this._addressDetail()
   },
   onReady() {
     
+  },
+  //地址详情
+  async _addressDetail() {
+    let result = await addressDetail(this.data.id)
+   console.log('dt',result)
+   if(result.data.code === 0){
+     this.setData({
+        addrdt:result.data.data,
+        name:result.data.data.userName,
+        phone:result.data.data.telNumber,
+        addrDt:result.data.data.detailInfo,
+        province:result.data.data.provinceName,
+        city:result.data.data.cityName,
+        county:result.data.data.countyName,
+        check:result.data.data.isDefault,
+      })
+   }
   },
   //点击省市区
   selCity() {
@@ -47,14 +70,14 @@ Page({
     }
     
   },
-  //添加地址
+  //修改地址
   async _addressSave() {
     let result = await addressSave({
       areaCode: this.data.areaCode,
       cityName: this.data.city,
       countyName: this.data.county,
       detailInfo: this.data.addrDt,
-      id: '',
+      id: this.data.id,
       isDefault: this.data.check,
       nationalCode: 'CN',
       postalCode: '',
@@ -63,10 +86,10 @@ Page({
       userId: app.userInfo.id,
       userName: this.data.name
     })
-   console.log('添加地址',result)
+   console.log('修改地址',result)
    if(result.data.code ===0){
      my.showToast({
-      content: '添加成功',
+      content: '修改成功',
       success: () => {
        my.navigateBack()
       },
@@ -75,7 +98,7 @@ Page({
   },
   //点击保存按钮
    saveBtn() {
-     console.log(this.data.name,this.data.phone,this.data.province,this.data.addrDt,)
+     //console.log(this.data.name,this.data.phone,this.data.province,this.data.addrDt,)
      if(!this.data.name){
         my.showToast({
           content: '请输入姓名'

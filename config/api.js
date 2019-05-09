@@ -39,7 +39,9 @@ const api = {
   queryFNewsInfoDeatailById,
   queryChildAreaByParentId,
   queryListByUserId,
-  addressSave
+  addressSave,
+  addressDelete,
+  addressDetail
 };
 
 
@@ -232,6 +234,16 @@ function queryListByUserId(params) {
 
 //添加或更新收货地址
 function addressSave(params) {
-  return fetchData('/mall/address/save', params,'','post');
+  return fetchData('/mall/address/save', params,'post');
+}
+
+//收货地址 删除
+function addressDelete(params) {
+  return fetchData('/mall/address/delete/'+params,'','post');
+}
+
+//收货地址 详情
+function addressDetail(params) {
+  return fetchData('/mall/address/detail/'+params);
 }
 export default api

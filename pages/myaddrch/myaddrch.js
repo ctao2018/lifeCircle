@@ -34,7 +34,7 @@ Page({
   //地址详情
   async _addressDetail() {
     let result = await addressDetail(this.data.id)
-   console.log('dt',result)
+   //console.log('dt',result)
    if(result.data.code === 0){
      this.setData({
         addrdt:result.data.data,
@@ -54,7 +54,7 @@ Page({
   },
   //点击省市区 返回结果
   onChange(val,code) {
-    console.log("com",val)
+    //console.log("com",val)
     this.setData({showAddr:false})
     if(val) {
       if(val[4]){
@@ -86,7 +86,7 @@ Page({
       userId: app.userInfo.id,
       userName: this.data.name
     })
-   console.log('修改地址',result)
+   //console.log('修改地址',result)
    if(result.data.code ===0){
      my.showToast({
       content: '修改成功',

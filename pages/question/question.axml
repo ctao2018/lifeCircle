@@ -20,7 +20,7 @@
         </view>  
       </view>
     </view>
-    <button class="que-btar" form-type="submit">发布</button>
+    <button class="que-btar" form-type="submit">提交</button>
   </form>
-  <view class="que-btip">温馨提示：问题经审核后发布到悬赏问答，其他用户回答后系统审核最优答案（只采纳一位用户的回答）。提问人和所有回答人都将获得相应积分奖励。点击我的-积分查看积分规则。</view>
+  <view class="que-btip">温馨提示：咨询后，可点击“我的”-“我的咨询”查看答案，成功咨询可获得积分奖励，奖励可用于积分商城礼品兑换。</view>
 </view>

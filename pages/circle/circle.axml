@@ -6,7 +6,7 @@
       </block>
     </view>
   </view>
-  <view class="cir-list" a:if="{{currentTabsIndex == 0}}">
+  <view class="cir-list" a:if="{{currentTabsIndex == 100}}">
     <block a:for="{{ansArr}}">
       <view class="home-wdbx" >
         <view class="home-tit" data-index="{{index}}" onTap="toDetailFn">{{item.lists.title}}</view>
@@ -70,7 +70,7 @@
       </view>
     </block>
   </view> -->
-  <view a:if="{{currentTabsIndex == 1 || currentTabsIndex == 2}}" class="{{currentTabsIndex==1?'cir-listb':''}} {{currentTabsIndex==2?'cir-list':''}} ">
+  <view  class="cir-list {{chFlag?'cir-listb':''}}">
     <view class="home-newstop" a:if="{{showtyNews}}">
       <block a:for="{{typeNews}}">
         <view class="home-newstopa {{newstapindx==index?'home-newstopsel':''}}" onTap="newsClick" data-index="{{index}}">{{item.name}}</view>
@@ -94,7 +94,7 @@
     </view> -->
     
   </view>
-  <view a:if="{{currentTabsIndex !== 0 && currentTabsIndex !== 1 && currentTabsIndex !== 2}}">
+  <view a:if="{{currentTabsIndex >5}}">
     <view class="home-morenodata c9 fs24 tc">暂无数据！</view>
   </view>
    <bottom-line a:if="{{showbtline}}"></bottom-line>

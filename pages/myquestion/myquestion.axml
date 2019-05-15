@@ -1,6 +1,6 @@
 <view class="myquestion">
   <view class="mq-tab bgf c6 fs28">
-    <block a:for="{{['已回复','发布中','未通过']}}">
+    <block a:for="{{['已回复','未通过']}}">
       <view class=" {{curIndex==index?'mq-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
     </block>
   </view>

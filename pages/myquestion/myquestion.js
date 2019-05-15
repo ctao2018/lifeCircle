@@ -50,14 +50,15 @@ Page({
       this.setData({
         yesFlag:false,
         noFlag:true,
-        isReplay:'YW',
-      })
-    }else if(index === 2){
-      this.setData({
-        yesFlag:false,
-        noFlag:true,
+        //isReplay:'YW',
         isReplay:'N',
       })
+    }else if(index === 2){
+      // this.setData({ //0515改版
+      //   yesFlag:false,
+      //   noFlag:true,
+      //   isReplay:'N',
+      // })
     }else{
       this.setData({
         yesFlag:true,

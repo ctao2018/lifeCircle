@@ -344,7 +344,7 @@
   left: 50%;
   bottom: 12rpx;
   /* margin-left: -180rpx;  0515改版 */
-  margin-left: -119rpx;
+  margin-left: -116rpx;
   /* border-radius: 36rpx;
   box-shadow: 0px 6px 10px 0px rgba(69, 151, 255,0.3);
   overflow: hidden; */
@@ -366,11 +366,11 @@
   background-size: 180rpx 140rpx;
 }
 .home-twbtn{
-  width: 238rpx; 
-  height:122rpx;
+  width: 232rpx; 
+  height:113rpx;
   background: url('../../assets/sbzx.png');
   background-repeat: no-repeat;
-  background-size: 238rpx 122rpx;
+  background-size: 232rpx 113rpx;
 }
 .home-wdboxl{
   width: 50%;

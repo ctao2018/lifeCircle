@@ -77,7 +77,8 @@ Page({
   },
   //点击去个人主页
   toPersonal() {
-    my.navigateTo({ url: '/pages/personalpage/personalpage?id='+this.data.userMsg.id})
+    //my.navigateTo({ url: '/pages/personalpage/personalpage?id='+this.data.userMsg.id})
+    my.navigateTo({ url: '/pages/personalinfo/personalinfo'})
   },
   //点击去积分页面
   toJF() {

@@ -70,6 +70,6 @@
     <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
   <view class="sea-btnbx bgf" a:if="{{showbtn}}">
-    <view class="sea-btntw fs26 cf tc" onTap="toQuestion">去提问</view>
+    <view class="sea-btntw fs26 cf tc" onTap="toQuestion">去咨询</view>
   </view>
 </view>

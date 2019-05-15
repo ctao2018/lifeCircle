@@ -10,10 +10,13 @@ Page({
     isHot:'',
     showbtline:false,
     newstapindx:0,
-    typeArr:[{name:'问答',catalogNo:'',children:[]}],
+    // typeArr:[{name:'问答',catalogNo:'',children:[]}], //0515改版
+    typeArr:[],
     typeNews:[],
     showtyNews:false,
     catalogNo:'',
+    chFlag:false,
+    newsArr:[],
   },
 
   onLoad() {
@@ -59,39 +62,63 @@ Page({
       currentTabsIndex:index,
       showbtline:false,
     })
-    if(index === 1 || index === 2){
-      if(this.data.typeArr[index].children.length>0){
-        this.setData({
-          typeNews:this.data.typeArr[index].children,
-          showtyNews:true,
-          catalogNo:this.data.typeArr[index].children[0].catalogNo,
-          newstapindx:0,
-          })
-      }else{
-        this.setData({
-          typeNews:[],
-          showtyNews:false,
-          catalogNo:this.data.typeArr[index].catalogNo,
-          })
-      }
+    if(this.data.typeArr[index].children.length>0){
       this.setData({
-        pageNum:1,
-        ansArr:[],
-        pagesNews:'',
-        pages:'',
-        newsArr:[],
-      })
-      this._queryFNewsInfoPage()
+        typeNews:this.data.typeArr[index].children,
+        showtyNews:true,
+        catalogNo:this.data.typeArr[index].children[0].catalogNo,
+        newstapindx:0,
+        chFlag:true,
+        })
     }else{
       this.setData({
-        pageNum:1,
-        ansArr:[],
-        isHot:'',
+        typeNews:[],
         showtyNews:false,
-        newsArr:[],
-      })
-      this._questionAnwserPage()
+        catalogNo:this.data.typeArr[index].catalogNo,
+        chFlag:false,
+        })
     }
+    this.setData({
+      pageNum:1,
+      ansArr:[],
+      pagesNews:'',
+      pages:'',
+      newsArr:[],
+    })
+    this._queryFNewsInfoPage()
+    // if(index === 1 || index === 2){ //0515改版
+    //   if(this.data.typeArr[index].children.length>0){
+    //     this.setData({
+    //       typeNews:this.data.typeArr[index].children,
+    //       showtyNews:true,
+    //       catalogNo:this.data.typeArr[index].children[0].catalogNo,
+    //       newstapindx:0,
+    //       })
+    //   }else{
+    //     this.setData({
+    //       typeNews:[],
+    //       showtyNews:false,
+    //       catalogNo:this.data.typeArr[index].catalogNo,
+    //       })
+    //   }
+    //   this.setData({
+    //     pageNum:1,
+    //     ansArr:[],
+    //     pagesNews:'',
+    //     pages:'',
+    //     newsArr:[],
+    //   })
+    //   this._queryFNewsInfoPage()
+    // }else{
+    //   this.setData({
+    //     pageNum:1,
+    //     ansArr:[],
+    //     isHot:'',
+    //     showtyNews:false,
+    //     newsArr:[],
+    //   })
+    //   this._questionAnwserPage()
+    // }
   },
   //新闻二级菜单 点击
   newsClick(e) {

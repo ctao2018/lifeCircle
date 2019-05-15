@@ -343,13 +343,14 @@
   position: fixed;
   left: 50%;
   bottom: 12rpx;
-  margin-left: -180rpx;
+  /* margin-left: -180rpx;  0515改版 */
+  margin-left: -119rpx;
   /* border-radius: 36rpx;
   box-shadow: 0px 6px 10px 0px rgba(69, 151, 255,0.3);
   overflow: hidden; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   z-index: 92;
 }
 .home-twhdl{
@@ -363,6 +364,13 @@
   background: url('../../assets/hd_f.png');
   background-repeat: no-repeat;
   background-size: 180rpx 140rpx;
+}
+.home-twbtn{
+  width: 238rpx; 
+  height:122rpx;
+  background: url('../../assets/sbzx.png');
+  background-repeat: no-repeat;
+  background-size: 238rpx 122rpx;
 }
 .home-wdboxl{
   width: 50%;

@@ -1,5 +1,9 @@
 <view class="mall bgf">
-  <view class="m-top flex ac jb">
+  <view class="mall-ibx tc">
+    <image class="mall-img" src="../../assets/mall_blank.png" mode="scaleToFill" />
+  </view>
+  <view class="c9 fs32 tc">开发中...</view>
+  <!-- <view class="m-top flex ac jb">
     <view class="flex ac">
       <view class="m-toplpic"><image class="m-toplimg" src="{{userMsg.headAddress}}" mode="scaleToFill"  /></view>
       <view class="c3 fs32">{{userMsg.nickName}}</view>
@@ -52,5 +56,5 @@
         </view>
       </block>
     </view>
-  </view>
+  </view> -->
 </view>

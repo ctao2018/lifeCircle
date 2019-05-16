@@ -167,7 +167,7 @@ Page({
     let result = await queryNewsChildrenCatalogTreeByParam({
       siteNo:'news'
     })
-    console.log('queryNewsChildrenCatalogTreeByParam',result)
+    //console.log('queryNewsChildrenCatalogTreeByParam',result)
     let list = result.data.data
     this.data.typeArr = this.data.typeArr.concat(list)
     this.setData({

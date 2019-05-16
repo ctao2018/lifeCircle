@@ -13,8 +13,9 @@
     </view>
   </view>
   <view class="cd-bx bgf">
-    <view class="rew-bxtop">
-      <view class="rew-bxtopl" onTap="toPersonal">
+    <view class="rew-bxtop bb-e">
+      <view class="c3 fs32 fw500">专业解答</view>
+      <!-- <view class="rew-bxtopl" onTap="toPersonal"> //0515改版
         <view class="rew-bxtopli"><image class="rew-bxthd" src="{{detail.headAddress}}" mode="scaleToFill" /></view>
         <view class="">
           <view class="rew-bxtoplname c6 fs28 ">{{detail.nickName}}</view>
@@ -24,7 +25,7 @@
       <view class="rew-bxtopr cc fs20">
         <view>{{detail.visitNumber}} 浏览</view>
         <view>{{detail.publishTime}}</view>
-      </view>
+      </view> -->
     </view>
     <view class="cd-bxcon c3 fs32">{{detail.answer}}</view>
     <view class="cd-bxpic clearfix">
@@ -38,13 +39,16 @@
         <view class="cd-bxcla c9 fs24">{{item}}</view>
       </block>
     </view>
+    <view class="bb-e cd-chtime"><text class="c9 fs24">{{detail.publishTime}}</text></view>
     <block a:if="{{detail.isPraiseByCurrentUser === 'Y'}}">
       <view class="tc cd-bxzan"><view class="cd-bxzani cd-bxzaniSel " onTap="zanDone"></view></view>
-      <view class="tc fs28 cd-bxzantxt cd-bxzantxtSel">{{praiseNumber}} 人赞</view>
+      <!-- <view class="tc fs28 cd-bxzantxt cd-bxzantxtSel">{{praiseNumber}} 人赞</view> -->
+      <view class="tc fs28 cd-bxzantxt cd-bxzantxtSel">已解决</view>
     </block>
     <block a:if="{{detail.isPraiseByCurrentUser === 'N'}}">
       <view class="tc cd-bxzan"><view class="cd-bxzani {{zanY?'cd-bxzaniSel':''}}" onTap="zanClick"></view></view>
-      <view class="tc fs28 cd-bxzantxt {{zanY?'cd-bxzantxtSel':''}}">{{praiseNumber}} 人赞<view class="cd-dzadd {{zanY?'cd-dzaddSel':''}}">+1</view></view>
+      <!-- <view class="tc fs28 c6 cd-bxzantxt {{zanY?'cd-bxzantxtSel':''}}">{{praiseNumber}} 人赞<view class="cd-dzadd {{zanY?'cd-dzaddSel':''}}">+1</view></view> -->
+      <view class="tc fs28 cc cd-bxzantxt {{zanY?'cd-bxzantxtSel':''}}">已解决</view>
     </block>
   </view>
   

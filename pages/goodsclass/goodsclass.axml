@@ -11,18 +11,23 @@
   </view>
   <view class="gc-big">
     <view class="gc-cul clearfix">
-      <block a:for="{{8}}">
+      <block a:for="{{goodsList}}" data-index="{{index}}">
         <view class="gc-cbx bgf">
-          <view class="gc-cbxpic"><image class="gc-cbximg" src="../../assets/imgaa.png" lazy-load="true" mode="scaleToFill"  /></view>
+          <view class="gc-cbxpic"><image class="gc-cbximg" src="{{item.listPicUrl}}" lazy-load="true" mode="aspectFill"  /></view>
           <view class="gc-cbxcon">
-            <view class="gc-cbxctit c3 fs30 fw500">欧舒丹甜蜜樱花</view>
+            <view class="gc-cbxctit c3 fs30 fw500">{{item.name}}</view>
             <view class="flex ac gc-cbxcjf">
-              <view class="fs36 fw500">88</view>
-              <view class="fs34 gc-cbxcjfr">积分</view>
+              <view class="m-cbxjfl fs28 fw500">
+                <text a:if="{{item.goodsIntegral}}">{{item.goodsIntegral}}积分 </text>
+                <text a:if="{{item.goodsIntegral && item.retailPrice >0}}"> + </text>
+                <text a:if="{{item.retailPrice >0}}">¥{{item.retailPrice}}</text>
+              </view>
             </view>
           </view>
         </view>
       </block>
+      <no-data a:if="{{goodsList.length === 0}}"></no-data>
     </view>
   </view>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

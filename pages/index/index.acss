@@ -102,8 +102,8 @@
   border-bottom: 1px solid #dddddd;
 }
 .home-wdtimg{
-  width: 175rpx;
-  height: 47rpx;
+  width: 144rpx;
+  height: 48rpx;
   margin-left: 27rpx;
 }
 .home-wdth{

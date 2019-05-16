@@ -41,7 +41,8 @@ const api = {
   queryListByUserId,
   addressSave,
   addressDelete,
-  addressDetail
+  addressDetail,
+  goodspage
 };
 
 
@@ -245,5 +246,10 @@ function addressDelete(params) {
 //收货地址 详情
 function addressDetail(params) {
   return fetchData('/mall/address/detail/'+params);
+}
+
+//(新品推荐、热门热卖）、商品列表页
+function goodspage(params) {
+  return fetchData('/mall/notGrant/goods/page', params);
 }
 export default api

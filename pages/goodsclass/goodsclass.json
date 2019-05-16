@@ -2,5 +2,7 @@
   "defaultTitle": "商品分类",
   "pullRefresh": false,
   "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
   }
 }

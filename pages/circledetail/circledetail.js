@@ -44,16 +44,16 @@ Page({
     if(this.data.zanFlag){
       this._praiseQuestionAnwser()
     }else{
-      my.showToast({
-        content: '你已经点过赞啦~'
-      });
+      // my.showToast({  //0515改版
+      //   content: '你已经点过赞啦~'
+      // });
     }
   },
   //点赞完后再点 没用
   zanDone() {
-    my.showToast({
-      content: '你已经点过赞啦~'
-    });
+    // my.showToast({ //0515改版
+    //   content: '你已经点过赞啦~'
+    // });
   },
   //点击展开
   showZKtxt() {

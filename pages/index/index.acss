@@ -433,7 +433,7 @@
 }
 .home-newsbb{
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   border-bottom: 2rpx solid #eeeeee;
 }

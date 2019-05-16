@@ -49,7 +49,7 @@
         "pagePath": "pages/circle/circle",
         "icon": "assets/tabbar_circle_default.png",
         "activeIcon": "assets/tabbar_circle_selected.png",
-        "name": "圈子"
+        "name": "看看"
       },
       {
         "pagePath": "pages/mall/mall",

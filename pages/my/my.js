@@ -5,6 +5,7 @@ Page({
   data: {
     userMsg:[],
     unRead:[],
+    headpic:'../../assets/headss.png'
   },
 
   onLoad() {
@@ -60,7 +61,10 @@ Page({
     console.log('我的',result)
     if(result.data.code === 0){
       app.userInfo = result.data.data
-      this.setData({userMsg:result.data.data,})
+      this.setData({
+        userMsg:result.data.data,
+        headpic:result.data.data.headAddress,
+      })
     }else{
       console.log(result)
     }

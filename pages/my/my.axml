@@ -3,7 +3,7 @@
     <view class="my-hdbg">
       <view class="my-hdcon">
         <view class="my-hdconl">
-          <view class="my-hdconli"><image class="my-hdconlimg" src="{{userMsg.headAddress}}" mode="scaleToFill" /></view>
+          <view class="my-hdconli"><image class="my-hdconlimg" src="{{headpic}}" mode="scaleToFill" /></view>
           <view class="my-hdconlname cf fs38">{{userMsg.nickName}}</view>
         </view>
         <view class="my-hdconr" onTap="toPersonal"></view>

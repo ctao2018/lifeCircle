@@ -141,11 +141,12 @@ Page({
     console.log(result)
     if(result.data.code === 0){
       my.alert({
-        title: '发布成功',
-        content: result.data.message,
-        buttonText: '确定',
+        title: '提交成功',
+        content: '提问由专人解答，请您耐心等待。先看看社保资讯吧',
+        buttonText: '好',
         success: () => {
-          my.redirectTo({url: '/pages/myquestion/myquestion'})
+          //my.redirectTo({url: '/pages/myquestion/myquestion'})
+          my.switchTab({url: '/pages/circle/circle'})
         },
       });
     }else{

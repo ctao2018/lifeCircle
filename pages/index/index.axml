@@ -97,20 +97,21 @@
       </block>
     </view>
     <block a:for="{{newsArr}}">
-      <view class="home-newsbx bgf" data-index="{{index}}" onTap="toNewsDetail">
+      <view class="home-newsbx bgf" a:if="{{item.isPicture}}" data-index="{{index}}" onTap="toNewsDetail">
+        <view class="home-newsbb">
+          <view class="home-newsbbl">
+            <view class="home-newsbxtitb fs34 c3 fw500">{{item.title}}</view>
+            <view class="c9 fs24">{{item.publishTime}}</view>
+          </view>
+          <image class="home-newspic" src="{{item.pictureUrl}}" mode="aspectFill" />
+        </view>
+      </view>
+      <view class="home-newsbx bgf" a:else data-index="{{index}}" onTap="toNewsDetail">
         <view class="home-newsbxtit fs34 c3 fw500">{{item.title}}</view>
         <view class="c9 fs24 home-newsbxdy">{{item.publishTime}}</view>
       </view>
     </block>
-    <!-- <view class="home-newsbx bgf">
-      <view class="home-newsbb">
-        <view class="home-newsbbl">
-          <view class="home-newsbxtitb fs34 c3 fw500">国新办举行《降低社会保险费率综合方案》有关情况吹风会</view>
-          <view class="c9 fs24">2029-02-02</view>
-        </view>
-        <image class="home-newspic" src="../../assets/imgaa.png" mode="aspectFill" />
-      </view>
-    </view> -->
+    
     
   </view>
   <view a:if="{{currentTabsIndex > 5}}">

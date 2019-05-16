@@ -14,7 +14,7 @@ Page({
     typeArr:[],
     typeNews:[],
     showtyNews:false,
-    catalogNo:'',
+    catalogNo:'hot',
     chFlag:false,
     newsArr:[],
   },
@@ -26,6 +26,7 @@ Page({
       this.auth()
     }
     this._queryNewsChildrenCatalogTreeByParam()
+    this._queryFNewsInfoPage()
   },
   onShow() {
    this.setData({
@@ -48,7 +49,9 @@ Page({
     //console.log('queryNewsChildrenCatalogTreeByParam',result)
     let list = result.data.data
     this.data.typeArr = this.data.typeArr.concat(list)
-    this.setData({typeArr:this.data.typeArr})
+    this.setData({
+      typeArr:this.data.typeArr,
+    })
     for(let i =0;i<this.data.typeArr.length;i++){
       if(this.data.typeArr[i].children.length>0){
         this.setData({typeNews:this.data.typeArr[i].children})

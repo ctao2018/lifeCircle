@@ -35,7 +35,7 @@ Page({
     typeArr:[],
     typeNews:[],
     showtyNews:false,
-    catalogNo:'',
+    catalogNo:'hot',
     cdFalg:false,
   },
 
@@ -47,6 +47,7 @@ Page({
    this._queryQuestionAnwserPage()
    this._queryAllValidHotCity()
    this._queryNewsChildrenCatalogTreeByParam()
+   this._queryFNewsInfoPage()
   },
   onShow() {
     this.setData({
@@ -166,10 +167,12 @@ Page({
     let result = await queryNewsChildrenCatalogTreeByParam({
       siteNo:'news'
     })
-    //console.log('queryNewsChildrenCatalogTreeByParam',result)
+    console.log('queryNewsChildrenCatalogTreeByParam',result)
     let list = result.data.data
     this.data.typeArr = this.data.typeArr.concat(list)
-    this.setData({typeArr:this.data.typeArr})
+    this.setData({
+      typeArr:this.data.typeArr,
+    })
     for(let i =0;i<this.data.typeArr.length;i++){
       if(this.data.typeArr[i].children.length>0){
         this.setData({typeNews:this.data.typeArr[i].children})
@@ -581,10 +584,11 @@ Page({
       hotCity:[],
       token:'',
       newstapindx:0,
-      typeArr:[{name:'问答',catalogNo:'',children:[]}],
+      // typeArr:[{name:'问答',catalogNo:'',children:[]}],0515改版
+      typeArr:[],
       typeNews:[],
       showtyNews:false,
-      catalogNo:'',
+      catalogNo:'hot',
       cdFalg:false,
     })
     this._getCategory()
@@ -595,6 +599,7 @@ Page({
     this._queryAllValidHotCity()
     this._queryNewsChildrenCatalogTreeByParam()
     my.stopPullDownRefresh()
+    this._queryFNewsInfoPage()
   }
   
 

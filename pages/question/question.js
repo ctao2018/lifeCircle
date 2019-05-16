@@ -69,7 +69,10 @@ Page({
   },
   //点击发布按钮
   fabu(e) {
-    this.setData({textarea:e.detail.value.textarea})
+    this.setData({
+      textarea:e.detail.value.textarea,
+      title: e.detail.value.inputTit,
+    })
     if(this.data.title.length>3){
       if(!this.data.submitF){
         this._addQuestionByUser()

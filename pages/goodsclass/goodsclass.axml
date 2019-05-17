@@ -26,8 +26,8 @@
           </view>
         </view>
       </block>
-      <no-data a:if="{{goodsList.length === 0}}"></no-data>
     </view>
+    <no-data a:if="{{goodsList.length === 0}}"></no-data>
   </view>
   <bottom-line a:if="{{showbtline}}"></bottom-line>
 </view>

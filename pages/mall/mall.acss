@@ -13,6 +13,7 @@
   border: 2rpx solid #e2e2e2;
   overflow: hidden;
   margin-right: 12rpx;
+  background-color: #F9F9F9;
 }
 .m-toplimg{
   width: 60rpx;

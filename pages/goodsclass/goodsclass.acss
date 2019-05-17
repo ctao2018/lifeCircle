@@ -74,6 +74,7 @@
   border-top-left-radius: 4rpx;
   border-top-right-radius: 4rpx;
   overflow: hidden;
+  background-color: #F9F9F9;
 }
 .gc-cbximg{
   width: 336rpx;

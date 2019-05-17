@@ -133,8 +133,4 @@ Page({
       my.navigateTo({ url: '/pages/goodssw/goodssw?id='+ id})
     }
   },
-  //点击 去下单
-  todetail() {
-    my.navigateTo({ url: '/pages/submitorder/submitorder'})
-  },
 });

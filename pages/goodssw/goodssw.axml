@@ -1,5 +1,5 @@
 <view class="goodssw bgf">
-  <swiper
+  <!-- <swiper
       indicator-color="#E8E8E8"
       indicator-active-color="#3CA0FF"
       indicator-dots="{{true}}"
@@ -12,13 +12,18 @@
         <image data-index="{{index}}" class="gsw-swiper-item" src="{{item}}" mode="scaleToFill"></image>
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> -->
+  <image class="gxw-hdimg" src="{{goodsArr.primaryPicUrl}}" mode="widthFix" />
   <view class="gsw-xx ">
-    <view class="fs36 c-c20"><text class="fs38 fw500">¥188 + 188</text>积分</view>
-    <view class="gsw-tit c3 fs34 fw500">经典棒球帽1996 DHEHGN经典</view>
+    <view class="fs36 c-c20">
+      <text a:if="{{goodsArr.goodsIntegral}}">{{goodsArr.goodsIntegral}}积分 </text>
+      <text class="gs-jia" a:if="{{goodsArr.goodsIntegral && goodsArr.retailPrice >0}}"> + </text>
+      <text a:if="{{goodsArr.retailPrice >0}}">¥{{goodsArr.retailPrice}}</text>
+    </view>
+    <view class="gsw-tit c3 fs34 fw500">{{goodsArr.name}}</view>
     <view class="flex ac jb cc fs22 bb-e gsw-xxdt">
-      <view class="gsw-xxyj">原价¥376</view>
-      <view>库存253件</view>
+      <view class="gsw-xxyj">原价¥{{goodsArr.marketPrice}}</view>
+      <view>库存{{goodsArr.goodsNumber}}件</view>
       <view>快递:免运费</view>
     </view>
   </view>
@@ -29,10 +34,7 @@
     </view>
   <view class="gsw-xq " a:if="{{currentTabsIndex === 0}}">
     <view class="c3 fs32 lh48">
-      <text>第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
-      第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
-      第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。
-      第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的方式地方第三方的。</text>
+      <rich-text nodes="{{nodes}}" ></rich-text>
     </view>
   </view>
   <view class="gsw-ps" a:if="{{currentTabsIndex === 1}}">
@@ -51,16 +53,20 @@
       <view class="gsw-tktop flex ">
         <view class="gsw-tktopl"><image class="gsw-tktopimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
         <view class="gsw-tktopr">
-          <view class="c3 fs34 fw500 lh48">经典棒球帽1996 DHEHGN经典</view>
-          <view class="c9 fs24 lh33">库存253件</view>
-          <view class="c-c20 fs34"><text class="fs36 fw500">¥188 + 188</text>积分</view>
+          <view class="c3 fs34 fw500 lh48">{{goodsArr.name}}</view>
+          <view class="c9 fs24 lh33">库存{{goodsArr.goodsNumber}}件</view>
+          <view class="c-c20 fs34 gsw-tkjf">
+            <text a:if="{{goodsArr.goodsIntegral}}">{{goodsArr.goodsIntegral}}积分 </text>
+            <text class="gs-jia" a:if="{{goodsArr.goodsIntegral && goodsArr.retailPrice >0}}"> + </text>
+            <text a:if="{{goodsArr.retailPrice >0}}">¥{{goodsArr.retailPrice}}</text>
+          </view>
         </view>
       </view>
       <view class="gsw-tknum flex ac jb">
         <view class="c9 fs32">购买数量</view>
-        <stepper onChange="callBackFn" step="{{1}}" showNumber readOnly="{{false}}" value="{{valueNum}}" min="{{1}}" max="{{12}}" />
+        <stepper onChange="callBackFn" step="{{1}}" showNumber readOnly="{{false}}" value="{{valueNum}}" min="{{1}}" max="{{goodsArr.goodsNumber}}" />
       </view>
     </view>
   </view>
-  <view class="gsw-btn cf fs36 flex ac jc" onTap="showTK">立即购买</view>
+  <view class="gsw-btn cf fs36 flex ac jc {{noFlag?'gsw-btnb':''}}" onTap="showTK">立即购买</view>
 </view>

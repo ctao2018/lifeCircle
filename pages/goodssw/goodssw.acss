@@ -8,8 +8,15 @@
   overflow: hidden;
   display: inline-block;
 }
+.gxw-hdimg{
+  width: 100%;
+  height: 750rpx;
+}
 .gsw-xx{
   padding: 16rpx 32rpx 0;
+}
+.gs-jia{
+  margin: 0 15rpx;
 }
 .gsw-tit{
   margin: 10rpx 0;
@@ -54,6 +61,9 @@
   bottom: 0;
   z-index: 99;
   background-color: #45A4FF;
+}
+.gsw-btnb{
+  background-color: #cccccc;
 }
 .gsw-tk{
   position: fixed;
@@ -148,4 +158,10 @@
   background-repeat: no-repeat;
   background-size: 34rpx 34rpx;
   margin-right: 20rpx;
+}
+.gsw-tkjf{
+  margin-top: 8rpx;
+}
+.fr-fin{
+  max-width: 100% !important;
 }

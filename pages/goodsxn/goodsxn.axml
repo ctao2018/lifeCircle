@@ -1,11 +1,11 @@
 <view class="goodsxn">
   <view class="gxn-hd bgf">
-    <image class="gxn-hdimg" src="{{goodsArr.primaryPicUrl}}" mode="aspectFit" />
+    <image class="gxn-hdimg" src="{{goodsArr.primaryPicUrl}}" mode="widthFix" />
     <view class="gxn-hdbx">
       <view class="gxn-hdtit c3 fs34">{{goodsArr.name}}</view>
       <view class="gxn-hdjf fs34 fw500">
         <text a:if="{{goodsArr.goodsIntegral}}">{{goodsArr.goodsIntegral}}积分 </text>
-        <text a:if="{{goodsArr.goodsIntegral && goodsArr.retailPrice >0}}"> + </text>
+        <text class="gs-jia" a:if="{{goodsArr.goodsIntegral && goodsArr.retailPrice >0}}"> + </text>
         <text a:if="{{goodsArr.retailPrice >0}}">¥{{goodsArr.retailPrice}}</text>
       </view>
     </view>

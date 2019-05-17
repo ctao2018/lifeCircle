@@ -1,5 +1,6 @@
 const app = getApp();
-import {} from '../../config/api'
+import {goodsDetail} from '../../config/api';
+import parse from 'mini-html-parser2';
 
 Page({
   data: {
@@ -10,10 +11,19 @@ Page({
     currentTabsIndex:0,
     showTKbx:false,
     valueNum:1,
+    goodsId:'',
+    goodsArr:[],
+    nodes:[],
+    noFlag:false,
   },
 
-  onLoad() {
-    
+  onLoad(options) {
+    if(options){
+      this.setData({
+        goodsId:options.id,
+      })
+      this._goodsDetail()
+    }
   },
   onShow() {
     
@@ -28,18 +38,65 @@ Page({
       currentTabsIndex:index,
     })
   },
+  //商品详情
+  async _goodsDetail() {
+    let result = await goodsDetail({
+      id:this.data.goodsId
+    })
+    console.log('goods',result)
+    if(result.data.code === 0){
+      this.setData({
+        goodsArr: result.data.data.info
+      })
+      this.changeNode()
+      if(result.data.data.info.goodsNumber < 1){
+        this.setData({
+          noFlag: true,
+        })
+      }else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
+        this.setData({
+          noFlag: true,
+        })
+      }
+    }else{
+      console.log(result)
+    }
+  },
+  changeNode() {
+    let html = this.data.goodsArr.goodsDesc
+    parse(html, (err, nodes) => {
+      if (!err) {
+        this.setData({
+          nodes,
+        });
+      }
+    })
+    //console.log(this.data.nodes)
+  },
   //点击购买按钮
   showTK() {
     if(!this.data.showTKbx){
       this.setData({showTKbx:true,})
     }else{
-      this.setData({showTKbx:false,})
+      if(!this.data.noFlag) {
+        my.navigateTo({ url: '/pages/submitorder/submitorder'})
+      }
     }
     
   },
   //选择数量
   callBackFn(value){
    console.log(value);
+   let jf = this.data.goodsArr.goodsIntegral;
+   if(jf*value > app.userInfo.point){
+     this.setData({
+       noFlag: true,
+     })
+   }else{
+      this.setData({
+       noFlag: false,
+     })
+   }
   },
   //关闭弹框
   closeTK() {

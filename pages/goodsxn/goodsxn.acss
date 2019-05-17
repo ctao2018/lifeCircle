@@ -20,6 +20,9 @@
   color: #FB6C20;
   line-height: 48rpx;
 }
+.gs-jia{
+  margin: 0 15rpx;
+}
 .gxn-xq{
   padding: 24rpx 32rpx;
   margin-bottom: 94rpx;

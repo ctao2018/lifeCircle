@@ -20,7 +20,7 @@ Page({
     }
   },
   onShow() {
-    console.log(app.userInfo)
+    
   },
   onReady() {
     

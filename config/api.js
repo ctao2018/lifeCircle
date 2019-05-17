@@ -42,7 +42,8 @@ const api = {
   addressSave,
   addressDelete,
   addressDetail,
-  goodspage
+  goodspage,
+  goodsDetail
 };
 
 
@@ -251,5 +252,10 @@ function addressDetail(params) {
 //(新品推荐、热门热卖）、商品列表页
 function goodspage(params) {
   return fetchData('/mall/notGrant/goods/page', params);
+}
+
+//商品详情
+function goodsDetail(params) {
+  return fetchData('/mall/notGrant/goods/detail', params);
 }
 export default api

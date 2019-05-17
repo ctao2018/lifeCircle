@@ -37,3 +37,9 @@
   z-index: 99;
   background-color: #45A4FF;
 }
+.gxn-btnb{
+  background-color: #cccccc;
+}
+.fr-fin{
+  max-width: 100% !important;
+}

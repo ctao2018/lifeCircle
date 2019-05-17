@@ -1,5 +1,5 @@
 { 
-  "defaultTitle": "圈子",
+  "defaultTitle": "看看",
   "pullRefresh": true,
   "usingComponents": {
     "bottom-line": "/components/bottomLine/bottomLine",

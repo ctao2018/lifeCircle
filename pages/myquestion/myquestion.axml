@@ -1,6 +1,6 @@
 <view class="myquestion">
   <view class="mq-tab bgf c6 fs28">
-    <block a:for="{{['已回复','未通过']}}">
+    <block a:for="{{['已回复','待回复','未通过']}}">
       <view class=" {{curIndex==index?'mq-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
     </block>
   </view>
@@ -17,19 +17,22 @@
   <view class="mq-box" a:if="{{noFlag}}">
     <block a:for="{{twArr}}">
       <view class="mq-yli bgf" a:if="{{item.auditState ==='Y'}}">
-        <view class="mq-ylitit c3 fs32">{{item.title}}</view>
-        <view class="mq-ylicon c9 fs28"></view>
+        <view class="mq-ylitit c9 fs32">{{item.title}}</view>
+        <view class="mq-ylicon c9 fs28">{{item.description}}</view>
         <view class="mq-ylitim c9 fs24 mq-nlitim">
           <view>{{item.createTime}}</view>
-          <view class="mq-nlitjf fw500">{{item.ansRewardPoint}}积分</view>
+          <!-- <view class="mq-nlitjf fw500">{{item.ansRewardPoint}}积分</view> 0515改版-->
         </view>
-        <view class="mq-ylixq fs24 mq-nlixq">
-          <view class="mq-hdbtl">
+        <view class="mq-ylixq fs24 mq-nlixq tc">
+          <view></view>
+          <view>待回复</view>
+          <view></view>
+          <!-- <view class="mq-hdbtl"> //0515改版
             <view class="c9 fs24">{{item.answerNumber || 0}} 回答</view>
             <view class="mq-addr c9 fs24"><view class="mq-addri"></view>{{item.cityName}}</view>
           </view>
           <view class="mq-bxbtra fs24" a:if="{{item.isCurrentUserReplayed === 0}}" data-index="{{index}}" onTap="toAnswer"><view class="mq-bxbtrai"></view>回答</view>
-          <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view>
+          <view class="c9 fs28" a:if="{{item.isCurrentUserReplayed === 1}}">已回答</view> -->
         </view>
       </view>
       <view class="mq-yli bgf" a:if="{{item.auditState ==='W'}}">

@@ -15,22 +15,28 @@ Page({
     order:'',
     goodsList:[],
     pages:'',
+    spType:'',
   },
 
   onLoad(options) {
     if(options.id === 'new'){
       this.setData({
+        spType:'new',
         isNew:1,
         isHot:null,
+        sort:'addTime',
+        order:'',
       })
-      this.goodsList()
     }else{
       this.setData({
+        spType:'hot',
         isNew:null,
-        isHot:1,
+        isHot:null,
+        sort:'addTime',
+        order:'',
       })
-      this.goodsList()
     }
+    this.goodsList()
   },
   onShow() {
     
@@ -60,6 +66,17 @@ Page({
       console.log(result)
     }
   },
+  //点击去详情
+  toDetail(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.goodsList[index].id
+    let goodsType = this.data.goodsList[index].goodsType
+    if(goodsType === 1){
+      my.navigateTo({ url: '/pages/goodsxn/goodsxn?id='+ id})
+    }else{
+      my.navigateTo({ url: '/pages/goodssw/goodssw?id='+ id})
+    }
+  },
   //点击新品
   tapXP() {
     this.setData({
@@ -67,16 +84,38 @@ Page({
       jgFlag:false,
       upFlag:false,
       downFlag:false,
+      pageNum:1,
+      goodsList:[],
+      sort:'addTime',
+      order:'',
     })
+    if(this.data.spType === 'new'){
+      this.setData({
+        isNew:1,
+        isHot:null,
+      })
+    }else{
+      this.setData({
+        isNew:null,
+        isHot:null,
+      })
+    }
+    this.goodsList()
   },
   //点击价格
   tapJG() {
+    this.setData({
+      pageNum:1,
+      goodsList:[],
+      sort:'retailPrice',
+    })
     if(this.data.upFlag) {
       this.setData({
         xpFlag:false,
         jgFlag:true,
         upFlag:false,
         downFlag:true,
+        order:'desc',
       })
     }else{
       this.setData({
@@ -84,9 +123,21 @@ Page({
         jgFlag:true,
         upFlag:true,
         downFlag:false,
+        order:'asc',
       })
     }
-    
+    if(this.data.spType === 'new'){
+      this.setData({
+        isNew:1,
+        isHot:null,
+      })
+    }else{
+      this.setData({
+        isNew:null,
+        isHot:null,
+      })
+    }
+    this.goodsList()
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

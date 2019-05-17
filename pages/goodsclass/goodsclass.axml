@@ -11,8 +11,8 @@
   </view>
   <view class="gc-big">
     <view class="gc-cul clearfix">
-      <block a:for="{{goodsList}}" data-index="{{index}}">
-        <view class="gc-cbx bgf">
+      <block a:for="{{goodsList}}">
+        <view class="gc-cbx bgf" data-index="{{index}}" onTap="toDetail">
           <view class="gc-cbxpic"><image class="gc-cbximg" src="{{item.listPicUrl}}" lazy-load="true" mode="aspectFill"  /></view>
           <view class="gc-cbxcon">
             <view class="gc-cbxctit c3 fs30 fw500">{{item.name}}</view>

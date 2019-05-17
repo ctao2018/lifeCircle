@@ -14,7 +14,7 @@
   </view>
   <view class="cd-bx bgf">
     <view class="rew-bxtop bb-e">
-      <view class="c3 fs32 fw500">专业解答</view>
+      <view class="c3 fs32 fwb">专业解答</view>
       <!-- <view class="rew-bxtopl" onTap="toPersonal"> //0515改版
         <view class="rew-bxtopli"><image class="rew-bxthd" src="{{detail.headAddress}}" mode="scaleToFill" /></view>
         <view class="">

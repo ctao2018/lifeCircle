@@ -14,6 +14,7 @@ Page({
         id:options.id,
       })
     }
+    app.getUrl(2,this.data.id)
   },
   onShow() {
     this.setData({

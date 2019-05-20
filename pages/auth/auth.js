@@ -26,8 +26,12 @@ Page({
                 key: 'token',
                 data: result.data.data
               });
-              console.log(app.backUrl)
-              my.redirectTo({ url: '/'+app.backUrl})
+              //console.log(app.backUrl)
+              if(app.backUrl === 'pages/mall/mall' || app.backUrl === 'pages/circle/circle' || app.backUrl === 'pages/my/my'){
+                my.switchTab({url: '/'+app.backUrl})
+              }else{
+                my.redirectTo({ url: '/'+app.backUrl})
+              }
             }else{
               my.showToast({
                 content: '授权失败',

@@ -21,12 +21,13 @@ Page({
 
   onLoad() {
     if (app.auth_info){
-      this._questionAnwserPage()
+      this._queryFNewsInfoPage()
+      //this._questionAnwserPage()
     }else{
-      this.auth()
+     this.auth()
     }
+    this.setData({typeArr:[],})
     this._queryNewsChildrenCatalogTreeByParam()
-    this._queryFNewsInfoPage()
   },
   onShow() {
    this.setData({
@@ -36,7 +37,6 @@ Page({
     //  showbtline:false,
      })
      app.getUrl(1)
-     //let tok = my.getStorageSync({ key: 'token' })
   },
   onReady() {
     
@@ -178,6 +178,7 @@ Page({
               data: result.data.data
             });
             this._questionAnwserPage()
+            this._queryFNewsInfoPage()
           }else{
             my.showToast({
               content: '授权失败，请重试！'

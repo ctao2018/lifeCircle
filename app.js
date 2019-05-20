@@ -14,7 +14,6 @@ App({
       my.getAuthCode({
         scopes: ['auth_user'],
         success: authcode => {
-
           // this.auth_info = {
           //   auth_code: authcode
           // };
@@ -45,6 +44,7 @@ App({
       let pages = getCurrentPages()  
       let currentPage = pages[pages.length - 1] 
       let url = currentPage.route
+      //console.log(url)
       if(type === 1){
         this.backUrl = url 
       }else if(type === 2){

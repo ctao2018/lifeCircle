@@ -15,7 +15,6 @@ Page({
      unRead:[],
    })
    app.getUrl(1)
-   let tok = my.getStorageSync({ key: 'token' })
     if (app.auth_info){
       this._queryMyAcctUserInfoAndPoint()
       this._queryUnreadQuestionAndAnswerNum()

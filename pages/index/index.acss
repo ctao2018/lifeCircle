@@ -341,10 +341,11 @@
 }
 .home-wdbox{
   position: fixed;
-  left: 50%;
+  right: 10rpx;
+  /* left: 50%; */
   bottom: 12rpx;
   /* margin-left: -180rpx;  0515改版 */
-  margin-left: -116rpx;
+  /* margin-left: -116rpx; */
   /* border-radius: 36rpx;
   box-shadow: 0px 6px 10px 0px rgba(69, 151, 255,0.3);
   overflow: hidden; */
@@ -365,12 +366,19 @@
   background-repeat: no-repeat;
   background-size: 180rpx 140rpx;
 }
-.home-twbtn{
-  width: 232rpx; 
-  height:113rpx;
-  background: url('../../assets/sbzx.png');
+.home-twbxa{
+  width: 148rpx; 
+  height:148rpx;
+  background: url('../../assets/twenbg.png');
   background-repeat: no-repeat;
-  background-size: 232rpx 113rpx;
+  background-size: 148rpx 148rpx;
+}
+.home-twbtn{
+  width: 114rpx; 
+  height:114rpx;
+  background: url('../../assets/twen.png');
+  background-repeat: no-repeat;
+  background-size: 114rpx 114rpx;
 }
 .home-wdboxl{
   width: 50%;

@@ -66,7 +66,7 @@ Page({
       // newstapindx:0,
       })
     //this._queryQuestionAnwserPage()
-    
+
   },
   onReady() {
     
@@ -345,15 +345,23 @@ Page({
       my.navigateTo({ url: url})
     } else if(this.data.menuList[indx].type === '3'){
       let url = this.data.menuList[indx].linkUrl
-      my.showToast({
-        content: '本服务由支付宝城市服务提供',
-        duration: 1500,
-        success: () => {
-           my.ap.navigateToAlipayPage({
-            path: url,
-          })
-        },
-      });
+      if(url){
+        my.showToast({
+          content: '本服务由支付宝城市服务提供',
+          duration: 1500,
+          success: () => {
+            my.ap.navigateToAlipayPage({
+              path: url,
+            })
+          },
+        });
+      }else{
+        my.showToast({
+          content: '该城市暂未开通此服务！',
+          duration: 1500,
+        });
+      }
+      
     } else if(this.data.menuList[indx].type === '4'){
       this.setData({cdFalg:true,})
       let moduleEn = this.data.menuList[indx].moduleEn
@@ -372,26 +380,39 @@ Page({
       moduleEn: moduleEn
     })
     //console.log('城市开通模块',result)
-    if(result.data.data.length>0){
-      let url = result.data.data[0].moduleUrl
-      //console.log(url)
-      if(this.data.cdFalg){
-        my.showToast({
-          content: '本服务由支付宝城市服务提供',
-          duration: 1500,
-          success: () => {
-            my.ap.navigateToAlipayPage({
-              path: url,
-            })
-          },
-        });
+    if(result.data.code ===0){
+      if(result.data.data.length>0){
+        let url = result.data.data[0].moduleUrl
+        //console.log(url)
+        if(this.data.cdFalg){
+          if(url){
+            my.showToast({
+              content: '本服务由支付宝城市服务提供',
+              duration: 1500,
+              success: () => {
+                my.ap.navigateToAlipayPage({
+                  path: url,
+                })
+              },
+            });
+          }else{
+            my.showToast({
+              content: '该城市暂未开通此服务！',
+              duration: 1500,
+            });
+          }
+        }else{
+          let tok = my.getStorageSync({ key: 'token' })
+          let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
+          //console.log(newurl)
+          app.webViewUrl = newurl
+          //app.webViewUrl = url + '?tok=' + tok.data
+          my.navigateTo({ url: '/pages/webview/webview'})
+        }
       }else{
-        let tok = my.getStorageSync({ key: 'token' })
-        let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
-        //console.log(newurl)
-        app.webViewUrl = newurl
-        //app.webViewUrl = url + '?tok=' + tok.data
-        my.navigateTo({ url: '/pages/webview/webview'})
+        my.showToast({
+          content: '该城市暂未开通此服务！'
+        });
       }
     }else{
       my.showToast({

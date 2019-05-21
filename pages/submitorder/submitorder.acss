@@ -69,6 +69,9 @@
   margin-left: 25rpx;
   text-align: right;
 }
+.so-jfnum{
+  white-space: nowrap;
+}
 .so-sprsl{
   margin-top: 18rpx;
 }
@@ -101,4 +104,7 @@
   height:94rpx;
   line-height: 94rpx;
   background:#45A4FF;
+}
+.so-addmon{
+  line-height: 33rpx;
 }

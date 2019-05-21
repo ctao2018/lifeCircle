@@ -1,5 +1,8 @@
 .adddz{
   width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 .ad-bx{
   border-top: 2rpx solid #eeeeee;

@@ -2,11 +2,13 @@
   <view class="addr-bx" a:if="{{addrList.length>0}}">
       <block a:for="{{addrList}}">
         <view class="addr-addr bgf">
-          <view class="addr-adtop">
-            <view class="addr-adtopa c3 fs32 fw500">{{item.userName}}</view>
-            <view class="c6 fs32">{{item.telNumber}}</view>
+          <view data-index="{{index}}" onTap="selAddrbx">
+            <view class="addr-adtop">
+              <view class="addr-adtopa c3 fs32 fw500">{{item.userName}}</view>
+              <view class="c6 fs32">{{item.telNumber}}</view>
+            </view>
+            <view class="addr-dz c6 fs24">{{item.provinceName}} {{item.cityName}} {{item.countyName}} {{item.detailInfo}}</view>
           </view>
-          <view class="addr-dz c6 fs24">{{item.provinceName}} {{item.cityName}} {{item.countyName}} {{item.detailInfo}}</view>
           <view class="addr-bt">
             <view class="c9 fs24 addr-btl"><view class="addr-btlradio {{item.isDefault?'addr-btlradioSel':''}}" data-index="{{index}}" onTap="setAddr"></view>设为默认地址</view>
             <view class="addr-btr">

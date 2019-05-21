@@ -7,10 +7,10 @@
       </view>
       <view class="so-addry cf" a:if="{{addrFlag}}">
         <view class="flex ac fs28">
-          <view class="so-addrn">张三丰</view>
-          <view>13800138000</view>
+          <view class="so-addrn">{{selAddr.userName}}</view>
+          <view>{{selAddr.telNumber}}</view>
         </view>
-        <view class="so-addrdz fs24">广东省深圳市南山区高新南七道011号深圳软件园T3栋211</view>
+        <view class="so-addrdz fs24">{{selAddr.provinceName}}{{selAddr.cityName}}{{selAddr.countyName}}{{selAddr.detailInfo}}</view>
         <view class="so-addrqt fs24" onTap="toaddrlist">选择其他地址</view>
       </view>
     </view>
@@ -19,15 +19,15 @@
     <view class="flex">
       <view class="so-splpic"><image class="so-splimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
       <view class="so-spm">
-        <view class="c3 fs24 so-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
-        <view class="c9 fs22">商品尺码颜色信息在这里</view>
+        <view class="c3 fs24 so-spmtit">{{goodsArr.name}}</view>
+        <view class="c9 fs22"></view>
       </view>
     </view>
     <view class="so-spr c3 fs24">
-      <view>¥10000.00</view>
-      <view>+</view>
-      <view class="c3">888积分</view>
-      <view class="c9 fs22 so-sprsl">X1</view>
+      <view class="so-jfnum" a:if="{{goodsArr.goodsIntegral}}">{{goodsArr.goodsIntegral}}积分</view>
+      <view class="so-addmon" a:if="{{goodsArr.goodsIntegral && goodsArr.retailPrice >0}}">+</view>
+      <view class="c3 so-jfnum" a:if="{{goodsArr.retailPrice >0}}">¥{{goodsArr.retailPrice}}</view>
+      <view class="c9 fs22 so-sprsl">X{{selNum}}</view>
     </view>
   </view>
   <view class="so-xx flex ac jb bb-e">
@@ -36,14 +36,20 @@
   </view>
   <view class="so-xx flex ac jb bb-e">
     <view class="c6 fs28">合计：</view>
-    <view class="c3 fs32 fw500">¥288.00</view>
+    <view class="c3 fs32 fw500">¥{{totalMon}}</view>
   </view>
   <view class="so-xx flex ac jb bb-e">
     <view class="c6 fs28">使用积分</view>
-    <view class="c3 fs32 fw500">888</view>
+    <view class="c3 fs32 fw500">{{totalJF}}</view>
   </view>
   <view class="so-bt flex ac jb">
-    <view class="so-btl fs26 c6">总计：<view class="so-btlnum fs28">¥288.00 + 888积分</view></view>
+    <view class="so-btl fs26 c6">总计：
+      <view class="so-btlnum fs28">
+        <text a:if="{{goodsArr.goodsIntegral}}">{{totalJF}}积分 </text>
+        <text class="gs-jia" a:if="{{goodsArr.goodsIntegral && goodsArr.retailPrice >0}}"> + </text>
+        <text a:if="{{goodsArr.retailPrice >0}}">¥{{totalMon}}</text>
+      </view>
+    </view>
     <view class="so-btr tc cf fs36" onTap="tjorder">提交订单</view>
   </view>
 </view>

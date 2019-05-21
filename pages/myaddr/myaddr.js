@@ -5,10 +5,15 @@ Page({
   data: {
     check:false,
     addrList:[],
+    addrType:false,
   },
 
-  onLoad() {
-    
+  onLoad(options) {
+    if(options.type === '1'){
+      this.setData({
+        addrType:true,
+      })
+    }
   },
   onShow() {
     this.setData({
@@ -38,7 +43,7 @@ Page({
     let index=e.currentTarget.dataset['index'];
     let flagM = this.data.addrList[index].isDefault
     let id =this.data.addrList[index].id
-    console.log(flagM)
+    //console.log(flagM)
     if(!flagM){
        this.setData({check:true,})
        this._addressSave(id)
@@ -50,7 +55,7 @@ Page({
       id: id,
       isDefault: this.data.check,
     })
-   console.log('设置默认',result)
+   //console.log('设置默认',result)
    if(result.data.code ===0){
      my.showToast({
       content: '设置成功',
@@ -91,5 +96,14 @@ Page({
       })
     this._queryListByUserId()
    }
+  },
+  //下单页面过来 点击选择地址
+  selAddrbx(e) {
+    let index=e.currentTarget.dataset['index'];
+    let seladdr = this.data.addrList[index]
+    if(this.data.addrType){
+      app.selAddr = seladdr
+      my.navigateBack()
+    }
   },
 });

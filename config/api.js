@@ -43,7 +43,8 @@ const api = {
   addressDelete,
   addressDetail,
   goodspage,
-  goodsDetail
+  goodsDetail,
+  orderSubmit
 };
 
 
@@ -257,5 +258,10 @@ function goodspage(params) {
 //商品详情
 function goodsDetail(params) {
   return fetchData('/mall/notGrant/goods/detail', params);
+}
+
+//下单
+function orderSubmit(params) {
+  return fetchData('/mall/order/submit',params,'post');
 }
 export default api

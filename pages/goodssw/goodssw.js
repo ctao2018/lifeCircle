@@ -15,6 +15,7 @@ Page({
     goodsArr:[],
     nodes:[],
     noFlag:false,
+    selNum:1,
   },
 
   onLoad(options) {
@@ -26,7 +27,9 @@ Page({
     }
   },
   onShow() {
-    
+     this.setData({
+      showTKbx:false,
+    })
   },
   onReady() {
     
@@ -79,7 +82,7 @@ Page({
       this.setData({showTKbx:true,})
     }else{
       if(!this.data.noFlag) {
-        my.navigateTo({ url: '/pages/submitorder/submitorder'})
+        my.navigateTo({ url: '/pages/submitorder/submitorder?num='+this.data.selNum + '&id=' + this.data.goodsArr.id})
       }
     }
     
@@ -87,6 +90,7 @@ Page({
   //选择数量
   callBackFn(value){
    console.log(value);
+   this.setData({selNum:value,})
    let jf = this.data.goodsArr.goodsIntegral;
    if(jf*value > app.userInfo.point){
      this.setData({

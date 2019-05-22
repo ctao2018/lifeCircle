@@ -97,7 +97,7 @@ Page({
           },
         });
       }else{
-
+        console.log('唤起支付宝支付')
       }
     }else{
       console.log(result)
@@ -113,7 +113,20 @@ Page({
   },
   //点击提交订单
   tjorder() {
-    this._orderSubmit()
+    if(this.data.goodsArr.retailPrice>0){
+      this._orderSubmit()
+    }else{
+      my.confirm({
+        title: '确认兑换',
+        confirmButtonText: '确认',
+        cancelButtonText: '取消',
+        success: (result) => {
+          if(result.confirm){
+            this._orderSubmit()
+          }
+        },
+      });
+    }
     // my.navigateTo({ url: '/pages/orderlist/orderlist'})
   },
 });

@@ -15,5 +15,5 @@
     <view class="c3 fs32 lh48">
       <rich-text nodes="{{nodes}}" ></rich-text>
   </view>
-  <view class="gxn-btn cf fs36 flex ac jc {{noFlag?'gxn-btnb':''}}" onTap="exchange">立即兑换</view>
+  <view class="gxn-btn cf fs36 flex ac jc {{noFlag?'gxn-btnb':''}}" onTap="exchange">{{btnTxt}}</view>
 </view>

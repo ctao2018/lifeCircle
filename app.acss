@@ -108,3 +108,6 @@ page {
 .mb16{
   margin-bottom: 16rpx;
 }
+.ws-no{
+  white-space: nowrap;
+}

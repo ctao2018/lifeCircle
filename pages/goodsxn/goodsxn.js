@@ -9,6 +9,7 @@ Page({
     goodsArr:[],
     nodes:[],
     noFlag:false,
+    btnTxt:'立即兑换',
   },
 
   onLoad(options) {
@@ -16,11 +17,16 @@ Page({
       this.setData({
         goodsId:options.id,
       })
-      this._goodsDetail()
     }
   },
   onShow() {
-    
+    this.setData({
+      goodsArr:[],
+      nodes:[],
+      noFlag:false,
+      btnTxt:'立即兑换',
+    })
+    this._goodsDetail()
   },
   onReady() {
     
@@ -39,10 +45,12 @@ Page({
       if(result.data.data.info.goodsNumber < 1){
         this.setData({
           noFlag: true,
+          btnTxt:'商品已售完',
         })
       }else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
         this.setData({
           noFlag: true,
+          btnTxt:'立即兑换',
         })
       }
     }else{
@@ -57,10 +65,9 @@ Page({
         confirmButtonText: '确认',
         cancelButtonText: '取消',
         success: (result) => {
-          console.log(result)
+         // console.log(result)
           if(result.confirm){
              this._orderSubmit()
-            
           }
         },
       });

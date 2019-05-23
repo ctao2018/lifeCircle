@@ -12,6 +12,7 @@ Page({
     selAddr:{},
     orderArr:[],
     orderSn:'',
+    tradeNo:'',
   },
 
   onLoad(options) {
@@ -116,9 +117,17 @@ Page({
     })
    //console.log('交易号',result)
    if(result.data.code === 0){
-     this.setData({orderSn: result.data.data.orderSn})
-     my.tradePay({
-      tradeNO: result.data.data.tradeNo, 
+     this.setData({
+       orderSn: result.data.data.orderSn,
+       tradeNo:result.data.data.tradeNo,
+      })
+     this.tradePay()
+   }
+  },
+  //支付宝调起收银台
+  tradePay() {
+    my.tradePay({
+      tradeNO: this.data.tradeNo, 
         success: (res) => {
           console.log(res)
           if(res.resultCode === '9000'){
@@ -134,7 +143,13 @@ Page({
               },
             });
           }else{
-            
+            my.alert({
+              title: '交易失败，请重新提交订单！',
+              buttonText: '确认',
+              success: () => {
+                this.tradePay()
+              },
+            });
           }
         },
         fail: (res) => {
@@ -145,7 +160,6 @@ Page({
           });
       }
     });
-   }
   },
   //支付结果确认
   async _payCallBack(msg,sta) {

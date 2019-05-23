@@ -1,5 +1,5 @@
 const app = getApp();
-import {goodsDetail,orderSubmit} from '../../config/api';
+import {goodsDetail,orderSubmit,alipayTradeCreate,payCallBack} from '../../config/api';
 import parse from 'mini-html-parser2';
 
 Page({
@@ -8,8 +8,10 @@ Page({
     goodsId:'',
     goodsArr:[],
     nodes:[],
-    noFlag:false,
+    noFlag:true,
     btnTxt:'立即兑换',
+    orderArr:[],
+    orderSn:'',
   },
 
   onLoad(options) {
@@ -23,8 +25,9 @@ Page({
     this.setData({
       goodsArr:[],
       nodes:[],
-      noFlag:false,
+      noFlag:true,
       btnTxt:'立即兑换',
+      orderArr:[],
     })
     this._goodsDetail()
   },
@@ -51,6 +54,10 @@ Page({
         this.setData({
           noFlag: true,
           btnTxt:'立即兑换',
+        })
+      }else{
+        this.setData({
+          noFlag: false,
         })
       }
     }else{
@@ -82,6 +89,7 @@ Page({
     })
     console.log('duihuan',result)
     if(result.data.code === 0){
+      this.setData({orderArr:result.data.data,})
       if(result.data.data.actualPrice === 0){
         my.alert({
           title: '兑换成功',
@@ -91,11 +99,60 @@ Page({
           },
         });
       }else{
-
+        this._alipayTradeCreate()
       }
     }else{
       console.log(result)
     }
+  },
+  //创建支付宝交易号
+  async _alipayTradeCreate() {
+    let result = await alipayTradeCreate({
+      orderSn: this.data.orderArr.orderSn,
+      totalAmount: this.data.orderArr.actualPrice
+    })
+   console.log('交易号',result)
+   if(result.data.code === 0){
+     this.setData({orderSn: result.data.data.orderSn})
+     my.tradePay({
+      tradeNO: result.data.data.tradeNo, 
+        success: (res) => {
+          console.log(res)
+          if(res.resultCode === '9000'){
+            my.redirectTo({ url: '/pages/orderlist/orderlist'})
+            this._payCallBack(JSON.stringify(res),1)
+          }else if(res.resultCode === '4000' || res.resultCode === '6001' || res.resultCode === '6002' || res.resultCode === '99'){
+            this._payCallBack(JSON.stringify(res),0)
+            my.alert({
+              title: '交易失败，请重新下单！',
+              buttonText: '确认',
+              success: () => {
+               
+              },
+            });
+          }else{
+            
+          }
+        },
+        fail: (res) => {
+          console.log(res)
+          my.showToast({
+            type: 'exception',
+            content: '支付失败，请重试！'
+          });
+      }
+    });
+   }
+  },
+  //支付结果确认
+  async _payCallBack(msg,sta) {
+    let result = await payCallBack({
+      alipayTradeResult: msg,
+      orderSn: this.data.orderSn,
+      payResultStatus: sta
+    })
+   console.log('支付结果确认',result)
+   
   },
   changeNode() {
     let html = this.data.goodsArr.goodsDesc

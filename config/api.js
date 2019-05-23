@@ -44,7 +44,9 @@ const api = {
   addressDetail,
   goodspage,
   goodsDetail,
-  orderSubmit
+  orderSubmit,
+  alipayTradeCreate,
+  payCallBack
 };
 
 
@@ -263,5 +265,15 @@ function goodsDetail(params) {
 //下单
 function orderSubmit(params) {
   return fetchData('/mall/order/submit',params,'post');
+}
+
+//创建支付宝交易号
+function alipayTradeCreate(params) {
+  return fetchData('/mall/pay/alipayTradeCreate',params,'post');
+}
+
+//支付宝支付结果确认（支付宝成功、失败回调）
+function payCallBack(params) {
+  return fetchData('/mall/pay/payCallBack',params,'post');
 }
 export default api

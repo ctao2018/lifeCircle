@@ -133,4 +133,15 @@ Page({
       my.navigateTo({ url: '/pages/goodssw/goodssw?id='+ id})
     }
   },
+  onPullDownRefresh() {
+    this.setData({
+      userMsg:[],
+      hotList:[],
+      newList:[],
+    })
+    this.newGoodsList()
+    this.hotGoodsList()
+    this._queryMyAcctUserInfoAndPoint()
+    my.stopPullDownRefresh()
+  }
 });

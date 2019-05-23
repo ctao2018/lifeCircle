@@ -97,8 +97,13 @@ Page({
    }
   },
   //点击保存按钮
-   saveBtn() {
+   saveBtn(e) {
      //console.log(this.data.name,this.data.phone,this.data.province,this.data.addrDt,)
+     this.setData({
+      name: e.detail.value.name,
+      phone: e.detail.value.phone,
+      addrDt: e.detail.value.addrdt,
+    })
      if(!this.data.name){
         my.showToast({
           content: '请输入姓名'

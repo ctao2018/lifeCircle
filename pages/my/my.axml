@@ -31,7 +31,7 @@
     <view class="c3 fs32"><image class="my-libi" src="../../assets/my_integral_icon.png" mode="scaleToFill" />积分</view>
     <view class="c9 fs28 tc" onTap="toJF">{{userMsg.point}} 积分<view class="info-liri"></view></view>
   </view>
-  <!-- <view class="info-box bgf mb16">
+  <view class="info-box bgf mb16">
     <view class="info-li bb-e" onTap="toOrderlist">
       <view class="c3 fs32">查看全部订单</view>
       <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
@@ -40,7 +40,7 @@
       <view class="c3 fs32">我的收货地址</view>
       <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
     </view>
-  </view> -->
+  </view>
   <view class="info-box bgf">
     <view class="info-li" onTap="makePhoneCall">
       <view class="c3 fs32">联系客服</view>

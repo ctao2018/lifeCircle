@@ -14,7 +14,7 @@ Page({
     goodsId:'',
     goodsArr:[],
     nodes:[],
-    noFlag:false,
+    noFlag:true,
     selNum:1,
   },
 
@@ -52,15 +52,20 @@ Page({
         goodsArr: result.data.data.info
       })
       this.changeNode()
-      if(result.data.data.info.goodsNumber < 1){
+      if(result.data.data.info.goodsNumber > 0 && (result.data.data.info.goodsIntegral <= app.userInfo.point)){
         this.setData({
-          noFlag: true,
-        })
-      }else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
-        this.setData({
-          noFlag: true,
+          noFlag: false,
         })
       }
+      // else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
+      //   this.setData({
+      //     noFlag: true,
+      //   })
+      // }else{
+      //   this.setData({
+      //     noFlag: false,
+      //   })
+      // }
     }else{
       console.log(result)
     }

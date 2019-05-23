@@ -1,6 +1,6 @@
 { 
   "defaultTitle": "商城",
-  "pullRefresh": false,
+  "pullRefresh": true,
   "usingComponents": {
   }
 }

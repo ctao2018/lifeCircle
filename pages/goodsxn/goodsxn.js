@@ -54,11 +54,12 @@ Page({
       }else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
         this.setData({
           noFlag: true,
-          btnTxt:'立即兑换',
+          btnTxt:'积分不足',
         })
       }else{
         this.setData({
           noFlag: false,
+          btnTxt:'立即兑换',
         })
       }
     }else{

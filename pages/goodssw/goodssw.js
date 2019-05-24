@@ -16,6 +16,7 @@ Page({
     nodes:[],
     noFlag:true,
     selNum:1,
+    btnTxt:'立即购买',
   },
 
   onLoad(options) {
@@ -52,20 +53,22 @@ Page({
         goodsArr: result.data.data.info
       })
       this.changeNode()
-      if(result.data.data.info.goodsNumber > 0 && (result.data.data.info.goodsIntegral <= app.userInfo.point)){
+      if(result.data.data.info.goodsNumber < 1){
+        this.setData({
+          noFlag: true,
+          btnTxt:'商品已售完',
+        })
+      }else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
+        this.setData({
+          noFlag: true,
+          btnTxt:'积分不足',
+        })
+      }else{
         this.setData({
           noFlag: false,
+          btnTxt:'立即购买',
         })
       }
-      // else if(result.data.data.info.goodsIntegral>app.userInfo.point) {
-      //   this.setData({
-      //     noFlag: true,
-      //   })
-      // }else{
-      //   this.setData({
-      //     noFlag: false,
-      //   })
-      // }
     }else{
       console.log(result)
     }
@@ -97,14 +100,18 @@ Page({
    console.log(value);
    this.setData({selNum:value,})
    let jf = this.data.goodsArr.goodsIntegral;
-   if(jf*value > app.userInfo.point){
-     this.setData({
-       noFlag: true,
-     })
-   }else{
+   if(value>0){
+     if(jf*value > app.userInfo.point){
       this.setData({
-       noFlag: false,
-     })
+        noFlag: true,
+        btnTxt:'积分不足',
+      })
+    }else{
+        this.setData({
+        noFlag: false,
+        btnTxt:'立即购买',
+      })
+    }
    }
   },
   //关闭弹框

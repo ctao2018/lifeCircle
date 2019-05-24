@@ -68,5 +68,5 @@
       </view>
     </view>
   </view>
-  <view class="gsw-btn cf fs36 flex ac jc {{noFlag?'gsw-btnb':''}}" onTap="showTK">立即购买</view>
+  <view class="gsw-btn cf fs36 flex ac jc {{noFlag?'gsw-btnb':''}}" onTap="showTK">{{btnTxt}}</view>
 </view>

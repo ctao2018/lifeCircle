@@ -181,6 +181,13 @@ Page({
   },
   //点击提交订单
   tjorder() {
+    if(!this.data.selAddr){
+      my.showToast({
+        type: 'exception',
+        content: '请先填写收货地址！'
+      });
+      return false;
+    }
     if(this.data.goodsArr.retailPrice>0){
       this._orderSubmit()
     }else{

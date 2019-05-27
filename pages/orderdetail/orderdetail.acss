@@ -137,3 +137,18 @@
   border:2rpx solid #45A4FF;
   color: #45A4FF;
 }
+.od-buy{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+.od-shbtnb{
+  width:160rpx;
+  height:57rpx;
+  line-height: 57rpx;
+  border-radius:29rpx;
+  background-color: #45A4FF;
+  color: #ffffff;
+}

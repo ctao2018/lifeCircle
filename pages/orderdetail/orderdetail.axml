@@ -1,27 +1,32 @@
 <view class="orderdetail">
-  <view class="od-top flex ac c-c20 fs34 fw500 bgf">交易成功</view>
-  <block a:if="{{!wlFlag}}">
-    <view class="od-qm c3 fs24 fw500 flex ac bb-e">券码<text class="c-c20 fs28 od-qmnum">X979DDF68S</text></view>
-    <view class="ol-bxb flex ac bgf bb-e">
-      <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+  <view class="od-top flex ac c-c20 fs34 fw500 bgf">
+    <text a:if="{{detail.orderStatus === 201}}">待发货</text>
+    <text a:if="{{detail.orderStatus === 300}}">待收货</text>
+    <text a:if="{{detail.orderStatus === 301}}">交易成功</text>
+    <text a:if="{{detail.orderStatus === 101}}">已取消</text>
+  </view>
+  <block a:if="{{detail.orderGoodsList[0].goodsType === 1}}">
+    <view class="od-qm c3 fs24 fw500 flex ac bb-e">券码<text class="c-c20 fs28 od-qmnum">{{detail.orderGoodsList[0].exchangeCouponList[0].couponCode}}</text></view>
+    <view class="ol-bxb flex bgf bb-e">
+      <view class="ol-bxbl"><image class="ol-bxblimg" src="{{detail.orderGoodsList[0].listPicUrl}}" mode="scaleToFill"/></view>
       <view class="ol-bxbr">
-        <view class="ol-bxbtit c3 fs26">SEESeekinxperiencneerinddderg包括专业分享、Workshop</view>
+        <view class="ol-bxbtit c3 fs26">{{detail.orderGoodsList[0].goodsName}}</view>
         <view class="flex ac jb fs24">
-          <view class="c3">888 积分</view>
-          <view class="c9">X1</view>
+          <view class="c3">{{detail.orderGoodsList[0].goodsIntegral}} 积分</view>
+          <view class="c9">X{{detail.orderGoodsList[0].number}}</view>
         </view>
       </view>
     </view>
-    <view class="ol-bxc flex ac c9 fs24 bgf">实付：<text class="c-c20 fs28 fw500">888</text><text class="c-c20 fs26">积分</text></view>
+    <view class="ol-bxc flex ac c9 fs24 bgf">实付：<text class="c-c20 fs28 fw500">{{detail.integral}}</text><text class="c-c20 fs26">积分</text></view>
   </block>
-  <block a:if="{{wlFlag}}">
-    <view class="od-wl bgf bb-e">
+  <block a:if="{{detail.orderGoodsList[0].goodsType === 0}}">
+    <view class="od-wl bgf bb-e" a:if="{{detail.shippingNo}}">
       <view class="flex ac">
-        <view class="od-wlkdi"><image class="od-wlkdpic" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
-        <view class="c3 fs28">韵达快递</view>
+        <view class="od-wlkdi"><image class="od-wlkdpic" src="{{detail.shippingIconPicture}}" mode="scaleToFill"/></view>
+        <view class="c3 fs28">{{detail.shippingName}}</view>
       </view>
       <view class="od-wldh flex ac">
-        <view class="c3 fs32">物流单号：<text class="fw500">20190507000012</text></view>
+        <view class="c3 fs32">物流单号：<text class="fw500">{{detail.shippingNo}}</text></view>
         <view class="fs26 c6 tc od-wlfz" onTap="copyFn">复制</view>
       </view>
       <view class="c9 fs28">复制物流单号查询物流信息</view>
@@ -29,42 +34,57 @@
     <view class="od-dz bgf flex ac">
       <image class="od-dzlpic" src="../../assets/location.png" mode="scaleToFill"/>
       <view class="od-dzr">
-        <view class="fs28 c3">张三丰<text class="c6 od-dzrph">13800138000</text></view>
-        <view class="c3 fs22 od-dzrdt">广东省深圳市南山区高新南七道011号深圳软件园T3栋2楼211</view>
+        <view class="fs28 c3">{{detail.consignee}}<text class="c6 od-dzrph">{{detail.mobile}}</text></view>
+        <view class="c3 fs22 od-dzrdt">{{detail.province}}{{detail.city}}{{detail.district}}{{detail.address}}</view>
       </view>
     </view>
-    <view class="ol-bxb flex ac jb bgf bb-e">
+    <view class="ol-bxb flex  jb bgf bb-e">
       <view class="flex ">
-        <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+        <view class="ol-bxbl"><image class="ol-bxblimg" src="{{detail.orderGoodsList[0].listPicUrl}}" mode="scaleToFill"/></view>
         <view class="ol-spm">
-          <view class="c3 fs26 ol-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
-          <view class="c9 fs22">商品尺码颜色信息在这里</view>
+          <view class="c3 fs26 ol-spmtit">{{detail.orderGoodsList[0].goodsName}}</view>
+          <view class="c9 fs22">{{detail.orderGoodsList[0].goodsBrief}}</view>
         </view>
       </view>
       <view class="ol-spr c3 fs24">
-        <view class="ws-no">¥10000.00</view>
-        <view>+</view>
-        <view class="c3 ws-no">888积分</view>
-        <view class="c9 fs22 ol-sprsl">X1</view>
+        <view class="ws-no" a:if="{{detail.orderGoodsList[0].goodsIntegral}}">{{detail.orderGoodsList[0].goodsIntegral}}积分</view>
+        <view class="" a:if="{{detail.orderGoodsList[0].goodsIntegral && detail.orderGoodsList[0].retailPrice >0}}">+</view>
+        <view class="c3 ws-no" a:if="{{detail.orderGoodsList[0].retailPrice >0}}">¥{{detail.orderGoodsList[0].retailPrice}}</view>
+        <view class="c9 fs22 ol-sprsl">X{{detail.orderGoodsList[0].number}}</view>
       </view>
     </view>
-    <view class="ol-bxc flex ac c9 fs24 bgf">合计：<text class="c-c20 fs34 fw500">¥88+88</text><text class="c-c20 fs30">积分</text></view>
+    <view class="ol-bxc flex ac c9 fs24 bgf">合计：
+      <text class="c-c20 fs34 fw500" a:if="{{detail.integral}}">{{detail.integral}}<text class="c-c20 fs30">积分</text> </text>
+      <text class="" a:if="{{detail.integral && detail.actualPrice >0}}"> + </text>
+      <text class="c-c20 fs34 fw500" a:if="{{detail.actualPrice >0}}">¥{{detail.actualPrice}}</text>
+    </view>
   </block>
   <view class="od-xx bgf">
-    <view class="od-xxdh bb-e c3 fs28 flex ac">订单单号：2019041700001212</view>
+    <view class="od-xxdh bb-e c3 fs28 flex ac">订单单号：{{detail.orderSn}}</view>
     <view class="od-xxtime">
-      <view class="od-xxtimea bb-e c9">
+      <view class="od-xxtimea bb-e c9" a:if="{{detail.confirmTime && detail.orderStatus !== 101}}">
+        <view class="fs28 lh40">收货时间：</view>
+        <view class="fs26">{{detail.confirmTime}}</view>
+      </view>
+      <view class="od-xxtimea bb-e c9" a:if="{{detail.sendTime}}">
+        <view class="fs28 lh40">发货时间：</view>
+        <view class="fs26">{{detail.sendTime}}</view>
+      </view>
+      <view class="od-xxtimea bb-e c9" a:if="{{detail.payTime}}">
         <view class="fs28 lh40">付款时间：</view>
-        <view class="fs26">2019-04-15 12:12:37</view>
+        <view class="fs26">{{detail.payTime}}</view>
       </view>
       <view class="od-xxtimea c9">
         <view class="fs28 lh40">下单时间：</view>
-        <view class="fs26">2019-04-15 12:12:37</view>
+        <view class="fs26">{{detail.addTime}}</view>
       </view>
     </view>
   </view>
   <view class="tc c6 fs28 od-kf bgf" onTap="makePhoneCall">联系客服</view>
-  <view class="od-sh bgf flex ac">
-    <view class="od-shbtn fs24 tc" onTap="shsure">确认收货</view>
+  <view class="od-sh bgf flex ac" a:if="{{detail.orderStatus === 300}}">
+    <view class="od-shbtn fs24 tc"  onTap="shsure">确认收货</view>
+  </view>
+  <view class="od-sh  bgf flex ac od-buy" a:if="{{detail.orderStatus === 101}}">
+    <view class="od-shbtnb fs24 tc"  onTap="toBuy">再次购买</view>
   </view>
 </view>

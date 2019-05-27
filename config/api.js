@@ -46,7 +46,10 @@ const api = {
   goodsDetail,
   orderSubmit,
   alipayTradeCreate,
-  payCallBack
+  payCallBack,
+  orderPage,
+  orderDetail,
+  confirmOrder
 };
 
 
@@ -275,5 +278,20 @@ function alipayTradeCreate(params) {
 //支付宝支付结果确认（支付宝成功、失败回调）
 function payCallBack(params) {
   return fetchData('/mall/pay/payCallBack',params,'post');
+}
+
+//订单列表
+function orderPage(params) {
+  return fetchData('/mall/order/page', params);
+}
+
+//订单详情
+function orderDetail(params) {
+  return fetchData('/mall/order/detail?orderId='+ params);
+}
+
+//确认收货
+function confirmOrder(params) {
+  return fetchData('/mall/order/confirmOrder?orderId='+params,'','post');
 }
 export default api

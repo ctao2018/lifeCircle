@@ -105,6 +105,11 @@ Page({
       }
     }else{
       console.log(result)
+       my.showToast({
+        type: 'exception',
+        content: result.data.message,
+        duration: 2000,
+      });
     }
   },
   //创建支付宝交易号
@@ -120,7 +125,13 @@ Page({
        tradeNo:result.data.data.tradeNo,
       })
      this.tradePay()
-   }
+   }else{
+       my.showToast({
+        type: 'exception',
+        content: result.data.message,
+        duration: 2000,
+      });
+    }
   },
   //支付宝调起收银台
   tradePay() {

@@ -4,51 +4,73 @@
       <view class=" {{curIndex==index?'ol-tabsel':''}}" onTap="tabClick" data-index="{{index}}">{{item}}</view>
     </block>
   </view>
-  <view class="ol-big" a:if="{{listFg}}">
-    <view class="ol-bx bgf">
-      <view class="ol-bxa flex ac jb fs26">
-        <view class="c6">订单单号：938273648277374</view>
-        <view class="fw500 ol-bxar">交易成功</view>
-      </view>
-      <view class="ol-bxb flex ac">
-        <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
-        <view class="ol-bxbr">
-          <view class="ol-bxbtit c3 fs26">SEESeekinxperiencneerinddderg包括专业分享、Workshop</view>
-          <view class="flex ac jb fs24">
-            <view class="c3">888 积分</view>
-            <view class="c9">X1</view>
+  <view class="ol-big" a:if="{{orderArr.length>0}}">
+    <block a:for="{{orderArr}}">
+      <view class="ol-bx bgf" a:if="{{item.orderGoodsList[0].goodsType === 1}}">
+        <view class="ol-bxa flex ac jb fs26">
+          <view class="c6">订单单号：{{item.orderSn}}</view>
+          <view class="fw500 ol-bxar">
+            <text a:if="{{item.orderStatus === 201}}">待发货</text>
+            <text a:if="{{item.orderStatus === 300}}">待收货</text>
+            <text a:if="{{item.orderStatus === 301}}">已完成</text>
+            <text a:if="{{item.orderStatus === 101}}">已取消</text>
           </view>
         </view>
-      </view>
-      <view class="ol-bxc flex ac c6 fs24">实付：<text class="c-c20 fs28 fw500">888</text><text class="c-c20 fs26">积分</text></view>
-    </view>
-    <view class="ol-bx bgf" onTap="toDetail">
-      <view class="ol-bxa flex ac jb fs26">
-        <view class="c6">订单单号：938273648277374</view>
-        <view class="fw500 ol-bxar">交易完成</view>
-      </view>
-      <view class="ol-bxb flex ac jb">
-        <view class="flex ">
-          <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
-          <view class="ol-spm">
-            <view class="c3 fs26 ol-spmtit">SEE Seekin Experiencneerindderg包括专业分享、Workshop 升级superstar go go go</view>
-            <view class="c9 fs22">商品尺码颜色信息在这里</view>
+        <view class="ol-bxb flex"  data-index="{{index}}" onTap="toDetail">
+          <view class="ol-bxbl"><image class="ol-bxblimg" src="{{item.orderGoodsList[0].listPicUrl}}" mode="scaleToFill"/></view>
+          <view class="ol-bxbr">
+            <view class="ol-bxbtit c3 fs26">{{item.orderGoodsList[0].goodsName}}</view>
+            <view class="flex ac jb fs24">
+              <view class="c3">{{item.orderGoodsList[0].goodsIntegral}} 积分</view>
+              <view class="c9">X{{item.orderGoodsList[0].number}}</view>
+            </view>
           </view>
         </view>
-        <view class="ol-spr c3 fs24">
-          <view class="ws-no">¥10000.00</view>
-          <view>+</view>
-          <view class="c3 ws-no">888积分</view>
-          <view class="c9 fs22 ol-sprsl">X1</view>
+        <view class="ol-bxc flex ac c6 fs24">实付：<text class="c-c20 fs28 fw500">{{item.integral}}</text><text class="c-c20 fs26">积分</text></view>
+        <view class="ol-bxd flex ac" a:if="{{item.orderStatus === 300}}">
+          <view class="ol-bxdbtn tc fs24" data-index="{{index}}" onTap="shsure">确认收货</view>
         </view>
       </view>
-      <view class="ol-bxc flex ac c6 fs24">合计：<text class="c-c20 fs34 fw500">¥88+88</text><text class="c-c20 fs30">积分</text></view>
-      <view class="ol-bxd flex ac">
-        <view class="ol-bxdbtn tc fs24">再次购买</view>
+      <view class="ol-bx bgf"  a:if="{{item.orderGoodsList[0].goodsType === 0}}">
+        <view class="ol-bxa flex ac jb fs26">
+          <view class="c6">订单单号：{{item.orderSn}}</view>
+          <view class="fw500 ol-bxar">
+            <text a:if="{{item.orderStatus === 201}}">待发货</text>
+            <text a:if="{{item.orderStatus === 300}}">待收货</text>
+            <text a:if="{{item.orderStatus === 301}}">已完成</text>
+            <text a:if="{{item.orderStatus === 101}}">已取消</text>
+          </view>
+        </view>
+        <view class="ol-bxb flex jb"  data-index="{{index}}" onTap="toDetail">
+          <view class="flex ">
+            <view class="ol-bxbl"><image class="ol-bxblimg" src="{{item.orderGoodsList[0].listPicUrl}}" mode="scaleToFill"/></view>
+            <view class="ol-spm">
+              <view class="c3 fs26 ol-spmtit">{{item.orderGoodsList[0].goodsName}}</view>
+              <view class="c9 fs22">{{item.orderGoodsList[0].goodsBrief}}</view>
+            </view>
+          </view>
+          <view class="ol-spr c3 fs24">
+            <view class="ws-no" a:if="{{item.orderGoodsList[0].goodsIntegral}}">{{item.orderGoodsList[0].goodsIntegral}}积分</view>
+            <view class="" a:if="{{item.orderGoodsList[0].goodsIntegral && item.orderGoodsList[0].retailPrice >0}}">+</view>
+            <view class="c3 ws-no" a:if="{{item.orderGoodsList[0].retailPrice >0}}">¥{{item.orderGoodsList[0].retailPrice}}</view>
+            <view class="c9 fs22 ol-sprsl">X{{item.orderGoodsList[0].number}}</view>
+          </view>
+        </view>
+        <view class="ol-bxc flex ac c6 fs24">合计：
+          <text class="c-c20 fs34 fw500" a:if="{{item.integral}}">{{item.integral}}<text class="c-c20 fs30">积分</text> </text>
+          <text class="" a:if="{{item.integral && item.actualPrice >0}}"> + </text>
+          <text class="c-c20 fs34 fw500" a:if="{{item.actualPrice >0}}">¥{{item.actualPrice}}</text>
+        </view>
+        <view class="ol-bxd flex ac" a:if="{{item.orderStatus === 300}}">
+          <view class="ol-bxdbtn tc fs24" data-index="{{index}}" onTap="shsure">确认收货</view>
+        </view>
+        <view class="ol-bxd flex ac" a:if="{{item.orderStatus === 101}}">
+          <view class="ol-bxdbtn tc fs24" data-index="{{index}}" onTap="toBuy">再次购买</view>
+        </view>
       </view>
-    </view>
+    </block>
   </view>
-  <view class="ol-nolist tc" a:if="{{!listFg}}">
+  <view class="ol-nolist tc" a:if="{{orderArr.length<1}}">
     <image class="ol-nolisti" src="../../assets/list_no.png" mode="scaleToFill" />
     <view class="c9 fs32 ol-nolistn tc">暂无订单</view>
   </view>

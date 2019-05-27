@@ -32,7 +32,7 @@
   </view>
   <view class="so-xx flex ac jb bb-e">
     <view class="c6 fs28">快递运费：<view class="c9 so-xxby">全国包邮</view></view>
-    <view class="c3 fs32 fw500">0</view>
+    <view class="c3 fs32 fw500">¥0.00</view>
   </view>
   <view class="so-xx flex ac jb bb-e">
     <view class="c6 fs28">合计：</view>

@@ -30,6 +30,7 @@ Page({
   onShow() {
      this.setData({
       showTKbx:false,
+      selNum:1,
     })
   },
   onReady() {

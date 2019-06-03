@@ -9,21 +9,21 @@ Page({
   },
 
   onLoad() {
-    
+    this.newGoodsList()
+    this.hotGoodsList()
   },
   onShow() {
-    this.setData({
-     hotList:[],
-     newList:[],
-    })
+    // this.setData({
+    //  hotList:[],
+    //  newList:[],
+    // })
    app.getUrl(1)
     if (app.auth_info){
       this._queryMyAcctUserInfoAndPoint()
     }else{
       this.auth()
     }
-    this.newGoodsList()
-    this.hotGoodsList()
+    
   },
   onReady() {
     

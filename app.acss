@@ -6,6 +6,12 @@ page {
 }
 .clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
 .clearfix{ display:inline-block;}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
 .tc{
   text-align: center;
 }
@@ -63,6 +69,9 @@ page {
 .fs38{
   font-size: 38rpx;
 }
+.fs44{
+  font-size: 44rpx;
+}
 .fs48{
   font-size: 48rpx;
 }
@@ -80,6 +89,9 @@ page {
 }
 .lh40{
   line-height: 40rpx;
+}
+.lh42{
+  line-height: 42rpx;
 }
 .lh48{
   line-height: 48rpx;
@@ -109,5 +121,10 @@ page {
   margin-bottom: 16rpx;
 }
 .ws-no{
+  white-space: nowrap;
+}
+.over-hid{
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }

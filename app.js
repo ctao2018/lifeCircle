@@ -6,6 +6,7 @@ App({
   toUrl:null,
   selAddr:null,
   cityAdcode:null,
+  coordinate:null,//经纬度
   globalData: {},
   token: '',
   getUserInfo() {

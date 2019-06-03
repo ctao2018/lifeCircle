@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/networkDetail/networkDetail",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",
@@ -27,6 +28,7 @@
     "pages/orderdetail/orderdetail",
     "pages/goodssw/goodssw",
     "pages/myaddrch/myaddrch",
+    "pages/managementNetwork/managementNetwork",
     "pages/integralrule/integralrule"
     
   ],

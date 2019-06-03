@@ -169,9 +169,10 @@ Page({
     })
     //console.log('queryNewsChildrenCatalogTreeByParam',result)
     let list = result.data.data
-    this.data.typeArr = this.data.typeArr.concat(list)
+    //this.data.typeArr = this.data.typeArr.concat(list) //0515改版
     this.setData({
-      typeArr:this.data.typeArr,
+      //typeArr:this.data.typeArr, //0515改版
+      typeArr:list,
     })
     for(let i =0;i<this.data.typeArr.length;i++){
       if(this.data.typeArr[i].children.length>0){
@@ -621,7 +622,11 @@ Page({
     this._queryNewsChildrenCatalogTreeByParam()
     my.stopPullDownRefresh()
     this._queryFNewsInfoPage()
-  }
+  },
   
+  //测试跳转 需删除
+  testaaa() {
+    my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
+  }
 
 });

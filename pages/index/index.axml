@@ -36,7 +36,7 @@
   <view class="home-wd">
     <view class="home-wdtop">
       <image class="home-wdtimg" src="../../assets/home_ugc.png" mode="scaleToFill" />
-      <view class="home-wdth">热门</view>
+      <view class="home-wdth" onTap="testaaa">热门</view>
       <view class="home-wdtsw">
         <swiper
           indicator-dots="{{false}}"

@@ -49,7 +49,9 @@ const api = {
   payCallBack,
   orderPage,
   orderDetail,
-  confirmOrder
+  confirmOrder,
+  getAreaInfoByCityCode,
+  formalTransactInstitution
 };
 
 
@@ -293,5 +295,15 @@ function orderDetail(params) {
 //确认收货
 function confirmOrder(params) {
   return fetchData('/mall/order/confirmOrder?orderId='+params,'','post');
+}
+
+//获取行政区信息
+function getAreaInfoByCityCode(params) {
+  return fetchData('/dist/whArea/getAreaInfoByCityCode?cityCode='+params);
+}
+
+//经办机构列表查询
+function formalTransactInstitution(params) {
+  return fetchData('/dist/formalTransactInstitution/pageByParam', params);
 }
 export default api

@@ -1,0 +1,9 @@
+{ 
+  "defaultTitle": "社保经办网点",
+  "pullRefresh": true,
+  "usingComponents": {
+    "tabs": "mini-antui/es/tabs/index",
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

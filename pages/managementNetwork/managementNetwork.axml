@@ -26,7 +26,7 @@
   </view>
   <view class="mn-listbx">
     <block a:for="{{mnList}}">
-      <view class="mn-list bgf bb-e">
+      <view class="mn-list bgf bb-e" data-index="{{index}}" onTap="toDetail">
         <view class="c3 fs36 lh42 over-hid">{{item.name}}</view>
         <view class="flex ac jb lh40">
           <view class=" c9 fs28 mn-addr">

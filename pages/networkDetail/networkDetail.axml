@@ -7,10 +7,10 @@
     ></map>
   </view>
   <view class="nd-con">
-    <view class="fs44 c3 fw500">宝安社保局</view>
+    <view class="fs44 c3 fw500">{{dtArr.name}}</view>
     <view class="flex ac jb nd-poi bb-e">
       <view class="c9 fs28">位置</view>
-      <view class="c3 fs28 nd-addr">罗湖区东门北路三号大院3</view>
+      <view class="c3 fs28 nd-addr">{{dtArr.address}}</view>
     </view>
   </view>
   <view class="nd-dhbx"><view class="nd-btn tc fs36 cf">导航</view></view>

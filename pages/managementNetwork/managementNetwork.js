@@ -18,11 +18,11 @@ Page({
   },
 
   onLoad(options) {
-    if(options){
-      this.setData({
-        cityCode:options.cityAdcode,
-      })
-    }
+    // if(options){
+    //   this.setData({
+    //     cityCode:options.cityAdcode,
+    //   })
+    // }
     app.getUrl(2,this.data.cityCode)
     this.auth()
     if(app.coordinate){
@@ -169,6 +169,12 @@ Page({
       showbtline:false,
     })
     this._formalTransactInstitution()
+  },
+  //去详情
+  toDetail(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.mnList[index].id
+    my.navigateTo({ url: '/pages/networkDetail/networkDetail?id='+ id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

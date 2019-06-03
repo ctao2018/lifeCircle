@@ -51,7 +51,8 @@ const api = {
   orderDetail,
   confirmOrder,
   getAreaInfoByCityCode,
-  formalTransactInstitution
+  formalTransactInstitution,
+  formalTransactInstitutiondt
 };
 
 
@@ -305,5 +306,10 @@ function getAreaInfoByCityCode(params) {
 //经办机构列表查询
 function formalTransactInstitution(params) {
   return fetchData('/dist/formalTransactInstitution/pageByParam', params);
+}
+
+//经办机构详情
+function formalTransactInstitutiondt(params) {
+  return fetchData('/dist/formalTransactInstitution/'+params);
 }
 export default api

@@ -1,0 +1,34 @@
+.networkdt{
+  width: 100%;
+}
+.nd-mapbx{
+  /* padding: 26rpx 32rpx; */
+}
+.nd-map{
+  width: 100%;
+  height: 468rpx;
+}
+.nd-con{
+  padding: 28rpx 32rpx 0;
+}
+.nd-poi{
+  height: 100rpx;
+  border-top: 2rpx solid #eeeeee;
+  margin-top: 24rpx;
+}
+.nd-addr{
+  max-width: 85%;
+}
+.nd-dhbx{
+  position: absolute;
+  left: 32rpx;
+  right: 32rpx;
+  bottom: 16rpx;
+}
+.nd-btn{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 4rpx;
+  background-color: #108EE9;
+}

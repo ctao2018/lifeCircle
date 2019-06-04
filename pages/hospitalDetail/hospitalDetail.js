@@ -1,5 +1,5 @@
 const app = getApp();
-import {formalTransactInstitutiondt} from '../../config/api'
+import {formalFixHospitalsdt} from '../../config/api'
 
 Page({
   data: {
@@ -39,7 +39,7 @@ Page({
    this.setData({
      dtArr:[],
    })
-   this._formalTransactInstitutiondt()
+   this._formalFixHospitalsdt()
    if(app.coordinate){
       this.setData({
         lng:app.coordinate.lng,
@@ -50,8 +50,8 @@ Page({
   onReady() {
     this.mapCtx = my.createMapContext('map');
   },
-  async _formalTransactInstitutiondt() {
-    let result = await formalTransactInstitutiondt(this.data.id)
+  async _formalFixHospitalsdt() {
+    let result = await formalFixHospitalsdt(this.data.id)
     console.log('dt',result)
     if(result.data.code === 0){
       let latitude = `markers[0].latitude`;

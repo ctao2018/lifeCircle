@@ -1,4 +1,4 @@
-.management{
+.hospital{
   width: 100%;
 }
 .mn-top{
@@ -27,7 +27,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  top: 183rpx;
+  top: 185rpx;
   z-index: 102;
 }
 .mn-bg{
@@ -86,4 +86,58 @@
   right: 0;
   bottom: 0;
   z-index: 9;
+}
+.h-tab{
+  height: 88rpx;
+}
+.h-arrd{
+  width: 26rpx; 
+  height:16rpx;
+  background: url('../../assets/nav_dropb.png');
+  background-repeat: no-repeat;
+  background-size: 26rpx 16rpx;
+  margin-left: 16rpx;
+}
+.h-arru{
+  background: url('../../assets/nav_drop_preb.png');
+  background-repeat: no-repeat;
+  background-size: 26rpx 16rpx;
+}
+.h-tksx{
+  z-index: 3;
+  position: absolute;
+  left: 0rpx;
+  right: 0rpx;
+  top: 0rpx;
+}
+.h-sxli{
+  height: 94rpx;
+  padding: 0 32rpx;
+}
+.h-sxi{
+  width: 25rpx; 
+  height:25rpx;
+  background: url('../../assets/selTt.png');
+  background-repeat: no-repeat;
+  background-size: 25rpx 25rpx;
+}
+.h-tit{
+  max-width: 85%;
+  display: inline-block;
+}
+.h-grade{
+  display: inline-block;
+  border-radius: 2rpx;
+  padding: 3rpx 8rpx;
+  margin-left: 16rpx;
+  line-height: 34rpx;
+  vertical-align: top;
+}
+.h-ga{
+  color: #0081EC;
+  background-color: #C5E6FE;
+}
+.h-gb{
+  color: #03B5A9;
+  background-color: #F3FCFB;
 }

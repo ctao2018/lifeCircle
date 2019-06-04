@@ -52,7 +52,10 @@ const api = {
   confirmOrder,
   getAreaInfoByCityCode,
   formalTransactInstitution,
-  formalTransactInstitutiondt
+  formalTransactInstitutiondt,
+  formalFixHospitals,
+  formalFixHospitalsdt,
+  formalFixDrugstore
 };
 
 
@@ -311,5 +314,20 @@ function formalTransactInstitution(params) {
 //经办机构详情
 function formalTransactInstitutiondt(params) {
   return fetchData('/dist/formalTransactInstitution/'+params);
+}
+
+//定点医院列表查询
+function formalFixHospitals(params) {
+  return fetchData('/dist/formalFixHospitals/pageByParam', params);
+}
+
+//定点医院详情
+function formalFixHospitalsdt(params) {
+  return fetchData('/dist/formalFixHospitals/'+params);
+}
+
+//定点药店列表查询
+function formalFixDrugstore(params) {
+  return fetchData('/dist/formalFixDrugstore/pageByParam', params);
 }
 export default api

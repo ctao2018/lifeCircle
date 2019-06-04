@@ -7,6 +7,7 @@ App({
   selAddr:null,
   cityAdcode:null,
   coordinate:null,//经纬度
+  globalQuery:null,//外部链接传过来的参
   globalData: {},
   token: '',
   getUserInfo() {
@@ -57,5 +58,10 @@ App({
       
     })
     
+  },
+  onLaunch(options) {
+    if(options.query){
+      this.globalQuery = options.query
+    }
   },
 });

@@ -626,7 +626,8 @@ Page({
   
   //测试跳转 需删除
   testaaa() {
-    my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
+    //my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
+    my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})
   }
 
 });

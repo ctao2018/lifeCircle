@@ -1,0 +1,9 @@
+{ 
+  "defaultTitle": "定点零售药店",
+  "pullRefresh": true,
+  "usingComponents": {
+    "tabs": "mini-antui/es/tabs/index",
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

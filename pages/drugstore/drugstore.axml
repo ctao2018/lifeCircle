@@ -1,4 +1,4 @@
-<view class="management">
+<view class="drugstore">
   <view class="mn-top bgf">
     <view class="mn-ss flex ac">
       <view class="mn-ssi"></view>
@@ -27,10 +27,10 @@
   <view class="mn-listbx">
     <block a:for="{{mnList}}">
       <view class="mn-list bgf bb-e" data-index="{{index}}" onTap="toDetail">
-        <view class="c3 fs36 lh42 over-hid">{{item.name}}</view>
+        <view class="c3 fs36 lh42 over-hid">{{item.organName}}</view>
         <view class="flex ac jb lh40">
           <view class=" c9 fs28 mn-addr">
-            <view class="over-hid">{{item.address}}</view>
+            <view class="over-hid">{{item.organAddress}}</view>
           </view>
           <view class="c9 fs26 ">{{item.dis || '0km'}}</view>
         </view>

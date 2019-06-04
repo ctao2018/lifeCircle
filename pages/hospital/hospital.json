@@ -1,0 +1,8 @@
+{ 
+  "defaultTitle": "定点医院",
+  "pullRefresh": true,
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

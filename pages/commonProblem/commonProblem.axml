@@ -1,0 +1,43 @@
+<view class="common">
+  <view class="mn-top bgf">
+    <view class="mn-ss flex ac">
+      <view class="mn-ssi"></view>
+      <view class="c9 fs28">搜索</view>
+    </view>
+   <view class="bb-e">
+      <tabs
+      tabs="{{tabs}}"
+      showPlus="{{true}}"
+      onTabClick="handleTabClick"
+      onPlusClick="handlePlusClick"
+      activeTab="{{activeTab}}"
+    >
+   </view>
+    <view class="mn-tk" a:if="{{showBx}}">
+      <view class="mn-bg" onTap="closeBx"></view>
+      <view class="mn-tkbx bgf">
+        <view class="mn-ul clearfix">
+          <block a:for="{{tabs}}">
+            <view class="mn-li tc fs28 c3 {{selindx==index?'mn-lisel':''}}" data-index="{{index}}" onTap="selTab">{{item.title}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mn-listbx">
+    <block a:for="{{mnList}}">
+      <view class="mn-list bgf bb-e" data-index="{{index}}" onTap="toDetail">
+        <view class="c3 fs36 lh42 over-hid">{{item.name}}</view>
+        <view class="flex ac jb lh40">
+          <view class=" c9 fs28 mn-addr">
+            <view class="over-hid">{{item.address}}</view>
+          </view>
+          <view class="c9 fs26 ">{{item.dis || '0km'}}</view>
+        </view>
+      </view>
+    </block>
+    <bottom-line a:if="{{showbtline}}"></bottom-line>
+  </view>
+  <view class="c9 fs24 flex ac jc mn-tip">网点数据仅供参考，如有疑问请参考当地人社官网</view>
+  <no-data a:if="{{mnList.length === 0}}"></no-data>
+</view>

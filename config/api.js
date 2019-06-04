@@ -56,7 +56,9 @@ const api = {
   formalFixHospitals,
   formalFixHospitalsdt,
   formalFixDrugstore,
-  formalFixDrugstoredt
+  formalFixDrugstoredt,
+  formalCommonQuestion,
+  queryCommonQusCategory
 };
 
 
@@ -335,5 +337,15 @@ function formalFixDrugstore(params) {
 //定点药店详情
 function formalFixDrugstoredt(params) {
   return fetchData('/dist/formalFixDrugstore/'+params);
+}
+
+//常见问题列表查询
+function formalCommonQuestion(params) {
+  return fetchData('/dist/formalCommonQuestion/pageByParam', params);
+}
+
+//常见问题分类信息
+function queryCommonQusCategory(params) {
+  return fetchData('/dist/formalCommonQuestion/queryCommonQusCategory?cityCode='+ params);
 }
 export default api

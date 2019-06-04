@@ -1,5 +1,5 @@
 const app = getApp();
-import {getTokenByCode,getAreaInfoByCityCode,formalFixDrugstore} from '../../config/api'
+import {getTokenByCode,formalCommonQuestion,queryCommonQusCategory} from '../../config/api'
 
 Page({
   data: {
@@ -11,18 +11,15 @@ Page({
    mnList:[],
    pages:'',
    pageNum:1,
-   area:'',
-   lng:'',
-   lat:'',
-   jwflag:0,
+   category:'',
   },
 
   onLoad(options) {
-    if(options){
-      this.setData({
-        cityCode:options.cityAdcode,
-      })
-    }
+    // if(options){
+    //   this.setData({
+    //     cityCode:options.cityAdcode,
+    //   })
+    // }
     if(app.globalQuery){
       this.setData({
         cityCode:app.globalQuery.cityAdcode,
@@ -31,15 +28,7 @@ Page({
     }
     app.getUrl(2,this.data.cityCode)
     this.auth()
-    if(app.coordinate){
-      this.setData({
-        jwflag:1,
-        lng:app.coordinate.lng,
-        lat:app.coordinate.lat,
-      })
-    }else{
-      this.getLocation()
-    }
+    
   },
   
   onShow() {
@@ -67,8 +56,8 @@ Page({
               key: 'token',
               data: result.data.data
             });
-            this._getAreaInfoByCityCode()
-            this._formalFixDrugstore()
+            this._formalCommonQuestion()
+            this._queryCommonQusCategory()
           }else{
             my.showToast({
               content: '授权失败，请重试！'
@@ -77,38 +66,18 @@ Page({
         })
       })
   },
-  //获取当前地理位置
-  getLocation() {
-    var that = this;
-    my.getLocation({
-      success(res) {
-        that.setData({
-         lng:res.longitude,
-         lat:res.latitude,
-         jwflag:1,
-        })
-        app.coordinate={
-          lng:res.longitude,
-          lat:res.latitude,
-        }
-        that._formalFixDrugstore()
-      },
-      fail() {
-        my.alert({ title: '定位失败' });
-      },
-    })
-  },
-  //获取行政区信息
-  async _getAreaInfoByCityCode() {
-    let result = await getAreaInfoByCityCode(this.data.cityCode)
-    //console.log('行政区',result)
+  
+  //获取分类信息
+  async _queryCommonQusCategory() {
+    let result = await queryCommonQusCategory(this.data.cityCode)
+    console.log('分类信息',result)
     if(result.data.code === 0){
       let ylist = [{lists: {id:''}, title: '全部'}]
       let list = result.data.data
       let newList = list.map((obj,index) => {
         return {
           lists:obj,
-          title:obj.name
+          title:obj.categoryName
         }
       })
       ylist = ylist.concat(newList)
@@ -121,17 +90,14 @@ Page({
     }
   },
   //列表查询
-  async _formalFixDrugstore() {
-    let result = await formalFixDrugstore({
+  async _formalCommonQuestion() {
+    let result = await formalCommonQuestion({
       cityCode: this.data.cityCode,
       pageNum: this.data.pageNum,
       pageSize: 10,
-      area: this.data.area,
-      longitude: this.data.lng,
-      latitude: this.data.lat,
-      flag: this.data.jwflag
+      category:this.data.category
     })
-    //console.log('list',result)
+    //console.log('经办机构',result)
     if(result.data.code === 0){
       this.setData({pages:result.data.data.pages})
       let list = result.data.data.rows
@@ -147,12 +113,12 @@ Page({
     this.setData({
       activeTab: index,
       selindx:index,
-      area:this.data.tabs[index].lists.id,
+      category:this.data.tabs[index].lists.id,
       mnList:[],
       pageNum:1,
       showbtline:false,
     });
-    this._formalFixDrugstore()
+    this._formalCommonQuestion()
   },
   //tab 更多点击
   handlePlusClick() {
@@ -170,25 +136,25 @@ Page({
       activeTab:index,
       showbtline:false,
       showBx:false,
-      area:this.data.tabs[index].lists.id,
+      category:this.data.tabs[index].lists.id,
       mnList:[],
       pageNum:1,
       showbtline:false,
     })
-    this._formalFixDrugstore()
+    this._formalCommonQuestion()
   },
   //去详情
   toDetail(e) {
     let index=e.currentTarget.dataset['index'];
     let id = this.data.mnList[index].id
-    my.navigateTo({ url: '/pages/drugstoreDetail/drugstoreDetail?id='+ id})
+    my.navigateTo({ url: '/pages/networkDetail/networkDetail?id='+ id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({
         pageNum: ++this.data.pageNum
       }, () => {
-        this._formalFixDrugstore()
+        this._formalCommonQuestion()
       })
     }else{
       this.setData({showbtline:true})
@@ -200,7 +166,7 @@ Page({
       pageNum:1,
       showbtline:false,
     })
-    this._formalFixDrugstore()
+    this._formalCommonQuestion()
     my.stopPullDownRefresh()
   }
 });

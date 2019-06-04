@@ -1,0 +1,9 @@
+{ 
+  "defaultTitle": "常见问题",
+  "pullRefresh": true,
+  "usingComponents": {
+    "tabs": "mini-antui/es/tabs/index",
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

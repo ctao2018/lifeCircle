@@ -1,0 +1,17 @@
+<view class="networkdt bgf">
+  <view class="nd-mapbx">
+    <map id="map" class="nd-map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" 
+    markers="{{markers}}"
+    onMarkerTap="markertap"
+    show-location
+    ></map>
+  </view>
+  <view class="nd-con">
+    <view class="fs44 c3 fw500">{{dtArr.organName}}</view>
+    <view class="flex ac jb nd-poi bb-e">
+      <view class="c9 fs28">位置</view>
+      <view class="c3 fs28 nd-addr">{{dtArr.organAddress}}</view>
+    </view>
+  </view>
+  <view class="nd-dhbx"><view class="nd-btn tc fs36 cf" onTap="daohang">导航</view></view>
+</view>

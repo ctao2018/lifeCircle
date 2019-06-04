@@ -55,7 +55,8 @@ const api = {
   formalTransactInstitutiondt,
   formalFixHospitals,
   formalFixHospitalsdt,
-  formalFixDrugstore
+  formalFixDrugstore,
+  formalFixDrugstoredt
 };
 
 
@@ -329,5 +330,10 @@ function formalFixHospitalsdt(params) {
 //定点药店列表查询
 function formalFixDrugstore(params) {
   return fetchData('/dist/formalFixDrugstore/pageByParam', params);
+}
+
+//定点药店详情
+function formalFixDrugstoredt(params) {
+  return fetchData('/dist/formalFixDrugstore/'+params);
 }
 export default api

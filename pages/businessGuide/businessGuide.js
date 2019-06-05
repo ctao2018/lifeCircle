@@ -146,7 +146,7 @@ Page({
   toDetail(e) {
     let index=e.currentTarget.dataset['index'];
     let id = this.data.mnList[index].id
-    my.navigateTo({ url: '/pages/networkDetail/networkDetail?id='+ id})
+    my.navigateTo({ url: '/pages/guideDetail/guideDetail?id='+ id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

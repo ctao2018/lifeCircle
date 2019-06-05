@@ -1,0 +1,23 @@
+.guide{
+  width: 100%;
+}
+.nd-tit{
+  line-height: 67rpx;
+  margin: 32rpx 0;
+  padding: 0 32rpx;
+}
+.nd-rm{
+  padding: 0 32rpx;
+  margin-bottom: 32rpx;
+}
+.nd-cont{
+  padding: 0 32rpx;
+  color: #666666;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  margin-bottom: 50rpx;
+}
+.mohrssNewsImg{
+  width: 100% !important;
+  height: auto !important;
+}

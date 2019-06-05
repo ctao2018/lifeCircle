@@ -1,0 +1,6 @@
+<view class="guide bgf">
+  
+  <view class="nd-cont">
+    <rich-text nodes="{{nodes}}" ></rich-text>
+  </view>
+</view>

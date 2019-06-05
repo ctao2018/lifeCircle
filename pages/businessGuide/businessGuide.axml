@@ -1,4 +1,4 @@
-<view class="common">
+<view class="business">
   <view class="mn-top bgf">
     <view class="mn-ss flex ac">
       <view class="mn-ssi"></view>
@@ -24,20 +24,15 @@
       </view>
     </view>
   </view>
-  <view class="mn-listbx">
+  <view class="mn-listbx bgf">
     <block a:for="{{mnList}}">
-      <view class="cp-list bgf" >
-        <view class="flex jb" data-index="{{index}}" onTap="showDetail">
-          <view class="c3 fs36 cp-tit">{{item.lists.articleTitle}}</view>
-          <view class="cp-arrri {{item.flag?'cp-arrdi':''}}"></view>
-        </view>
-        <view class="cp-dt fs30 c8 lh45" a:if="{{item.flag}}">
-          <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
-        </view>
+      <view class="bg-list bb-e flex ac jb" data-index="{{index}}" onTap="toDetail">
+        <view class="bg-tit"><view class="over-hid c3 fs36">{{item.title}}</view></view>
+        <view class="bg-arrr"></view>
       </view>
     </block>
     <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
-  <view class="c9 fs24 flex ac jc mn-tip">常见问题仅供参考，如有疑问请参考当地人社官网</view>
+  <view class="c9 fs24 flex ac jc mn-tip">办事指南仅供参考，如有疑问请参考当地人社官网</view>
   <no-data a:if="{{mnList.length === 0}}"></no-data>
 </view>

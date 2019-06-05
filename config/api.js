@@ -58,7 +58,10 @@ const api = {
   formalFixDrugstore,
   formalFixDrugstoredt,
   formalCommonQuestion,
-  queryCommonQusCategory
+  queryCommonQusCategory,
+  formalBusinessGuideca,
+  formalBusinessGuide,
+  formalBusinessGuidedt
 };
 
 
@@ -347,5 +350,20 @@ function formalCommonQuestion(params) {
 //常见问题分类信息
 function queryCommonQusCategory(params) {
   return fetchData('/dist/formalCommonQuestion/queryCommonQusCategory?cityCode='+ params);
+}
+
+//办事指南分类信息
+function formalBusinessGuideca(params) {
+  return fetchData('/dist/formalBusinessGuide/queryGuideCategory?cityCode='+ params);
+}
+
+//办事指南列表查询
+function formalBusinessGuide(params) {
+  return fetchData('/dist/formalBusinessGuide/pageByParam', params);
+}
+
+//办事指南详情
+function formalBusinessGuidedt(params) {
+  return fetchData('/dist/formalBusinessGuide/getGuideContentById/'+params);
 }
 export default api

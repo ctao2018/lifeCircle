@@ -33,6 +33,9 @@ page {
 .c6{
   color: #666666;
 }
+.c8{
+  color: #888888;
+}
 .c9{
   color: #999999;
 }
@@ -92,6 +95,9 @@ page {
 }
 .lh42{
   line-height: 42rpx;
+}
+.lh45{
+  line-height: 45rpx;
 }
 .lh48{
   line-height: 48rpx;

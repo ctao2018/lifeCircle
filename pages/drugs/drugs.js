@@ -100,7 +100,7 @@ Page({
   toDetail(e) {
     let index=e.currentTarget.dataset['index'];
     let id = this.data.mnList[index].id
-    my.navigateTo({ url: '/pages/hospitalDetail/hospitalDetail?id='+ id})
+    my.navigateTo({ url: '/pages/drugsDetail/drugsDetail?id='+ id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

@@ -1,0 +1,29 @@
+<view class="drugsdt">
+  <view class="gd-box bgf">
+    <view class="bb-e flex ac jb fs36 gd-list">
+      <view class="c8">药品名称</view>
+      <view class="c3 gd-name">{{detail.name}}</view>
+    </view>
+    <view class="bb-e flex ac jb fs36 gd-list">
+      <view class="c8">药品类型</view>
+      <view class="c3" a:if="{{detail.category === 'A'}}">西药</view>
+      <view class="c3" a:if="{{detail.category === 'B'}}">中成药</view>
+      <view class="c3" a:if="{{detail.category === 'C'}}">中药饮片</view>
+    </view>
+    <view class="bb-e flex ac jb fs36 gd-list">
+      <view class="c8">药品剂型</view>
+      <view class="c3">{{detail.dosageForm}}</view>
+    </view>
+    <view class="bb-e flex ac jb fs36 gd-list">
+      <view class="c8">医保类别</view>
+      <view class="c3" a:if="{{detail.rechargeableGrade === 'A'}}">甲</view>
+      <view class="c3" a:if="{{detail.rechargeableGrade === 'B'}}">乙</view>
+      <view class="c3" a:if="{{detail.rechargeableGrade === 'C'}}">自费</view>
+    </view>
+    <view class=" flex ac jb fs36 gd-list">
+      <view class="c8">备注</view>
+      <view class="c3 gd-remark">{{detail.remark || '无'}}</view>
+    </view>
+  </view>
+  <view class="c9 fs24 flex ac jc gd-tip">办事指南仅供参考，如有疑问请参考当地人社官网</view>
+</view>

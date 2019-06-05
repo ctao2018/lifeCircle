@@ -1,0 +1,6 @@
+{ 
+  "defaultTitle": "医保药品目录",
+  "pullRefresh": false,
+  "usingComponents": {
+  }
+}

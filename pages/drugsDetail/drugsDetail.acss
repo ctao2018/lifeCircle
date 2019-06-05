@@ -1,0 +1,27 @@
+.drugsdt{
+  width: 100%;
+}
+.gd-box{
+  padding: 0rpx 32rpx;
+  margin-top: 28rpx;
+}
+.gd-tip{
+  height: 108rpx;
+  background-color: #f5f5f5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+.gd-list{
+  min-height: 114rpx;
+}
+.gd-name{
+  max-width: 76%;
+  line-height: 50rpx;
+}
+.gd-remark{
+  max-width: 85%;
+  line-height: 50rpx;
+}

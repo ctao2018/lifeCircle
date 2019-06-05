@@ -37,6 +37,7 @@
     "pages/commonProblem/commonProblem",
     "pages/businessGuide/businessGuide",
     "pages/guideDetail/guideDetail",
+    "pages/drugsDetail/drugsDetail",
     "pages/integralrule/integralrule"
     
   ],

@@ -14,11 +14,11 @@ Page({
   },
 
   onLoad(options) {
-    // if(options){
-    //   this.setData({
-    //     cityCode:options.cityAdcode,
-    //   })
-    // }
+    if(options){
+      this.setData({
+        cityCode:options.cityAdcode,
+      })
+    }
     if(app.globalQuery){
       this.setData({
         cityCode:app.globalQuery.cityAdcode,

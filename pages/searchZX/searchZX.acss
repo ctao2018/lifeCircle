@@ -1,0 +1,47 @@
+.search{
+  width: 100%;
+}
+.sea-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  padding: 18rpx 0;
+}
+.sea-topl{
+  display: flex;
+  position: relative;
+  height: 56rpx;
+  line-height: 56rpx;
+  -webkit-box-flex: 1;
+  flex: 1 1 0%;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4rpx;
+  align-items: center;
+  margin-left: 32rpx;
+}
+.sea-topli{
+  width: 28rpx; 
+  height:28rpx;
+  background: url('../../assets/hone_search.png');
+  background-repeat: no-repeat;
+  background-size: 28rpx 28rpx;
+  margin-left: 28rpx;
+}
+.sea-toplinp{
+  flex: 1 1 0%;
+  height: 56rpx;
+  line-height: 56rpx;
+  padding: 0;
+  font-size: 28rpx;
+  background: 0px 0px;
+  box-sizing: border-box;
+  margin-left: 10rpx;
+}
+.sea-topr{
+  color: #2C9CFF;
+  margin: 0 32rpx;
+}

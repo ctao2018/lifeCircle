@@ -1,0 +1,14 @@
+<view class="search">
+  <view class="sea-top bgf">
+      <view class="sea-topl">
+        <view class="sea-topli"></view>
+        <input class="sea-toplinp" placeholder=""  value="{{ssCont}}"
+        onFocus="handleFocus"  
+        onBlur="handleBlur" 
+        onConfirm="handleConfirm"
+      />
+      </view>
+      <view class="fs32 sea-topr" onTap="handleSubmit">搜索</view>
+  </view>
+  
+</view>

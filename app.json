@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/drugs/drugs",
+    "pages/searchZX/searchZX",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",
@@ -38,6 +38,7 @@
     "pages/businessGuide/businessGuide",
     "pages/guideDetail/guideDetail",
     "pages/drugsDetail/drugsDetail",
+    "pages/drugs/drugs",
     "pages/integralrule/integralrule"
     
   ],

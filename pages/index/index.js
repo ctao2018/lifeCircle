@@ -630,7 +630,8 @@ Page({
     //my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/drugstore/drugstore?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/commonProblem/commonProblem?cityAdcode='+this.data.cityAdcode})
-    my.navigateTo({ url: '/pages/businessGuide/businessGuide?cityAdcode='+this.data.cityAdcode})
+    //my.navigateTo({ url: '/pages/businessGuide/businessGuide?cityAdcode='+this.data.cityAdcode})
+    my.navigateTo({ url: '/pages/drugs/drugs?cityAdcode='+this.data.cityAdcode})
   }
 
 });

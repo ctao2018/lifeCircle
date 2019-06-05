@@ -27,7 +27,7 @@ Page({
   //详情
   async _formalInsuranceDrugsInfodt() {
     let result = await formalInsuranceDrugsInfodt(this.data.id)
-    console.log('详情',result)
+    //console.log('详情',result)
       this.setData({
         detail:result.data.data,
       })

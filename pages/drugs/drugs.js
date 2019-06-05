@@ -1,11 +1,10 @@
 const app = getApp();
-import {getTokenByCode,formalBusinessGuideca,formalBusinessGuide} from '../../config/api'
+import {getTokenByCode,formalInsuranceDrugsInfo} from '../../config/api'
 
 Page({
   data: {
-   tabs:[],
-   showBx:false,
-   selindx:0,
+   type:[{name: '全部', type: ''}, {name: '西药', type: 'A'}, {name: '中成药', type: 'B'}, {name: '中药饮片', type: 'C'}],
+   tapindx:0,
    showbtline:false,
    cityCode:'440600',
    mnList:[],
@@ -15,11 +14,11 @@ Page({
   },
 
   onLoad(options) {
-    if(options){
-      this.setData({
-        cityCode:options.cityAdcode,
-      })
-    }
+    // if(options){
+    //   this.setData({
+    //     cityCode:options.cityAdcode,
+    //   })
+    // }
     if(app.globalQuery){
       this.setData({
         cityCode:app.globalQuery.cityAdcode,
@@ -28,6 +27,7 @@ Page({
     }
     app.getUrl(2,this.data.cityCode)
     this.auth()
+    
   },
   
   onShow() {
@@ -55,8 +55,7 @@ Page({
               key: 'token',
               data: result.data.data
             });
-            this._formalBusinessGuideca()
-            this._formalBusinessGuide()
+            this._formalInsuranceDrugsInfo()
           }else{
             my.showToast({
               content: '授权失败，请重试！'
@@ -65,36 +64,14 @@ Page({
         })
       })
   },
-  //获取分类信息
-  async _formalBusinessGuideca() {
-    let result = await formalBusinessGuideca(this.data.cityCode)
-    //console.log('分类',result)
-    if(result.data.code === 0){
-      let ylist = [{lists: {id:''}, title: '全部'}]
-      let list = result.data.data
-      let newList = list.map((obj,index) => {
-        return {
-          lists:obj,
-          title:obj.categoryName
-        }
-      })
-      ylist = ylist.concat(newList)
-      this.setData({
-        tabs:ylist
-      })
-      console.log('ylist',this.data.tabs)
-    }else{
-      console.log(result)
-    }
-  },
   //列表查询
-  async _formalBusinessGuide() {
-    let result = await formalBusinessGuide({
-      cityCode: this.data.cityCode,
+  async _formalInsuranceDrugsInfo() {
+    let result = await formalInsuranceDrugsInfo({
+      regionNo: this.data.cityCode,
       pageNum: this.data.pageNum,
       pageSize: 10,
-      area: this.data.area,
-      category:this.data.category,
+      category: this.data.category,
+      name: '',
     })
     //console.log('list',result)
     if(result.data.code === 0){
@@ -107,53 +84,30 @@ Page({
       console.log(result)
     }
   },
-  //tab点击
-  handleTabClick({ index }) {
-    this.setData({
-      activeTab: index,
-      selindx:index,
-      category:this.data.tabs[index].lists.id,
-      mnList:[],
-      pageNum:1,
-      showbtline:false,
-    });
-    this._formalBusinessGuide()
-  },
-  //tab 更多点击
-  handlePlusClick() {
-    this.setData({showBx:!this.data.showBx})
-  },
-  //关闭弹框
-  closeBx() {
-     this.setData({showBx:false})
-  },
-  //弹框 点击选择
-  selTab(e) {
+  // 选择
+  typeClick(e) {
     let index=e.currentTarget.dataset['index'];
     this.setData({
-      selindx:index,
-      activeTab:index,
+      tapindx:index,
+      category:this.data.type[index].type,
       showbtline:false,
-      showBx:false,
-      category:this.data.tabs[index].lists.id,
       mnList:[],
       pageNum:1,
-      showbtline:false,
     })
-    this._formalBusinessGuide()
+    this._formalInsuranceDrugsInfo()
   },
   //去详情
   toDetail(e) {
     let index=e.currentTarget.dataset['index'];
     let id = this.data.mnList[index].id
-    my.navigateTo({ url: '/pages/guideDetail/guideDetail?id='+ id})
+    my.navigateTo({ url: '/pages/hospitalDetail/hospitalDetail?id='+ id})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({
         pageNum: ++this.data.pageNum
       }, () => {
-        this._formalBusinessGuide()
+        this._formalInsuranceDrugsInfo()
       })
     }else{
       this.setData({showbtline:true})
@@ -165,7 +119,7 @@ Page({
       pageNum:1,
       showbtline:false,
     })
-    this._formalBusinessGuide()
+    this._formalInsuranceDrugsInfo()
     my.stopPullDownRefresh()
   }
 });

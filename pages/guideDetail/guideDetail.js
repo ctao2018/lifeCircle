@@ -5,7 +5,9 @@ Page({
   data: {
    id:'',
    detail:[],
-   nodes:[],
+   nodesTJ:[],
+   nodesQD:[],
+   nodesLC:[],
   },
 
   onLoad(options) {
@@ -30,21 +32,38 @@ Page({
   async _formalBusinessGuidedt() {
     let result = await formalBusinessGuidedt(this.data.id)
     console.log('详情',result)
-      
+      let date = result.data.data.createTime.substring(0, 10);
+      let newdate = `detail.createTime`
       this.setData({
-        detail:result.data.data
+        detail:result.data.data,
+        [newdate]:date,
       })
       this.changeNode()
   },
   changeNode() {
-    let html = this.data.detail.content
-    parse(html, (err, nodes) => {
+    let htmlTJ = this.data.detail.businessCondition;
+     let htmlQD = this.data.detail.detailedList;
+      let htmlLC = this.data.detail.businesssProcess;
+    parse(htmlTJ, (err, nodes) => {
       if (!err) {
         this.setData({
-          nodes,
+          nodesTJ:nodes,
         });
       }
     })
-    console.log(this.data.nodes)
+    parse(htmlQD, (err, nodes) => {
+      if (!err) {
+        this.setData({
+          nodesQD:nodes,
+        });
+      }
+    })
+    parse(htmlLC, (err, nodes) => {
+      if (!err) {
+        this.setData({
+          nodesLC:nodes,
+        });
+      }
+    })
   },
 });

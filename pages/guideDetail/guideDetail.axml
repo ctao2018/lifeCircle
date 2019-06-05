@@ -1,6 +1,20 @@
 <view class="guide bgf">
-  
-  <view class="nd-cont">
-    <rich-text nodes="{{nodes}}" ></rich-text>
+  <view class="gd-box">
+    <view class="fs48 c3 gd-tit">{{detail.title}}</view>
+    <view class="c9 fs28 gd-res">来源：{{detail.source}}</view>
+    <view class="fs28 c9 gd-date">日期：{{detail.createTime}}</view>
+    <view class="fs36 c6 gd-dtsty">一、申请条件</view>
+    <view class="gd-dtsty fs36 c6">
+      <rich-text nodes="{{nodesTJ}}" ></rich-text>
+    </view>
+    <view class="fs36 c6 gd-dtsty">二、材料清单</view>
+    <view class="gd-dtsty fs36 c6">
+      <rich-text nodes="{{nodesQD}}" ></rich-text>
+    </view>
+    <view class="fs36 c6 gd-dtsty">三、办事流程</view>
+    <view class="gd-dtsty fs36 c6">
+      <rich-text nodes="{{nodesLC}}" ></rich-text>
+    </view>
   </view>
+  <view class="c9 fs24 flex ac jc gd-tip">办事指南仅供参考，如有疑问请参考当地人社官网</view>
 </view>

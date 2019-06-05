@@ -1,0 +1,57 @@
+.drugs{
+  width: 100%;
+}
+.mn-top{
+  padding-top: 18rpx;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 99;
+}
+.mn-ss{
+  height: 60rpx;
+  background-color: #f5f5f5;
+  margin:0 32rpx 18rpx 32rpx;
+}
+.mn-ssi{
+  width: 28rpx; 
+  height:28rpx;
+  background: url('../../assets/hone_search.png');
+  background-repeat: no-repeat;
+  background-size: 28rpx 28rpx;
+  margin:0 15rpx 0 28rpx;
+}
+.mn-tip{
+  height: 108rpx;
+  background-color: #f5f5f5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+.mn-listbx{
+  margin: 203rpx 0 110rpx;
+  padding: 0 32rpx;
+}
+.h-tab{
+  height: 88rpx;
+}
+.d-tabsel{
+  color: #108EE9;
+  position: relative;
+}
+.d-tabsel:after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -25rpx;
+  width: 80rpx;
+  height: 4rpx;
+  margin-left: -40rpx;
+  background-color: #108EE9;
+}
+.d-list{
+  padding: 24rpx 0;
+}

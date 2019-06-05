@@ -61,7 +61,9 @@ const api = {
   queryCommonQusCategory,
   formalBusinessGuideca,
   formalBusinessGuide,
-  formalBusinessGuidedt
+  formalBusinessGuidedt,
+  formalInsuranceDrugsInfo,
+  formalInsuranceDrugsInfodt
 };
 
 
@@ -365,5 +367,15 @@ function formalBusinessGuide(params) {
 //办事指南详情
 function formalBusinessGuidedt(params) {
   return fetchData('/dist/formalBusinessGuide/getGuideContentById/'+params);
+}
+
+//药品列表查询
+function formalInsuranceDrugsInfo(params) {
+  return fetchData('/dist/formalInsuranceDrugsInfo/pageByParam', params);
+}
+
+//药品详情
+function formalInsuranceDrugsInfodt(params) {
+  return fetchData('/dist/formalInsuranceDrugsInfo//'+params);
 }
 export default api

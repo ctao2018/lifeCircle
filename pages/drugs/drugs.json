@@ -1,0 +1,8 @@
+{ 
+  "defaultTitle": "医保药品目录",
+  "pullRefresh": true,
+  "usingComponents": {
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "no-data": "/components/nodata/nodata"
+  }
+}

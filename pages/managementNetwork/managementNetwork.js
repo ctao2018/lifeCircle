@@ -45,7 +45,7 @@ Page({
   onShow() {
     this.setData({
     });
-
+    my.hideLoading();
   },
   onReady() {
     
@@ -122,6 +122,10 @@ Page({
   },
   //经办机构列表查询
   async _formalTransactInstitution() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
     let result = await formalTransactInstitution({
       cityCode: this.data.cityCode,
       pageNum: this.data.pageNum,
@@ -131,6 +135,7 @@ Page({
       latitude: this.data.lat,
       flag: this.data.jwflag
     })
+    my.hideLoading()
     //console.log('经办机构',result)
     if(result.data.code === 0){
       this.setData({pages:result.data.data.pages})

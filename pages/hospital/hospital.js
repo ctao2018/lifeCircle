@@ -51,7 +51,7 @@ Page({
   onShow() {
     this.setData({
     });
-
+    my.hideLoading();
   },
   onReady() {
     
@@ -122,6 +122,10 @@ Page({
   },
   //列表查询
   async _formalFixHospitals() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
     let result = await formalFixHospitals({
       cityCode: this.data.cityCode,
       pageNum: this.data.pageNum,
@@ -132,6 +136,7 @@ Page({
       latitude: this.data.lat,
       flag: this.data.jwflag
     })
+    my.hideLoading()
     //console.log('医院',result)
     if(result.data.code === 0){
       this.setData({pages:result.data.data.pages})

@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/searchZX/searchZX",
     "pages/index/index",
     "pages/personalpage/personalpage",
     "pages/circle/circle",
@@ -39,6 +38,7 @@
     "pages/guideDetail/guideDetail",
     "pages/drugsDetail/drugsDetail",
     "pages/drugs/drugs",
+    "pages/searchZX/searchZX",
     "pages/integralrule/integralrule"
     
   ],

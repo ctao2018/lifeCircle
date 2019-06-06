@@ -1,14 +1,41 @@
-<view class="search">
+<view class="search bgf">
   <view class="sea-top bgf">
       <view class="sea-topl">
         <view class="sea-topli"></view>
-        <input class="sea-toplinp" placeholder=""  value="{{ssCont}}"
-        onFocus="handleFocus"  
-        onBlur="handleBlur" 
-        onConfirm="handleConfirm"
-      />
+        <input class="sea-toplinp c6" placeholder=""  value="{{ssCont}}"
+          onBlur="handleBlur" 
+          onConfirm="handleConfirm"
+        />
       </view>
       <view class="fs32 sea-topr" onTap="handleSubmit">搜索</view>
   </view>
-  
+  <view class="s-big">
+    <view class="s-hisbig" a:if="{{!ssFlag}}">
+      <view class="c3 fs36 fw600">搜索历史</view>
+      <view class="s-hisbx flex">
+        <block a:for="{{ssList}}">
+          <view class="c3 fs28 s-hisa" data-index="{{index}}" onTap="selSearch">{{item}}</view>
+        </block>
+      </view>
+      <view class="s-clear" a:if="{{ssList.length>0}}">
+        <view class="fs32 s-clearbtn" onTap="removeBtn">清除历史记录</view>
+      </view>
+    </view>
+    <!-- 药品目录 -->
+    <view a:if="{{ypList}}">
+      <block a:for="{{ypList}}">
+        <view class="bb-e d-list"  data-index="{{index}}" onTap="toDetail">
+          <view class="c3 fs34 lh48 over-hid">{{item.name}}</view>
+          <view class="fs28 c8 lh40 flex ac jb">
+            <view>{{item.dosageForm}}</view>
+            <view a:if="{{item.category === 'A'}}">西药</view>
+            <view a:if="{{item.category === 'B'}}">中成药</view>
+            <view a:if="{{item.category === 'C'}}">中药饮片</view>
+          </view>
+        </view>
+      </block>
+      <bottom-line a:if="{{showbtline}}"></bottom-line>
+      <no-data a:if="{{showNodata}}"></no-data>
+    </view>
+  </view>
 </view>

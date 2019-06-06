@@ -33,7 +33,7 @@ Page({
   onShow() {
     this.setData({
     });
-
+    my.hideLoading();
   },
   onReady() {
     
@@ -89,6 +89,10 @@ Page({
   },
   //列表查询
   async _formalBusinessGuide() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
     let result = await formalBusinessGuide({
       cityCode: this.data.cityCode,
       pageNum: this.data.pageNum,
@@ -96,6 +100,7 @@ Page({
       area: this.data.area,
       category:this.data.category,
     })
+    my.hideLoading()
     //console.log('list',result)
     if(result.data.code === 0){
       this.setData({pages:result.data.data.pages})

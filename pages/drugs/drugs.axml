@@ -1,6 +1,6 @@
 <view class="drugs">
   <view class="mn-top bgf">
-    <view class="mn-ss flex ac">
+    <view class="mn-ss flex ac" onTap="toSearch">
       <view class="mn-ssi"></view>
       <view class="c9 fs28">搜索</view>
     </view>

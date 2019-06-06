@@ -33,7 +33,7 @@ Page({
   onShow() {
     this.setData({
     });
-
+    my.hideLoading()
   },
   onReady() {
     
@@ -66,6 +66,10 @@ Page({
   },
   //列表查询
   async _formalInsuranceDrugsInfo() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
     let result = await formalInsuranceDrugsInfo({
       regionNo: this.data.cityCode,
       pageNum: this.data.pageNum,
@@ -73,6 +77,7 @@ Page({
       category: this.data.category,
       name: '',
     })
+    my.hideLoading()
     //console.log('list',result)
     if(result.data.code === 0){
       this.setData({pages:result.data.data.pages})
@@ -101,6 +106,10 @@ Page({
     let index=e.currentTarget.dataset['index'];
     let id = this.data.mnList[index].id
     my.navigateTo({ url: '/pages/drugsDetail/drugsDetail?id='+ id})
+  },
+  //去搜索
+  toSearch() {
+    my.navigateTo({ url: '/pages/searchZX/searchZX?id='})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

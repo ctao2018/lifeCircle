@@ -73,3 +73,29 @@
 .d-list{
   padding: 24rpx 0;
 }
+.mn-list{
+  padding: 20rpx 0rpx;
+}
+.mn-addr{
+  width: 80%;
+}
+.h-tit{
+  max-width: 85%;
+  display: inline-block;
+}
+.h-grade{
+  display: inline-block;
+  border-radius: 2rpx;
+  padding: 3rpx 8rpx;
+  margin-left: 16rpx;
+  line-height: 34rpx;
+  vertical-align: top;
+}
+.h-ga{
+  color: #0081EC;
+  background-color: #C5E6FE;
+}
+.h-gb{
+  color: #03B5A9;
+  background-color: #F3FCFB;
+}

@@ -11,27 +11,47 @@ Page({
     ssFlag:false,
     showNodata:false,
     serMsg:'',
+    jwflag:0,
+    lng:'',
+    lat:'',
     ypList:[],
+    yyList:[],
+    yygrade:[],
   },
 
   onLoad(options) {
+    console.log(options)
     // if(options){
     //   this.setData({
     //     pageType:options.type,
     //     cityCode:options.cityAdcode,
     //   })
     // }
-    this.setData({pageType:'drugs'})
+    this.setData({pageType:'hospital'})
     if(this.data.pageType === 'drugs'){
       this.getHis('drugsKey')
       this.setData({
         title:'医保药品目录'
       })
+    }else if(this.data.pageType === 'hospital') {
+      this.getHis('hospitalkey')
+      this.setData({
+        title:'定点医院'
+      })
     }
   },
   onShow() {
-    this.setData({
-    })
+    if(app.coordinate){
+      this.setData({
+        jwflag:1,
+        lng:app.coordinate.lng,
+        lat:app.coordinate.lat,
+      })
+    }else{
+      this.setData({
+        jwflag:0
+      })
+    }
     app.getUrl(3,this.data.city,this.data.cityCode);
     this.setTit();
   },
@@ -72,6 +92,8 @@ Page({
   removeBtn() {
     if(this.data.pageType === 'drugs'){
       this.removeHis('drugsKey')
+    }else if(this.data.pageType === 'hospital') {
+      this.removeHis('hospitalkey')
     }
   },
   //搜索值处理
@@ -106,15 +128,17 @@ Page({
       pageNum:1,
       pages:'',
       showbtline:false,
+      ssFlag:true,
+      serMsg:this.data.ssCont,
       ypList:[],
+      yyList:[],
     })
     if(this.data.pageType === 'drugs'){
       this.setHis('drugsKey',sslist)
-      let msg = this.data.ssCont;
-      this.setData({
-        serMsg:msg,
-      })
       this._formalInsuranceDrugsInfo()
+    }else if(this.data.pageType === 'hospital') {
+      this.setHis('hospitalkey',sslist)
+      this._formalFixHospitals()
     }
     this.setData({
       ssCont:'',
@@ -149,12 +173,48 @@ Page({
       this.data.ypList = this.data.ypList.concat(list)
       this.setData({
         ypList:this.data.ypList,
-        ssFlag:true,
       })
       if(this.data.ypList.length<1){
         this.setData({showNodata:true})
       }
       console.log(this.data.ypList)
+    }else{
+      console.log(result)
+    }
+  },
+  //医院 列表
+  async _formalFixHospitals() {
+    my.showLoading({
+      content: '加载中...',
+      delay: 100
+    });
+    let result = await formalFixHospitals({
+      cityCode: this.data.cityCode,
+      pageNum: this.data.pageNum,
+      pageSize: 10,
+      name: this.data.serMsg,
+      longitude: this.data.lng,
+      latitude: this.data.lat,
+      flag: this.data.jwflag
+    })
+    my.hideLoading()
+    //console.log('医院',result)
+    if(result.data.code === 0){
+      this.setData({pages:result.data.data.pages})
+      let list = result.data.data.rows
+      this.data.yyList = this.data.yyList.concat(list)
+      this.setData({
+        yyList:this.data.yyList,
+      })
+      console.log(this.data.yyList)
+      if(this.data.yyList.length<1){
+        this.setData({showNodata:true})
+      }
+      let gradeArr=[]
+      for (let i = 0;i<this.data.yyList.length; i++) {
+        gradeArr.push(this.data.yyList[i].grade.substring(0, 1))
+      }
+      this.setData({yygrade:gradeArr})
     }else{
       console.log(result)
     }
@@ -168,18 +228,25 @@ Page({
         pageNum:1,
         pages:'',
         showbtline:false,
+        ssFlag:true,
         ypList:[],
+        yyList:[],
       })
     if(this.data.pageType === 'drugs'){
       this._formalInsuranceDrugsInfo()
+    }else if(this.data.pageType === 'hospital') {
+      this._formalFixHospitals()
     }
   },
   //to 详情页面
   toDetail(e) {
     let index=e.currentTarget.dataset['index'];
-    let id = this.data.mnList[index].id;
     if(this.data.pageType === 'drugs'){
+      let id = this.data.ypList[index].id;
       my.navigateTo({ url: '/pages/drugsDetail/drugsDetail?id='+ id})
+    }else if(this.data.pageType === 'hospital') {
+      let id = this.data.yyList[index].id
+      my.navigateTo({ url: '/pages/hospitalDetail/hospitalDetail?id='+ id})
     }
     
   },
@@ -190,6 +257,8 @@ Page({
       }, () => {
         if(this.data.pageType === 'drugs'){
           this._formalInsuranceDrugsInfo()
+        }else if(this.data.pageType === 'hospital') {
+          this._formalFixHospitals()
         }
       
       })

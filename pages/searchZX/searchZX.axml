@@ -34,8 +34,26 @@
           </view>
         </view>
       </block>
-      <bottom-line a:if="{{showbtline}}"></bottom-line>
-      <no-data a:if="{{showNodata}}"></no-data>
     </view>
+    <!-- 定点医院 -->
+    <view a:if="{{yyList}}">
+      <block a:for="{{yyList}}">
+        <view class="mn-list bgf bb-e" data-index="{{index}}" onTap="toDetail">
+          <view class="">
+            <view class="c3 fs34 lh42 over-hid h-tit">{{item.name}}</view>
+            <text  class="fs24 h-grade {{yygrade[index]==='三'?'h-ga':''}} {{yygrade[index]==='二'?'h-gb':''}}" a:if="{{yygrade[index]==='三' || yygrade[index]==='二'}}" data-index="{{index}}">{{item.grade}}</text>
+          </view>
+          <view class="flex ac jb lh40">
+            <view class=" c9 fs28 mn-addr">
+              <view class="over-hid">{{item.address}}</view>
+            </view>
+            <view class="c9 fs26 ">{{item.dis || '0km'}}</view>
+          </view>
+        </view>
+      </block>
+      
+    </view>
+    <bottom-line a:if="{{showbtline}}"></bottom-line>
+    <no-data a:if="{{showNodata}}"></no-data>
   </view>
 </view>

@@ -109,7 +109,7 @@ Page({
   },
   //去搜索
   toSearch() {
-    my.navigateTo({ url: '/pages/searchZX/searchZX?id='})
+    my.navigateTo({ url: '/pages/searchZX/searchZX?pageType=drugs&cityCode=' + this.data.cityCode})
   },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {

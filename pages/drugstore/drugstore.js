@@ -188,6 +188,10 @@ Page({
     let id = this.data.mnList[index].id
     my.navigateTo({ url: '/pages/drugstoreDetail/drugstoreDetail?id='+ id})
   },
+    //去搜索
+  toSearch() {
+    my.navigateTo({ url: '/pages/searchZX/searchZX?pageType=drugstore&cityCode=' + this.data.cityCode})
+  },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({

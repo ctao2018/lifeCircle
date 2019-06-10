@@ -146,7 +146,7 @@ Page({
   //菜单列表
   async _getMenu() {
     let result = await getMenu()
-   //console.log('getMenu',result)
+   console.log('getMenu',result)
    let menu = result.data.data
    this.setData({menuList:menu})
   },
@@ -403,12 +403,25 @@ Page({
             });
           }
         }else{
-          let tok = my.getStorageSync({ key: 'token' })
-          let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
-          //console.log(newurl)
-          app.webViewUrl = newurl
-          //app.webViewUrl = url + '?tok=' + tok.data
-          my.navigateTo({ url: '/pages/webview/webview'})
+          // let tok = my.getStorageSync({ key: 'token' })
+          // let newurl = env.jump_url + '?toUrl=' + url + '?tok=' + tok.data
+          // //console.log(newurl)
+          // app.webViewUrl = newurl
+          // //app.webViewUrl = url + '?tok=' + tok.data
+          // my.navigateTo({ url: '/pages/webview/webview'})
+          if(moduleEn === 'fixHospitals'){
+            my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})
+          }else if(moduleEn === 'fixDrugstore'){
+            my.navigateTo({ url: '/pages/drugstore/drugstore?cityAdcode='+this.data.cityAdcode})
+          }else if(moduleEn === 'insuraceDrugs'){
+            my.navigateTo({ url: '/pages/drugs/drugs?cityAdcode='+this.data.cityAdcode})
+          }else if(moduleEn === 'transactInstitution'){
+            my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
+          }else if(moduleEn === 'businessGuide'){
+            my.navigateTo({ url: '/pages/businessGuide/businessGuide?cityAdcode='+this.data.cityAdcode})
+          }else if(moduleEn === 'commonQuestion'){
+            my.navigateTo({ url: '/pages/commonProblem/commonProblem?cityAdcode='+this.data.cityAdcode})
+          }
         }
       }else{
         my.showToast({

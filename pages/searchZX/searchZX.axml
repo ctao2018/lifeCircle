@@ -51,7 +51,57 @@
           </view>
         </view>
       </block>
-      
+    </view>
+    <!-- 经办网点 -->
+    <view a:if="{{jbList}}">
+      <block a:for="{{jbList}}">
+        <view class="mn-list bgf bb-e" data-index="{{index}}" onTap="toDetail">
+          <view class="c3 fs36 lh42 over-hid">{{item.name}}</view>
+          <view class="flex ac jb lh40">
+            <view class=" c9 fs28 mn-addr">
+              <view class="over-hid">{{item.address}}</view>
+            </view>
+            <view class="c9 fs26 ">{{item.dis || '0km'}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 办事指南 -->
+    <view a:if="{{bsList}}">
+      <block a:for="{{bsList}}">
+        <view class="bg-list bb-e flex ac jb" data-index="{{index}}" onTap="toDetail">
+          <view class="bg-tit"><view class="over-hid c3 fs36">{{item.title}}</view></view>
+          <view class="bg-arrr"></view>
+        </view>
+      </block>
+    </view>
+    <!-- 定点零售药店 -->
+    <view a:if="{{ydList}}">
+      <block a:for="{{ydList}}">
+        <view class="mn-list bgf bb-e" data-index="{{index}}" onTap="toDetail">
+          <view class="c3 fs36 lh42 over-hid">{{item.organName}}</view>
+          <view class="flex ac jb lh40">
+            <view class=" c9 fs28 mn-addr">
+              <view class="over-hid">{{item.organAddress}}</view>
+            </view>
+            <view class="c9 fs26 ">{{item.dis || '0km'}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 常见问题 -->
+    <view a:if="{{wtList}}">
+      <block a:for="{{wtList}}">
+        <view class="cp-list bgf" >
+          <view class="flex jb" data-index="{{index}}" onTap="toDetail">
+            <view class="c3 fs36 cp-tit">{{item.lists.articleTitle}}</view>
+            <view class="cp-arrri {{item.flag?'cp-arrdi':''}}"></view>
+          </view>
+          <view class="cp-dt fs30 c8 lh45" a:if="{{item.flag}}">
+            <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
+          </view>
+        </view>
+      </block>
     </view>
     <bottom-line a:if="{{showbtline}}"></bottom-line>
     <no-data a:if="{{showNodata}}"></no-data>

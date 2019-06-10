@@ -156,7 +156,7 @@ Page({
   //点击 全部
   showTKbx() {
     this.setData({
-      showBx:true,
+      showBx:!this.data.showBx,
       showSX:false,
     });
   },
@@ -164,7 +164,7 @@ Page({
   showSXbx() {
     this.setData({
       showBx:false,
-      showSX:true,
+      showSX:!this.data.showSX,
     })
   },
   //筛选 选择

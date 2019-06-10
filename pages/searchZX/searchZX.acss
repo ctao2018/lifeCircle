@@ -99,3 +99,46 @@
   color: #03B5A9;
   background-color: #F3FCFB;
 }
+.bg-list{
+  height: 100rpx;
+}
+.bg-tit{
+  width: 90%;
+}
+.bg-arrr{
+  width: 14rpx; 
+  height:27rpx;
+  background: url('../../assets/list_drop.png');
+  background-repeat: no-repeat;
+  background-size: 14rpx 27rpx;
+  margin-top: 10rpx;
+}
+.cp-list{
+  padding: 25rpx 0;
+  margin-bottom: 16rpx;
+}
+.cp-tit{
+  width: 90%;
+  line-height: 50rpx;
+}
+.cp-arrri{
+  width: 14rpx; 
+  height:27rpx;
+  background: url('../../assets/list_drop.png');
+  background-repeat: no-repeat;
+  background-size: 14rpx 27rpx;
+  margin-top: 10rpx;
+}
+.cp-arrdi{
+  width: 28rpx; 
+  height:15rpx;
+  background: url('../../assets/list_drop_pre.png');
+  background-repeat: no-repeat;
+  background-size: 28rpx 15rpx;
+  margin-top: 15rpx;
+}
+.cp-dt{
+  margin-top: 24rpx;
+  padding-top: 20rpx;
+  border-top: 2rpx solid #eeeeee;
+}

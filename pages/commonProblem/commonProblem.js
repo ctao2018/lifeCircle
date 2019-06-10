@@ -182,6 +182,10 @@ Page({
     
    // console.log(this.data.dtArr)
   },
+    //去搜索
+  toSearch() {
+    my.navigateTo({ url: '/pages/searchZX/searchZX?pageType=commonProblem&cityCode=' + this.data.cityCode})
+  },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({

@@ -153,6 +153,10 @@ Page({
     let id = this.data.mnList[index].id
     my.navigateTo({ url: '/pages/guideDetail/guideDetail?id='+ id})
   },
+  //去搜索
+  toSearch() {
+    my.navigateTo({ url: '/pages/searchZX/searchZX?pageType=businessGuide&cityCode=' + this.data.cityCode})
+  },
   onReachBottom(e) {
     if (this.data.pages>this.data.pageNum) {
       this.setData({

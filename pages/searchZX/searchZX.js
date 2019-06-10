@@ -28,39 +28,38 @@ Page({
 
   onLoad(options) {
     console.log(options)
-    // if(options){
-    //   this.setData({
-    //     pageType:options.type,
-    //     cityCode:options.cityAdcode,
-    //   })
-    // }
-    this.setData({pageType:'commonProblem'})
-    if(this.data.pageType === 'drugs'){
+    if(options){
+      this.setData({
+        pageType:options.pageType,
+        cityCode:options.cityCode,
+      })
+    }
+    if(options.pageType === 'drugs'){
       this.getHis('drugsKey')
       this.setData({
         title:'医保药品目录'
       })
-    }else if(this.data.pageType === 'hospital') {
+    }else if(options.pageType === 'hospital') {
       this.getHis('hospitalkey')
       this.setData({
         title:'定点医院'
       })
-    }else if(this.data.pageType === 'managementNetwork') {
+    }else if(options.pageType === 'managementNetwork') {
       this.getHis('networkkey')
       this.setData({
         title:'社保经办网点'
       })
-    }else if(this.data.pageType === 'businessGuide') {
+    }else if(options.pageType === 'businessGuide') {
       this.getHis('guidekey')
       this.setData({
         title:'办事指南'
       })
-    }else if(this.data.pageType === 'drugstore') {
+    }else if(options.pageType === 'drugstore') {
       this.getHis('drugstorekey')
       this.setData({
         title:'定点零售药店'
       })
-    }else if(this.data.pageType === 'commonProblem') {
+    }else if(options.pageType === 'commonProblem') {
       this.getHis('problemkey')
       this.setData({
         title:'常见问题'
@@ -149,16 +148,24 @@ Page({
     }
     return arr
   },
-  handleSubmit() {
+  handleSubmit(e) {
+    let inpData = e.detail.value.inputss
+    this.setData({ssCont:inpData})
+    this.searchFn()
+  },
+  searchFn() {
     if(!this.data.ssCont){
       my.showToast({
         content: '请输入需要搜索的内容！'
       });
       return false;
     }
+    my.pageScrollTo({
+      scrollTop: 0
+    })
     let sslist = this.searchVal(this.data.ssCont,this.data.ssList)
     this.setData({ssList:sslist})
-    console.log(this.data.ssList,this.data.pageType)
+    //console.log(this.data.ssList,this.data.pageType)
     this.setData({
       pageNum:1,
       pages:'',
@@ -201,7 +208,7 @@ Page({
   },
   handleConfirm(e) {
     this.setData({ssCont:e.detail.value})
-    this.handleSubmit()
+    this.searchFn()
   },
   //药品列表
   async _formalInsuranceDrugsInfo() {
@@ -293,6 +300,9 @@ Page({
       this.data.jbList = this.data.jbList.concat(list)
       this.setData({jbList:this.data.jbList})
       console.log(this.data.jbList)
+      if(this.data.ypList.length<1){
+        this.setData({showNodata:true})
+      }
     }else{
       console.log(result)
     }
@@ -316,6 +326,9 @@ Page({
       let list = result.data.data.rows
       this.data.bsList = this.data.bsList.concat(list)
       this.setData({bsList:this.data.bsList})
+      if(this.data.bsList.length<1){
+        this.setData({showNodata:true})
+      }
       console.log(this.data.bsList)
     }else{
       console.log(result)
@@ -343,6 +356,9 @@ Page({
       let list = result.data.data.rows
       this.data.ydList = this.data.ydList.concat(list)
       this.setData({ydList:this.data.ydList})
+      if(this.data.ydList.length<1){
+        this.setData({showNodata:true})
+      }
       console.log(this.data.ydList)
     }else{
       console.log(result)
@@ -375,6 +391,9 @@ Page({
       this.setData({wtList:this.data.wtList})
       this.changeNode()
       console.log(this.data.wtList)
+      if(this.data.wtList.length<1){
+        this.setData({showNodata:true})
+      }
     }else{
       console.log(result)
     }

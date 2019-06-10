@@ -44,6 +44,9 @@
 .sea-topr{
   color: #2C9CFF;
   margin: 0 32rpx;
+  height: auto;
+  line-height: 32rpx;
+  border: none;
 }
 .s-big{
   margin-top: 116rpx;
@@ -116,6 +119,7 @@
 .cp-list{
   padding: 25rpx 0;
   margin-bottom: 16rpx;
+  border-bottom: 2rpx solid #eeeeee;
 }
 .cp-tit{
   width: 90%;

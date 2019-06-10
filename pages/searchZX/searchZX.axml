@@ -1,14 +1,17 @@
 <view class="search bgf">
-  <view class="sea-top bgf">
-      <view class="sea-topl">
-        <view class="sea-topli"></view>
-        <input class="sea-toplinp c6" placeholder=""  value="{{ssCont}}"
-          onBlur="handleBlur" 
-          onConfirm="handleConfirm"
-        />
-      </view>
-      <view class="fs32 sea-topr" onTap="handleSubmit">搜索</view>
-  </view>
+  <form onSubmit="handleSubmit">
+    <view class="sea-top bgf">
+        <view class="sea-topl">
+          <view class="sea-topli"></view>
+          <input class="sea-toplinp c6" placeholder="" name="inputss"  value="{{ssCont}}"
+            onBlur="handleBlur" 
+            onConfirm="handleConfirm"
+          />
+        </view>
+        <!-- <view class="fs32 sea-topr" onTap="handleSubmit">搜索</view> -->
+        <button class="fs32 sea-topr" form-type="submit">搜索</button>
+    </view>
+  </form>
   <view class="s-big">
     <view class="s-hisbig" a:if="{{!ssFlag}}">
       <view class="c3 fs36 fw600">搜索历史</view>

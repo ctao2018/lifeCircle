@@ -1,6 +1,6 @@
 <view class="question">
   <form onSubmit="fabu">
-    <view class="que-inpbx"><input class="que-inp" maxlength="60" value="{{title}}" name="inputTit" onBlur="getTit" placeholder="请输入问题并以问号结尾(4~60字)" /></view>
+    <view class="que-inpbx"><textarea class="que-inp" maxlength=60  show-count={{false}} value="{{title}}" name="inputTit" onBlur="getTit" placeholder="请输入问题并以问号结尾(4~60字)" /></view>
     <view class="que-txtbx"><textarea class="que-txt" show-count="false" name="textarea" placeholder="详细描述你的问题（选填）" maxlength=300 /></view>
     <view class="que-bt">
       <view class="que-bta">

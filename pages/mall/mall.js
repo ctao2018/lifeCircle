@@ -9,8 +9,8 @@ Page({
   },
 
   onLoad() {
-    this.newGoodsList()
-    this.hotGoodsList()
+    // this.newGoodsList()
+    // this.hotGoodsList()
   },
   onShow() {
     // this.setData({

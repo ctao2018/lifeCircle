@@ -341,9 +341,9 @@
 }
 .home-wdbox{
   position: fixed;
-  right: 10rpx;
+  right: 32rpx;
   /* left: 50%; */
-  bottom: 12rpx;
+  bottom: 54rpx;
   /* margin-left: -180rpx;  0515改版 */
   /* margin-left: -116rpx; */
   /* border-radius: 36rpx;
@@ -367,18 +367,18 @@
   background-size: 180rpx 140rpx;
 }
 .home-twbxa{
-  width: 148rpx; 
+  /* width: 148rpx; 
   height:148rpx;
   background: url('../../assets/twenbg.png');
   background-repeat: no-repeat;
-  background-size: 148rpx 148rpx;
+  background-size: 148rpx 148rpx; */
 }
 .home-twbtn{
-  width: 114rpx; 
-  height:114rpx;
+  width: 152rpx; 
+  height:147rpx;
   background: url('../../assets/twen.png');
   background-repeat: no-repeat;
-  background-size: 114rpx 114rpx;
+  background-size: 152rpx 147rpx;
 }
 .home-wdboxl{
   width: 50%;

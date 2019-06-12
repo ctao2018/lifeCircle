@@ -64,4 +64,9 @@ App({
       this.globalQuery = options.query
     }
   },
+  onShow(options) {
+    if(options.query){
+      this.globalQuery = options.query
+    }
+  },
 });

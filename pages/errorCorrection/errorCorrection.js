@@ -1,5 +1,5 @@
 const app = getApp();
-import {queryAllValidMaterials,addAnswerByUser} from '../../config/api'
+import {addAnswerByUser} from '../../config/api'
 import env from '../../config/env'
 
 Page({
@@ -29,7 +29,7 @@ Page({
     }
   },
   onShow() {
-    this._queryAllValidMaterials()
+   
   },
   onReady() {
     
@@ -38,96 +38,6 @@ Page({
   getLink(e) {
     this.setData({
       urlLink: e.detail.value,
-    });
-  },
-   //所需材料 列表
-  async _queryAllValidMaterials() {
-    let result = await queryAllValidMaterials()
-   // console.log('材料',result)
-    let list = result.data.data
-    let newList = list.map((obj,index) => {
-      return {
-        lists:obj,
-        flaga:false
-      }
-    })
-    this.setData({clArr:newList})
-    //console.log('材料',this.data.clArr)
-  },
-  //点击选择材料
-  selCLfn(e) {
-    let index=e.currentTarget.dataset['index'];
-    let clLng = this.data.clArr.length - 1;
-    //console.log(clLng)
-    if(clLng === index){
-      this.setData({
-        showTK:true,
-      })
-    } else{
-      let sItem = "clArr["+ index + "].flaga";
-      if(this.data.clArr[index].flaga){
-        this.setData({
-          [sItem]:false,
-        })
-      }else{
-        this.setData({
-          [sItem]:true,
-        })
-      }
-    }
-    
-    let selArr = []
-    let that = this
-    that.data.clArr.forEach(function (e, i) {
-      if(that.data.clArr[i].flaga){
-        selArr.push(that.data.clArr[i].lists.name)
-      }
-    })
-    this.setData({selCl:selArr})
-    let nowLeng = this.data.selCl.length
-    this.setData({selLeng:nowLeng})
-  },
-  //关闭弹框
-  closeTK() {
-    this.setData({
-      showTK:false,
-      qtCL:'',
-    })
-  },
-  //弹框 确认
-  addYes(e) {
-    let inpData = e.detail.value.inputCl
-    this.setData({qtCL:inpData})
-    let num = inpData.length
-    if(num>15){
-      my.showToast({
-        content: '输入内容过长',
-        duration: 1500,
-      });
-      return false
-    }
-    if(inpData){
-      let newCL = []
-      newCL = [{
-        lists:{name:inpData},
-        flaga:true,
-      }]
-      let newArr = newCL.concat(this.data.clArr)
-      let newselArr = this.data.selCl
-      //console.log(newselArr)
-      let nweselCl = newselArr.push(inpData)
-      this.setData({
-        showTK:false,
-        qtCL:'',
-        clArr:newArr,
-        selArr:nweselCl,
-      })
-    }
-  },
-  //获取弹框输入框内容
-  getCail(e) {
-    this.setData({
-      qtCL: e.detail.value,
     });
   },
   //点击上传图片

@@ -68,7 +68,7 @@
         "pagePath": "pages/mall/mall",
         "icon": "assets/tabbar_mall_default.png",
         "activeIcon": "assets/tabbar_mall_selected.png",
-        "name": "商城"
+        "name": "优选"
       },
       {
         "pagePath": "pages/my/my",

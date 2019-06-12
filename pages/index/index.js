@@ -640,11 +640,12 @@ Page({
   //测试跳转 需删除
   testaaa() {
     //my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
-    my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})
+    //my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/drugstore/drugstore?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/commonProblem/commonProblem?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/businessGuide/businessGuide?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/drugs/drugs?cityAdcode='+this.data.cityAdcode})
+    my.navigateTo({ url: '/pages/errorCorrection/errorCorrection'})
   }
 
 });

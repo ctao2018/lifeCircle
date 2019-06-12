@@ -12,34 +12,12 @@
         <image class="addpici" onTap="upLoadimg" src="../../assets/picture.png" mode="scaleToFill" />
       </view>
       <view class="ans-clbx">
-        <view class="ans-clbxt">
-          <view class="c3 fs34">选择所需材料</view>
-          <!-- <view class="c3 fs28">{{selLeng}}/3</view> -->
-        </view>
-        <view class="ans-clbxsel">
-          <block a:for="{{clArr}}">
-            <view class="ans-clitem {{item.flaga?'ans-clitemsel':''}}" data-index="{{index}}" onTap="selCLfn">{{item.lists.name}}</view>
-          </block>
-        </view>
         <view class="ans-linkbx">
           <view class="ans-linkl c3 fs34">来源链接</view>
           <view class="ans-link"><input class="ans-linkinp"  value="{{urlLink}}" onBlur="getLink" placeholder="添加链接(选填)" /></view>
         </view>
       </view>
     </view>
-    <view class="ans-tip c9 fs24">温馨提示：上传社保部门官网/公众号/生活/头条号/等链接作为依据，可以更快获得审核通过哦。经过审核后发布，可获得积分奖励。点击我的-积分查看积分规则。</view>
     <view class="ans-btnbx"><button class="ans-btn fs32 cf {{changebtncol?'ans-btnSel':''}}" form-type="submit">提交</button></view>
-    <view class="ans-tk" a:if="{{showTK}}">
-      <view class="ans-tkbx bgf">
-        <form onSubmit="addYes">
-        <view class="fs36 c3 fw500">添加材料</view>
-        <view class="ans-tkbxcl"><input class="ans-tkbxinp c6 fs28"  value="{{clval}}" name="inputCl" placeholder="输入材料" /></view>
-        <view class="ans-tkbtn">
-          <view class="c9 fs28" onTap="closeTK">取消</view>
-          <button class="fs28 fw500 ans-tkbtna" form-type="submit">添加</button>
-        </view>
-        </form>
-      </view>
-    </view>
   </form>
 </view>

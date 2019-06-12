@@ -39,6 +39,7 @@
     "pages/drugsDetail/drugsDetail",
     "pages/drugs/drugs",
     "pages/searchZX/searchZX",
+    "pages/errorCorrection/errorCorrection",
     "pages/integralrule/integralrule"
     
   ],

@@ -130,5 +130,10 @@ Page({
     })
     this._formalInsuranceDrugsInfo()
     my.stopPullDownRefresh()
-  }
+  },
+  onShareAppMessage() {
+    return {
+      path: '/pages/drugs/drugs?cityAdcode='+this.data.cityCode
+    };
+  },
 });

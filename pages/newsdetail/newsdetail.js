@@ -47,4 +47,9 @@ Page({
     })
     console.log(this.data.nodes)
   },
+  onShareAppMessage() {
+    return {
+      path: '/pages/newsdetail/newsdetail?id='+ this.data.id
+    };
+  },
 });

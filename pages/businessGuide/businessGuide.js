@@ -176,5 +176,10 @@ Page({
     })
     this._formalBusinessGuide()
     my.stopPullDownRefresh()
-  }
+  },
+  onShareAppMessage() {
+    return {
+      path: '/pages/businessGuide/businessGuide?cityAdcode='+this.data.cityCode
+    };
+  },
 });

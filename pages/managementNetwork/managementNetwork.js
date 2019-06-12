@@ -18,6 +18,7 @@ Page({
   },
 
   onLoad(options) {
+    my.alert({ title: options});
     if(options){
       this.setData({
         cityCode:options.cityAdcode,
@@ -211,5 +212,10 @@ Page({
     })
     this._formalTransactInstitution()
     my.stopPullDownRefresh()
-  }
+  },
+  onShareAppMessage() {
+    return {
+      path: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityCode
+    };
+  },
 });

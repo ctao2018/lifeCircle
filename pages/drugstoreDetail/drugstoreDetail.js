@@ -80,4 +80,9 @@ Page({
       mode:0,                           // 只有驾车模式和公交模式支持，可选,具体值见下表
     });
   },
+  onShareAppMessage() {
+    return {
+      path: '/pages/drugstoreDetail/drugstoreDetail?id='+ this.data.id
+    };
+  },
 });

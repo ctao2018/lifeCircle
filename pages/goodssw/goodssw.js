@@ -119,5 +119,9 @@ Page({
   closeTK() {
     this.setData({showTKbx:false,})
   },
-  
+  onShareAppMessage() {
+    return {
+      path: '/pages/goodssw/goodssw?id='+ this.data.goodsId
+    };
+  },
 });

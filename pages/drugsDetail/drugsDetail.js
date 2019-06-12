@@ -32,5 +32,9 @@ Page({
         detail:result.data.data,
       })
   },
-  
+  onShareAppMessage() {
+    return {
+      path: '/pages/drugsDetail/drugsDetail?id='+ this.data.id
+    };
+  },
 });

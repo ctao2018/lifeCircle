@@ -191,4 +191,9 @@ Page({
     })
     //console.log(this.data.nodes)
   },
+  onShareAppMessage() {
+    return {
+      path: '/pages/goodsxn/goodsxn?id='+ this.data.goodsId
+    };
+  },
 });

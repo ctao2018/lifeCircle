@@ -117,4 +117,9 @@ Page({
       urls: this.data.picArr,
     });
   },
+  onShareAppMessage() {
+    return {
+      path: '/pages/circledetail/circledetail?id='+ this.data.id
+    };
+  },
 });

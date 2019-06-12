@@ -205,5 +205,10 @@ Page({
     })
     this._formalCommonQuestion()
     my.stopPullDownRefresh()
-  }
+  },
+  onShareAppMessage() {
+    return {
+      path: '/pages/commonProblem/commonProblem?cityAdcode='+this.data.cityCode
+    };
+  },
 });

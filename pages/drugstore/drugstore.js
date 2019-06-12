@@ -211,5 +211,10 @@ Page({
     })
     this._formalFixDrugstore()
     my.stopPullDownRefresh()
-  }
+  },
+  onShareAppMessage() {
+    return {
+      path: '/pages/drugstore/drugstore?cityAdcode='+this.data.cityCode
+    };
+  },
 });

@@ -66,4 +66,9 @@ Page({
       }
     })
   },
+  onShareAppMessage() {
+    return {
+      path: '/pages/guideDetail/guideDetail?id='+ this.data.id
+    };
+  },
 });

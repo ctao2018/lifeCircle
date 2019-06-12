@@ -238,5 +238,10 @@ Page({
     })
     this._formalFixHospitals()
     my.stopPullDownRefresh()
-  }
+  },
+  onShareAppMessage() {
+    return {
+      path: '/pages/hospital/hospital?cityAdcode='+this.data.cityCode
+    };
+  },
 });

@@ -33,6 +33,9 @@
         </view>
         <view class="cp-dt fs28 c8 lh45" a:if="{{item.flag}}">
           <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
+          <view class="jc-box flex">
+            <view class="jc-btn flex ac jc cc fs28" data-index="{{index}}" onTap="tojc"><view class="jc-ia"></view>纠错</view>
+          </view>
         </view>
       </view>
     </block>

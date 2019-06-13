@@ -110,3 +110,22 @@
   padding-top: 20rpx;
   border-top: 2rpx solid #eeeeee;
 }
+.jc-box{
+  margin-top: 20rpx;
+  padding-top: 25rpx;
+  justify-content: flex-end;
+  border-top: 2rpx solid #eeeeee;
+}
+.jc-btn{
+  width: 122rpx;
+  height: 50rpx;
+  border: 2rpx solid #e0e0e0;
+}
+.jc-ia{
+  width: 28rpx; 
+  height:28rpx;
+  background: url('../../assets/jiuc.png');
+  background-repeat: no-repeat;
+  background-size: 28rpx 28rpx;
+  margin-right: 12rpx;
+}

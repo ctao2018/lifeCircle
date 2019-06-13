@@ -21,6 +21,10 @@
           <view class="int-jfliala c3 fs32" a:if="{{item.type === '5'}}">额外奖励(回答)</view>
           <view class="int-jfliala c3 fs32" a:if="{{item.type === '6'}}">提问参与奖励</view>
           <view class="int-jfliala c3 fs32" a:if="{{item.type === '7'}}">回答参与奖励</view>
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '8'}}">积分冻结</view>
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '9'}}">积分解冻</view>
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '11'}}">退货退还</view>
+          <view class="int-jfliala c3 fs32" a:if="{{item.type === '12'}}">纠错奖励</view>
           <view class="c9 fs24">{{item.createTime}}</view>
         </view>
         <view class="int-jfliara fs36 fw500" a:if="{{item.changePoint >=0}}">+{{item.changePoint}}</view>

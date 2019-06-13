@@ -32,3 +32,21 @@
   border-radius: 4rpx;
   background-color: #108EE9;
 }
+.jc-box{
+  margin-top: 32rpx;
+  padding: 0 32rpx;
+  justify-content: flex-end;
+}
+.jc-btn{
+  width: 122rpx;
+  height: 50rpx;
+  border: 2rpx solid #e0e0e0;
+}
+.jc-ia{
+  width: 28rpx; 
+  height:28rpx;
+  background: url('../../assets/jiuc.png');
+  background-repeat: no-repeat;
+  background-size: 28rpx 28rpx;
+  margin-right: 12rpx;
+}

@@ -19,10 +19,6 @@ Page({
         type:options.type,
         id:options.id,
       })
-      this.setData({
-        type:'1',
-        id:10,
-      })
     }
   },
   onShow() {
@@ -128,7 +124,7 @@ Page({
     if(result.data.code === 0){
        my.alert({
         title: '提交成功',
-        content: '将在1-3个工作日内审核，审核通过后发放积分',
+        content: '感谢您的积极反馈，我们将认真采纳您的建议积极排查问题',
         success: () => {
           my.navigateBack()
         },

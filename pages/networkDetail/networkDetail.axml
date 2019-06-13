@@ -13,5 +13,8 @@
       <view class="c3 fs28 nd-addr">{{dtArr.address}}</view>
     </view>
   </view>
+  <view class="jc-box flex">
+    <view class="jc-btn flex ac jc cc fs28" onTap="tojc"><view class="jc-ia"></view>纠错</view>
+  </view>
   <view class="nd-dhbx"><view class="nd-btn tc fs36 cf" onTap="daohang">导航</view></view>
 </view>

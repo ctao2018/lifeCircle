@@ -80,6 +80,10 @@ Page({
       mode:0,                           // 只有驾车模式和公交模式支持，可选,具体值见下表
     });
   },
+  //纠错
+  tojc() {
+    my.navigateTo({ url: '/pages/errorCorrection/errorCorrection?type=2&id='+this.data.id})
+  },
   onShareAppMessage() {
     return {
       path: '/pages/hospitalDetail/hospitalDetail?id='+ this.data.id

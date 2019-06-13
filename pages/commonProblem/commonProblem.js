@@ -206,6 +206,12 @@ Page({
     this._formalCommonQuestion()
     my.stopPullDownRefresh()
   },
+  //纠错
+  tojc(e) {
+    let index=e.currentTarget.dataset['index'];
+    let id = this.data.mnList[index].lists.id
+    my.navigateTo({ url: '/pages/errorCorrection/errorCorrection?type=4&id='+ id})
+  },
   onShareAppMessage() {
     return {
       path: '/pages/commonProblem/commonProblem?cityAdcode='+this.data.cityCode

@@ -28,10 +28,10 @@
     <block a:for="{{mnList}}">
       <view class="cp-list bgf" >
         <view class="flex jb" data-index="{{index}}" onTap="showDetail">
-          <view class="c3 fs36 cp-tit">{{item.lists.articleTitle}}</view>
+          <view class="c3 fs32 cp-tit">{{item.lists.articleTitle}}</view>
           <view class="cp-arrri {{item.flag?'cp-arrdi':''}}"></view>
         </view>
-        <view class="cp-dt fs30 c8 lh45" a:if="{{item.flag}}">
+        <view class="cp-dt fs28 c8 lh45" a:if="{{item.flag}}">
           <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
         </view>
       </view>

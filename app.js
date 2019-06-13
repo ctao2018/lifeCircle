@@ -42,7 +42,7 @@ App({
       });
     });
   },
-  getUrl(type,id,name) {
+  getUrl(type,id,code) {
     return new Promise((resolve, reject) => {
       let pages = getCurrentPages()  
       let currentPage = pages[pages.length - 1] 
@@ -53,7 +53,11 @@ App({
       }else if(type === 2){
         this.backUrl = url+ '?id=' + id
       }else if(type === 3){
-        this.backUrl = url+ '?city=' + id +'&cityAdcode=' + name
+        this.backUrl = url+ '?city=' + id +'&cityAdcode=' + code
+      }else if(type === 4){
+        this.backUrl = url+ '?cityAdcode=' + id
+      }else if(type === 5){
+        this.backUrl = url+ '?pageType=' + id +'&cityCode=' + code
       }
       
     })

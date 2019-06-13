@@ -78,7 +78,7 @@ Page({
         jwflag:0
       })
     }
-    app.getUrl(3,this.data.city,this.data.cityCode);
+    app.getUrl(5,this.data.city,this.data.cityCode);
     this.setTit();
   },
   onReady() {

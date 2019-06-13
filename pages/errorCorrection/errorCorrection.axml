@@ -1,23 +1,25 @@
 <view class="answer">
   <form onSubmit="submitFn">
-    <view class="ans-tcon bgf">
-      <textarea class="ans-txt" show-count="false" name="textarea" maxlength=-1 placeholder="请输入你的答案" />
-      <view class="addpic clearfix">
-        <block a:for="{{imgArr}}">
-          <view class="ans-uppic" a:if="{{imgArr}}">
-            <image class="ans-upimg" src="{{item.data}}" mode="aspectFill" />
-            <view class="ans-uppicclose" data-index="{{index}}" onTap="delPicFn"></view>
-          </view>
-        </block>
-        <image class="addpici" onTap="upLoadimg" src="../../assets/picture.png" mode="scaleToFill" />
-      </view>
-      <view class="ans-clbx">
-        <view class="ans-linkbx">
-          <view class="ans-linkl c3 fs34">来源链接</view>
-          <view class="ans-link"><input class="ans-linkinp"  value="{{urlLink}}" onBlur="getLink" placeholder="添加链接(选填)" /></view>
+    <view class="ans-tit fs24 c9">问题描述</view>
+    <view class="ans-tcon ">
+      <textarea class="ans-txt bgf" show-count="{{false}}" name="textarea" maxlength=-1 placeholder="请填写10个字以上的问题描述以便我们提供更好的服务" />
+      <view class="bgf ec-pic">
+        <view class="c9 fs24">图片（选填，提供问题截图）</view>
+        <view class="addpic flex ac">
+          <block a:for="{{imgArr}}">
+            <view class="ans-uppic" a:if="{{imgArr}}">
+              <image class="ans-upimg" src="{{item.data}}" mode="aspectFill" />
+              <view class="ans-uppicclose" data-index="{{index}}" onTap="delPicFn"></view>
+            </view>
+          </block>
+          <image class="addpici" onTap="upLoadimg" src="../../assets/picture.png" mode="scaleToFill" />
         </view>
       </view>
+      <view class="ans-linkbx bgf">
+        <view class="ans-linkl c3 fs34">联系电话</view>
+        <view class="ans-link"><input class="ans-linkinp" name="phoneinp"  value="{{phone}}" onBlur="getLink" placeholder="选填，方便我们与你联系" /></view>
+      </view>
     </view>
-    <view class="ans-btnbx"><button class="ans-btn fs32 cf {{changebtncol?'ans-btnSel':''}}" form-type="submit">提交</button></view>
+    <view class="ans-btnbx"><button class="ans-btn fs32 cf" form-type="submit">提交</button></view>
   </form>
 </view>

@@ -63,7 +63,8 @@ const api = {
   formalBusinessGuide,
   formalBusinessGuidedt,
   formalInsuranceDrugsInfo,
-  formalInsuranceDrugsInfodt
+  formalInsuranceDrugsInfodt,
+  submitCorrection
 };
 
 
@@ -376,6 +377,11 @@ function formalInsuranceDrugsInfo(params) {
 
 //药品详情
 function formalInsuranceDrugsInfodt(params) {
-  return fetchData('/dist/formalInsuranceDrugsInfo//'+params);
+  return fetchData('/dist/formalInsuranceDrugsInfo/'+params);
+}
+
+//纠错
+function submitCorrection(params) {
+  return fetchData('/dist/userCorrection/submitCorrection', params, 'post');
 }
 export default api

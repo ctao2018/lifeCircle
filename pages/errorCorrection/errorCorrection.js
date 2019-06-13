@@ -1,30 +1,27 @@
 const app = getApp();
-import {addAnswerByUser} from '../../config/api'
+import {addAnswerByUser,submitCorrection} from '../../config/api'
 import env from '../../config/env'
 
 Page({
   data: {
-    clArr:[],
-    urlLink:'',
-    selCl:[],
-    selLeng:0,
-    typeBack:'',
-    changebtncol:false,
-    questionId:'',
+    phone:'',
+    type:'',
+    id:null,
     imgUp:'',
     textarea:'',
     imgArr:[],
-    detailedList:'',
     picturesUrl:'',
-    showTK: false,
-    qtCL:'',
   },
 
   onLoad(options) {
      if(options){
       this.setData({
-        typeBack:options.typeBack,
-        questionId:options.id,
+        type:options.type,
+        id:options.id,
+      })
+      this.setData({
+        type:'1',
+        id:10,
       })
     }
   },
@@ -34,16 +31,16 @@ Page({
   onReady() {
     
   },
-  //获取链接
+  //获取电话
   getLink(e) {
     this.setData({
-      urlLink: e.detail.value,
+      phone: e.detail.value,
     });
   },
   //点击上传图片
   upLoadimg() {
     const token = my.getStorageSync({ key: "token" });
-    if(this.data.imgArr.length<8){
+    if(this.data.imgArr.length<4){
       my.chooseImage({
         success: (res) => {
           let imgSrc = res.apFilePaths[0];
@@ -85,8 +82,19 @@ Page({
   },
   //点击提交按钮
   submitFn(e) {
-    this.setData({changebtncol:true,})
-    this.setData({textarea:e.detail.value.textarea})
+    this.setData({
+      textarea:e.detail.value.textarea,
+      phone:e.detail.value.phoneinp,
+    })
+    let reg=/^1[3456789]\d{9}$/;
+     if(this.data.phone){
+       if(!reg.test(this.data.phone)){
+          my.showToast({
+            content: '请输入正确的电话号码'
+          });
+          return false;
+      }
+     }
     let piclist = ''
     let imgUrl = []
     if(this.data.imgArr.length>0){
@@ -96,28 +104,25 @@ Page({
       piclist = imgUrl.join('|')
     }
     //console.log('piclist',piclist)
-    let dtlist = this.data.selCl.join(',')
     this.setData({
-      detailedList:dtlist,
       picturesUrl:piclist
     })
-    //console.log(this.data.detailedList)
-    if(this.data.textarea || piclist){
-     this._addAnswerByUser()
+    if(this.data.textarea){
+     this._submitCorrection()
     } else{
       my.showToast({
-        content: '请输入答案或者上传图片资料！'
+        content: '请输入问题描述！'
       });
     }
   },
-  //提交答案
-  async _addAnswerByUser() {
-    let result = await addAnswerByUser({
-      answer: this.data.textarea,
-      detailedList: this.data.detailedList,
+  //提交
+  async _submitCorrection() {
+    let result = await submitCorrection({
+      description: this.data.textarea,
       picturesUrl: this.data.picturesUrl,
-      questionId: this.data.questionId,
-      sourceUrl: this.data.urlLink,
+      businessId: this.data.id,
+      category: this.data.type,
+      telephone: this.data.phone,
     })
     //console.log('提交',result)
     if(result.data.code === 0){
@@ -125,11 +130,7 @@ Page({
         title: '提交成功',
         content: '将在1-3个工作日内审核，审核通过后发放积分',
         success: () => {
-          if(this.data.typeBack === '2'){
-            my.navigateBack({delta: 2})
-          }else{
-            my.navigateBack()
-          }
+          my.navigateBack()
         },
       });
     }else{

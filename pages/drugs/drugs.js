@@ -25,7 +25,7 @@ Page({
       })
       app.globalQuery = null
     }
-    app.getUrl(2,this.data.cityCode)
+    app.getUrl(4,this.data.cityCode)
     this.auth()
     
   },

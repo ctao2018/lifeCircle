@@ -13,7 +13,7 @@
   <view class="mn-listbx bgf">
     <block a:for="{{mnList}}">
       <view class="bb-e d-list"  data-index="{{index}}" onTap="toDetail">
-        <view class="c3 fs34 lh48 over-hid">{{item.name}}</view>
+        <view class="c3 fs32 lh48 over-hid">{{item.name}}</view>
         <view class="fs28 c8 lh40 flex ac jb">
           <view>{{item.dosageForm}}</view>
           <view a:if="{{item.category === 'A'}}">西药</view>

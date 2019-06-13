@@ -27,7 +27,7 @@
   <view class="mn-listbx bgf">
     <block a:for="{{mnList}}">
       <view class="bg-list bb-e flex ac jb" data-index="{{index}}" onTap="toDetail">
-        <view class="bg-tit"><view class="over-hid c3 fs36">{{item.title}}</view></view>
+        <view class="bg-tit"><view class="over-hid c3 fs32">{{item.title}}</view></view>
         <view class="bg-arrr"></view>
       </view>
     </block>

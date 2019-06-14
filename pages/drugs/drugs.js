@@ -26,8 +26,11 @@ Page({
       app.globalQuery = null
     }
     app.getUrl(4,this.data.cityCode)
-    this.auth()
-    
+    if (app.auth_info){
+      this._formalInsuranceDrugsInfo()
+    }else{
+      this.auth()
+    }
   },
   
   onShow() {

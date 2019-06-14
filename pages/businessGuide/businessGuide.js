@@ -27,7 +27,12 @@ Page({
       app.globalQuery = null
     }
     app.getUrl(4,this.data.cityCode)
-    this.auth()
+    if (app.auth_info){
+      this._formalBusinessGuideca()
+      this._formalBusinessGuide()
+    }else{
+      this.auth()
+    }
   },
   
   onShow() {

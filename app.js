@@ -1,3 +1,4 @@
+import uma from 'umtrack-alipay';
 App({
   userInfo: null,
   auth_info: null,
@@ -67,10 +68,18 @@ App({
     if(options.query){
       this.globalQuery = options.query
     }
+    uma.init('5d0340b50cafb268fa000df3', my);
   },
   onShow(options) {
     if(options.query){
       this.globalQuery = options.query
     }
+    uma.resume();
   },
+  onHide() {
+      uma.pause();    
+  },
+  globalData: {
+    uma         
+  }
 });

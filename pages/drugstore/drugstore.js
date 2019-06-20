@@ -29,21 +29,23 @@ Page({
       })
       app.globalQuery = null
     }
-    app.getUrl(4,this.data.cityCode)
+    app.getUrl(4,this.data.cityCode);
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
     if(app.coordinate){
       this.setData({
         jwflag:1,
         lng:app.coordinate.lng,
         lat:app.coordinate.lat,
       })
-      if (app.auth_info){
+      if (flagT){
         this._getAreaInfoByCityCode()
         this._formalFixDrugstore()
       }else{
         this.auth()
       }
     }else{
-      if (app.auth_info){
+      if (flagT){
         this._getAreaInfoByCityCode()
       }else{
         this.auth()

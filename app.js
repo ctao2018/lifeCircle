@@ -27,7 +27,8 @@ App({
             success: res => {
               this.auth_info = {
                 user_info: res,
-                auth_code: authcode
+                auth_code: authcode,
+                auth_time: new Date().getTime()
               };
               resolve(this.auth_info);
             },
@@ -63,6 +64,14 @@ App({
       
     })
     
+  },
+  authIsOrNot(nowTime) {
+    let oldT = this.auth_info.auth_time;
+    if(nowTime-oldT> 14400000){
+      return false
+    }else{
+      return true
+    }
   },
   onLaunch(options) {
     if(options.query){

@@ -29,8 +29,10 @@ Page({
       })
       app.globalQuery = null
     }
-    app.getUrl(4,this.data.cityCode)
-    if (app.auth_info){
+    app.getUrl(4,this.data.cityCode);
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       this._formalCommonQuestion()
       this._queryCommonQusCategory()
     }else{

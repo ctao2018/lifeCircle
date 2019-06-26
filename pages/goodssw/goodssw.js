@@ -5,8 +5,8 @@ import parse from 'mini-html-parser2';
 Page({
   data: {
    banner: [
-      '../../assets/imgaa.png',
-      '../../assets/imgaa.png',
+      '../../assets/headss.png',
+      '../../assets/headss.png',
     ],
     currentTabsIndex:0,
     showTKbx:false,

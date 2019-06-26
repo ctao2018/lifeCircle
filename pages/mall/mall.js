@@ -14,8 +14,6 @@ Page({
   },
   onShow() {
     // this.setData({
-    //  hotList:[],
-    //  newList:[],
     // })
    app.getUrl(1)
     if (app.auth_info){

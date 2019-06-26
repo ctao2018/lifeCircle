@@ -41,10 +41,10 @@
       <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
     </view>
   </view> -->
-  <view class="info-box bgf">
+  <!-- <view class="info-box bgf">
     <view class="info-li" onTap="makePhoneCall">
       <view class="c3 fs32">联系客服</view>
       <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
     </view>
-  </view>
+  </view> -->
 </view>

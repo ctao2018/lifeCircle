@@ -51,7 +51,7 @@
     <view class="gsw-bg" onTap="closeTK"></view>
     <view class="gsw-tkbx bgf">
       <view class="gsw-tktop flex ">
-        <view class="gsw-tktopl"><image class="gsw-tktopimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+        <view class="gsw-tktopl"><image class="gsw-tktopimg" src="{{goodsArr.primaryPicUrl}}" mode="scaleToFill"/></view>
         <view class="gsw-tktopr">
           <view class="c3 fs34 fw500 lh48">{{goodsArr.name}}</view>
           <view class="c9 fs24 lh33">库存{{goodsArr.goodsNumber}}件</view>

@@ -17,7 +17,7 @@
   </view>
   <view class="bb-e flex  jb so-sp">
     <view class="flex">
-      <view class="so-splpic"><image class="so-splimg" src="../../assets/imgaa.png" mode="scaleToFill"/></view>
+      <view class="so-splpic"><image class="so-splimg" src="{{goodsArr.primaryPicUrl}}" mode="scaleToFill"/></view>
       <view class="so-spm">
         <view class="c3 fs24 so-spmtit">{{goodsArr.name}}</view>
         <view class="c9 fs22">{{goodsArr.goodsBrief}}</view>

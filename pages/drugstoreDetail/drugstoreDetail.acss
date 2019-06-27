@@ -38,9 +38,10 @@
   justify-content: flex-end;
 }
 .jc-btn{
-  width: 122rpx;
-  height: 50rpx;
-  border: 2rpx solid #e0e0e0;
+  width: 110rpx;
+  height: 44rpx;
+  border: 2rpx solid #459CF8;
+  color: #459CF8;
 }
 .jc-ia{
   width: 28rpx; 

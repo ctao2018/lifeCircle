@@ -1,7 +1,11 @@
 import uma from 'umtrack-alipay';
 App({
   userInfo: null,
-  auth_info: null,
+  auth_info: {
+                user_info:null,
+                auth_code: null,
+                auth_time: null
+              },
   webViewUrl:null,
   backUrl:null,
   toUrl:null,

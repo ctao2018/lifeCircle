@@ -1,26 +1,67 @@
 <view class="question">
-  <form onSubmit="fabu">
-    <view class="que-inpbx"><textarea class="que-inp" maxlength=60  show-count={{false}} value="{{title}}" name="inputTit" onBlur="getTit" placeholder="请输入问题并以问号结尾(4~60字)" /></view>
-    <view class="que-txtbx"><textarea class="que-txt" show-count="false" name="textarea" placeholder="详细描述你的问题（选填）" maxlength=300 /></view>
-    <view class="que-bt">
-      <view class="que-bta">
-        <view class="que-btal">
-          <view class="que-btalpos" onTap="toCitySel">
-            <view class="que-btalposi"></view>
-            <view class="que-btalposn">{{city}}</view>
-            </view>
-          <view class="que-btaltyp">
-            <view class="que-btaltypi "></view>
-            <picker onChange="bindPickerChange" value="{{indexType}}" range="{{typeArr}}" range-key="name">
-              <view class="picker">
-                {{typeArr[indexType].name}}
-              </view>
-            </picker>
+  <image class="que-zxi" mode="scaleToFill" src="../../assets/zixunA.jpg"/>
+  <view class="que-tab bgf c6 fs32 flex ac ja"  a:if="{{bsList.length>0 || wtList.length>0}}">
+    <block a:for="{{tabArr}}">
+      <view class="flex ac {{curIndex==index?'que-tabsel':''}}" onTap="tabClick" data-index="{{index}}">
+        <image class="que-bai" mode="scaleToFill" src="{{item.pic}}"/>
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  <view class="que-zxbx" a:if="{{bsList.length>0 || wtList.length>0}}">
+    <view a:if="{{showBX}}">
+      <view class="bs-listbx bgf" a:if="{{bsList.length>0}}">
+        <block a:for="{{bsList}}">
+          <view class="bg-list flex ac jb" data-index="{{index}}" onTap="toDetailbs">
+            <view class="bg-tit"><view class="over-hid c3 fs28">{{item.title}}</view></view>
+            <view class="bg-arrr"></view>
           </view>
-        </view>  
+        </block>
+        <view class="que-cmore fs24 c9 tc" onTap="moreBS">查看更多</view>
+      </view>
+      <view class="que-nodata tc c9 fs24" a:else>该城市暂无数据</view>
+    </view>
+    <view a:if="{{!showBX}}">
+      <view class="wt-listbx bgf" a:if="{{wtList.length>0}}">
+        <block a:for="{{wtList}}">
+          <view class="cp-list bgf bb-e" >
+            <view class="flex jb" data-index="{{index}}" onTap="showDetail">
+              <view class="c3 fs28 cp-tit">{{item.lists.articleTitle}}</view>
+              <view class="cp-arrri {{item.flag?'cp-arrdi':''}}"></view>
+            </view>
+            <view class="cp-dt fs26 c8 lh40" a:if="{{item.flag}}">
+              <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
+              <view class="jc-box flex">
+                <view class="jc-btn flex ac jc fs24" data-index="{{index}}" onTap="tojc"><view class="jc-ia"></view>纠错</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class="que-cmore fs24 c9 tc" onTap="moreWT">查看更多</view>
+      </view>
+      <view class="que-nodata tc c9 fs24" a:else>该城市暂无数据</view>
+    </view>
+  </view>
+  <form onSubmit="fabu">
+    <view class="que-twfo bgf">
+      <view class="que-inpbx bb-e"><textarea class="que-inp" maxlength=60  show-count={{false}} value="{{title}}" name="inputTit" onBlur="getTit" placeholder="请输入问题并以问号结尾(4~60字)" /></view>
+      <view class="que-txtbx"><textarea class="que-txt" show-count="false" name="textarea" placeholder="详细描述你的问题（选填）" maxlength=300 /></view>
+    </view>
+    <view class="que-bt bgf flex ac ">
+      <view class="flex ac" onTap="toCitySel">
+        <view class="que-btalposi"></view>
+        <view class="c6 fs28 over-hid que-ctw">{{city}}</view>
+      </view>
+      <view class="flex ac">
+        <view class="que-btaltypi "></view>
+        <picker  onChange="bindPickerChange" value="{{indexType}}" range="{{typeArr}}" range-key="name">
+          <view class="picker c6 fs28">
+            {{typeArr[indexType].name}}
+          </view>
+        </picker>
       </view>
     </view>
     <button class="que-btar" form-type="submit">提交</button>
   </form>
-  <view class="que-btip">温馨提示：咨询后，可点击“我的”-“我的咨询”查看答案，成功咨询可获得积分奖励，奖励可用于积分商城礼品兑换。</view>
+  <view class="que-btip">咨询后可点击小程序右下角“我的”-“我的咨询”查看咨询结果。</view>
 </view>

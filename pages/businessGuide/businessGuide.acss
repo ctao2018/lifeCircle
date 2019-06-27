@@ -94,5 +94,4 @@
   background: url('../../assets/list_drop.png');
   background-repeat: no-repeat;
   background-size: 14rpx 27rpx;
-  margin-top: 10rpx;
 }

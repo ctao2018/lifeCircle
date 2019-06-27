@@ -66,7 +66,6 @@ Page({
       // newstapindx:0,
       })
     //this._queryQuestionAnwserPage()
-
   },
   onReady() {
     
@@ -108,7 +107,7 @@ Page({
               data: result.data.data
             });
             if(type === 1){
-              my.navigateTo({ url: '/pages/question/question'})
+              my.navigateTo({ url: '/pages/question/question?cityAdcode='+this.data.cityAdcode+'&city='+this.data.city})
             }else if(type === 2){
               my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
             }else if(type === 3){
@@ -279,7 +278,9 @@ Page({
   goToLinkPage(e) {
     //console.log(e);
     let indx = e.currentTarget.dataset.index
-    if (app.auth_info){
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       this.categoryJump(indx)
     }else{
       this.auth(8,indx)
@@ -303,8 +304,10 @@ Page({
   },
   //热点滚动 点击跳转
   hotLinkPage(e) {
-    let indx = e.currentTarget.dataset.index
-    if (app.auth_info){
+    let indx = e.currentTarget.dataset.index;
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       this.hotJump(indx)
     }else{
       this.auth(7,indx)
@@ -331,9 +334,10 @@ Page({
     let indx = e.currentTarget.dataset.index
     if(this.data.menuList[indx].type === '0'){
       this.setData({cdFalg:false,})
-      let moduleEn = this.data.menuList[indx].moduleEn
-      let tok = my.getStorageSync({ key: 'token' })
-      if (app.auth_info){
+      let moduleEn = this.data.menuList[indx].moduleEn;
+      let t = new Date().getTime();
+      let flagT = app.authIsOrNot(t);
+      if (flagT){
         this._queryOpenCityValidModuleInfoByParam(moduleEn)
       }else{
         this.auth(6,moduleEn)
@@ -365,8 +369,10 @@ Page({
       
     } else if(this.data.menuList[indx].type === '4'){
       this.setData({cdFalg:true,})
-      let moduleEn = this.data.menuList[indx].moduleEn
-      if (app.auth_info){
+      let moduleEn = this.data.menuList[indx].moduleEn;
+      let t = new Date().getTime();
+      let flagT = app.authIsOrNot(t);
+      if (flagT){
         this._queryOpenCityValidModuleInfoByParam(moduleEn)
       }else{
         this.auth(6,moduleEn)
@@ -444,18 +450,21 @@ Page({
   },
   //点击跳转 发布问题
   toQuestion() {
-    let tok = my.getStorageSync({ key: 'token' })
-    if (tok.data){
-      my.navigateTo({ url: '/pages/question/question'})
-    }else{
-      this.auth(1)
-    }
+    my.navigateTo({ url: '/pages/question/question?cityAdcode='+this.data.cityAdcode+'&city='+this.data.city})
+    // let t = new Date().getTime();
+    // let flagT = app.authIsOrNot(t);
+    // if (flagT){
+    //   my.navigateTo({ url: '/pages/question/question?cityAdcode='+this.data.cityAdcode+'&city='+this.data.city})
+    // }else{
+    //   this.auth(1)
+    // }
     this.setData({editFlag:false})
   },
   //点击跳转 悬赏问答页
   toReward() {
-    let tok = my.getStorageSync({ key: 'token' })
-    if (tok.data){
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       my.navigateTo({ url: '/pages/reward/reward?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode })
     }else{
       this.auth(2)
@@ -495,10 +504,11 @@ Page({
   },
   //问答热门列表 跳转至详情
   toDetailFn(e) {
-    let tok = my.getStorageSync({ key: 'token' })
     let index=e.currentTarget.dataset['index'];
-    let id = this.data.ansArr[index].lists.id
-    if (tok.data){
+    let id = this.data.ansArr[index].lists.id;
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       my.navigateTo({ url: '/pages/circledetail/circledetail?id='+ id})
     }else{
       this.auth(3,id)
@@ -507,8 +517,10 @@ Page({
   //新闻 至详情
   toNewsDetail(e) {
     let index=e.currentTarget.dataset['index'];
-    let id = this.data.newsArr[index].id
-    if (app.auth_info){
+    let id = this.data.newsArr[index].id;
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       my.navigateTo({ url: '/pages/newsdetail/newsdetail?id='+ id})
     }else{
       this.auth(9,id)
@@ -558,8 +570,9 @@ Page({
   },
   //to 搜索页面
   toSearch() {
-    let tok = my.getStorageSync({ key: 'token' })
-    if (tok.data){
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       my.navigateTo({ url: '/pages/search/search?city='+this.data.city +'&cityAdcode='+this.data.cityAdcode})
     }else{
       this.auth(4)
@@ -568,9 +581,10 @@ Page({
   //to 个人主页
   toPersonal(e) {
     let index=e.currentTarget.dataset['index'];
-    let id = this.data.ansArr[index].lists.accountId
-    let tok = my.getStorageSync({ key: 'token' })
-    if (tok.data){
+    let id = this.data.ansArr[index].lists.accountId;
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
     }else{
       this.auth(5,id)

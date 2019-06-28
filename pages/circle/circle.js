@@ -12,10 +12,7 @@ Page({
     newstapindx:0,
     // typeArr:[{name:'问答',catalogNo:'',children:[]}], //0515改版
     typeArr:[],
-    typeNews:[],
-    showtyNews:false,
     catalogNo:'hot',
-    chFlag:false,
     newsArr:[],
   },
 
@@ -48,40 +45,22 @@ Page({
     })
     //console.log('queryNewsChildrenCatalogTreeByParam',result)
     let list = result.data.data
-    this.data.typeArr = this.data.typeArr.concat(list)
+    let newList = list.map((obj,index) => {
+        return {
+          lists:obj,
+          title:obj.name
+        }
+      })
     this.setData({
-      typeArr:this.data.typeArr,
+      typeArr:newList,
     })
-    for(let i =0;i<this.data.typeArr.length;i++){
-      if(this.data.typeArr[i].children.length>0){
-        this.setData({typeNews:this.data.typeArr[i].children})
-      }
-    }
   },
   // tab点击切换
-  tabClick(e) {
-    let index=e.currentTarget.dataset['index'];
+  handleTabClick({ index }) {
     this.setData({
-      currentTabsIndex:index,
+      activeTab: index,
       showbtline:false,
-    })
-    if(this.data.typeArr[index].children.length>0){
-      this.setData({
-        typeNews:this.data.typeArr[index].children,
-        showtyNews:true,
-        catalogNo:this.data.typeArr[index].children[0].catalogNo,
-        newstapindx:0,
-        chFlag:true,
-        })
-    }else{
-      this.setData({
-        typeNews:[],
-        showtyNews:false,
-        catalogNo:this.data.typeArr[index].catalogNo,
-        chFlag:false,
-        })
-    }
-    this.setData({
+      catalogNo:this.data.typeArr[index].lists.catalogNo,
       pageNum:1,
       ansArr:[],
       pagesNews:'',
@@ -123,19 +102,6 @@ Page({
     //   this._questionAnwserPage()
     // }
   },
-  //新闻二级菜单 点击
-  newsClick(e) {
-    let index=e.currentTarget.dataset['index'];
-    this.setData({
-      newstapindx:index,
-      showbtline:false,
-      catalogNo:this.data.typeNews[index].catalogNo,
-      newsArr:[],
-      pagesNews:'',
-      pageNum:1,
-    })
-    this._queryFNewsInfoPage()
-  },
   //新闻政策列表
   async _queryFNewsInfoPage() {
     my.showLoading({
@@ -151,14 +117,25 @@ Page({
     my.hideLoading()
     this.setData({pagesNews:result.data.data.pages})
     let list = result.data.data.rows
-    this.data.newsArr = this.data.newsArr.concat(list)
+    let newList = []
+    for(let i =0;i<list.length;i++){
+      if(list[i].pictureUrl){
+        let imgArr = list[i].pictureUrl.split('|')
+        let b = {imgUrl:imgArr,lists:list[i]}
+        newList.push(b)
+      }else{
+        let b = {lists:list[i]}
+        newList.push(b)
+      }
+    }
+    this.data.newsArr = this.data.newsArr.concat(newList)
     this.setData({newsArr:this.data.newsArr})
     //console.log('newsArr',this.data.newsArr)
   },
   //新闻 至详情
   toNewsDetail(e) {
     let index=e.currentTarget.dataset['index'];
-    let id = this.data.newsArr[index].id
+    let id = this.data.newsArr[index].lists.id
     my.navigateTo({ url: '/pages/newsdetail/newsdetail?id='+ id})
   },
   auth() {
@@ -177,7 +154,7 @@ Page({
               key: 'token',
               data: result.data.data
             });
-            this._questionAnwserPage()
+            //this._questionAnwserPage()
             this._queryFNewsInfoPage()
           }else{
             my.showToast({
@@ -231,7 +208,7 @@ Page({
     my.navigateTo({ url: '/pages/personalpage/personalpage?id=' +id})
   },
   onReachBottom(e) {
-    if(this.data.currentTabsIndex<1){
+    if(this.data.currentTabsIndex<0){
       if (this.data.pages>this.data.pageNum) {
         this.setData({
           pageNum: ++this.data.pageNum
@@ -261,7 +238,7 @@ Page({
       newsArr:[],
       showbtline:false,
     })
-    this._questionAnwserPage()
+    //this._questionAnwserPage()
     this._queryFNewsInfoPage()
     my.stopPullDownRefresh()
   }

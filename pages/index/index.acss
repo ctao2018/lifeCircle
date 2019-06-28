@@ -93,18 +93,17 @@
 }
 .home-wd{
   background-color: #ffffff;
-  margin-top: 15rpx;
+  padding: 0 32rpx;
 }
 .home-wdtop{
-  height: 75rpx;
+  height: 88rpx;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #dddddd;
+  border-top: 2rpx solid #eeeeee;
 }
 .home-wdtimg{
   width: 144rpx;
   height: 48rpx;
-  margin-left: 27rpx;
 }
 .home-wdth{
   width: 60rpx;
@@ -139,8 +138,19 @@
   display: inline-block;
 }
 .home-tab{
-  margin: 24rpx 32rpx 0;
+  margin-top: 16rpx;
   border-bottom: 1rpx solid #eeeeee;
+}
+.home-tabfix{
+  position:fixed;
+  left:0rpx;
+  top:0rpx;
+  right:0rpx;
+  margin-top:0rpx;
+  z-index: 99;
+}
+.home-newbx{
+  margin-top: 95rpx;
 }
 .home-tabc{
   display: inline-block;
@@ -211,6 +221,19 @@
   width: 222rpx;
   height: 222rpx;
   margin-left: 10rpx;
+}
+.home-newimgbx{
+  height: 152rpx;
+  margin-top: 16rpx;
+  margin-left: -16rpx;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+.home-newimg{
+  float: left;
+  width: 218rpx;
+  height: 152rpx;
+  margin-left: 16rpx;
 }
 .home-wdfd{
   margin-top: 24rpx;
@@ -439,6 +462,7 @@
   line-height: 48rpx;
   margin-bottom: 20rpx;
 }
+
 .home-newsbb{
   display: flex;
   /* align-items: center; */
@@ -469,4 +493,15 @@
 .home-morenodata{
   margin-top: 80rpx;
   margin-bottom: 280rpx;
+}
+.home-newsrq{
+  padding: 24rpx 0;
+}
+.home-seal{
+  color: #FFADAD;
+  border: 2rpx solid #FFADAD;
+  border-radius: 2rpx;
+  padding: 2rpx 8rpx;
+  display: inline-block;
+  margin-right: 24rpx;
 }

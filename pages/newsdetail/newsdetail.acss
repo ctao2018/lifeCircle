@@ -15,9 +15,38 @@
   color: #666666;
   font-size: 36rpx;
   line-height: 50rpx;
-  margin-bottom: 50rpx;
+  margin-bottom: 120rpx;
 }
 .mohrssNewsImg{
   width: 100% !important;
   height: auto !important;
+}
+.nd-scbx{
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(251,251,251,.90)
+}
+.nd-sci{
+  width: 40rpx; 
+  height:40rpx;
+  background: url('../../assets/sca.png');
+  background-repeat: no-repeat;
+  background-size: 40rpx 40rpx;
+}
+.nd-scisel{
+  background: url('../../assets/scb.png');
+  background-repeat: no-repeat;
+  background-size: 40rpx 40rpx;
+}
+.nd-fxi{
+  width: 41rpx; 
+  height:40rpx;
+  background: url('../../assets/share.png');
+  background-repeat: no-repeat;
+  background-size: 41rpx 40rpx;
+  border: none;
 }

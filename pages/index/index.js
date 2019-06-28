@@ -33,10 +33,10 @@ Page({
     newstapindx:0,
     // typeArr:[{name:'问答',catalogNo:'',children:[]}], //0515改版
     typeArr:[],
-    typeNews:[],
-    showtyNews:false,
     catalogNo:'hot',
     cdFalg:false,
+    boxTop:null,
+    tabF:false,
   },
 
   onLoad() {
@@ -44,31 +44,25 @@ Page({
    this._getMenu()
    this.getLocation()
    this._queryAllHotspotCarousel()
-   this._queryQuestionAnwserPage()
+   //this._queryQuestionAnwserPage()
    this._queryAllValidHotCity()
    this._queryNewsChildrenCatalogTreeByParam()
    this._queryFNewsInfoPage()
   },
   onShow() {
     this.setData({
-      // ansArr:[],
-      // newsArr:[],
-      // pageNum:1,
-      // pages:'',
-      // pagesNews:'',
-      // showbtline:false,
-      // hotCity:[],
-      // typeArr:[{name:'全部',catalogNo:'',children:[]}],
-      // typeNews:[],
-      // showtyNews:false,
-      // currentTabsIndex:0,
-      // catalogNo:'',
-      // newstapindx:0,
       })
-    //this._queryQuestionAnwserPage()
   },
   onReady() {
-    
+    let that = this
+    my.createSelectorQuery()
+      .select('#newsbox').boundingClientRect()
+      .exec((ret) => {
+      that.setData({
+        boxTop:ret[0].top
+      })
+    });
+   
   },
   //获取当前地理位置
   getLocation() {
@@ -169,43 +163,28 @@ Page({
     //console.log('queryNewsChildrenCatalogTreeByParam',result)
     let list = result.data.data
     //this.data.typeArr = this.data.typeArr.concat(list) //0515改版
+    let newList = list.map((obj,index) => {
+        return {
+          lists:obj,
+          title:obj.name
+        }
+      })
     this.setData({
       //typeArr:this.data.typeArr, //0515改版
-      typeArr:list,
+      typeArr:newList,
     })
-    for(let i =0;i<this.data.typeArr.length;i++){
-      if(this.data.typeArr[i].children.length>0){
-        this.setData({typeNews:this.data.typeArr[i].children})
-      }
-    }
   },
   // tab点击切换
-  tabClick(e) {
-    let index=e.currentTarget.dataset['index'];
+  handleTabClick({ index }) {
     this.setData({
-      currentTabsIndex:index,
+      activeTab: index,
       showbtline:false,
-    })
-    if(this.data.typeArr[index].children.length>0){
-        this.setData({
-          typeNews:this.data.typeArr[index].children,
-          showtyNews:true,
-          catalogNo:this.data.typeArr[index].children[0].catalogNo,
-          newstapindx:0,
-          })
-    }else{
-      this.setData({
-        typeNews:[],
-        showtyNews:false,
-        catalogNo:this.data.typeArr[index].catalogNo,
-        })
-    }
-    this.setData({
       pageNum:1,
       ansArr:[],
       pagesNews:'',
       pages:'',
       newsArr:[],
+      catalogNo:this.data.typeArr[index].lists.catalogNo,
     })
     this._queryFNewsInfoPage()
     // if(index === 1 || index === 2){  //0515改版
@@ -242,19 +221,6 @@ Page({
     //   this._queryQuestionAnwserPage()
     // }
   },
-  //新闻二级菜单 点击
-  newsClick(e) {
-    let index=e.currentTarget.dataset['index'];
-    this.setData({
-      newstapindx:index,
-      showbtline:false,
-      catalogNo:this.data.typeNews[index].catalogNo,
-      newsArr:[],
-      pagesNews:'',
-      pageNum:1,
-    })
-    this._queryFNewsInfoPage()
-  },
   //新闻政策列表
   async _queryFNewsInfoPage() {
     my.showLoading({
@@ -270,9 +236,20 @@ Page({
     my.hideLoading()
     this.setData({pagesNews:result.data.data.pages})
     let list = result.data.data.rows
-    this.data.newsArr = this.data.newsArr.concat(list)
+    let newList = []
+    for(let i =0;i<list.length;i++){
+      if(list[i].pictureUrl){
+        let imgArr = list[i].pictureUrl.split('|')
+        let b = {imgUrl:imgArr,lists:list[i]}
+        newList.push(b)
+      }else{
+        let b = {lists:list[i]}
+        newList.push(b)
+      }
+    }
+    this.data.newsArr = this.data.newsArr.concat(newList)
     this.setData({newsArr:this.data.newsArr})
-    //console.log('newsArr',this.data.newsArr)
+    console.log('newsArr',this.data.newsArr)
   },
   //点击轮播图跳转
   goToLinkPage(e) {
@@ -517,7 +494,7 @@ Page({
   //新闻 至详情
   toNewsDetail(e) {
     let index=e.currentTarget.dataset['index'];
-    let id = this.data.newsArr[index].id;
+    let id = this.data.newsArr[index].lists.id;
     let t = new Date().getTime();
     let flagT = app.authIsOrNot(t);
     if (flagT){
@@ -590,6 +567,21 @@ Page({
       this.auth(5,id)
     }
   },
+  onPageScroll(e) {
+    // console.log(e)
+    // let sctop = e.scrollTop+46;
+    // console.log(sctop,this.data.boxTop)
+    // if(sctop>this.data.boxTop){
+    //   this.setData({
+    //     tabF:true,
+    //   })
+      
+    // }else{
+    //   this.setData({
+    //     tabF:false,
+    //   })
+    // }
+  },
   onReachBottom(e) {
     if(this.data.currentTabsIndex<0){ //0515改版 把1改为了0
       if (this.data.pages>this.data.pageNum) {
@@ -621,7 +613,6 @@ Page({
       hotList:[],
       category:[],
       menuList:[],
-      currentTabsIndex:0,
       editFlag:false,
       pageNum:1,
       pages:'',
@@ -635,8 +626,6 @@ Page({
       newstapindx:0,
       // typeArr:[{name:'问答',catalogNo:'',children:[]}],0515改版
       typeArr:[],
-      typeNews:[],
-      showtyNews:false,
       catalogNo:'hot',
       cdFalg:false,
     })
@@ -644,14 +633,14 @@ Page({
     this._getMenu()
     this.getLocation()
     this._queryAllHotspotCarousel()
-    this._queryQuestionAnwserPage()
+    //this._queryQuestionAnwserPage()
     this._queryAllValidHotCity()
     this._queryNewsChildrenCatalogTreeByParam()
     my.stopPullDownRefresh()
     this._queryFNewsInfoPage()
   },
   
-  //测试跳转 需删除
+  //测试跳转 需删除// my.pageScrollTo({ scrollTop: 100 })
   testaaa() {
     //my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})

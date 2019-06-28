@@ -6,6 +6,7 @@ Page({
    id:'',
    detail:[],
    nodes:[],
+   scF:false,
   },
 
   onLoad(options) {

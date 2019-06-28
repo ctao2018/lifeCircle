@@ -2,6 +2,7 @@
   "defaultTitle": "医贝社保圈",
   "pullRefresh": true,
   "usingComponents": {
-    "bottom-line": "/components/bottomLine/bottomLine"
+    "bottom-line": "/components/bottomLine/bottomLine",
+    "tabs": "mini-antui/es/tabs/index"
   }
 }

@@ -3,6 +3,7 @@
   "pullRefresh": true,
   "usingComponents": {
     "bottom-line": "/components/bottomLine/bottomLine",
-    "no-data": "/components/nodata/nodata"
+    "no-data": "/components/nodata/nodata",
+    "tabs": "mini-antui/es/tabs/index"
   }
 }

@@ -256,8 +256,4 @@ Page({
       path: '/pages/hospital/hospital?cityAdcode='+this.data.cityCode
     };
   },
-  // onPageScroll(e) {
-  //   console.log(e)
-  //my.createSelectorQuery().select('#scroll').boundingClientRect()
-  // }
 });

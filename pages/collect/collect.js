@@ -51,8 +51,9 @@ Page({
         newList.push(b)
       }
     }
-    this.data.newsArr = this.data.newsArr.concat(newList)
-    this.setData({newsArr:this.data.newsArr})
+    let yArr = this.data.newsArr
+    yArr = yArr.concat(newList)
+    this.setData({newsArr:yArr})
     console.log('newsArr',this.data.newsArr)
   },
   //点击删除

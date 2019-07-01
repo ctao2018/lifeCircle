@@ -247,8 +247,9 @@ Page({
         newList.push(b)
       }
     }
-    this.data.newsArr = this.data.newsArr.concat(newList)
-    this.setData({newsArr:this.data.newsArr})
+    let yArr = this.data.newsArr;
+    yArr = yArr.concat(newList);
+    this.setData({newsArr:yArr})
     // if(this.data.tabF){
     //   my.pageScrollTo({ scrollTop: 440 })
     // }
@@ -575,16 +576,16 @@ Page({
     let sctop = e.scrollTop+46;
     //console.log(sctop,this.data.boxTop)
     //if(sctop>this.data.boxTop){
-    if(sctop>480){
-      this.setData({
-        tabF:true,
-      })
+    // if(sctop>480){
+    //   this.setData({
+    //     tabF:true,
+    //   })
       
-    }else{
-      this.setData({
-        tabF:false,
-      })
-    }
+    // }else{
+    //   this.setData({
+    //     tabF:false,
+    //   })
+    // }
   },
   onReachBottom(e) {
     if(this.data.currentTabsIndex<0){ //0515改版 把1改为了0

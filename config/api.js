@@ -395,7 +395,7 @@ function submitArticleCollect(params) {
 
 //收藏分页列表
 function articleCollect(params) {
-  return fetchData('/dist/articleCollect/queryPageByParam', params, 'post');
+  return fetchData('/dist/articleCollect/queryPageByParam', params);
 }
 
 //取消收藏

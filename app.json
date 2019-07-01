@@ -40,6 +40,7 @@
     "pages/drugs/drugs",
     "pages/searchZX/searchZX",
     "pages/errorCorrection/errorCorrection",
+    "pages/collect/collect",
     "pages/integralrule/integralrule"
     
   ],

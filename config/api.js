@@ -64,7 +64,10 @@ const api = {
   formalBusinessGuidedt,
   formalInsuranceDrugsInfo,
   formalInsuranceDrugsInfodt,
-  submitCorrection
+  submitCorrection,
+  submitArticleCollect,
+  articleCollect,
+  cancelArticleCollect
 };
 
 
@@ -383,5 +386,20 @@ function formalInsuranceDrugsInfodt(params) {
 //纠错
 function submitCorrection(params) {
   return fetchData('/dist/userCorrection/submitCorrection', params, 'post');
+}
+
+//提交收藏
+function submitArticleCollect(params) {
+  return fetchData('/dist/articleCollect/submitArticleCollect', params, 'post');
+}
+
+//收藏分页列表
+function articleCollect(params) {
+  return fetchData('/dist/articleCollect/queryPageByParam', params, 'post');
+}
+
+//取消收藏
+function cancelArticleCollect(params) {
+  return fetchData('/dist/articleCollect/cancelArticleCollect/'+params);
 }
 export default api

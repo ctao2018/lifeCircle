@@ -79,6 +79,11 @@
   background-repeat: no-repeat;
   background-size: 84rpx 84rpx;
 }
+.my-hdbanais{
+  background: url('../../assets/collect.png');
+  background-repeat: no-repeat;
+  background-size: 84rpx 84rpx;
+}
 .my-li{
   height: 104rpx;
   padding: 0 32rpx;

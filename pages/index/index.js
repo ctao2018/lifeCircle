@@ -54,15 +54,15 @@ Page({
       })
   },
   onReady() {
-    let that = this
+   let that = this
     my.createSelectorQuery()
       .select('#newsbox').boundingClientRect()
       .exec((ret) => {
+        console.log(ret)
       that.setData({
         boxTop:ret[0].top
       })
     });
-   
   },
   //获取当前地理位置
   getLocation() {
@@ -249,6 +249,9 @@ Page({
     }
     this.data.newsArr = this.data.newsArr.concat(newList)
     this.setData({newsArr:this.data.newsArr})
+    // if(this.data.tabF){
+    //   my.pageScrollTo({ scrollTop: 440 })
+    // }
     console.log('newsArr',this.data.newsArr)
   },
   //点击轮播图跳转
@@ -568,19 +571,20 @@ Page({
     }
   },
   onPageScroll(e) {
-    // console.log(e)
-    // let sctop = e.scrollTop+46;
-    // console.log(sctop,this.data.boxTop)
-    // if(sctop>this.data.boxTop){
-    //   this.setData({
-    //     tabF:true,
-    //   })
+    //console.log(e)
+    let sctop = e.scrollTop+46;
+    //console.log(sctop,this.data.boxTop)
+    //if(sctop>this.data.boxTop){
+    if(sctop>480){
+      this.setData({
+        tabF:true,
+      })
       
-    // }else{
-    //   this.setData({
-    //     tabF:false,
-    //   })
-    // }
+    }else{
+      this.setData({
+        tabF:false,
+      })
+    }
   },
   onReachBottom(e) {
     if(this.data.currentTabsIndex<0){ //0515改版 把1改为了0
@@ -640,7 +644,7 @@ Page({
     this._queryFNewsInfoPage()
   },
   
-  //测试跳转 需删除// my.pageScrollTo({ scrollTop: 100 })
+  //测试跳转 需删除// my.pageScrollTo({ scrollTop: 440 })
   testaaa() {
     //my.navigateTo({ url: '/pages/managementNetwork/managementNetwork?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/hospital/hospital?cityAdcode='+this.data.cityAdcode})

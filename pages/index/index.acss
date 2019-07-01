@@ -139,18 +139,21 @@
 }
 .home-tab{
   margin-top: 16rpx;
-  border-bottom: 1rpx solid #eeeeee;
+  position: relative;
+  height: 88rpx;
 }
-.home-tabfix{
-  position:fixed;
+.home-tabbx{
+  position: absolute;
   left:0rpx;
   top:0rpx;
   right:0rpx;
   margin-top:0rpx;
-  z-index: 99;
+  z-index: 88;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #eeeeee;
 }
-.home-newbx{
-  margin-top: 95rpx;
+.home-tabfix{
+  position:fixed;
 }
 .home-tabc{
   display: inline-block;

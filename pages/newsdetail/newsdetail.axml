@@ -9,8 +9,7 @@
   </view>
   <view class="nd-scbx flex ac ja">
     <view class="c9 fs24">文章转载仅供学习交流，若有侵权请联系删除</view>
-    <view class="nd-sci {{scF?'nd-scisel':''}}"></view>
-    <!-- <view class="nd-fxi"></view> -->
+    <view class="nd-sci {{scF?'nd-scisel':''}}" onTap="collectFn"></view>
     <button class="nd-fxi" open-type="share"></button>
   </view>
 </view>

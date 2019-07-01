@@ -1,0 +1,39 @@
+<view class="collect bgf">
+  <block a:for="{{newsArr}}">
+    <view class="home-newsbx bgf" a:if="{{item.imgUrl.length === 1}}" >
+      <view class="home-newsbb" data-index="{{index}}" onTap="toNewsDetail">
+        <view class="home-newsbbl">
+          <view class="home-newsbxtitb fs34 c3 fw500">{{item.lists.title}}</view>
+        </view>
+        <image class="home-newspic" src="{{item.lists.picturesUrl}}" lazy-load="true" mode="aspectFill" />
+      </view>
+      <view class="c9 fs24 home-newsrq bb-e flex ac jb">
+        <view>{{item.lists.addTime}}</view>
+        <view class="co-deli" data-index="{{index}}" onTap="delCollect"></view>
+      </view>
+    </view>
+    <view class="home-newsbx bgf" a:if="{{item.imgUrl.length>1}}">
+      <view  data-index="{{index}}" onTap="toNewsDetail">
+        <view class="lh48 fs34 c3 fw500">{{item.lists.title}}</view>
+        <view class="home-newimgbx clearfix">
+          <block a:for="{{item.imgUrl}}">
+            <image class="home-newimg" data-index="{{index}}" src="{{item}}" mode="aspectFill" />
+          </block>
+        </view>
+      </view>
+      <view class="c9 fs24 home-newsrq bb-e flex ac jb">
+        <view>{{item.lists.addTime}}</view>
+        <view class="co-deli" data-index="{{index}}" onTap="delCollect"></view>
+      </view>
+    </view>
+    <view class="home-newsbx bgf" a:if="{{!item.imgUrl}}" >
+      <view class="home-newsbxtit fs34 c3 fw500" data-index="{{index}}" onTap="toNewsDetail">{{item.lists.title}}</view>
+      <view class="c9 fs24 home-newsbxdy flex ac jb">
+        <view>{{item.lists.addTime}}</view>
+        <view class="co-deli" data-index="{{index}}" onTap="delCollect"></view>
+      </view>
+    </view>
+  </block>
+  <no-data a:if="{{newsArr.length === 0}}"></no-data>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
+</view>

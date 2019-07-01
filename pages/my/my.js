@@ -97,6 +97,10 @@ Page({
   toMyAnswer() {
     my.navigateTo({ url: '/pages/myanswer/myanswer'})
   },
+  //to 我的收藏
+  toCollect() {
+     my.navigateTo({ url: '/pages/collect/collect'})
+  },
   //to 全部订单
   toOrderlist() {
     my.navigateTo({ url: '/pages/orderlist/orderlist'})

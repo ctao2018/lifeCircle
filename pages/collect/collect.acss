@@ -1,0 +1,57 @@
+.collect{
+  width: 100%;
+}
+.home-newsbx{
+  padding: 30rpx 32rpx 0;
+}
+.home-newsbb{
+  display: flex;
+  justify-content: space-between;
+}
+.home-newsbbl{
+  width: 436rpx;
+}
+.home-newsbxtit{
+  line-height: 48rpx;
+  margin-bottom: 20rpx;
+}
+.home-newsbxtitb{
+  line-height: 48rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 23rpx;
+}
+.home-newspic{
+  width: 218rpx;
+  height: 152rpx;
+  border-radius: 4rpx;
+}
+.home-newimgbx{
+  height: 152rpx;
+  margin-top: 16rpx;
+  margin-left: -16rpx;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+.home-newimg{
+  float: left;
+  width: 218rpx;
+  height: 152rpx;
+  margin-left: 16rpx;
+}
+.home-newsrq{
+  padding: 24rpx 0;
+}
+.home-newsbxdy{
+  border-bottom: 2rpx solid #eeeeee;
+  padding-bottom: 32rpx;
+}
+.co-deli{
+  width: 41rpx; 
+  height:32rpx;
+  background: url('../../assets/delete.png');
+  background-repeat: no-repeat;
+  background-size: 41rpx 32rpx;
+}

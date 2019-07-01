@@ -54,11 +54,12 @@
       </view>
     </view>
   </view>
-  <view class="home-tab bgf {{tabF?'home-tabfix':''}}">
+  <view class="home-tab bgf ">
     <!-- <block a:for="{{typeArr}}">
       <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item.name}}</view>
     </block> -->
     <tabs
+      className="home-tabbx {{tabF?'home-tabfix':''}}"
       tabs="{{typeArr}}"
       onTabClick="handleTabClick"
       activeTab="{{activeTab}}"
@@ -95,7 +96,7 @@
       </view>
     </view>
   </block> -->
-  <view id="newsbox" class="{{tabF?'home-newbx':''}}">
+  <view id="newsbox" class="">
     <block a:for="{{newsArr}}">
       <view class="home-newsbx bgf" a:if="{{item.lists.isPicture && item.imgUrl.length<2}}" data-index="{{index}}" onTap="toNewsDetail">
         <view class="home-newsbb">

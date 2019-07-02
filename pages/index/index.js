@@ -37,6 +37,7 @@ Page({
     cdFalg:false,
     boxTop:null,
     tabF:false,
+    isTab:false,
   },
 
   onLoad() {
@@ -185,6 +186,8 @@ Page({
       pages:'',
       newsArr:[],
       catalogNo:this.data.typeArr[index].lists.catalogNo,
+      isTab:true,
+      tabF:true,
     })
     this._queryFNewsInfoPage()
     // if(index === 1 || index === 2){  //0515改版
@@ -223,6 +226,7 @@ Page({
   },
   //新闻政策列表
   async _queryFNewsInfoPage() {
+    console.log(this.data.tabF)
     my.showLoading({
       content: '加载中...',
       delay: 100
@@ -250,9 +254,12 @@ Page({
     let yArr = this.data.newsArr;
     yArr = yArr.concat(newList);
     this.setData({newsArr:yArr})
-    // if(this.data.tabF){
-    //   my.pageScrollTo({ scrollTop: 440 })
-    // }
+    if(this.data.tabF){
+      let toTop = this.data.boxTop-38;
+      my.pageScrollTo({scrollTop: toTop});
+      this.setData({isTab:false})
+    }
+    console.log(this.data.tabF)
     console.log('newsArr',this.data.newsArr)
   },
   //点击轮播图跳转
@@ -573,19 +580,19 @@ Page({
   },
   onPageScroll(e) {
     //console.log(e)
-    let sctop = e.scrollTop+46;
+    let sctop = e.scrollTop+40;
     //console.log(sctop,this.data.boxTop)
-    //if(sctop>this.data.boxTop){
-    // if(sctop>480){
-    //   this.setData({
-    //     tabF:true,
-    //   })
-      
-    // }else{
-    //   this.setData({
-    //     tabF:false,
-    //   })
-    // }
+    if(!this.data.isTab){
+      if(sctop>this.data.boxTop){
+        this.setData({
+          tabF:true,
+        })
+      }else{
+        this.setData({
+          tabF:false,
+        })
+      }
+    }
   },
   onReachBottom(e) {
     if(this.data.currentTabsIndex<0){ //0515改版 把1改为了0
@@ -633,6 +640,8 @@ Page({
       typeArr:[],
       catalogNo:'hot',
       cdFalg:false,
+      tabF:false,
+      isTab:false,
     })
     this._getCategory()
     this._getMenu()

@@ -65,6 +65,7 @@
 }
 .home-tban{
   margin: 0rpx 0 22rpx -32rpx;
+  height: 360rpx;
 }
 .home-tbana{
   float: left;
@@ -94,6 +95,7 @@
 .home-wd{
   background-color: #ffffff;
   padding: 0 32rpx;
+  margin-bottom: 16rpx;
 }
 .home-wdtop{
   height: 88rpx;
@@ -138,7 +140,6 @@
   display: inline-block;
 }
 .home-tab{
-  margin-top: 16rpx;
   position: relative;
   height: 88rpx;
 }

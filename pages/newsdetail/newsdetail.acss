@@ -10,6 +10,10 @@
   padding: 0 32rpx;
   margin-bottom: 32rpx;
 }
+.nd-rmr{
+  margin-left: 30rpx;
+  color: #9B9B9B;
+}
 .nd-cont{
   padding: 0 32rpx;
   color: #666666;

@@ -165,5 +165,5 @@
       <view class="home-twbtn" onTap="toQuestion"></view>
     </view>
   </view>
-  <favorite>收藏小程序，下次使用更方便</favorite>
+  <favorite type="tips" bottom="2rpx">收藏小程序，下次使用更方便</favorite>
 </view>

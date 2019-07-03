@@ -100,6 +100,7 @@ Page({
   },
   onShareAppMessage() {
     return {
+      title:this.data.detail.title,
       path: '/pages/newsdetail/newsdetail?id='+ this.data.id
     };
   },

@@ -226,7 +226,6 @@ Page({
   },
   //新闻政策列表
   async _queryFNewsInfoPage() {
-    console.log(this.data.tabF)
     my.showLoading({
       content: '加载中...',
       delay: 100
@@ -259,7 +258,6 @@ Page({
       my.pageScrollTo({scrollTop: toTop});
       this.setData({isTab:false})
     }
-    console.log(this.data.tabF)
     console.log('newsArr',this.data.newsArr)
   },
   //点击轮播图跳转

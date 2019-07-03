@@ -31,7 +31,11 @@ Page({
   async _queryFNewsInfoDeatailById() {
     let result = await queryFNewsInfoDeatailById(this.data.id)
     console.log('详情',result)
-      
+    let vNum = result.data.data.visitNumber
+      if(vNum>10000){
+        vNum = (vNum/10000).toFixed(1)+'万';
+        result.data.data.visitNumber = vNum
+      }
       this.setData({
         detail:result.data.data
       })

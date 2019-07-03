@@ -253,10 +253,14 @@ Page({
     let yArr = this.data.newsArr;
     yArr = yArr.concat(newList);
     this.setData({newsArr:yArr})
-    if(this.data.tabF){
-      let toTop = this.data.boxTop-38;
-      my.pageScrollTo({scrollTop: toTop});
-      this.setData({isTab:false})
+    if(this.data.newsArr.length>0){
+      if(this.data.tabF){
+        let toTop = this.data.boxTop-38;
+        my.pageScrollTo({scrollTop: toTop});
+        this.setData({isTab:false})
+      }
+    }else{
+      this.setData({tabF:false})
     }
     console.log('newsArr',this.data.newsArr)
   },

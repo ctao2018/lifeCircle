@@ -509,3 +509,7 @@
   display: inline-block;
   margin-right: 24rpx;
 }
+.h-listbig{
+  width: 100vw;
+  height: 100vh;
+}

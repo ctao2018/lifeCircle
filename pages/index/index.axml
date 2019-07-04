@@ -54,6 +54,7 @@
       </view>
     </view>
   </view>
+  <view class="h-listbig">
   <view class="home-tab bgf ">
     <!-- <block a:for="{{typeArr}}">
       <view class="home-tabc {{currentTabsIndex==index?'home-tabSel':''}}" onTap="tabClick" data-index="{{index}}">{{item.name}}</view>
@@ -130,13 +131,14 @@
         </view>
       </view>
     </block>
+     
     
-    
+  </view>
+  <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
   <!-- <view a:if="{{currentTabsIndex > 5}}">
     <view class="home-morenodata c9 fs24 tc">暂无数据！</view>
   </view> -->
-  <bottom-line a:if="{{showbtline}}"></bottom-line>
   <!-- <view a:if="{{!editFlag}}" class="home-edit" onTap="showEdit"><image class="home-editimg" src="../../assets/editA.png" mode="scaleToFill" /></view>
   <view class="home-twbig">
     <view class="home-twbg {{editFlag?'home-twbgSel':''}}" onTap="closeEdit"></view>

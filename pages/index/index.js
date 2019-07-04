@@ -254,7 +254,7 @@ Page({
     yArr = yArr.concat(newList);
     this.setData({newsArr:yArr})
     if(this.data.newsArr.length>0){
-      if(this.data.tabF){
+      if(this.data.isTab){
         let toTop = this.data.boxTop-38;
         my.pageScrollTo({scrollTop: toTop});
         this.setData({isTab:false})

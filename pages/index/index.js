@@ -38,6 +38,7 @@ Page({
     boxTop:null,
     tabF:false,
     isTab:false,
+    scrollTop:'',
   },
 
   onLoad() {
@@ -185,10 +186,14 @@ Page({
       pagesNews:'',
       pages:'',
       newsArr:[],
-      catalogNo:this.data.typeArr[index].lists.catalogNo,
-      isTab:true,
-      tabF:true,
+      catalogNo:this.data.typeArr[index].lists.catalogNo, 
     })
+    if(this.data.scrollTop>this.data.boxTop){
+      this.setData({
+        isTab:true,
+        tabF:true,
+      })
+    }
     this._queryFNewsInfoPage()
     // if(index === 1 || index === 2){  //0515改版
     //   if(this.data.typeArr[index].children.length>0){
@@ -226,17 +231,14 @@ Page({
   },
   //新闻政策列表
   async _queryFNewsInfoPage() {
-    my.showLoading({
-      content: '加载中...',
-      delay: 100
-    });
+    my.showNavigationBarLoading();
     const result = await queryFNewsInfoPage({
       pageNum: this.data.pageNum,
       pageSize: 10,
       catalogNo: this.data.catalogNo,
     })
     //console.log('news',result)
-    my.hideLoading()
+    my.hideNavigationBarLoading();
     this.setData({pagesNews:result.data.data.pages})
     let list = result.data.data.rows
     let newList = []
@@ -584,6 +586,7 @@ Page({
     //console.log(e)
     let sctop = e.scrollTop+40;
     //console.log(sctop,this.data.boxTop)
+    this.setData({scrollTop:sctop})
     if(!this.data.isTab){
       if(sctop>this.data.boxTop){
         this.setData({
@@ -644,6 +647,7 @@ Page({
       cdFalg:false,
       tabF:false,
       isTab:false,
+      scrollTop:'',
     })
     this._getCategory()
     this._getMenu()

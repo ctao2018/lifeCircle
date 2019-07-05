@@ -104,17 +104,14 @@ Page({
   },
   //新闻政策列表
   async _queryFNewsInfoPage() {
-    my.showLoading({
-      content: '加载中...',
-      delay: 100
-    });
+    my.showNavigationBarLoading();
     const result = await queryFNewsInfoPage({
       pageNum: this.data.pageNum,
       pageSize: 10,
       catalogNo: this.data.catalogNo,
     })
     //console.log('news',result)
-    my.hideLoading()
+    my.hideNavigationBarLoading();
     this.setData({pagesNews:result.data.data.pages})
     let list = result.data.data.rows
     let newList = []

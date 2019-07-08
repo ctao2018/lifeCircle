@@ -1,11 +1,13 @@
 const app = getApp();
-import {queryMyAcctUserInfoAndPoint,getTokenByCode,goodspage} from '../../config/api'
+import {queryMyAcctUserInfoAndPoint,getTokenByCode,goodspage} from '../../config/api';
+import env from '../../config/env'
 
 Page({
   data: {
     userMsg:[],
     hotList:[],
     newList:[],
+    mall_blank:env.pic_url+'mall_blank.png',
   },
 
   onLoad() {

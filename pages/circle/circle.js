@@ -17,7 +17,9 @@ Page({
   },
 
   onLoad() {
-    if (app.auth_info){
+    let t = new Date().getTime();
+    let flagT = app.authIsOrNot(t);
+    if (flagT){
       this._queryFNewsInfoPage()
       //this._questionAnwserPage()
     }else{

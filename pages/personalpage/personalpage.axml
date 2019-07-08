@@ -1,12 +1,15 @@
 <view class="personal">
   <view class="per-top">
-    <view class="per-hd">
-      <view class="per-hdimg"><image class="per-hdimgi" src="{{userMsg.headAddress}}" mode="scaleToFill" /></view>
-    </view>
-    <view class="per-name tc fs38 cf">{{userMsg.nickName}}</view>
-    <view class="per-edbx">
-      <view class="per-edr fs24 cf" a:if="{{userMsg.isOneself === 'Y'}}" onTap="toEditFn">
-        <view class="per-edri"></view>编辑
+    <image class="per-hdpic" mode="scaleToFill" src="{{pic_bg}}"/>
+    <view class="per-hdcor">
+      <view class="per-hd">
+        <view class="per-hdimg"><image class="per-hdimgi" src="{{userMsg.headAddress}}" mode="scaleToFill" /></view>
+      </view>
+      <view class="per-name tc fs38 cf">{{userMsg.nickName}}</view>
+      <view class="per-edbx">
+        <view class="per-edr fs24 cf" a:if="{{userMsg.isOneself === 'Y'}}" onTap="toEditFn">
+          <view class="per-edri"></view>编辑
+        </view>
       </view>
     </view>
   </view>

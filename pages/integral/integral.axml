@@ -1,6 +1,7 @@
 <view class="integral">
   <view class="int-hd">
     <view class="int-hdbg">
+      <image class="int-hdpic" mode="scaleToFill" src="{{pic_bg}}"/>
       <view class="int-hdjf cf fs28 fw500">当前积分：<view class="int-hdjfnum fw600">{{pointAll}}</view></view>
     </view>
     <view class="int-hdz fs22 cf" onTap="toRule">积分规则<view class="int-hdwh"></view></view>

@@ -8,12 +8,15 @@
 .int-hdbg{
   width: 100%; 
   height:340rpx;
-  background: url('../../assets/integral_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+.int-hdpic{
+  width: 100%; 
+  height:340rpx;
 }
 .int-hdjf{
-  padding: 100rpx 0 0 160rpx;
+  position: absolute;
+  left: 160rpx;
+  top: 100rpx;
 }
 .int-hdjfnum{
   font-size: 78rpx;

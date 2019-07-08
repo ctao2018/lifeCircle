@@ -41,9 +41,9 @@ Page({
       this.changeNode()
   },
   changeNode() {
-    let htmlTJ = this.data.detail.businessCondition;
-     let htmlQD = this.data.detail.detailedList;
-      let htmlLC = this.data.detail.businesssProcess;
+    let htmlTJ = app.escape2Html(this.data.detail.businessCondition);
+    let htmlQD = app.escape2Html(this.data.detail.detailedList);
+    let htmlLC = app.escape2Html(this.data.detail.businesssProcess);
     parse(htmlTJ, (err, nodes) => {
       if (!err) {
         this.setData({

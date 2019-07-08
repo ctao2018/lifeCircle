@@ -175,7 +175,8 @@ Page({
   },
   changeNode() {
     for(let i =0;i<this.data.mnList.length;i++){
-      let html = this.data.mnList[i].lists.answer
+      let html = app.escape2Html(this.data.mnList[i].lists.answer)
+      //  let html = this.data.mnList[i].lists.answer
       parse(html, (err, nodes) => {
         if (!err) {
           let dt = `dtArr[`+ i +`].latitude`;
@@ -186,7 +187,7 @@ Page({
       })
     }
     
-   // console.log(this.data.dtArr)
+   //console.log(this.data.dtArr)
   },
     //去搜索
   toSearch() {

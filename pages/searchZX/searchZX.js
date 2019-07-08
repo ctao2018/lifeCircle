@@ -400,7 +400,7 @@ Page({
   },
   changeNode() {
     for(let i =0;i<this.data.wtList.length;i++){
-      let html = this.data.wtList[i].lists.answer
+      let html = app.escape2Html(this.data.wtList[i].lists.answer);
       parse(html, (err, nodes) => {
         if (!err) {
           let dt = `dtArr[`+ i +`].latitude`;

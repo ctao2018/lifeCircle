@@ -1,5 +1,5 @@
 <view class="question">
-  <image class="que-zxi" mode="scaleToFill" src="../../assets/zixunA.jpg"/>
+  <image class="que-zxi" mode="scaleToFill" src="{{pic_ban}}"/>
   <view class="que-tab bgf c6 fs32 flex ac ja"  a:if="{{bsList.length>0 || wtList.length>0}}">
     <block a:for="{{tabArr}}">
       <view class="flex ac {{curIndex==index?'que-tabsel':''}}" onTap="tabClick" data-index="{{index}}">

@@ -91,14 +91,9 @@ Page({
         });
     }
   },
-  //转义方法
-      escape2Html(str) {
-        var arrEntities = { 'lt': '<', 'gt': '>', 'nbsp': ' ', 'amp': '&', 'quot': '"','ldquo':'“','rdquo':'”','hellip':'……'};
-        return str.replace(/&(lt|gt|nbsp|amp|quot|ldquo|rdquo|hellip);/ig, function (all, t) { return arrEntities[t]; }).replace('<section', '<div').replace('<img', '<img class="mohrssNewsImg" ');
-        // return str.replace(/&(lt|gt|nbsp|amp|quot|ldquo|rdquo|hellip);/ig, function (all, t) { return arrEntities[t]; }).replace('<section', '<div').replace('<img', '<img style="max-width:100%;height:auto" ');
-      },
   changeNode() {
-    let html = this.escape2Html(this.data.detail.content)
+    // let html = this.data.detail.content
+    let html = app.escape2Html(this.data.detail.content)
     parse(html, (err, nodes) => {
       if (!err) {
         this.setData({

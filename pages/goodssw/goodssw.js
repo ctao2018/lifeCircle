@@ -75,7 +75,7 @@ Page({
     }
   },
   changeNode() {
-    let html = this.data.goodsArr.goodsDesc
+    let html = this.data.goodsArr.goodsDesc;
     parse(html, (err, nodes) => {
       if (!err) {
         this.setData({

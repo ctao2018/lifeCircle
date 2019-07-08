@@ -1,6 +1,7 @@
 <view class="my">
   <view class="my-hd">
     <view class="my-hdbg">
+      <image class="my-hdpic" mode="scaleToFill" src="{{pic_bg}}"/>
       <view class="my-hdcon">
         <view class="my-hdconl">
           <view class="my-hdconli"><image class="my-hdconlimg" src="{{userMsg.headAddress || '../../assets/headss.png'}}" mode="scaleToFill" /></view>

@@ -1,5 +1,6 @@
 const app = getApp();
-import {queryMyPointBookPageByParam} from '../../config/api'
+import {queryMyPointBookPageByParam} from '../../config/api';
+import env from '../../config/env';
 
 Page({
   data: {
@@ -10,6 +11,7 @@ Page({
     jfArr:[],
     showbtline:false,
     pointAll:'',
+    pic_bg:env.pic_url+'integral_bg.png',
   },
 
   onLoad() {

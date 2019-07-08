@@ -4,7 +4,6 @@ import parse from 'mini-html-parser2';
 
 Page({
   data: {
-    imgsrc:'../../assets/integral_bg.png',
     goodsId:'',
     goodsArr:[],
     nodes:[],
@@ -181,7 +180,7 @@ Page({
    
   },
   changeNode() {
-    let html = this.data.goodsArr.goodsDesc
+    let html = this.data.goodsArr.goodsDesc;
     parse(html, (err, nodes) => {
       if (!err) {
         this.setData({

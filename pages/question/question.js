@@ -1,6 +1,7 @@
 const app = getApp();
 import {getTokenByCode,queryAllValidHotCity,queryAllValidQuestionCategory,addQuestionByUser,
 formalBusinessGuide,formalCommonQuestion} from '../../config/api';
+import env from '../../config/env';
 import parse from 'mini-html-parser2';
 
 Page({
@@ -31,6 +32,7 @@ Page({
     wtList:[],
     nodes:[],
     dtArr:[],
+    pic_ban:env.pic_url+'zixunA.jpg',
   },
 
   onLoad(options) {
@@ -298,7 +300,7 @@ Page({
   },
   changeNode() {
     for(let i =0;i<this.data.wtList.length;i++){
-      let html = this.data.wtList[i].lists.answer
+      let html = app.escape2Html(this.data.wtList[i].lists.answer);
       parse(html, (err, nodes) => {
         if (!err) {
           let dt = `dtArr[`+ i +`].latitude`;

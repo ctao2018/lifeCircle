@@ -25,6 +25,10 @@
   width: 100% !important;
   height: auto !important;
 }
+.fr-fic{
+  width: 100% !important;
+  height: auto !important;
+}
 .nd-scbx{
   height: 100rpx;
   position: fixed;

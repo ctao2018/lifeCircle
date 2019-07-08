@@ -5,9 +5,17 @@
 .per-top{
   width: 100%; 
   height:334rpx;
-  background: url('../../assets/personal_bg.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
+}
+.per-hdcor{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.per-hdpic{
+  width: 100%; 
+  height:334rpx;
 }
 .per-hd{
   padding: 70rpx 0 20rpx;

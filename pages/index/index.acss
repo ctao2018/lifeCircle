@@ -381,18 +381,6 @@
   justify-content: center;
   z-index: 92;
 }
-.home-twhdl{
-  width: 180rpx; 
-  height:140rpx;
-  background: url('../../assets/tw_f.png');
-  background-repeat: no-repeat;
-  background-size: 180rpx 140rpx;
-}
-.home-twhdr{
-  background: url('../../assets/hd_f.png');
-  background-repeat: no-repeat;
-  background-size: 180rpx 140rpx;
-}
 .home-twbxa{
   /* width: 148rpx; 
   height:148rpx;

@@ -1,5 +1,6 @@
 const app = getApp();
-import {queryVisitAnswerDynamicByParam,queryVisitUserInfoById,queryVisitQuestionDynamicByParam} from '../../config/api'
+import {queryVisitAnswerDynamicByParam,queryVisitUserInfoById,queryVisitQuestionDynamicByParam} from '../../config/api';
+import env from '../../config/env';
 
 Page({
   data: {
@@ -14,6 +15,7 @@ Page({
     showQuestion:false,
     id:'',
     userMsg:[],
+    pic_bg:env.pic_url+'personal_bg.png',
   },
 
   onLoad(options) {

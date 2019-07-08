@@ -69,6 +69,7 @@ App({
     })
     
   },
+  //判断认证是否过期
   authIsOrNot(nowTime) {
     let oldT = this.auth_info.auth_time;
     if(nowTime-oldT> 14400000){
@@ -76,6 +77,13 @@ App({
     }else{
       return true
     }
+  },
+  //转义方法
+  escape2Html(str) {
+    var arrEntities = {'ldquo':'“','rdquo':'”','hellip':'……','lsquo':'‘','rsquo':'’','mdash':'—','middot':'·'};
+    return str.replace(/&(ldquo|rdquo|hellip|lsquo|rsquo|mdash|middot);/ig, function (all, t) { return arrEntities[t]; }).replace('<section', '<div');
+    // return str.replace(/&(ldquo|rdquo|hellip|lsquo|rsquo|mdash|middot);/ig, function (all, t) { return arrEntities[t]; }).replace('<section', '<div').replace('<img', '<img class="mohrssNewsImg" ');
+    // return str.replace(/&(lt|gt|nbsp|amp|quot|ldquo|rdquo|hellip);/ig, function (all, t) { return arrEntities[t]; }).replace('<section', '<div').replace('<img', '<img style="max-width:100%;height:auto" ');
   },
   onLaunch(options) {
     if(options.query){

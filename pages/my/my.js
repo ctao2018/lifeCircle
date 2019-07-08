@@ -1,10 +1,12 @@
 const app = getApp();
-import {getTokenByCode,queryMyAcctUserInfoAndPoint,queryUnreadQuestionAndAnswerNum,queryOpenCityValidModuleInfoByParam} from '../../config/api'
+import {getTokenByCode,queryMyAcctUserInfoAndPoint,queryUnreadQuestionAndAnswerNum,queryOpenCityValidModuleInfoByParam} from '../../config/api';
+import env from '../../config/env';
 
 Page({
   data: {
     userMsg:[],
     unRead:[],
+    pic_bg:env.pic_url+'personal_bg.png',
   },
 
   onLoad() {
@@ -15,7 +17,10 @@ Page({
      unRead:[],
    })
    app.getUrl(1)
-    if (app.auth_info){
+   let t = new Date().getTime();
+   let flagT = app.authIsOrNot(t);
+    // if (app.auth_info){
+    if(flagT){
       this._queryMyAcctUserInfoAndPoint()
       this._queryUnreadQuestionAndAnswerNum()
     }else{
@@ -78,7 +83,7 @@ Page({
   },
   //点击去个人主页
   toPersonal() {
-    //my.navigateTo({ url: '/pages/personalpage/personalpage?id='+this.data.userMsg.id})
+    // my.navigateTo({ url: '/pages/personalpage/personalpage?id='+this.data.userMsg.id})
     my.navigateTo({ url: '/pages/personalinfo/personalinfo'})
   },
   //点击去积分页面

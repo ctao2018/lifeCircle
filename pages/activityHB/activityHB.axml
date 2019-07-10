@@ -1,0 +1,9 @@
+<view class="activityHB">
+  <view class="a-box">
+    <image class="a-img" mode="widthFix" src="{{imgsrc}}"/>
+  </view>
+  <view class="a-btnbx flex ac jb bgf">
+    <view class="a-btna fw500 fs36" onTap="copyCode">复制搜索码</view>
+    <view class="a-btna a-btnb fw500 fs36" onTap="saveImg">保存图片</view>
+  </view>
+</view>

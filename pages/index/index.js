@@ -78,6 +78,7 @@ Page({
           cityAdcode: res.cityAdcode
         })
         app.cityAdcode = res.cityAdcode;
+        app.cityName = res.city;
       },
       fail() {
         my.alert({ title: '定位失败' });
@@ -443,13 +444,6 @@ Page({
   //点击跳转 发布问题
   toQuestion() {
     my.navigateTo({ url: '/pages/question/question?cityAdcode='+this.data.cityAdcode+'&city='+this.data.city})
-    // let t = new Date().getTime();
-    // let flagT = app.authIsOrNot(t);
-    // if (flagT){
-    //   my.navigateTo({ url: '/pages/question/question?cityAdcode='+this.data.cityAdcode+'&city='+this.data.city})
-    // }else{
-    //   this.auth(1)
-    // }
     this.setData({editFlag:false})
   },
   //点击跳转 悬赏问答页
@@ -531,6 +525,7 @@ Page({
           cityAdcode:res.adCode,
         })
         app.cityAdcode = res.adCode;
+        app.cityName = res.city;
         if(res.adCode === '110100'){
           this.setData({cityAdcode:110000})
           app.cityAdcode = '110000'

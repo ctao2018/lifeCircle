@@ -1,0 +1,13 @@
+.tabbar{
+  height: 100rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  border-top: 2rpx solid #eeeeee;
+}
+.tb-img{
+  width: 44rpx;
+  height: 44rpx;
+}

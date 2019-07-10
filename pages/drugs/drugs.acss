@@ -32,7 +32,7 @@
   z-index: 9;
 }
 .mn-listbx{
-  margin: 203rpx 0 110rpx;
+  margin: 203rpx 0 102rpx;
   padding: 0 32rpx;
 }
 .h-tab{

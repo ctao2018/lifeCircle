@@ -70,7 +70,7 @@
   color: #108EE9;
 }
 .mn-listbx{
-  margin: 203rpx 0 110rpx;
+  margin: 203rpx 0 102rpx;
 }
 .mn-tip{
   height: 108rpx;

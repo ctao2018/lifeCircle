@@ -1,0 +1,34 @@
+.activityHB{
+  width: 100%;
+  background-color: #4D8BFA;
+}
+.a-box{
+  width: 100%;
+  margin-bottom: 120rpx;
+}
+.a-img{
+  width: 100%;
+}
+.a-btnbx{
+  height: 120rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+}
+.a-btna{
+  width: 335rpx;
+  height: 88rpx;
+  border-radius: 4rpx;
+  color: #E73434;
+  background-color: #FFF7E3;
+  margin-left: 32rpx;
+  text-align: center;
+  line-height: 88rpx;
+}
+.a-btnb{
+  background-color: #FFCC59;
+  margin-left: 0;
+  margin-right: 32rpx;
+}

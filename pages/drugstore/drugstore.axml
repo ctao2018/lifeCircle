@@ -38,6 +38,7 @@
     </block>
     <bottom-line a:if="{{showbtline}}"></bottom-line>
   </view>
-  <view class="c9 fs24 flex ac jc mn-tip">网点数据仅供参考，如有疑问请参考当地人社官网</view>
+  <!-- <view class="c9 fs24 flex ac jc mn-tip">网点数据仅供参考，如有疑问请参考当地人社官网</view> -->
   <no-data a:if="{{mnList.length === 0}}"></no-data>
+  <tab-bar></tab-bar>
 </view>

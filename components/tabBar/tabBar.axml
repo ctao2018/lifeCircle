@@ -1,0 +1,18 @@
+<view class="tabbar flex ac ja bgf">
+  <view class="tc"  onTap="toFirstpage">
+    <image class="tb-img" mode="scaleToFill" src="../../assets/tabbar_home_default.png"/>
+    <view class="c9 fs22 tc ">首页</view>
+  </view>
+  <view class="tc"  onTap="toKK">
+    <image class="tb-img" mode="scaleToFill" src="../../assets/tabbar_circle_default.png"/>
+    <view class="c9 fs22 tc">看看</view>
+  </view>
+  <view class="tc" onTap="toMall">
+    <image class="tb-img" mode="scaleToFill" src="../../assets/tabbar_mall_default.png"/>
+    <view class="c9 fs22 tc" >优选</view>
+  </view>
+  <view class="tc" onTap="toMy">
+    <image class="tb-img" mode="scaleToFill" src="../../assets/tabbar_my_default.png"/>
+    <view class="c9 fs22 tc" >我的</view>
+  </view>
+</view>

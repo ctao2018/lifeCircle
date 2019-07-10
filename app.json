@@ -41,6 +41,7 @@
     "pages/searchZX/searchZX",
     "pages/errorCorrection/errorCorrection",
     "pages/collect/collect",
+    "pages/activityHB/activityHB",
     "pages/integralrule/integralrule"
     
   ],

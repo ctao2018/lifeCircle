@@ -1,0 +1,3 @@
+<view class="icon-zx">
+  <view class="i-twbtn" onTap="toQuestion"></view>
+</view>

@@ -3,6 +3,7 @@
   "pullRefresh": true,
   "usingComponents": {
     "bottom-line": "/components/bottomLine/bottomLine",
-    "tabs": "mini-antui/es/tabs/index"
+    "tabs": "mini-antui/es/tabs/index",
+    "icon-tw": "/components/iconTW/iconTW"
   }
 }

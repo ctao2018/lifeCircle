@@ -11,6 +11,7 @@ App({
   toUrl:null,
   selAddr:null,
   cityAdcode:null,
+  cityName:null,
   coordinate:null,//经纬度
   globalQuery:null,//外部链接传过来的参
   globalData: {},

@@ -1,0 +1,16 @@
+.icon-zx{
+  position: fixed;
+  right: 32rpx;
+  bottom: 54rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 92;
+}
+.i-twbtn{
+  width: 152rpx; 
+  height:147rpx;
+  background: url('../../assets/twen.png');
+  background-repeat: no-repeat;
+  background-size: 152rpx 147rpx;
+}

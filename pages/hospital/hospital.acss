@@ -73,7 +73,7 @@
   width: 80%;
 }
 .mn-listbx{
-  margin: 203rpx 0 110rpx;
+  margin: 203rpx 0 102rpx;
 }
 .mn-list{
   padding: 20rpx 32rpx;

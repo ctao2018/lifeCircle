@@ -1,45 +1,47 @@
 <view class="question">
   <image class="que-zxi" mode="scaleToFill" src="{{pic_ban}}"/>
-  <view class="que-tab bgf c6 fs32 flex ac ja"  a:if="{{bsList.length>0 || wtList.length>0}}">
-    <block a:for="{{tabArr}}">
-      <view class="flex ac {{curIndex==index?'que-tabsel':''}}" onTap="tabClick" data-index="{{index}}">
-        <image class="que-bai" mode="scaleToFill" src="{{item.pic}}"/>
-        {{item.name}}
-      </view>
-    </block>
-  </view>
-  <view class="que-zxbx" a:if="{{bsList.length>0 || wtList.length>0}}">
-    <view a:if="{{showBX}}">
-      <view class="bs-listbx bgf" a:if="{{bsList.length>0}}">
-        <block a:for="{{bsList}}">
-          <view class="bg-list flex ac jb" data-index="{{index}}" onTap="toDetailbs">
-            <view class="bg-tit"><view class="over-hid c3 fs28">{{item.title}}</view></view>
-            <view class="bg-arrr"></view>
-          </view>
-        </block>
-        <view class="que-cmore fs24 c9 tc" onTap="moreBS">查看更多</view>
-      </view>
-      <view class="que-nodata tc c9 fs24" a:else>该城市暂无数据</view>
+  <view a:if="{{isShow}}">
+    <view class="que-tab bgf c6 fs32 flex ac ja"  a:if="{{bsList.length>0 || wtList.length>0}}">
+      <block a:for="{{tabArr}}">
+        <view class="flex ac {{curIndex==index?'que-tabsel':''}}" onTap="tabClick" data-index="{{index}}">
+          <image class="que-bai" mode="scaleToFill" src="{{item.pic}}"/>
+          {{item.name}}
+        </view>
+      </block>
     </view>
-    <view a:if="{{!showBX}}">
-      <view class="wt-listbx bgf" a:if="{{wtList.length>0}}">
-        <block a:for="{{wtList}}">
-          <view class="cp-list bgf bb-e" >
-            <view class="flex jb" data-index="{{index}}" onTap="showDetail">
-              <view class="c3 fs28 cp-tit">{{item.lists.articleTitle}}</view>
-              <view class="cp-arrri {{item.flag?'cp-arrdi':''}}"></view>
+    <view class="que-zxbx" a:if="{{bsList.length>0 || wtList.length>0}}">
+      <view a:if="{{showBX}}">
+        <view class="bs-listbx bgf" a:if="{{bsList.length>0}}">
+          <block a:for="{{bsList}}">
+            <view class="bg-list flex ac jb" data-index="{{index}}" onTap="toDetailbs">
+              <view class="bg-tit"><view class="over-hid c3 fs28">{{item.title}}</view></view>
+              <view class="bg-arrr"></view>
             </view>
-            <view class="cp-dt fs26 c8 lh40" a:if="{{item.flag}}">
-              <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
-              <view class="jc-box flex">
-                <view class="jc-btn flex ac jc fs24" data-index="{{index}}" onTap="tojc"><view class="jc-ia"></view>纠错</view>
+          </block>
+          <view class="que-cmore fs24 c9 tc" onTap="moreBS">查看更多</view>
+        </view>
+        <view class="que-nodata tc c9 fs24" a:else>该城市暂无数据</view>
+      </view>
+      <view a:if="{{!showBX}}">
+        <view class="wt-listbx bgf" a:if="{{wtList.length>0}}">
+          <block a:for="{{wtList}}">
+            <view class="cp-list bgf bb-e" >
+              <view class="flex jb" data-index="{{index}}" onTap="showDetail">
+                <view class="c3 fs28 cp-tit">{{item.lists.articleTitle}}</view>
+                <view class="cp-arrri {{item.flag?'cp-arrdi':''}}"></view>
+              </view>
+              <view class="cp-dt fs26 c8 lh40" a:if="{{item.flag}}">
+                <rich-text data-index="{{index}}" nodes="{{dtArr[index].latitude}}" ></rich-text>
+                <view class="jc-box flex">
+                  <view class="jc-btn flex ac jc fs24" data-index="{{index}}" onTap="tojc"><view class="jc-ia"></view>纠错</view>
+                </view>
               </view>
             </view>
-          </view>
-        </block>
-        <view class="que-cmore fs24 c9 tc" onTap="moreWT">查看更多</view>
+          </block>
+          <view class="que-cmore fs24 c9 tc" onTap="moreWT">查看更多</view>
+        </view>
+        <view class="que-nodata tc c9 fs24" a:else>该城市暂无数据</view>
       </view>
-      <view class="que-nodata tc c9 fs24" a:else>该城市暂无数据</view>
     </view>
   </view>
   <form onSubmit="fabu">

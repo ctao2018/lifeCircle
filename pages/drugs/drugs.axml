@@ -27,4 +27,5 @@
   <tab-bar></tab-bar>
   <!-- <view class="c9 fs24 flex ac jc mn-tip">药品信息仅供参考，如有疑问请参考当地人社官网</view> -->
   <no-data a:if="{{mnList.length === 0}}"></no-data>
+  <!-- <icon-tw changestyle="true" showconf="true"></icon-tw> -->
 </view>

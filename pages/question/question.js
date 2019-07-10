@@ -1,6 +1,6 @@
 const app = getApp();
 import {getTokenByCode,queryAllValidHotCity,queryAllValidQuestionCategory,addQuestionByUser,
-formalBusinessGuide,formalCommonQuestion} from '../../config/api';
+formalBusinessGuide,formalCommonQuestion,getCityInfoByCityCode} from '../../config/api';
 import env from '../../config/env';
 import parse from 'mini-html-parser2';
 
@@ -33,14 +33,20 @@ Page({
     nodes:[],
     dtArr:[],
     pic_ban:env.pic_url+'zixunA.jpg',
+    nocont:'',
+    isShow:true,
   },
 
   onLoad(options) {
     if(options){
       this.setData({
         cityCode:options.cityAdcode,
-        city:options.city
+        city:options.city,
+        nocont:options.nocont
       })
+    }
+    if(this.data.nocont === 'true'){
+      this.setData({isShow:false})
     }
     app.getUrl(3,this.data.city,this.data.cityCode)
     let t = new Date().getTime();
@@ -50,7 +56,11 @@ Page({
       this._queryAllValidQuestionCategory();
       this._formalBusinessGuide();
       this._formalCommonQuestion();
-      
+      if(!app.cityName){
+        this._getCityInfoByCityCode()
+      }else{
+        this.setData({city:app.cityName})
+      }
     }else{
       this.auth()
     }
@@ -85,6 +95,11 @@ Page({
             this._queryAllValidQuestionCategory();
             this._formalBusinessGuide();
             this._formalCommonQuestion();
+            if(!app.cityName){
+              this._getCityInfoByCityCode()
+            }else{
+              this.setData({city:app.cityName})
+            }
           }else{
             my.showToast({
               content: '授权失败，请重试！'
@@ -173,6 +188,18 @@ Page({
         this._formalCommonQuestion()
       },
     });
+  },
+  //根据cityCode查cityName 
+  async _getCityInfoByCityCode() {
+    let result = await getCityInfoByCityCode({
+      cityCode:this.data.cityCode
+    })
+    //console.log(result)
+    if(result.data.code === 0){
+      this.setData({
+        city:result.data.data.name
+      })
+    }
   },
   //问题分类
   async _queryAllValidQuestionCategory() {

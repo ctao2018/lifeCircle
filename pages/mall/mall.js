@@ -17,8 +17,10 @@ Page({
   onShow() {
     // this.setData({
     // })
+   let t = new Date().getTime();
+   let flagT = app.authIsOrNot(t);
    app.getUrl(1)
-    if (app.auth_info){
+    if (flagT){
       this._queryMyAcctUserInfoAndPoint()
     }else{
       this.auth()

@@ -4,6 +4,7 @@
   "usingComponents": {
     "bottom-line": "/components/bottomLine/bottomLine",
     "no-data": "/components/nodata/nodata",
-    "tab-bar": "/components/tabBar/tabBar"
+    "tab-bar": "/components/tabBar/tabBar",
+    "icon-tw": "/components/iconTW/iconTW"
   }
 }

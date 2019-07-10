@@ -27,7 +27,8 @@ Page({
       this.setData({
         cityCode:app.globalQuery.cityAdcode,
       })
-      app.globalQuery = null
+      app.cityAdcode = app.globalQuery.cityAdcode;
+      app.globalQuery = null;
     }
     app.getUrl(4,this.data.cityCode);
     let t = new Date().getTime();

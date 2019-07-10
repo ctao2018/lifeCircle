@@ -664,9 +664,10 @@ Page({
     //my.navigateTo({ url: '/pages/businessGuide/businessGuide?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/drugs/drugs?cityAdcode='+this.data.cityAdcode})
     //my.navigateTo({ url: '/pages/errorCorrection/errorCorrection'})
-    app.webViewUrl = 'https://test.szyibei.com/sbjccx/firstPage/'
+    my.navigateTo({ url: '/pages/activityHB/activityHB'})
+    //app.webViewUrl = 'https://test.szyibei.com/sbjccx/firstPage/'
     //app.webViewUrl ='https://medicalinsprod.alipay-eco.com/medicalinsprod/unitycontroller/entrance?channelno=SZHRSS'
-    my.navigateTo({ url: '/pages/webview/webview'})
+    //my.navigateTo({ url: '/pages/webview/webview'})
   }
 
 });

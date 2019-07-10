@@ -67,7 +67,8 @@ const api = {
   submitCorrection,
   submitArticleCollect,
   articleCollect,
-  cancelArticleCollect
+  cancelArticleCollect,
+  getCityInfoByCityCode
 };
 
 
@@ -401,5 +402,10 @@ function articleCollect(params) {
 //取消收藏
 function cancelArticleCollect(params) {
   return fetchData('/dist/articleCollect/cancelArticleCollect/'+params);
+}
+
+//根据cityCode查cityName
+function getCityInfoByCityCode(params) {
+  return fetchData('/sharecom/whArea/getCityInfoByCityCode', params);
 }
 export default api

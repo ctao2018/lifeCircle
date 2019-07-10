@@ -33,6 +33,7 @@ Page({
       this.setData({
         cityCode:app.globalQuery.cityAdcode,
       })
+      app.cityAdcode = app.globalQuery.cityAdcode;
       app.globalQuery = null
     }
     app.getUrl(4,this.data.cityCode);

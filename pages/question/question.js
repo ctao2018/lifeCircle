@@ -38,7 +38,7 @@ Page({
   },
 
   onLoad(options) {
-    if(options){
+    if(options && options.cityAdcode !== 'null'){
       this.setData({
         cityCode:options.cityAdcode,
         city:options.city,
@@ -96,7 +96,7 @@ Page({
             this._formalBusinessGuide();
             this._formalCommonQuestion();
             if(!app.cityName){
-              this._getCityInfoByCityCode()
+               this._getCityInfoByCityCode()
             }else{
               this.setData({city:app.cityName})
             }

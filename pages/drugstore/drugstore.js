@@ -109,6 +109,7 @@ Page({
       },
       fail() {
         my.alert({ title: '定位失败' });
+        that._formalFixDrugstore()
       },
     })
   },

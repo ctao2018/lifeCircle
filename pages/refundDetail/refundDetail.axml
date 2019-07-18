@@ -1,0 +1,38 @@
+<view class="refunddet">
+  <view class="bgf mb16">
+    <view class="ad-top bb-e">
+      <view class="fs34 fw500 ad-toph">请等待商家处理</view>
+      <view class="c9 fs24">商家联系电话：13543294377</view>
+    </view>
+    <view class="ad-js">
+      <view class="flex ad-jsp">
+        <view class="ad-jspnum tc cf fs20">1</view>
+        <view class="c9 fs24 ad-jspr">退货退款申请已成功提交，请耐心等待商家处理；</view>
+      </view>
+      <view class="flex ad-jsp">
+        <view class="ad-jspnum tc cf fs20">2</view>
+        <view class="c9 fs24 ad-jspr">如果商家同意，款项会汇入您的交易账号中，请注意查收；</view>
+      </view>
+      <view class="flex ad-jsp">
+        <view class="ad-jspnum tc cf fs20">3</view>
+        <view class="c9 fs24 ad-jspr">如果商家拒绝，商家会主动联系您协商处理，请保持订单联系电话畅通。</view>
+      </view>
+    </view>
+  </view>
+  <view class="c3 fs28 ad-tkxx flex ac bgf">退款信息</view>
+  <view class="ol-bxb flex  jb ">
+    <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/headss.png" mode="scaleToFill"/></view>
+    <view class="ol-spm">
+      <view class="c3 fs26 ol-spmtit">SEESeekinExperiencneerindderg包括专业分享、Workshopef</view>
+      <view class="flex ac fs22 c9">
+        <view class="ar-spl ">商品尺码颜色信息在这里</view>
+        <view class=" ol-sprsl">X1</view>
+      </view>
+    </view>
+  </view>
+  <view class="ad-bt c9 fs24 bgf">
+    <view class="mb10">退款原因：拍错/多拍</view>
+    <view class="mb10">退款金额：¥100.00</view>
+    <view>申请时间：2019-08-01 18:30</view>
+  </view>
+</view>

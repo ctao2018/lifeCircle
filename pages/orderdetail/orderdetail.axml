@@ -53,10 +53,15 @@
         <view class="c9 fs22 ol-sprsl">X{{detail.orderGoodsList[0].number}}</view>
       </view>
     </view>
-    <view class="ol-bxc flex ac c9 fs24 bgf">合计：
-      <text class="c-c20 fs34 fw500" a:if="{{detail.integral}}">{{detail.integral}}<text class="c-c20 fs30">积分</text> </text>
-      <text class="" a:if="{{detail.integral && detail.actualPrice >0}}"> + </text>
-      <text class="c-c20 fs34 fw500" a:if="{{detail.actualPrice >0}}">¥{{detail.actualPrice}}</text>
+    <view class="ol-bxc flex ac jb fs24 bgf">
+      <view class="flex ac c9 fs24 ">
+        合计：
+        <text class="c-c20 fs34 fw500" a:if="{{detail.integral}}">{{detail.integral}}<text class="c-c20 fs30">积分</text> </text>
+        <text class="" a:if="{{detail.integral && detail.actualPrice >0}}"> + </text>
+        <text class="c-c20 fs34 fw500" a:if="{{detail.actualPrice >0}}">¥{{detail.actualPrice}}</text>
+      </view>
+      <view class="c6 tc ol-tkbtn" a:if="{{detail.orderStatus === 201 || detail.orderStatus === 300}}" onTap="toRefund">退货退款</view>
+      <view class="c6 tc ol-tkbtn" a:if="{{detail.orderStatus === 301}}" onTap="toRefund">申请售后</view>
     </view>
   </block>
   <view class="od-xx bgf">

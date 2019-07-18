@@ -15,7 +15,6 @@ Component({
     },
     methods: {
       toFirstpage() {
-        console.log('11')
         my.switchTab({url: '/pages/index/index'})
       },
       toKK() {

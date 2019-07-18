@@ -1,0 +1,59 @@
+<view class="applyref">
+  <form onSubmit="submitFn">
+  <view class="ol-bxb flex  jb bgf ">
+    <view class="ol-bxbl"><image class="ol-bxblimg" src="{{detail.orderGoodsList[0].listPicUrl}}" mode="scaleToFill"/></view>
+    <view class="ol-spm">
+      <view class="c3 fs26 ol-spmtit">{{detail.orderGoodsList[0].goodsName}}</view>
+      <view class="flex ac fs22 c9">
+        <view class="ar-spl ">{{detail.orderGoodsList[0].goodsBrief}}</view>
+        <view class=" ol-sprsl">X{{detail.orderGoodsList[0].number}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="bgf ar-tkzl">
+    <view class="bb-e ar-tkzla flex ac fs32">
+      <view class="c3">退款金额：</view>
+      <view class="">
+        <text class="c-ff9" a:if="{{detail.integral}}">{{detail.integral}}积分</text>
+        <text class="" a:if="{{detail.integral && detail.actualPrice >0}}"> + </text>
+        <text class="c-ff9" a:if="{{detail.actualPrice >0}}">¥{{detail.actualPrice}}</text>
+      </view>
+    </view>
+    <view class=" ar-tkzla flex ac jb fs32">
+      <view class="c3"><text class="c-f23">*</text>退款原因</view>
+      <picker  onChange="bindPickerChange" value="{{indexType}}" range="{{typeArr}}">
+        <view class="picker c6 ar-picker">
+          {{typeArr[indexType]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="bgf ar-tkzl">
+    <view class="bb-e ar-tkzla flex ac fs32">
+      <view class="c3"><text class="c-f23">*</text>手机号码：</view>
+      <view class="ar-inpbx flex ac">
+        <input class="ar-inp" type="number" name="phoneinp" value="{{phoneNum}}" placeholder="必填" onBlur="getPhone"/>
+      </view>
+    </view>
+    <view class="ar-tkzla flex ac fs32">
+      <view class="c3">退款说明：</view>
+      <view class="ar-inpbx flex ac">
+        <input class="ar-inp" type="text" name="reasoninp" value="{{tkReason}}" placeholder="选填" onBlur="getSM"/>
+      </view>
+    </view>
+  </view>
+  <view class="bgf ar-picbx">
+    <view class="c3 fs32 flex ac ar-pictit">上传凭证<view class="fs24 c9">（最多上传3张）</view></view>
+    <view class="flex ac">
+      <block a:for="{{imgArr}}">
+        <view class="ans-uppic" a:if="{{imgArr}}">
+          <image class="ans-upimg" src="{{item.data}}" mode="aspectFill" />
+          <view class="ans-uppicclose" data-index="{{index}}" onTap="delPicFn"></view>
+        </view>
+      </block>
+      <image class="addpici" a:if="{{upPicF}}" onTap="upLoadimg" src="../../assets/picture.png" mode="scaleToFill" />
+    </view>
+  </view>
+  <button class="ar-btn tc cf fs36" form-type="submit">提交</button>
+  </form>
+</view>

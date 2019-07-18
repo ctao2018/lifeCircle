@@ -18,6 +18,7 @@ Page({
     picturesUrl:'',
     showTK: false,
     qtCL:'',
+    submitF:true,
   },
 
   onLoad(options) {
@@ -30,6 +31,7 @@ Page({
   },
   onShow() {
     this._queryAllValidMaterials()
+    this.setData({submitF:true})
   },
   onReady() {
     
@@ -193,7 +195,10 @@ Page({
     })
     //console.log(this.data.detailedList)
     if(this.data.textarea || piclist){
-     this._addAnswerByUser()
+      if(this.data.submitF){
+        this.setData({submitF:false})
+        this._addAnswerByUser()
+      }
     } else{
       my.showToast({
         content: '请输入答案或者上传图片资料！'
@@ -227,6 +232,7 @@ Page({
         title: '提交失败',
         content: result.data.message,
       });
+      this.setData({submitF:true})
     }
   },
 });

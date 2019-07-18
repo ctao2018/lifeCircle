@@ -114,6 +114,10 @@ Page({
   toMyaddr() {
     my.navigateTo({ url: '/pages/myaddr/myaddr'})
   },
+  //to 退款售后
+  toRefund() {
+    my.navigateTo({ url: '/pages/refund/refund'})
+  },
   // 社保卡 点击
   toShebao() {
      this._queryOpenCityValidModuleInfoByParam()

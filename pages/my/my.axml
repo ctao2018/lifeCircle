@@ -41,6 +41,10 @@
       <view class="c3 fs32">查看全部订单</view>
       <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
     </view>
+    <view class="info-li bb-e" onTap="toRefund">
+      <view class="c3 fs32">退款/售后</view>
+      <view class="info-lir c3 fs34"><view class="info-liri"></view></view>
+    </view>
      <view class="info-li " onTap="toMyaddr">
       <view class="c3 fs32">我的收货地址</view>
       <view class="info-lir c3 fs34"><view class="info-liri"></view></view>

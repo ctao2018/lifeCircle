@@ -91,4 +91,8 @@ Page({
       }
     })
   },
+  //申请退款
+  toRefund() {
+    my.navigateTo({ url: '/pages/applyRefund/applyRefund?id='+this.data.orderId})
+  },
 });

@@ -24,7 +24,7 @@
     <view class="flex ac jb cc fs22 bb-e gsw-xxdt">
       <view class="gsw-xxyj">原价¥{{goodsArr.marketPrice}}</view>
       <view>库存{{goodsArr.goodsNumber}}件</view>
-      <view>快递:免运费</view>
+      <view>已售:{{goodsArr.sellVolume || 0}}</view>
     </view>
   </view>
   <view class="gsw-tab flex ac ja  bb-e">

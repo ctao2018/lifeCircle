@@ -1,0 +1,97 @@
+.applyref{
+  width: 100%;
+}
+.ol-bxb{
+  padding: 24rpx 32rpx;
+  margin-bottom: 16rpx;
+}
+.ol-bxbl{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+}
+.ol-bxblimg{
+  width: 140rpx;
+  height: 140rpx;
+}
+.ol-spm{
+  flex: 1;
+}
+.ol-spmtit{
+  line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.ar-spl{
+  flex: 1;
+}
+.ol-sprsl{
+  margin-left: 16rpx;
+}
+.ar-tkzl{
+  padding: 0 0 0 32rpx;
+  margin-bottom: 16rpx;
+}
+.ar-tkzla{
+  height: 85rpx;
+}
+.c-ff9{
+  color: #FF9257;
+}
+.c-f23{
+  color: #F23131;
+}
+.ar-picker{
+  margin-right: 32rpx;
+}
+.ar-inpbx{
+  flex: 1;
+}
+.ar-inp{
+  width: 100%;
+  height: 68rpx;
+  line-height: 68rpx;
+}
+.ar-picbx{
+  padding: 20rpx 32rpx;
+}
+.ar-pictit{
+  margin-bottom: 20rpx;
+}
+.addpici{
+  width: 150rpx;
+  height: 150rpx;
+}
+.ans-uppic{
+  position: relative;
+}
+.ans-upimg{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 32rpx;
+}
+.ans-uppicclose{
+  width: 38rpx; 
+  height:38rpx;
+  background: url('../../assets/cha.png');
+  background-repeat: no-repeat;
+  background-size: 38rpx 38rpx;
+  position: absolute;
+  right: 19rpx;
+  top: -10rpx;
+}
+.ar-btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  height: 94rpx;
+  line-height: 94rpx;
+  background-color: #45A4FF;
+  border: none;
+}

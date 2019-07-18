@@ -1,0 +1,55 @@
+.refund{
+  width: 100%;
+}
+.ol-bxb{
+  padding: 24rpx 32rpx;
+  margin-bottom: 16rpx;
+}
+.ol-bxbl{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+}
+.ol-bxblimg{
+  width: 140rpx;
+  height: 140rpx;
+}
+.ol-spm{
+  flex: 1;
+}
+.ol-spmtit{
+  line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.ar-spl{
+  flex: 1;
+}
+.ol-sprsl{
+  margin-left: 16rpx;
+}
+.re-list{
+  margin-top: 16rpx;
+}
+.re-hd{
+  height: 78rpx;
+  padding: 0 32rpx;
+  color: #FB6C20;
+}
+.re-bt{
+  height: 105rpx;
+  padding: 0 32rpx;
+  justify-content: flex-end;
+}
+.re-btna{
+  color: #45A4FF;
+  width:160rpx;
+  height:57rpx;
+  line-height: 57rpx;
+  border-radius:29rpx;
+  border: 2rpx solid #45A4FF;
+}

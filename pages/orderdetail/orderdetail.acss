@@ -41,7 +41,7 @@
   margin-bottom: 32rpx;
 }
 .ol-bxc{
-  height: 80rpx;
+  height: 96rpx;
   padding: 0 32rpx;
 }
 .ol-spm{
@@ -151,4 +151,11 @@
   border-radius:29rpx;
   background-color: #45A4FF;
   color: #ffffff;
+}
+.ol-tkbtn{
+  width: 160rpx;
+  height: 57rpx;
+  line-height: 57rpx;
+  border-radius: 29rpx;
+  border: 2rpx solid #999999;
 }

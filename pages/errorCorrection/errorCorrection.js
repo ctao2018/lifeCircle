@@ -11,6 +11,7 @@ Page({
     textarea:'',
     imgArr:[],
     picturesUrl:'',
+    submitF:true,
   },
 
   onLoad(options) {
@@ -22,7 +23,7 @@ Page({
     }
   },
   onShow() {
-   
+    this.setData({submitF:true})
   },
   onReady() {
     
@@ -104,7 +105,10 @@ Page({
       picturesUrl:piclist
     })
     if(this.data.textarea){
-     this._submitCorrection()
+      if(this.data.submitF){
+        this._submitCorrection()
+        this.setData({submitF:false})
+      }
     } else{
       my.showToast({
         content: '请输入问题描述！'
@@ -134,6 +138,7 @@ Page({
         title: '提交失败',
         content: result.data.message,
       });
+      this.setData({submitF:true})
     }
   },
 });

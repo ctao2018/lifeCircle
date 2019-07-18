@@ -1,0 +1,18 @@
+<view class="refund">
+  <view class="re-list" a:for="{{5}}">
+    <view class="fw500 fs26 re-hd flex ac bgf">已完成</view>
+    <view class="ol-bxb flex  jb ">
+      <view class="ol-bxbl"><image class="ol-bxblimg" src="../../assets/headss.png" mode="scaleToFill"/></view>
+      <view class="ol-spm">
+        <view class="c3 fs26 ol-spmtit">SEESeekinExperiencneerindderg包括专业分享、Workshopef</view>
+        <view class="flex ac fs22 c9">
+          <view class="ar-spl ">商品尺码颜色信息在这里</view>
+          <view class=" ol-sprsl">X1</view>
+        </view>
+      </view>
+    </view>
+    <view class="bgf flex ac re-bt">
+      <view class="re-btna tc fs24" onTap="toDetail">查看详情</view>
+    </view>
+  </view>
+</view>

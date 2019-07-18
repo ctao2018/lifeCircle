@@ -638,7 +638,6 @@ Page({
       newstapindx:0,
       // typeArr:[{name:'问答',catalogNo:'',children:[]}],0515改版
       typeArr:[],
-      catalogNo:'hot',
       cdFalg:false,
       tabF:false,
       isTab:false,

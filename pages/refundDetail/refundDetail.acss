@@ -1,0 +1,68 @@
+.refunddet{
+  width: 100%;
+}
+.ol-bxb{
+  padding: 24rpx 32rpx;
+  margin-bottom: 16rpx;
+}
+.ol-bxbl{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 16rpx;
+  overflow: hidden;
+}
+.ol-bxblimg{
+  width: 140rpx;
+  height: 140rpx;
+}
+.ol-spm{
+  flex: 1;
+}
+.ol-spmtit{
+  line-height: 36rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+.ar-spl{
+  flex: 1;
+}
+.ol-sprsl{
+  margin-left: 16rpx;
+}
+.ad-top{
+  padding: 28rpx 32rpx;
+}
+.ad-toph{
+  color: #FB6C20;
+  line-height: 48rpx;
+  margin-bottom: 6rpx;
+}
+.ad-js{
+  padding: 28rpx 32rpx 20rpx;
+}
+.ad-jsp{
+  margin-bottom: 8rpx;
+}
+.ad-jspnum{
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 12rpx;
+  background-color: #cccccc;
+  margin-right: 10rpx;
+}
+.ad-jspr{
+  flex: 1;
+}
+.ad-tkxx{
+  height: 70rpx;
+  padding: 0 32rpx;
+}
+.ad-bt{
+  padding: 20rpx 32rpx
+}
+.mb10{
+  margin-bottom: 10rpx;
+}
